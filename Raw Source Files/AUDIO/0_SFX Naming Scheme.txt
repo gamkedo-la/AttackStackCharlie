@@ -3,9 +3,9 @@ FILE NAMING SCHEME FOR AUDIO ASSETS
 
 Sx_Cat_Subcat_File Name_A_01
 |   |   |      |        | |
-SX for Sound Effects, MX for Music, DX for dialogue.
+Sx for Sound Effects, Mx for Music, Dx for dialogue.
     |   |      |        | |
-    Category, i.e. UI, AMB(ience), WEAP(on), FOL(ey), etc.
+    Category, i.e. UI, Amb(ience), Weapon, Stinger, etc.
         |      |        | |
         Subcategory as full word, i.e. UI_BUTTON, WEAP_SWORD, etc.
                |        | |
