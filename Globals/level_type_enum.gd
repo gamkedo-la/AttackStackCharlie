@@ -1,0 +1,4 @@
+enum LevelType {
+	SPLIT,
+	ROF
+}

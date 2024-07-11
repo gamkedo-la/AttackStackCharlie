@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://degldynxe05sf"]
+[gd_scene load_steps=8 format=3 uid="uid://degldynxe05sf"]
 
 [ext_resource type="PackedScene" uid="uid://c4hrawof8vra7" path="res://Player/playership.tscn" id="1_kdrlo"]
-[ext_resource type="PackedScene" uid="uid://chy58la7p4ca2" path="res://Powerups/UpgradeShotPlus.tscn" id="2_4aj01"]
+[ext_resource type="PackedScene" uid="uid://chy58la7p4ca2" path="res://Powerups/UpgradeShot_Split.tscn" id="2_4aj01"]
+[ext_resource type="PackedScene" uid="uid://lmcwu5px8yv" path="res://Powerups/UpgradeShot_ROF.tscn" id="3_agxoh"]
 [ext_resource type="PackedScene" uid="uid://di0klw80v6wob" path="res://Models/vr-hand.glb" id="3_y3jsb"]
 [ext_resource type="Script" path="res://Models/3dspin.gd" id="4_6wt8j"]
 
@@ -42,32 +43,32 @@ position = Vector2(442, 433)
 [node name="Powerup2" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
 position = Vector2(295, 458)
 
-[node name="Powerup3" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
-position = Vector2(632, 437)
+[node name="Powerup3" parent="PowerupsTest" instance=ExtResource("3_agxoh")]
+position = Vector2(657, 433)
 
-[node name="Powerup4" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
-position = Vector2(737, 458)
+[node name="Powerup4" parent="PowerupsTest" instance=ExtResource("3_agxoh")]
+position = Vector2(775, 547)
 
-[node name="Powerup5" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
-position = Vector2(837, 471)
+[node name="Powerup5" parent="PowerupsTest" instance=ExtResource("3_agxoh")]
+position = Vector2(754, 437)
 
-[node name="Powerup6" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
-position = Vector2(967, 474)
-
-[node name="Powerup8" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
-position = Vector2(691, 558)
-
-[node name="Powerup9" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
-position = Vector2(796, 579)
-
-[node name="Powerup10" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
-position = Vector2(896, 592)
-
-[node name="Powerup11" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
-position = Vector2(1026, 595)
+[node name="Powerup6" parent="PowerupsTest" instance=ExtResource("3_agxoh")]
+position = Vector2(667, 537)
 
 [node name="Powerup7" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
 position = Vector2(176, 499)
+
+[node name="Powerup8" parent="PowerupsTest" instance=ExtResource("3_agxoh")]
+position = Vector2(857, 448)
+
+[node name="Powerup9" parent="PowerupsTest" instance=ExtResource("3_agxoh")]
+position = Vector2(865, 556)
+
+[node name="Powerup10" parent="PowerupsTest" instance=ExtResource("3_agxoh")]
+position = Vector2(953, 561)
+
+[node name="Powerup11" parent="PowerupsTest" instance=ExtResource("3_agxoh")]
+position = Vector2(956, 453)
 
 [node name="Powerup12" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
 position = Vector2(311, 551)
