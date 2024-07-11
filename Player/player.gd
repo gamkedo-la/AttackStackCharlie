@@ -20,7 +20,7 @@ const MAX_LEVELS = 3
 
 var shot_levels_dict = {
 	ROF = 0,
-	SPLIT = 0,
+	SPLIT = 0, # This means that we need to add a + 1 later. The price of the generic implementation of MAX_LEVELS. We may need to customize them in the end.
 }
 
 var lastShotTime = 0.0
