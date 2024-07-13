@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dmkcjurkrrrj1"
+path="res://.godot/imported/Sx_PlayerWeapon_Standard_Laser_A_05.wav-ced62f8083ecd5129f4aa85c7fbc03db.sample"
+
+[deps]
+
+source_file="res://Raw Source Files/AUDIO/SFX/Sx_PlayerWeapon_Standard_Laser_A_05.wav"
+dest_files=["res://.godot/imported/Sx_PlayerWeapon_Standard_Laser_A_05.wav-ced62f8083ecd5129f4aa85c7fbc03db.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

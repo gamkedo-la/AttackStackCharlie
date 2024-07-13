@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://gw5clihcu8l4"
+path="res://.godot/imported/Sx_PlayerWeapon_PlasmaBeam_LOOP.wav-f09db19f1cd667c6bb7f5faf0c6d44e5.sample"
+
+[deps]
+
+source_file="res://Raw Source Files/AUDIO/SFX/Sx_PlayerWeapon_PlasmaBeam_LOOP.wav"
+dest_files=["res://.godot/imported/Sx_PlayerWeapon_PlasmaBeam_LOOP.wav-f09db19f1cd667c6bb7f5faf0c6d44e5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

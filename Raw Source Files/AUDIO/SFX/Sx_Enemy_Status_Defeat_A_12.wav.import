@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8twwh56xs75j"
+path="res://.godot/imported/Sx_Enemy_Status_Defeat_A_12.wav-0667d90c31311b63c5f990dc1927a520.sample"
+
+[deps]
+
+source_file="res://Raw Source Files/AUDIO/SFX/Sx_Enemy_Status_Defeat_A_12.wav"
+dest_files=["res://.godot/imported/Sx_Enemy_Status_Defeat_A_12.wav-0667d90c31311b63c5f990dc1927a520.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

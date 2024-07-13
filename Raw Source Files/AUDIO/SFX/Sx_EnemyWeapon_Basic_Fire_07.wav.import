@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c3cra6t72p0p4"
+path="res://.godot/imported/Sx_EnemyWeapon_Basic_Fire_07.wav-c85b38d5a636967646c74033eafec5bb.sample"
+
+[deps]
+
+source_file="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_07.wav"
+dest_files=["res://.godot/imported/Sx_EnemyWeapon_Basic_Fire_07.wav-c85b38d5a636967646c74033eafec5bb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
