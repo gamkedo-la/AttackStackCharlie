@@ -1,10 +1,44 @@
-[gd_scene load_steps=8 format=3 uid="uid://degldynxe05sf"]
+[gd_scene load_steps=19 format=3 uid="uid://degldynxe05sf"]
 
 [ext_resource type="PackedScene" uid="uid://c4hrawof8vra7" path="res://Player/playership.tscn" id="1_kdrlo"]
+[ext_resource type="AudioStream" uid="uid://bmhmaolkrx2v6" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_01.wav" id="2_3rgrb"]
 [ext_resource type="PackedScene" uid="uid://chy58la7p4ca2" path="res://Powerups/UpgradeShot_Split.tscn" id="2_4aj01"]
 [ext_resource type="PackedScene" uid="uid://lmcwu5px8yv" path="res://Powerups/UpgradeShot_ROF.tscn" id="3_agxoh"]
+[ext_resource type="AudioStream" uid="uid://bj4vtav3rvrbf" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_02.wav" id="3_h5qtx"]
 [ext_resource type="PackedScene" uid="uid://di0klw80v6wob" path="res://Models/vr-hand.glb" id="3_y3jsb"]
 [ext_resource type="Script" path="res://Models/3dspin.gd" id="4_6wt8j"]
+[ext_resource type="AudioStream" uid="uid://dcg0vshpdpwej" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_03.wav" id="4_fp1pw"]
+[ext_resource type="AudioStream" uid="uid://daisyf1pangp8" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_04.wav" id="5_yoosd"]
+[ext_resource type="AudioStream" uid="uid://dbmr3kql10fa4" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_05.wav" id="6_uc5j8"]
+[ext_resource type="AudioStream" uid="uid://qyrtm6b5a4iq" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_06.wav" id="7_4ysgg"]
+[ext_resource type="AudioStream" uid="uid://c3cra6t72p0p4" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_07.wav" id="8_4tdnv"]
+[ext_resource type="AudioStream" uid="uid://byeot2c34tyb6" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_08.wav" id="9_rk8mk"]
+[ext_resource type="AudioStream" uid="uid://58f3fauypuul" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_09.wav" id="10_a6mra"]
+[ext_resource type="AudioStream" uid="uid://dxgt70jp13sar" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_10.wav" id="11_m2ddn"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hpqqt"]
+random_pitch = 1.5
+streams_count = 10
+stream_0/stream = ExtResource("2_3rgrb")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("3_h5qtx")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("4_fp1pw")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("5_yoosd")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("6_uc5j8")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("7_4ysgg")
+stream_5/weight = 1.0
+stream_6/stream = ExtResource("8_4tdnv")
+stream_6/weight = 1.0
+stream_7/stream = ExtResource("9_rk8mk")
+stream_7/weight = 1.0
+stream_8/stream = ExtResource("10_a6mra")
+stream_8/weight = 1.0
+stream_9/stream = ExtResource("11_m2ddn")
+stream_9/weight = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8lp0"]
 size = Vector2(1192, 20)
@@ -16,6 +50,9 @@ size = Vector2(17, 646)
 
 [node name="Player" parent="." instance=ExtResource("1_kdrlo")]
 position = Vector2(550, 534)
+
+[node name="SX_PlayShootBasic" type="AudioStreamPlayer" parent="Player"]
+stream = SubResource("AudioStreamRandomizer_hpqqt")
 
 [node name="Boundaries" type="StaticBody2D" parent="."]
 

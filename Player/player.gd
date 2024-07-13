@@ -5,7 +5,6 @@ extends CharacterBody2D
 
 @onready var shipSprite = get_node(shipSpritePath) as Node2D
 
-
 const SHIP_SPEED = 250
 const SHOT_SPREAD = 25
 
@@ -81,6 +80,7 @@ func fire():
 			shotSweepEdgeL = Vector2.UP
 			shotSweepEdgeR = Vector2.DOWN
 		shot.global_position = $ShootFrom.global_position + shipFacing*25 + (shotSweepEdgeL*xOffset+shotSweepEdgeR*n)*SHOT_SPREAD
+
 
 func get_time():
 	return Time.get_ticks_msec() / 1000.0
