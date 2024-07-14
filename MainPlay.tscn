@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://degldynxe05sf"]
+[gd_scene load_steps=20 format=3 uid="uid://degldynxe05sf"]
 
 [ext_resource type="PackedScene" uid="uid://c4hrawof8vra7" path="res://Player/playership.tscn" id="1_kdrlo"]
 [ext_resource type="AudioStream" uid="uid://bmhmaolkrx2v6" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_01.wav" id="2_3rgrb"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://byeot2c34tyb6" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_08.wav" id="9_rk8mk"]
 [ext_resource type="AudioStream" uid="uid://58f3fauypuul" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_09.wav" id="10_a6mra"]
 [ext_resource type="AudioStream" uid="uid://dxgt70jp13sar" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_10.wav" id="11_m2ddn"]
+[ext_resource type="PackedScene" uid="uid://b84bpkxpn18yb" path="res://Powerups/UpgradeShot_Range.tscn" id="16_kxsc8"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hpqqt"]
 random_pitch = 1.5
@@ -75,6 +76,9 @@ shape = SubResource("RectangleShape2D_c8lp0")
 [node name="PowerupsTest" type="Node2D" parent="."]
 
 [node name="Powerup" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
+position = Vector2(442, 433)
+
+[node name="Powerup15" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
 position = Vector2(442, 433)
 
 [node name="Powerup2" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
@@ -178,3 +182,18 @@ spinX = 1
 transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 17.5481, 13.0985, 9.98588)
 projection = 1
 size = 20.0
+
+[node name="UpgradeShot_Range" parent="3D background scene" instance=ExtResource("16_kxsc8")]
+position = Vector2(539, 325)
+
+[node name="UpgradeShot_Range2" parent="3D background scene" instance=ExtResource("16_kxsc8")]
+position = Vector2(627, 329)
+
+[node name="UpgradeShot_Range3" parent="3D background scene" instance=ExtResource("16_kxsc8")]
+position = Vector2(450, 286)
+
+[node name="UpgradeShot_Range4" parent="3D background scene" instance=ExtResource("16_kxsc8")]
+position = Vector2(576, 216)
+
+[node name="UpgradeShot_Range5" parent="3D background scene" instance=ExtResource("16_kxsc8")]
+position = Vector2(684, 238)

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b84bpkxpn18yb"]
+
+[ext_resource type="Script" path="res://Powerups/PowerupShotPlus.gd" id="1_52muy"]
+[ext_resource type="Texture2D" uid="uid://dkxjebqsbvbfw" path="res://Powerups/range_upgrade.png" id="2_t0gjh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bh3kg"]
+size = Vector2(28, 27)
+
+[node name="UpgradeShot_Range" type="Area2D"]
+script = ExtResource("1_52muy")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_bh3kg")
+
+[node name="Shotupgrade" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("2_t0gjh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,4 +1,5 @@
 enum LevelType {
 	SPLIT,
-	ROF
+	ROF,
+	RANGE
 }

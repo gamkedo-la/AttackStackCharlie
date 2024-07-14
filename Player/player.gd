@@ -11,8 +11,8 @@ const SHOT_SPREAD = 25
 const LEVEL_TYPE = preload("res://Globals/level_type_enum.gd").LevelType
 var LEVEL_TYPE_LIST = LEVEL_TYPE.keys()
 const ROF = 0.2
-const BASE_SHOT_LIFE = 0.45
-const EXTRA_SHOT_LIFE_INCREMENT = 0.2
+const BASE_SHOT_LIFE = 0.5
+const EXTRA_SHOT_LIFE_INCREMENT = 0.3
 
 # Can be split too if needed. Potentially inside the dictionary
 # If leveling up logic becomes more complex, it could be extracted to an object 
@@ -77,7 +77,7 @@ func fire():
 		var shot = shotBasic.instantiate();
 		get_tree().root.add_child(shot);
 		shot.activateShot(shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.ROF]], 
-			BASE_SHOT_LIFE + 2 * EXTRA_SHOT_LIFE_INCREMENT,
+			BASE_SHOT_LIFE + shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.RANGE]] * EXTRA_SHOT_LIFE_INCREMENT,
 			shipFacing);
 		var shotSweepEdgeL = Vector2.LEFT
 		var shotSweepEdgeR = Vector2.RIGHT
