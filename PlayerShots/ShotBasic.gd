@@ -10,18 +10,18 @@ extends Area2D
 @onready var sprite3 = get_node(sprite3_path) as Node2D
 
 const SHOT_SPEED = 300
-const REMOVE_TIMER = 3
 var timeAlive = 0.0
 var moveDir = Vector2.ZERO;
 
-func activateShot(useSprite: int, direction: Vector2):
+func activateShot(useSprite: int, lifeSpan:float, direction: Vector2):
 	sprite1.visible = (useSprite == 0)
 	sprite2.visible = (useSprite == 1)
 	sprite3.visible = (useSprite == 2)
+	timeAlive = lifeSpan
 	moveDir = direction
 
 func _physics_process(delta):
 	position += moveDir * delta * SHOT_SPEED
-	timeAlive += delta
-	if timeAlive > REMOVE_TIMER:
+	timeAlive -= delta
+	if timeAlive < 0:
 		queue_free()

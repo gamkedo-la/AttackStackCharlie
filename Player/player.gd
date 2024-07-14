@@ -11,6 +11,8 @@ const SHOT_SPREAD = 25
 const LEVEL_TYPE = preload("res://Globals/level_type_enum.gd").LevelType
 var LEVEL_TYPE_LIST = LEVEL_TYPE.keys()
 const ROF = 0.2
+const BASE_SHOT_LIFE = 0.45
+const EXTRA_SHOT_LIFE_INCREMENT = 0.2
 
 # Can be split too if needed. Potentially inside the dictionary
 # If leveling up logic becomes more complex, it could be extracted to an object 
@@ -20,6 +22,7 @@ const MAX_LEVELS = 3
 var shot_levels_dict = {
 	ROF = 0,
 	SPLIT = 0, # This means that we need to add a + 1 later. The price of the generic implementation of MAX_LEVELS. We may need to customize them in the end.
+	RANGE = 0,
 }
 
 var lastShotTime = 0.0
@@ -62,10 +65,10 @@ func upgradeShot(type):
 	
 
 func fire():
-	print("get_time ", get_time())
-	print("lastShotTime ", lastShotTime)
-	print("get_time - lastShotTime ", get_time() - lastShotTime)
-	print("ROF * (SHOT_LEVELS-shotLev) ", ROF * (MAX_LEVELS-shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.ROF]]))
+	# print("get_time ", get_time())
+	# print("lastShotTime ", lastShotTime)
+	# print("get_time - lastShotTime ", get_time() - lastShotTime)
+	# print("ROF * (SHOT_LEVELS-shotLev) ", ROF * (MAX_LEVELS-shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.ROF]]))
 	if get_time() - lastShotTime < ROF * (MAX_LEVELS-shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.ROF]]):
 		return
 	lastShotTime = get_time()
@@ -73,7 +76,9 @@ func fire():
 		var xOffset = (shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.SPLIT]]-1.0)/2.0
 		var shot = shotBasic.instantiate();
 		get_tree().root.add_child(shot);
-		shot.activateShot(shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.ROF]], shipFacing);
+		shot.activateShot(shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.ROF]], 
+			BASE_SHOT_LIFE + 2 * EXTRA_SHOT_LIFE_INCREMENT,
+			shipFacing);
 		var shotSweepEdgeL = Vector2.LEFT
 		var shotSweepEdgeR = Vector2.RIGHT
 		if shipFacing == Vector2.LEFT || shipFacing == Vector2.RIGHT:
