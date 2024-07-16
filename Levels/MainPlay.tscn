@@ -42,12 +42,13 @@ stream_9/stream = ExtResource("11_m2ddn")
 stream_9/weight = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8lp0"]
-size = Vector2(1192, 20)
+size = Vector2(1160, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ioben"]
-size = Vector2(17, 646)
+size = Vector2(16, 671)
 
 [node name="MainPlay" type="Node2D"]
+process_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("1_kdrlo")]
 position = Vector2(550, 534)
@@ -58,19 +59,19 @@ stream = SubResource("AudioStreamRandomizer_hpqqt")
 [node name="Boundaries" type="StaticBody2D" parent="."]
 
 [node name="Top" type="CollisionShape2D" parent="Boundaries"]
-position = Vector2(586, 0)
+position = Vector2(576, 0)
 shape = SubResource("RectangleShape2D_c8lp0")
 
 [node name="Left" type="CollisionShape2D" parent="Boundaries"]
-position = Vector2(10, 317)
+position = Vector2(8, 320.5)
 shape = SubResource("RectangleShape2D_ioben")
 
 [node name="Right" type="CollisionShape2D" parent="Boundaries"]
-position = Vector2(1171.5, 323)
+position = Vector2(1152, 324)
 shape = SubResource("RectangleShape2D_ioben")
 
 [node name="Bottom" type="CollisionShape2D" parent="Boundaries"]
-position = Vector2(578, 646)
+position = Vector2(580, 648)
 shape = SubResource("RectangleShape2D_c8lp0")
 
 [node name="PowerupsTest" type="Node2D" parent="."]
