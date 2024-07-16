@@ -18,6 +18,10 @@ func _on_game_manager_toggle_game_paused(is_paused : bool):
 		hide()
 		
 
-
 func _on_resume_btn_pressed():
 	game_manager.game_paused = false
+
+func _on_exit_btn_pressed():
+	print("quit button pressed")
+	get_tree().quit()
+

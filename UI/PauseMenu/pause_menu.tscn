@@ -64,3 +64,4 @@ layout_mode = 2
 text = "EXIT"
 
 [connection signal="pressed" from="BoxContainer/VBoxContainer/ResumeBTN" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/ExitBTN" to="." method="_on_exit_btn_pressed"]
