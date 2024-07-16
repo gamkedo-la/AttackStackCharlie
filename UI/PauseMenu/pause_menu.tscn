@@ -62,3 +62,5 @@ text = "MAIN MENU"
 [node name="ExitBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "EXIT"
+
+[connection signal="pressed" from="BoxContainer/VBoxContainer/ResumeBTN" to="." method="_on_resume_btn_pressed"]
