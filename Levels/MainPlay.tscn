@@ -15,7 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://byeot2c34tyb6" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_08.wav" id="9_rk8mk"]
 [ext_resource type="AudioStream" uid="uid://58f3fauypuul" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_09.wav" id="10_a6mra"]
 [ext_resource type="AudioStream" uid="uid://dxgt70jp13sar" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_10.wav" id="11_m2ddn"]
-[ext_resource type="PackedScene" uid="uid://b84bpkxpn18yb" path="res://Powerups/UpgradeShot_Range.tscn" id="16_kxsc8"]
+[ext_resource type="PackedScene" path="res://Powerups/UpgradeShot_Range.tscn" id="16_kxsc8"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hpqqt"]
 random_pitch = 1.5
@@ -77,9 +77,6 @@ shape = SubResource("RectangleShape2D_c8lp0")
 [node name="PowerupsTest" type="Node2D" parent="."]
 
 [node name="Powerup" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
-position = Vector2(442, 433)
-
-[node name="Powerup15" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
 position = Vector2(442, 433)
 
 [node name="Powerup2" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
