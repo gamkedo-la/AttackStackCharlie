@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4hrawof8vra7"]
+[gd_scene load_steps=5 format=3 uid="uid://c4hrawof8vra7"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_wobpw"]
 [ext_resource type="Texture2D" uid="uid://ep23f1urry7c" path="res://Player/playerjet.png" id="2_kr5tv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_meycx"]
 size = Vector2(51, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvcs2"]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_wobpw")
@@ -20,3 +22,15 @@ shape = SubResource("RectangleShape2D_meycx")
 
 [node name="ShootFrom" type="Node2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="EnemyDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
+scale = Vector2(2.88, 3.375)
+shape = SubResource("RectangleShape2D_mvcs2")
+debug_color = Color(0.899814, 0.296397, 0.262715, 0.42)
+
+[connection signal="area_entered" from="EnemyDetector" to="." method="_on_enemy_detector_area_entered"]
+[connection signal="body_entered" from="EnemyDetector" to="." method="_on_enemy_detector_body_entered"]

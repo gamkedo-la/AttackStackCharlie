@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://cj7rg0xhytvee"]
+
+[ext_resource type="Script" path="res://Enemies/EvilSpikes.gd" id="1_5br4y"]
+[ext_resource type="Texture2D" uid="uid://dprmolug2e317" path="res://Enemies/EvilSpikes-Sheet.png" id="2_die8i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apqvm"]
+atlas = ExtResource("2_die8i")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enjn8"]
+atlas = ExtResource("2_die8i")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wk7pd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apqvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enjn8")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cio05"]
+radius = 9.0
+
+[node name="EvilSpikes" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_5br4y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wk7pd")
+animation = &"spin"
+autoplay = "spin"
+frame_progress = 0.251356
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cio05")

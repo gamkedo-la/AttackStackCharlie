@@ -18,18 +18,19 @@ const EXTRA_SHOT_LIFE_INCREMENT = 0.3
 # If leveling up logic becomes more complex, it could be extracted to an object 
 # with specific logic to level up each dimension 
 const MAX_LEVELS = 3
-
+var lastShotTime = 0.0
+var shotBasic = preload("res://PlayerShots/PlayerShotBasic.tscn");
+var shipFacing = Vector2.UP;
 var shot_levels_dict = {
 	ROF = 0,
 	SPLIT = 0, # This means that we need to add a + 1 later. The price of the generic implementation of MAX_LEVELS. We may need to customize them in the end.
 	RANGE = 0,
 }
 
-var lastShotTime = 0.0
-# var shotLev = 0;
-# var shotSplit = 1;
-var shotBasic = preload("res://PlayerShots/PlayerShotBasic.tscn");
-var shipFacing = Vector2.UP;
+# Damage immunity after hit
+var time_modulated: float = 0.3
+var time_modulated_elapsed: float = 0
+var is_damaged: bool = false
 
 func _physics_process(delta):
 	var move_vec = Vector2()
@@ -54,6 +55,12 @@ func _physics_process(delta):
 			shipFacing = Vector2.DOWN;
 			shipSprite.rotation = PI
 	move_and_collide(move_vec * delta * SHIP_SPEED)
+	
+	if is_damaged and time_modulated_elapsed > time_modulated:
+		is_damaged = false
+		time_modulated_elapsed = 0
+	elif is_damaged:
+		time_modulated_elapsed += delta
 
 func _process(delta):
 	if Input.is_action_pressed("shoot"):
@@ -89,3 +96,27 @@ func fire():
 
 func get_time():
 	return Time.get_ticks_msec() / 1000.0
+
+func _damage_player() -> void:
+	if is_damaged == false:
+		is_damaged = true
+		if(PlayerVars.player_shield > 0):
+			PlayerVars.player_shield -= 1
+			pass
+		PlayerVars.player_health -= 1
+		print("Player damaged, current player health: ", PlayerVars.player_health)
+		if PlayerVars.player_health <= 0:
+			# Will need to be substituted for a signal or a call to whatever we actually want to do on death
+			get_tree().reload_current_scene()
+	else:
+		pass
+
+
+func _on_enemy_detector_body_entered(body):
+	print("Enemy Detected, current player health: ", PlayerVars.player_health)
+	_damage_player()
+
+
+func _on_enemy_detector_area_entered(area):
+	print("Enemy Detected, current player health: ", PlayerVars.player_health)
+	_damage_player()

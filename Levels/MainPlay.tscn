@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://degldynxe05sf"]
+[gd_scene load_steps=22 format=3 uid="uid://degldynxe05sf"]
 
+[ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_h7xv5"]
 [ext_resource type="PackedScene" uid="uid://c4hrawof8vra7" path="res://Player/playership.tscn" id="1_kdrlo"]
 [ext_resource type="AudioStream" uid="uid://bmhmaolkrx2v6" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_01.wav" id="2_3rgrb"]
 [ext_resource type="PackedScene" uid="uid://chy58la7p4ca2" path="res://Powerups/UpgradeShot_Split.tscn" id="2_4aj01"]
@@ -15,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://byeot2c34tyb6" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_08.wav" id="9_rk8mk"]
 [ext_resource type="AudioStream" uid="uid://58f3fauypuul" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_09.wav" id="10_a6mra"]
 [ext_resource type="AudioStream" uid="uid://dxgt70jp13sar" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_10.wav" id="11_m2ddn"]
+[ext_resource type="PackedScene" uid="uid://cj7rg0xhytvee" path="res://Enemies/EvilSpikes.tscn" id="14_s5mp3"]
 [ext_resource type="PackedScene" path="res://Powerups/UpgradeShot_Range.tscn" id="16_kxsc8"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hpqqt"]
@@ -49,6 +51,7 @@ size = Vector2(16, 671)
 
 [node name="MainPlay" type="Node2D"]
 process_mode = 1
+script = ExtResource("1_h7xv5")
 
 [node name="Player" parent="." instance=ExtResource("1_kdrlo")]
 position = Vector2(550, 534)
@@ -117,6 +120,14 @@ position = Vector2(441, 554)
 
 [node name="Powerup14" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
 position = Vector2(211, 590)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="EvilSpikes" parent="Enemies" instance=ExtResource("14_s5mp3")]
+position = Vector2(251, 211)
+
+[node name="EvilSpikes2" parent="Enemies" instance=ExtResource("14_s5mp3")]
+position = Vector2(883, 220)
 
 [node name="3D background scene" type="Node" parent="."]
 
