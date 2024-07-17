@@ -111,12 +111,6 @@ func _damage_player() -> void:
 	else:
 		pass
 
-
-func _on_enemy_detector_body_entered(body):
-	print("Enemy Detected, current player health: ", PlayerVars.player_health)
-	_damage_player()
-
-
 func _on_enemy_detector_area_entered(area):
 	print("Enemy Detected, current player health: ", PlayerVars.player_health)
 	_damage_player()
