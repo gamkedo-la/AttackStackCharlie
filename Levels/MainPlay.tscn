@@ -17,7 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://58f3fauypuul" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_09.wav" id="10_a6mra"]
 [ext_resource type="AudioStream" uid="uid://dxgt70jp13sar" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_10.wav" id="11_m2ddn"]
 [ext_resource type="PackedScene" uid="uid://cj7rg0xhytvee" path="res://Enemies/EvilSpikes.tscn" id="14_s5mp3"]
-[ext_resource type="PackedScene" path="res://Powerups/UpgradeShot_Range.tscn" id="16_kxsc8"]
+[ext_resource type="PackedScene" uid="uid://b84bpkxpn18yb" path="res://Powerups/UpgradeShot_Range.tscn" id="16_kxsc8"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hpqqt"]
 random_pitch = 1.5
