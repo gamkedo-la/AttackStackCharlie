@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3r4y0jmgsskp"]
+
+[ext_resource type="Script" path="res://UI/HUD/round_title.gd" id="1_pyglu"]
+
+[node name="RoundTitle" type="Node2D"]
+position = Vector2(1, -1)
+script = ExtResource("1_pyglu")
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 472.0
+offset_top = 265.0
+offset_right = 647.0
+offset_bottom = 372.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 78
+text = "TEST"
+horizontal_alignment = 1
+vertical_alignment = 1
