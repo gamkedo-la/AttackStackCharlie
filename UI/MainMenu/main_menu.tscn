@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dhjlg4dmbxqom"]
+[gd_scene load_steps=2 format=3 uid="uid://dhjlg4dmbxqom"]
+
+[ext_resource type="Script" path="res://UI/MainMenu/PlayGameBTN.gd" id="1_rummk"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -48,6 +50,7 @@ theme_override_constants/separation = 10
 [node name="PlayGameBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "PLAY GAME"
+script = ExtResource("1_rummk")
 
 [node name="OptionsBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -60,3 +63,5 @@ text = "CREDITS"
 [node name="ExitBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "EXIT"
+
+[connection signal="pressed" from="BoxContainer/VBoxContainer/PlayGameBTN" to="BoxContainer/VBoxContainer/PlayGameBTN" method="_on_pressed"]
