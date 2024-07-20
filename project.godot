@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Attack Stack Charlie"
-run/main_scene="res://Levels/MainPlay.tscn"
+run/main_scene="res://UI/MainMenu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 PlayerVars="*res://Globals/player_vars.gd"
+SceneManager="*res://Globals/SceneManager.tscn"
 
 [filesystem]
 
