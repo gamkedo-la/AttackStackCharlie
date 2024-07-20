@@ -107,7 +107,7 @@ func _damage_player() -> void:
 		print("Player damaged, current player health: ", PlayerVars.player_health)
 		if PlayerVars.player_health <= 0:
 			# Will need to be substituted for a signal or a call to whatever we actually want to do on death
-			get_tree().reload_current_scene()
+			SceneManager.RestartScene()
 	else:
 		pass
 
