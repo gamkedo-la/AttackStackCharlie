@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0o8yc026rno2"]
+
+[ext_resource type="Script" path="res://Globals/SceneManager.gd" id="1_svuu7"]
+
+[node name="SceneManager" type="Node3D"]
+script = ExtResource("1_svuu7")
+Scenes = {
+"MainMenu": &"res://UI/MainMenu/main_menu.tscn",
+"MainPlay": &"res://Levels/MainPlay.tscn"
+}
