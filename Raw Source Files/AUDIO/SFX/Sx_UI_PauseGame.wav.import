@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://7e4s3wng0h06"
+path="res://.godot/imported/Sx_UI_PauseGame.wav-34ef68c2ace45b6ee45d83b46932d1ba.sample"
+
+[deps]
+
+source_file="res://Raw Source Files/AUDIO/SFX/Sx_UI_PauseGame.wav"
+dest_files=["res://.godot/imported/Sx_UI_PauseGame.wav-34ef68c2ace45b6ee45d83b46932d1ba.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
