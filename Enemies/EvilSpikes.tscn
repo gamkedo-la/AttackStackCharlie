@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cj7rg0xhytvee"]
+[gd_scene load_steps=8 format=3 uid="uid://cj7rg0xhytvee"]
 
 [ext_resource type="Script" path="res://Enemies/EvilSpikes.gd" id="1_5br4y"]
 [ext_resource type="Texture2D" uid="uid://dprmolug2e317" path="res://Enemies/EvilSpikes-Sheet.png" id="2_die8i"]
@@ -28,6 +28,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_cio05"]
 radius = 9.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_hrx8h"]
+radius = 18.0278
+
 [node name="EvilSpikes" type="Area2D"]
 collision_layer = 2
 script = ExtResource("1_5br4y")
@@ -40,3 +43,10 @@ frame_progress = 0.218369
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cio05")
+
+[node name="ProjectileDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileDetector"]
+shape = SubResource("CircleShape2D_hrx8h")
+
+[connection signal="area_entered" from="ProjectileDetector" to="." method="_on_projectile_detector_area_entered"]

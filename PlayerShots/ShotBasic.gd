@@ -25,3 +25,9 @@ func _physics_process(delta):
 	timeAlive -= delta
 	if timeAlive < 0:
 		queue_free()
+
+
+func _on_area_entered(area):
+	print('Hit Object')
+	queue_free()
+	pass # Replace with function body.
