@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0o8yc026rno2"]
+[gd_scene load_steps=3 format=3 uid="uid://c0o8yc026rno2"]
 
 [ext_resource type="Script" path="res://Globals/SceneManager.gd" id="1_svuu7"]
+[ext_resource type="PackedScene" uid="uid://cbeaplqjjejha" path="res://UI/PauseMenu/pause_menu.tscn" id="2_tf0e3"]
 
 [node name="SceneManager" type="Node3D"]
 script = ExtResource("1_svuu7")
@@ -8,3 +9,6 @@ Scenes = {
 "MainMenu": &"res://UI/MainMenu/main_menu.tscn",
 "MainPlay": &"res://Levels/MainPlay.tscn"
 }
+
+[node name="PauseMenu" parent="." node_paths=PackedStringArray("scene_manager") instance=ExtResource("2_tf0e3")]
+scene_manager = NodePath("..")

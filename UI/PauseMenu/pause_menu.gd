@@ -1,27 +1,27 @@
 extends Control
 
-@export var game_manager : GameManager
+@export var scene_manager : NSceneManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hide()
-	game_manager.connect("toggle_game_paused", _on_game_manager_toggle_game_paused)
+	scene_manager.connect("toggle_game_paused", _on_scene_manager_toggle_game_paused)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-func _on_game_manager_toggle_game_paused(is_paused : bool):
+func _on_scene_manager_toggle_game_paused(is_paused : bool):
 	if(is_paused):
+		print("Show called")
 		show()
 	else:
+		print("Hide called")
 		hide()
 		
-
 func _on_resume_btn_pressed():
-	game_manager.game_paused = false
+	print("resume button pressed")
+	scene_manager.game_paused = false
+
+func _on_main_menu_btn_pressed():
+	print("Add go to main menu here")
 
 func _on_exit_btn_pressed():
-	print("quit button pressed")
-	get_tree().quit()
+	scene_manager.QuitGame()
 
