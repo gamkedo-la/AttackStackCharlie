@@ -1,7 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4hrawof8vra7"]
+[gd_scene load_steps=8 format=3 uid="uid://c4hrawof8vra7"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_wobpw"]
 [ext_resource type="Texture2D" uid="uid://ep23f1urry7c" path="res://Player/playerjet.png" id="2_kr5tv"]
+
+[sub_resource type="Curve" id="Curve_6p3bd"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(0.2, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.0352711, 0.0, 0, 0]
+point_count = 3
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_5qx18"]
+offsets = PackedFloat32Array(0, 0.449198, 0.588235, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_b5pw3"]
+min_value = -1.0
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_meycx"]
 size = Vector2(51, 63)
@@ -15,6 +29,90 @@ shipSpritePath = NodePath("Playerjet")
 [node name="Playerjet" type="Sprite2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("2_kr5tv")
+
+[node name="Glow particles (left)" type="CPUParticles2D" parent="Playerjet"]
+position = Vector2(-8, 28)
+amount = 16
+lifetime = 0.25
+explosiveness = 0.04
+randomness = 0.21
+emission_shape = 1
+emission_sphere_radius = 4.0
+direction = Vector2(0, 1)
+spread = 10.0
+gravity = Vector2(0, 0)
+damping_min = 0.1
+damping_max = 0.2
+angle_max = 360.0
+scale_amount_min = 4.0
+scale_amount_max = 12.0
+scale_amount_curve = SubResource("Curve_6p3bd")
+color_ramp = SubResource("Gradient_5qx18")
+hue_variation_curve = SubResource("Curve_b5pw3")
+
+[node name="Glow particles (right)" type="CPUParticles2D" parent="Playerjet"]
+position = Vector2(8, 28)
+amount = 16
+lifetime = 0.25
+explosiveness = 0.04
+randomness = 0.21
+emission_shape = 1
+emission_sphere_radius = 4.0
+direction = Vector2(0, 1)
+spread = 10.0
+gravity = Vector2(0, 0)
+damping_min = 0.1
+damping_max = 0.2
+angle_max = 360.0
+scale_amount_min = 4.0
+scale_amount_max = 12.0
+scale_amount_curve = SubResource("Curve_6p3bd")
+color_ramp = SubResource("Gradient_5qx18")
+hue_variation_curve = SubResource("Curve_b5pw3")
+
+[node name="Thruster Particles (left)" type="CPUParticles2D" parent="Playerjet"]
+position = Vector2(-8, 28)
+amount = 32
+lifetime = 0.5
+explosiveness = 0.04
+randomness = 0.21
+emission_shape = 1
+emission_sphere_radius = 4.0
+direction = Vector2(0, 1)
+spread = 5.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 32.0
+initial_velocity_max = 256.0
+damping_min = 0.1
+damping_max = 0.2
+angle_max = 360.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color = Color(1, 1, 0.223529, 1)
+color_ramp = SubResource("Gradient_5qx18")
+hue_variation_curve = SubResource("Curve_b5pw3")
+
+[node name="Thruster Particles (right)" type="CPUParticles2D" parent="Playerjet"]
+position = Vector2(8, 28)
+amount = 32
+lifetime = 0.5
+explosiveness = 0.04
+randomness = 0.21
+emission_shape = 1
+emission_sphere_radius = 4.0
+direction = Vector2(0, 1)
+spread = 5.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 32.0
+initial_velocity_max = 256.0
+damping_min = 0.1
+damping_max = 0.2
+angle_max = 360.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color = Color(1, 1, 0.223529, 1)
+color_ramp = SubResource("Gradient_5qx18")
+hue_variation_curve = SubResource("Curve_b5pw3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, -0.5)
