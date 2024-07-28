@@ -68,7 +68,7 @@ func _process(delta):
 
 func upgradeShot(type):
 	shot_levels_dict[type] = min(MAX_LEVELS - 1, shot_levels_dict[type] + 1)
-	print(shot_levels_dict)
+	# print(shot_levels_dict)
 	
 
 func fire():
@@ -104,7 +104,7 @@ func _damage_player() -> void:
 			PlayerVars.player_shield -= 1
 			pass
 		PlayerVars.player_health -= 1
-		print("Player damaged, current player health: ", PlayerVars.player_health)
+		# print("Player damaged, current player health: ", PlayerVars.player_health)
 		if PlayerVars.player_health <= 0:
 			# Will need to be substituted for a signal or a call to whatever we actually want to do on death
 			SceneManager.RestartScene()
@@ -112,5 +112,5 @@ func _damage_player() -> void:
 		pass
 
 func _on_enemy_detector_area_entered(area):
-	print("Enemy Detected, current player health: ", PlayerVars.player_health)
+	# print("Enemy Detected, current player health: ", PlayerVars.player_health)
 	_damage_player()

@@ -1,7 +1,6 @@
-extends Enemy
+extends "res://Enemies/Enemy.gd"
 
 func _ready():
-	setDirection(Vector2.RIGHT)
 	pass
 
 func _process(delta):

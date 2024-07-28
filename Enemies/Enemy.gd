@@ -15,6 +15,5 @@ func _process(delta):
 	pass
 
 func _on_projectile_detector_area_entered(area):
-	print('Hit')
 	queue_free()
 	pass # Replace with function body.

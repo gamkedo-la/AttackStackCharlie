@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://degldynxe05sf"]
+[gd_scene load_steps=24 format=3 uid="uid://degldynxe05sf"]
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_h7xv5"]
 [ext_resource type="PackedScene" uid="uid://c4hrawof8vra7" path="res://Player/playership.tscn" id="1_kdrlo"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://byeot2c34tyb6" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_08.wav" id="9_rk8mk"]
 [ext_resource type="AudioStream" uid="uid://58f3fauypuul" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_09.wav" id="10_a6mra"]
 [ext_resource type="AudioStream" uid="uid://dxgt70jp13sar" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_10.wav" id="11_m2ddn"]
+[ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="13_fc6v7"]
 [ext_resource type="PackedScene" uid="uid://cj7rg0xhytvee" path="res://Enemies/EvilSpikes.tscn" id="14_s5mp3"]
 [ext_resource type="PackedScene" uid="uid://b84bpkxpn18yb" path="res://Powerups/UpgradeShot_Range.tscn" id="16_kxsc8"]
 [ext_resource type="PackedScene" uid="uid://cfc6nu2yaw6cd" path="res://Enemies/EvilSlider.tscn" id="19_vgg0c"]
@@ -59,6 +60,15 @@ position = Vector2(550, 534)
 
 [node name="SX_PlayShootBasic" type="AudioStreamPlayer" parent="Player"]
 stream = SubResource("AudioStreamRandomizer_hpqqt")
+
+[node name="Enemies" type="Node2D" parent="."]
+script = ExtResource("13_fc6v7")
+
+[node name="EvilSpikes" parent="Enemies" instance=ExtResource("14_s5mp3")]
+position = Vector2(251, 211)
+
+[node name="EvilSpikes2" parent="Enemies" instance=ExtResource("14_s5mp3")]
+position = Vector2(883, 220)
 
 [node name="Boundaries" type="StaticBody2D" parent="."]
 
@@ -121,14 +131,6 @@ position = Vector2(441, 554)
 
 [node name="Powerup14" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
 position = Vector2(211, 590)
-
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="EvilSpikes" parent="Enemies" instance=ExtResource("14_s5mp3")]
-position = Vector2(251, 211)
-
-[node name="EvilSpikes2" parent="Enemies" instance=ExtResource("14_s5mp3")]
-position = Vector2(883, 220)
 
 [node name="3D background scene" type="Node" parent="."]
 
