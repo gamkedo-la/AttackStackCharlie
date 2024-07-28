@@ -38,22 +38,22 @@ func _physics_process(delta):
 		move_vec.x -= 1
 		if Input.is_action_pressed("shoot") == false:
 			shipFacing = Vector2.LEFT;
-			shipSprite.rotation = -PI/2
+			shipSprite.rotation = PI
 	if Input.is_action_pressed("move right"):
 		move_vec.x += 1
 		if Input.is_action_pressed("shoot") == false:
 			shipFacing = Vector2.RIGHT;
-			shipSprite.rotation = PI/2
+			shipSprite.rotation = 0
 	if Input.is_action_pressed("move up"):
 		move_vec.y -= 1
 		if Input.is_action_pressed("shoot") == false:
 			shipFacing = Vector2.UP;
-			shipSprite.rotation = 0
+			shipSprite.rotation = -PI/2
 	if Input.is_action_pressed("move down"):
 		move_vec.y += 1
 		if Input.is_action_pressed("shoot") == false:
 			shipFacing = Vector2.DOWN;
-			shipSprite.rotation = PI
+			shipSprite.rotation = PI/2
 	move_and_collide(move_vec * delta * SHIP_SPEED)
 	
 	if is_damaged and time_modulated_elapsed > time_modulated:
