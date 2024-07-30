@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhjlg4dmbxqom"]
+[gd_scene load_steps=4 format=3 uid="uid://dhjlg4dmbxqom"]
 
 [ext_resource type="Texture2D" uid="uid://bceijy6acrat8" path="res://UI/MainMenu/logo.png" id="1_aqjag"]
 [ext_resource type="Script" path="res://UI/MainMenu/PlayGameBTN.gd" id="1_rummk"]
+[ext_resource type="Script" path="res://UI/MainMenu/ExitBTN.gd" id="3_voos7"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -71,5 +72,7 @@ text = "CREDITS"
 [node name="ExitBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "EXIT"
+script = ExtResource("3_voos7")
 
 [connection signal="pressed" from="BoxContainer/VBoxContainer/PlayGameBTN" to="BoxContainer/VBoxContainer/PlayGameBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/ExitBTN" to="BoxContainer/VBoxContainer/ExitBTN" method="_on_pressed"]
