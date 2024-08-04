@@ -27,19 +27,19 @@ func spawn_enemy_at_random_edge():
 	match edge:
 		0: # Top
 			enemy.setDirection(Vector2.DOWN)
-			enemy.rotation = -PI / 2
+			enemy.rotation = PI / 2
 			spawn_position = Vector2(randf() * viewport_size.x, 0)
 		1: # Bottom
 			enemy.setDirection(Vector2.UP)
-			enemy.rotation = PI / 2
+			enemy.rotation = -PI / 2
 			spawn_position = Vector2(randf() * viewport_size.x, viewport_size.y)
 		2: # Left
 			enemy.setDirection(Vector2.RIGHT)
-			enemy.rotation = PI
+			enemy.rotation = 0
 			spawn_position = Vector2(0, randf() * viewport_size.y)
 		3: # Right
 			enemy.setDirection(Vector2.LEFT)
-			enemy.rotation = 0
+			enemy.rotation = PI
 			spawn_position = Vector2(viewport_size.x, randf() * viewport_size.y)
 	enemy.global_position = spawn_position
 	enemy.add_to_group("enemies")
