@@ -20,6 +20,7 @@ const EXTRA_SHOT_LIFE_INCREMENT = 0.3
 const MAX_LEVELS = 3
 var lastShotTime = 0.0
 var shotBasic = preload("res://PlayerShots/PlayerShotBasic.tscn");
+const shotSound = preload("res://Raw Source Files/AUDIO/SFX/Sx_PlayerWeapon_Standard_Laser_A_01.wav");
 var shipFacing = Vector2.UP;
 var shot_levels_dict = {
 	ROF = 0,
@@ -78,6 +79,7 @@ func fire():
 	# print("ROF * (SHOT_LEVELS-shotLev) ", ROF * (MAX_LEVELS-shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.ROF]]))
 	if get_time() - lastShotTime < ROF * (MAX_LEVELS-shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.ROF]]):
 		return
+	$SX_PlayShootBasic.play()	
 	lastShotTime = get_time()
 	for n in shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.SPLIT]] + 1:
 		var xOffset = (shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.SPLIT]]-1.0)/2.0
@@ -92,7 +94,6 @@ func fire():
 			shotSweepEdgeL = Vector2.UP
 			shotSweepEdgeR = Vector2.DOWN
 		shot.global_position = $ShootFrom.global_position + shipFacing*25 + (shotSweepEdgeL*xOffset+shotSweepEdgeR*n)*SHOT_SPREAD
-
 
 func get_time():
 	return Time.get_ticks_msec() / 1000.0
