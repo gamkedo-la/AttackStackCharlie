@@ -99,6 +99,7 @@ func get_time():
 	return Time.get_ticks_msec() / 1000.0
 
 func _damage_player() -> void:
+	Events.emit_signal("player_hit")
 	if is_damaged == false:
 		is_damaged = true
 		if(PlayerVars.player_shield > 0):

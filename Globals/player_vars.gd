@@ -1,7 +1,7 @@
 extends Node
 
-var player_max_health: int = 2
-var player_health: int = 2
+var player_max_health: int = 3
+var player_health: int = 3
 var player_max_shield: int = 6
 var player_shield: int = 0
 
