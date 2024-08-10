@@ -15,5 +15,5 @@ func _process(delta):
 	pass
 
 func _on_projectile_detector_area_entered(area):
-	queue_free()
-	pass # Replace with function body.
+	if area.is_in_group("bullet"):
+		queue_free()

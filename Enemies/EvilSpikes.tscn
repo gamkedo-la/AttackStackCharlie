@@ -44,7 +44,7 @@ frame_progress = 0.218369
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cio05")
 
-[node name="ProjectileDetector" type="Area2D" parent="."]
+[node name="ProjectileDetector" type="Area2D" parent="." groups=["hitbox"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileDetector"]
 shape = SubResource("CircleShape2D_hrx8h")

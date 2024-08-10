@@ -28,5 +28,5 @@ func _physics_process(delta):
 
 
 func _on_area_entered(area):
-	queue_free()
-	pass # Replace with function body.
+	if area.is_in_group("hitbox"):
+		queue_free()
