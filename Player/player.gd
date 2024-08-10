@@ -116,3 +116,5 @@ func _damage_player() -> void:
 func _on_enemy_detector_area_entered(area):
 	# print("Enemy Detected, current player health: ", PlayerVars.player_health)
 	_damage_player()
+	
+	area.queue_free()

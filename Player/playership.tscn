@@ -123,7 +123,7 @@ shape = SubResource("RectangleShape2D_meycx")
 [node name="ShootFrom" type="Node2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
 
-[node name="EnemyDetector" type="Area2D" parent="."]
+[node name="EnemyDetector" type="Area2D" parent="." groups=["player"]]
 collision_layer = 0
 collision_mask = 2
 
