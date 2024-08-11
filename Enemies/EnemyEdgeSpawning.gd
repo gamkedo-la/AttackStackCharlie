@@ -1,7 +1,7 @@
 extends Node2D
 
 var enemy_scene = preload("res://Enemies/EvilSlider.tscn")
-var max_enemies = 5
+var max_enemies = 25
 
 func _ready():
 	spawn_loop()
