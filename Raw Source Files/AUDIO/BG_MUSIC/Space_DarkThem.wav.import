@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://vc3xnr08e3j0"
+path="res://.godot/imported/Space_DarkThem.wav-c6789dfc3db5a55d318afae106f1d7dc.sample"
+
+[deps]
+
+source_file="res://Raw Source Files/AUDIO/BG_MUSIC/Space_DarkThem.wav"
+dest_files=["res://.godot/imported/Space_DarkThem.wav-c6789dfc3db5a55d318afae106f1d7dc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
