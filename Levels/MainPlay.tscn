@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://degldynxe05sf"]
+[gd_scene load_steps=27 format=3 uid="uid://degldynxe05sf"]
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_h7xv5"]
 [ext_resource type="PackedScene" uid="uid://c4hrawof8vra7" path="res://Player/playership.tscn" id="1_kdrlo"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://dxgt70jp13sar" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_10.wav" id="11_m2ddn"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="13_fc6v7"]
 [ext_resource type="PackedScene" uid="uid://cj7rg0xhytvee" path="res://Enemies/EvilSpikes.tscn" id="14_s5mp3"]
+[ext_resource type="PackedScene" uid="uid://d12rmco0pfhyc" path="res://Enemies/EvilCircler.tscn" id="15_nh14u"]
 [ext_resource type="PackedScene" uid="uid://b84bpkxpn18yb" path="res://Powerups/UpgradeShot_Range.tscn" id="16_kxsc8"]
 [ext_resource type="PackedScene" uid="uid://0xcemwtyox3a" path="res://Models/pyramid.glb" id="19_dciw2"]
 [ext_resource type="PackedScene" uid="uid://cfc6nu2yaw6cd" path="res://Enemies/EvilSlider.tscn" id="19_vgg0c"]
@@ -85,6 +86,9 @@ position = Vector2(251, 211)
 
 [node name="EvilSpikes2" parent="Enemies" instance=ExtResource("14_s5mp3")]
 position = Vector2(883, 220)
+
+[node name="EvilCircler" parent="Enemies" instance=ExtResource("15_nh14u")]
+position = Vector2(508, 261)
 
 [node name="Boundaries" type="StaticBody2D" parent="."]
 
