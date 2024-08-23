@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctoiuwlmdykfy"]
+
+[ext_resource type="Texture2D" uid="uid://bha2828ihlp4t" path="res://Player/playerdrone.png" id="1_cphip"]
+
+[node name="Playerdrone" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cphip")
