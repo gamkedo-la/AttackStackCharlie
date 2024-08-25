@@ -10,6 +10,7 @@ motion_mode = 1
 platform_on_leave = 2
 platform_floor_layers = 4294901760
 script = ExtResource("1_onh04")
+droneSpritePath = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_cphip")
