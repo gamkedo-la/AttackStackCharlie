@@ -111,32 +111,11 @@ shape = SubResource("RectangleShape2D_c8lp0")
 
 [node name="PowerupsTest" type="Node2D" parent="."]
 
-[node name="Powerup" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
-position = Vector2(442, 433)
-
-[node name="Powerup2" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
-position = Vector2(295, 458)
-
-[node name="Powerup3" parent="PowerupsTest" instance=ExtResource("3_agxoh")]
-position = Vector2(657, 433)
-
-[node name="Powerup4" parent="PowerupsTest" instance=ExtResource("3_agxoh")]
-position = Vector2(775, 547)
-
-[node name="Powerup5" parent="PowerupsTest" instance=ExtResource("3_agxoh")]
-position = Vector2(754, 437)
-
-[node name="Powerup6" parent="PowerupsTest" instance=ExtResource("3_agxoh")]
-position = Vector2(667, 537)
-
 [node name="Powerup7" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
 position = Vector2(176, 499)
 
 [node name="Powerup8" parent="PowerupsTest" instance=ExtResource("3_agxoh")]
-position = Vector2(857, 448)
-
-[node name="Powerup9" parent="PowerupsTest" instance=ExtResource("3_agxoh")]
-position = Vector2(865, 556)
+position = Vector2(951, 340)
 
 [node name="Powerup10" parent="PowerupsTest" instance=ExtResource("3_agxoh")]
 position = Vector2(953, 561)
@@ -145,10 +124,7 @@ position = Vector2(953, 561)
 position = Vector2(956, 453)
 
 [node name="Powerup12" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
-position = Vector2(311, 551)
-
-[node name="Powerup13" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
-position = Vector2(441, 554)
+position = Vector2(265, 391)
 
 [node name="Powerup14" parent="PowerupsTest" instance=ExtResource("2_4aj01")]
 position = Vector2(211, 590)
@@ -190,20 +166,14 @@ transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08,
 projection = 1
 size = 20.0
 
-[node name="UpgradeShot_Range" parent="3D background scene" instance=ExtResource("16_kxsc8")]
-position = Vector2(539, 325)
-
-[node name="UpgradeShot_Range2" parent="3D background scene" instance=ExtResource("16_kxsc8")]
-position = Vector2(627, 329)
-
 [node name="UpgradeShot_Range3" parent="3D background scene" instance=ExtResource("16_kxsc8")]
-position = Vector2(450, 286)
+position = Vector2(394, 190)
 
 [node name="UpgradeShot_Range4" parent="3D background scene" instance=ExtResource("16_kxsc8")]
 position = Vector2(576, 216)
 
 [node name="UpgradeShot_Range5" parent="3D background scene" instance=ExtResource("16_kxsc8")]
-position = Vector2(684, 238)
+position = Vector2(738, 190)
 
 [node name="EvilSlider" parent="." instance=ExtResource("19_vgg0c")]
 position = Vector2(162, 142)

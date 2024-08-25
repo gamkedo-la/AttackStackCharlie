@@ -10,7 +10,8 @@ const SHOT_SPREAD = 25
 
 const LEVEL_TYPE = preload("res://Globals/level_type_enum.gd").LevelType
 var LEVEL_TYPE_LIST = LEVEL_TYPE.keys()
-const ROF = 0.2
+const ROF = 0.5
+const EXTRA_ROF_TIME_DECREASE = 0.1
 const BASE_SHOT_LIFE = 0.5
 const EXTRA_SHOT_LIFE_INCREMENT = 0.3
 
@@ -78,7 +79,7 @@ func fire():
 	# print("lastShotTime ", lastShotTime)
 	# print("get_time - lastShotTime ", get_time() - lastShotTime)
 	# print("ROF * (SHOT_LEVELS-shotLev) ", ROF * (MAX_LEVELS-shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.ROF]]))
-	if get_time() - lastShotTime < ROF * (MAX_LEVELS-shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.ROF]]):
+	if get_time() - lastShotTime < ROF -EXTRA_ROF_TIME_DECREASE*shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.ROF]]:
 		return
 	$SX_PlayShootBasic.play()	
 	lastShotTime = get_time()
