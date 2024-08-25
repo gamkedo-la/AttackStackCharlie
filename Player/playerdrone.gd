@@ -11,7 +11,7 @@ var player_position = Vector2()
 var drone_facing = Vector2()
 
 func _ready():
-	var player_node = get_node("../Player")  # Adjust the path as necessary
+	var player_node = get_tree().current_scene.get_node("Player")
 	player_node.connect("player_moved", Callable(self, "_on_player_moved"))
 	player_node.connect("player_turned", Callable(self, "_on_player_turned"))
 

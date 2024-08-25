@@ -6,30 +6,32 @@ const CIRCLE_DISTANCE = 300
 var playerPos
 var circlePercent = 0
 var inRangeOfTarget
+var targetPos = Vector2()
 
 func _ready():
-	pass
+	var player_node = get_tree().current_scene.get_node("Player")
+	player_node.connect("player_moved", Callable(self, "_on_player_moved"))
+
+func _on_player_moved(new_position):
+	playerPos = new_position
 
 func _process(delta):
-	var playerCenter = get_parent().get_parent().get_node("Player").get_node("CollisionShape2D").get_shape().get_rect().get_center()
-	playerPos = get_parent().get_parent().get_node("Player").global_position
 	var rotationAmount = circlePercent * TAU
-	var targetPos = playerPos + playerCenter
 	var distToPlayer = global_position.distance_to(targetPos)
 	if distToPlayer <= CIRCLE_DISTANCE:
 		if inRangeOfTarget == false:
 			inRangeOfTarget = true
 			var targetSpotOnUnitCircle = (global_position - targetPos).normalized()
-			print("Vector: ")
-			print(targetSpotOnUnitCircle)
+			# print("Vector: ")
+			# print(targetSpotOnUnitCircle)
 			rotationAmount = targetSpotOnUnitCircle.angle()
-			print("Radians: ")
-			print(rotationAmount)
+			# print("Radians: ")
+			# print(rotationAmount)
 		targetPos.x += cos(rotationAmount + PI/2) * CIRCLE_DISTANCE
 		targetPos.y += sin(rotationAmount + PI/2) * CIRCLE_DISTANCE
 		global_position += (targetPos - global_position).normalized() * delta * ENEMY_SPEED * 5
 	else:
-		print("outofrange")
+		# print("outofrange")
 		inRangeOfTarget = false
 		global_position += (targetPos - global_position).normalized() * delta * ENEMY_SPEED * 5
 	
