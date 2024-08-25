@@ -3,7 +3,6 @@ extends "res://Enemies/Enemy.gd"
 const ROTATE_SPEED = 0.2
 const CIRCLE_DISTANCE = 300
 
-var playerPos
 var circlePercent = 0
 var inRangeOfTarget
 var targetPos = Vector2()
@@ -13,7 +12,7 @@ func _ready():
 	player_node.connect("player_moved", Callable(self, "_on_player_moved"))
 
 func _on_player_moved(new_position):
-	playerPos = new_position
+	targetPos = new_position
 
 func _process(delta):
 	var rotationAmount = circlePercent * TAU
