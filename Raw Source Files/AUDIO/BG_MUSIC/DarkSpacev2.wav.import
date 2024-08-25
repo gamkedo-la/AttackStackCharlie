@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cq0a75tg6or0f"
+path="res://.godot/imported/DarkSpacev2.wav-933b982069f00a2afc73d5944c4fe618.sample"
+
+[deps]
+
+source_file="res://Raw Source Files/AUDIO/BG_MUSIC/DarkSpacev2.wav"
+dest_files=["res://.godot/imported/DarkSpacev2.wav-933b982069f00a2afc73d5944c4fe618.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

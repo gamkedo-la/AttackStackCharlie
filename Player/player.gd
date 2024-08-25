@@ -2,7 +2,7 @@ extends CharacterBody2D
 # based on code from tutorial at https://www.youtube.com/watch?v=AHK5aQ7xvH8
 
 @export var shipSpritePath: NodePath
-
+signal player_moved(new_position)
 @onready var shipSprite = get_node(shipSpritePath) as Node2D
 
 const SHIP_SPEED = 250
@@ -62,6 +62,7 @@ func _physics_process(delta):
 		time_modulated_elapsed = 0
 	elif is_damaged:
 		time_modulated_elapsed += delta
+	emit_signal("player_moved", global_position)
 
 func _process(delta):
 	if Input.is_action_pressed("shoot"):

@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctoiuwlmdykfy"]
+[gd_scene load_steps=4 format=3 uid="uid://ctoiuwlmdykfy"]
 
 [ext_resource type="Texture2D" uid="uid://bha2828ihlp4t" path="res://Player/playerdrone.png" id="1_cphip"]
+[ext_resource type="Script" path="res://Player/playerdrone.gd" id="1_onh04"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d0nx8"]
 
 [node name="Playerdrone" type="CharacterBody2D"]
+motion_mode = 1
+platform_on_leave = 2
+platform_floor_layers = 4294901760
+script = ExtResource("1_onh04")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_cphip")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_d0nx8")

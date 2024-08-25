@@ -231,7 +231,4 @@ offset_bottom = 648.0
 script = SubResource("GDScript_qyxo7")
 
 [node name="Playerdrone" parent="." instance=ExtResource("23_v43me")]
-position = Vector2(533, 476)
-
-[node name="Playerdrone2" parent="." instance=ExtResource("23_v43me")]
-position = Vector2(537, 597)
+position = Vector2(526, 392)
