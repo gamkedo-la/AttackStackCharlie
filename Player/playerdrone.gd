@@ -14,6 +14,7 @@ func _ready():
 	var player_node = get_tree().current_scene.get_node("Player")
 	player_node.connect("player_moved", Callable(self, "_on_player_moved"))
 	player_node.connect("player_turned", Callable(self, "_on_player_turned"))
+	player_node.connect("player_fired", Callable(self, "_on_player_fired"))
 
 func _on_player_turned(new_facing):
 	drone_facing = new_facing
@@ -28,6 +29,21 @@ func _on_player_turned(new_facing):
 
 func _on_player_moved(new_position):
 	player_position = new_position
+
+func _on_player_fired(ship):
+	for n in ship.shot_levels_dict[ship.LEVEL_TYPE_LIST[ship.LEVEL_TYPE.SPLIT]] + 1:
+		var xOffset = (ship.shot_levels_dict[ship.LEVEL_TYPE_LIST[ship.LEVEL_TYPE.SPLIT]]-1.0)/2.0
+		var shot = ship.shotBasic.instantiate();
+		get_tree().root.add_child(shot);
+		shot.activateShot(ship.shot_levels_dict[ship.LEVEL_TYPE_LIST[ship.LEVEL_TYPE.ROF]], 
+			ship.BASE_SHOT_LIFE + ship.shot_levels_dict[ship.LEVEL_TYPE_LIST[ship.LEVEL_TYPE.RANGE]] * ship.EXTRA_SHOT_LIFE_INCREMENT,
+			ship.shipFacing);
+		var shotSweepEdgeL = Vector2.LEFT
+		var shotSweepEdgeR = Vector2.RIGHT
+		if ship.shipFacing == Vector2.LEFT || ship.shipFacing == Vector2.RIGHT:
+			shotSweepEdgeL = Vector2.UP
+			shotSweepEdgeR = Vector2.DOWN
+		shot.global_position = $ShootFrom.global_position + ship.shipFacing*25 + (shotSweepEdgeL*xOffset+shotSweepEdgeR*n)*ship.SHOT_SPREAD
 
 func _physics_process(delta):
 	current_angle += delta * ANGLE_CHANGE
