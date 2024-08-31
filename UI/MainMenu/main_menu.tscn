@@ -1,9 +1,70 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhjlg4dmbxqom"]
+[gd_scene load_steps=8 format=3 uid="uid://dhjlg4dmbxqom"]
 
 [ext_resource type="Texture2D" uid="uid://bceijy6acrat8" path="res://UI/MainMenu/logo.png" id="1_aqjag"]
 [ext_resource type="Script" path="res://UI/MainMenu/PlayGameBTN.gd" id="1_rummk"]
 [ext_resource type="Script" path="res://UI/MainMenu/ExitBTN.gd" id="3_voos7"]
 [ext_resource type="AudioStream" uid="uid://c4vuhqoft0m78" path="res://Raw Source Files/AUDIO/MUSIC/Mx_MainMenuTheme_Amin.wav" id="4_q28mw"]
+
+[sub_resource type="Animation" id="Animation_oy0rs"]
+resource_name = "intro_sequence"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5p1r7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pqixo"]
+_data = {
+"RESET": SubResource("Animation_5p1r7"),
+"intro_sequence": SubResource("Animation_oy0rs")
+}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -78,6 +139,33 @@ script = ExtResource("3_voos7")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_q28mw")
 autoplay = true
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "HOMETEAM GAME DEV PRESENTS..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IntroSequence" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pqixo")
+}
+autoplay = "intro_sequence"
 
 [connection signal="pressed" from="BoxContainer/VBoxContainer/PlayGameBTN" to="BoxContainer/VBoxContainer/PlayGameBTN" method="_on_pressed"]
 [connection signal="pressed" from="BoxContainer/VBoxContainer/ExitBTN" to="BoxContainer/VBoxContainer/ExitBTN" method="_on_pressed"]
