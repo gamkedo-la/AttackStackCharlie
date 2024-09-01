@@ -17,9 +17,9 @@ enemy_data = Array[Dictionary]([{
 "scene": "EvilSlider",
 "weight": 1
 }])
-minRespawnTime = 0.03
+minRespawnTime = 0.04
 maxRespawnTime = 0.07
-maxEnemies = 400
+maxEnemies = 350
 
 [node name="Powerups (pre-placed)" type="Node2D" parent="."]
 
