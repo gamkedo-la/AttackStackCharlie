@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @export var shipSpritePath: NodePath
 @onready var shipSprite = get_node(shipSpritePath) as Node2D
+@onready var player_upgrade_status = $"../PlayerUpgradeStatus"
 signal player_moved(new_position)
 signal player_turned(new_facing)
 signal player_fired(ship)
@@ -74,6 +75,9 @@ func _process(delta):
 
 func upgradeShot(type):
 	shot_levels_dict[type] = min(MAX_LEVELS - 1, shot_levels_dict[type] + 1)
+	player_upgrade_status.text = "";
+	for key in shot_levels_dict:
+		player_upgrade_status.text += (key + ": " + str(shot_levels_dict[key]) + "\n");
 	# print(shot_levels_dict)
 	
 

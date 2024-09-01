@@ -74,6 +74,15 @@ func explode_enemy(enemy):
 process_mode = 1
 script = ExtResource("1_h7xv5")
 
+[node name="PlayerUpgradeStatus" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 15.0
+offset_right = 168.0
+offset_bottom = 85.0
+text = "ROF: 0
+SPLIT: 0
+RANGE: 0"
+
 [node name="Player" parent="." instance=ExtResource("1_kdrlo")]
 position = Vector2(550, 534)
 
