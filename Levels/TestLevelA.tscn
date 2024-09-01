@@ -16,6 +16,7 @@
 [node name="MainPlay" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_4o0gi")
+LevelName = "A: Placed Enemies/Items"
 
 [node name="Playerdrone" parent="." instance=ExtResource("2_ojseh")]
 position = Vector2(526, 392)

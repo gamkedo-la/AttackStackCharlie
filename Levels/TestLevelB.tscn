@@ -9,6 +9,7 @@
 [node name="MainPlay" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_2d853")
+LevelName = "B: Many Rushers Spawn"
 
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("3_einjh")
