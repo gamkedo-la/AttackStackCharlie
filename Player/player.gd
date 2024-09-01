@@ -1,7 +1,7 @@
 extends CharacterBody2D
 # based on code from tutorial at https://www.youtube.com/watch?v=AHK5aQ7xvH8
 
-@onready var player_upgrade_status = $"../PlayerUpgradeStatus"
+@onready var player_upgrade_status = get_tree().current_scene.get_node("EveryLevelReusedStuff/PlayerUpgradeStatus")
 signal player_moved(new_position)
 signal player_turned(new_facing)
 signal player_fired(ship)

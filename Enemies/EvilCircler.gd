@@ -8,7 +8,7 @@ var inRangeOfTarget
 var targetPos = Vector2()
 
 func _ready():
-	var player_node = get_tree().current_scene.get_node("Player")
+	var player_node = get_tree().current_scene.get_node("EveryLevelReusedStuff/Player")
 	player_node.connect("player_moved", Callable(self, "_on_player_moved"))
 
 func _on_player_moved(new_position):

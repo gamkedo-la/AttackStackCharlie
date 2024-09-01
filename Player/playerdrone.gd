@@ -11,7 +11,7 @@ var player_position = Vector2()
 var drone_facing = Vector2()
 
 func _ready():
-	var player_node = get_tree().current_scene.get_node("Player")
+	var player_node = get_tree().current_scene.get_node("EveryLevelReusedStuff/Player")
 	player_node.connect("player_moved", Callable(self, "_on_player_moved"))
 	player_node.connect("player_turned", Callable(self, "_on_player_turned"))
 	player_node.connect("player_fired", Callable(self, "_on_player_fired"))
