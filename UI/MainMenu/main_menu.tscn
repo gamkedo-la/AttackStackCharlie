@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhjlg4dmbxqom"]
+[gd_scene load_steps=9 format=3 uid="uid://dhjlg4dmbxqom"]
 
 [ext_resource type="Texture2D" uid="uid://bceijy6acrat8" path="res://UI/MainMenu/logo.png" id="1_aqjag"]
+[ext_resource type="Script" path="res://UI/MainMenu/SkipTitleForGameTesting.gd" id="1_l326y"]
 [ext_resource type="Script" path="res://UI/MainMenu/PlayGameBTN.gd" id="1_rummk"]
 [ext_resource type="Script" path="res://UI/MainMenu/ExitBTN.gd" id="3_voos7"]
 [ext_resource type="AudioStream" uid="uid://c4vuhqoft0m78" path="res://Raw Source Files/AUDIO/MUSIC/Mx_MainMenuTheme_Amin.wav" id="4_q28mw"]
@@ -73,6 +74,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_l326y")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
