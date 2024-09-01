@@ -1,7 +1,7 @@
 extends "res://Enemies/Scripts/Enemy.gd"
 
 const ROTATE_SPEED = 0.2
-const CIRCLE_DISTANCE = 400
+const CIRCLE_DISTANCE = 350
 
 var circlePercent = 0
 var inRangeOfTarget

@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://degldynxe05sf"]
+[gd_scene load_steps=13 format=3 uid="uid://degldynxe05sf"]
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_4o0gi"]
 [ext_resource type="PackedScene" uid="uid://ctoiuwlmdykfy" path="res://Player/playerdrone.tscn" id="2_ojseh"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="3_j6cuh"]
 [ext_resource type="PackedScene" uid="uid://cj7rg0xhytvee" path="res://Enemies/EvilSpikes.tscn" id="4_wr81a"]
 [ext_resource type="PackedScene" uid="uid://d12rmco0pfhyc" path="res://Enemies/EvilCircler.tscn" id="5_twfta"]
-[ext_resource type="PackedScene" uid="uid://cfc6nu2yaw6cd" path="res://Enemies/EvilSlider.tscn" id="6_d55cp"]
 [ext_resource type="PackedScene" uid="uid://b87ldi225us4h" path="res://Enemies/EvilRusher.tscn" id="7_aq55c"]
 [ext_resource type="PackedScene" uid="uid://chy58la7p4ca2" path="res://Powerups/UpgradeShot_Split.tscn" id="8_t4b3p"]
 [ext_resource type="PackedScene" uid="uid://lmcwu5px8yv" path="res://Powerups/UpgradeShot_ROF.tscn" id="9_36728"]
@@ -32,9 +31,6 @@ position = Vector2(883, 220)
 
 [node name="EvilCircler" parent="Enemies" instance=ExtResource("5_twfta")]
 position = Vector2(508, 261)
-
-[node name="EvilSlider" parent="Enemies" instance=ExtResource("6_d55cp")]
-position = Vector2(162, 142)
 
 [node name="EvilRusher" parent="Enemies" instance=ExtResource("7_aq55c")]
 position = Vector2(50, 293)

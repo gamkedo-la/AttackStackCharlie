@@ -1,6 +1,6 @@
 extends "res://Enemies/Scripts/Enemy.gd"
 
-const HUNT_SPEED = 25
+const HUNT_SPEED = 45
 const RUSH_SPEED = 95
 const RUSH_DISTANCE = 200
 

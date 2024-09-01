@@ -1,9 +1,9 @@
 extends Node2D
 
 @export var enemy_data: Array[Dictionary] = [
-	{"scene": preload("res://Enemies/EvilRusher.tscn"), "weight": 1},
-	{"scene": preload("res://Enemies/EvilSlider.tscn"), "weight": 3},
-	{"scene": preload("res://Enemies/EvilCircler.tscn"), "weight": 2}
+	{"scene": "EvilRusher", "weight": 1},
+	{"scene": "EvilSlider", "weight": 3},
+	{"scene": "EvilCircler", "weight": 2}
 ]
 @export var minRespawnTime: float = 0.25
 @export var maxRespawnTime: float = 0.75
@@ -29,7 +29,11 @@ func get_spawn_weight_total():
 	for data in enemy_data:
 		total_weight += data["weight"]
 	return total_weight
-	
+
+func load_scene(scene_name: String):
+	var scene_path = "res://Enemies/" + scene_name + ".tscn"
+	return load(scene_path)
+		
 func select_enemy_scene():
 	var total_weight = get_spawn_weight_total()
 	var random_value = randi() % total_weight
@@ -38,7 +42,7 @@ func select_enemy_scene():
 	for data in enemy_data:
 		current_weight += data["weight"]
 		if random_value < current_weight:
-			return data["scene"]
+			return load_scene(data["scene"])
 
 	print("I messed up the spawn ratio logic this should not be seen - cdeleon");
 	return null

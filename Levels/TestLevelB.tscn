@@ -12,6 +12,16 @@ script = ExtResource("1_2d853")
 
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("3_einjh")
+enemy_data = Array[Dictionary]([{
+"scene": "EvilRusher",
+"weight": 5
+}, {
+"scene": "EvilSlider",
+"weight": 3
+}, {
+"scene": "EvilCircler",
+"weight": 2
+}])
 
 [node name="Powerups (pre-placed)" type="Node2D" parent="."]
 
