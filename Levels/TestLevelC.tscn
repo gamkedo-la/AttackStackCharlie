@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbkgn7ad7u1bu"]
+
+[ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_7pfjl"]
+[ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="2_amnqo"]
+[ext_resource type="PackedScene" uid="uid://di0klw80v6wob" path="res://Models/vr-hand.glb" id="3_an1u7"]
+[ext_resource type="Script" path="res://Models/3dspin.gd" id="4_qcfvj"]
+[ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="5_5h4dk"]
+
+[node name="MainPlay" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_7pfjl")
+LevelName = "C: Dense Sliders"
+
+[node name="Enemies" type="Node2D" parent="."]
+script = ExtResource("2_amnqo")
+enemy_data = Array[Dictionary]([{
+"scene": "EvilSlider",
+"weight": 1
+}])
+minRespawnTime = 0.03
+maxRespawnTime = 0.07
+maxEnemies = 400
+
+[node name="Powerups (pre-placed)" type="Node2D" parent="."]
+
+[node name="3D background scene" type="Node" parent="."]
+
+[node name="3D Lighting" type="Node3D" parent="3D background scene"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6197, 4.99725, 11.2573)
+omni_range = 24.9841
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2094, -51.1959, 11.2573)
+omni_range = 47.1413
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.6214, -88.5333, 11.2573)
+omni_range = 47.1413
+
+[node name="3D Models" type="Node3D" parent="3D background scene"]
+
+[node name="vr-hand" parent="3D background scene/3D Models" instance=ExtResource("3_an1u7")]
+transform = Transform3D(0.284015, 2.35363e-16, 0.95882, 3.48787e-16, 1, -3.48787e-16, -0.95882, 4.33485e-16, 0.284015, 14.0083, -26.1895, 17.7393)
+script = ExtResource("4_qcfvj")
+spinX = 1
+
+[node name="vr-hand2" parent="3D background scene/3D Models" instance=ExtResource("3_an1u7")]
+transform = Transform3D(-0.182235, 0.983255, 3.48787e-16, -0.983255, -0.182235, -3.48787e-16, -2.79385e-16, -4.06508e-16, 1, 9.14699, -59.3397, -0.28223)
+script = ExtResource("4_qcfvj")
+spinY = 1
+
+[node name="vr-hand3" parent="3D background scene/3D Models" instance=ExtResource("3_an1u7")]
+transform = Transform3D(1, -8.26765e-18, 7.54913e-17, 7.54913e-17, 0.21644, -0.976296, -8.26765e-18, 0.976296, 0.21644, 28.4669, -90.7346, 10.7577)
+script = ExtResource("4_qcfvj")
+spinZ = 1
+
+[node name="vr-hand4" parent="3D background scene/3D Models" instance=ExtResource("3_an1u7")]
+transform = Transform3D(-1.29015, 7.16874e-16, 0.765184, 5.2318e-16, 1.5, -5.2318e-16, -0.765184, -1.83102e-16, -1.29015, 0.797753, -90.7737, 21.6985)
+script = ExtResource("4_qcfvj")
+spinX = 1
+
+[node name="vr-hand5" parent="3D background scene/3D Models" instance=ExtResource("3_an1u7")]
+transform = Transform3D(-0.066926, 0.361101, 1.45435, -1.47488, -0.273353, -4.86466e-09, 0.265034, -1.42999, 0.36725, 24.4535, -123.549, 12.0449)
+script = ExtResource("4_qcfvj")
+spinY = 1
+
+[node name="vr-hand6" parent="3D background scene/3D Models" instance=ExtResource("3_an1u7")]
+transform = Transform3D(0.36725, 1.41987, 0.314778, 1.24577e-16, 0.324659, -1.46444, -1.45435, 0.358545, 0.0794875, 19.7509, -154.943, 3.76077)
+script = ExtResource("4_qcfvj")
+spinZ = 1
+
+[node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_5h4dk")]
+
+[editable path="EveryLevelReusedStuff"]

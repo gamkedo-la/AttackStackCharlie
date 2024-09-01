@@ -8,7 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func on_player_hit():
-	print("PLAYER HIT!")
+	# print("PLAYER HIT!")
 	$AnimationPlayer.play("player_hit")
 	$AudioStreamPlayer.play()
 
