@@ -1,8 +1,5 @@
 extends "res://Enemies/Enemy.gd"
 
-@export var rusherSpritePath: NodePath
-@onready var rusherSprite = get_node(rusherSpritePath) as Node2D
-
 const HUNT_SPEED = 25
 const RUSH_SPEED = 95
 const RUSH_DISTANCE = 200
@@ -23,7 +20,7 @@ func _process(delta):
 	if distToPlayer <= RUSH_DISTANCE:
 		lastMovingVec = (targetPos-global_position).normalized();
 		global_position += lastMovingVec * delta * RUSH_SPEED
-		rusherSprite.rotation = lastMovingVec.angle()
+		rotation = lastMovingVec.angle()
 	else:
 		global_position += lastMovingVec * delta * HUNT_SPEED
 	pass

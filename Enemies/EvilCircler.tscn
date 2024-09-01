@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d12rmco0pfhyc"]
 
 [ext_resource type="Script" path="res://Enemies/EvilCircler.gd" id="1_fbonj"]
-[ext_resource type="Texture2D" uid="uid://cr3omsak5lmmj" path="res://Enemies/EvilCircler.png" id="2_fb83u"]
+[ext_resource type="Texture2D" uid="uid://c8qh1tgr28e8r" path="res://Enemies/EnemyCraftMain.png" id="2_o4jaw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cio05"]
 radius = 9.0
@@ -21,11 +21,11 @@ shape = SubResource("CircleShape2D_cio05")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileDetector"]
 shape = SubResource("CircleShape2D_hrx8h")
 
-[node name="EvilCircler" type="Sprite2D" parent="."]
-position = Vector2(2.08165e-12, 2.08165e-12)
-texture = ExtResource("2_fb83u")
-
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="EnemyCraftMain" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0, 1)
+texture = ExtResource("2_o4jaw")
 
 [connection signal="area_entered" from="ProjectileDetector" to="." method="_on_projectile_detector_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

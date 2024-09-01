@@ -1,8 +1,6 @@
 extends CharacterBody2D
 # based on code from tutorial at https://www.youtube.com/watch?v=AHK5aQ7xvH8
 
-@export var shipSpritePath: NodePath
-@onready var shipSprite = get_node(shipSpritePath) as Node2D
 @onready var player_upgrade_status = $"../PlayerUpgradeStatus"
 signal player_moved(new_position)
 signal player_turned(new_facing)
@@ -43,22 +41,22 @@ func _physics_process(delta):
 		move_vec.x -= 1
 		if Input.is_action_pressed("shoot") == false:
 			shipFacing = Vector2.LEFT;
-			shipSprite.rotation = PI
+			rotation = PI
 	if Input.is_action_pressed("move right"):
 		move_vec.x += 1
 		if Input.is_action_pressed("shoot") == false:
 			shipFacing = Vector2.RIGHT;
-			shipSprite.rotation = 0
+			rotation = 0
 	if Input.is_action_pressed("move up"):
 		move_vec.y -= 1
 		if Input.is_action_pressed("shoot") == false:
 			shipFacing = Vector2.UP;
-			shipSprite.rotation = -PI/2
+			rotation = -PI/2
 	if Input.is_action_pressed("move down"):
 		move_vec.y += 1
 		if Input.is_action_pressed("shoot") == false:
 			shipFacing = Vector2.DOWN;
-			shipSprite.rotation = PI/2
+			rotation = PI/2
 	move_and_collide(move_vec * delta * SHIP_SPEED)
 	
 	if is_damaged and time_modulated_elapsed > time_modulated:

@@ -1,7 +1,7 @@
 extends "res://Enemies/Enemy.gd"
 
 const ROTATE_SPEED = 0.2
-const CIRCLE_DISTANCE = 300
+const CIRCLE_DISTANCE = 400
 
 var circlePercent = 0
 var inRangeOfTarget
@@ -17,6 +17,7 @@ func _on_player_moved(new_position):
 func _process(delta):
 	var rotationAmount = circlePercent * TAU
 	var distToPlayer = global_position.distance_to(targetPos)
+	var wasPos = global_position;
 	if distToPlayer <= CIRCLE_DISTANCE:
 		if inRangeOfTarget == false:
 			inRangeOfTarget = true
@@ -33,6 +34,8 @@ func _process(delta):
 		# print("outofrange")
 		inRangeOfTarget = false
 		global_position += (targetPos - global_position).normalized() * delta * ENEMY_SPEED * 5
+	var moveAng = atan2(global_position.y-wasPos.y,global_position.x-wasPos.x)
+	rotation = moveAng
 	
 
 	circlePercent += ROTATE_SPEED * delta
