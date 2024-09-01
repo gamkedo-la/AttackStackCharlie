@@ -1,8 +1,8 @@
 extends "res://Enemies/Scripts/Enemy.gd"
 
-const HUNT_SPEED = 45
-const RUSH_SPEED = 95
-const RUSH_DISTANCE = 200
+const HUNT_SPEED = 55
+const RUSH_SPEED = 105
+const RUSH_DISTANCE = 300
 
 var targetPos = Vector2()
 var lastMovingVec = Vector2.RIGHT

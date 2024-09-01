@@ -18,7 +18,7 @@ enemy_data = Array[Dictionary]([{
 "weight": 1
 }])
 minRespawnTime = 0.04
-maxRespawnTime = 0.07
+maxRespawnTime = 0.08
 maxEnemies = 350
 
 [node name="Powerups (pre-placed)" type="Node2D" parent="."]
