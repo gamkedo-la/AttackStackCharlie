@@ -4,5 +4,5 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if skipIntroForFasterTesting:
-		print("TITLE/SPLASH/MENU BYPASSED for instant play - skipIntroForFasterTesting in inspector top of main_menu.tscn")
-		SceneManager.SwitchScene("MainPlay")
+		print("SPLASH/MENU BYPASSED to test - skipIntroForFasterTesting see top of UI/MainMenu/main_menu.tscn")
+		SceneManager.SwitchScene("TestLevelA")

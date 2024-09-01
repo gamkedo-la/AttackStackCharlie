@@ -12,4 +12,4 @@ func _process(delta):
 
 
 func _on_pressed():
-	SceneManager.SwitchScene("MainPlay")
+	SceneManager.SwitchScene("TestLevelA")

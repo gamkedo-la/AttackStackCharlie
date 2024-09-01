@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5l5coih5r1su"]
+
+[ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_2d853"]
+[ext_resource type="PackedScene" uid="uid://ctoiuwlmdykfy" path="res://Player/playerdrone.tscn" id="2_3iq38"]
+[ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="3_einjh"]
+[ext_resource type="PackedScene" uid="uid://0xcemwtyox3a" path="res://Models/pyramid.glb" id="11_uybkw"]
+[ext_resource type="Script" path="res://Models/3dspin.gd" id="12_d02ne"]
+[ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="13_uimog"]
+
+[node name="MainPlay" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_2d853")
+
+[node name="Playerdrone" parent="." instance=ExtResource("2_3iq38")]
+visible = false
+position = Vector2(526, 392)
+
+[node name="Enemies" type="Node2D" parent="."]
+script = ExtResource("3_einjh")
+
+[node name="Powerups (pre-placed)" type="Node2D" parent="."]
+
+[node name="3D background scene" type="Node" parent="."]
+
+[node name="3D Lighting" type="Node3D" parent="3D background scene"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6197, 4.99725, 11.2573)
+omni_range = 24.9841
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2094, -51.1959, 11.2573)
+omni_range = 47.1413
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.6214, -88.5333, 11.2573)
+omni_range = 47.1413
+
+[node name="3D Models" type="Node3D" parent="3D background scene"]
+
+[node name="pyramid" parent="3D background scene/3D Models" instance=ExtResource("11_uybkw")]
+transform = Transform3D(-3.7893e-07, 3.29937, -0.0643289, 1.18451e-08, 0.0643289, 3.29937, 3.3, 3.78673e-07, -1.68881e-08, 0.76873, -57.1865, 6.19276)
+script = ExtResource("12_d02ne")
+spinZ = 1
+
+[node name="pyramid3" parent="3D background scene/3D Models" instance=ExtResource("11_uybkw")]
+transform = Transform3D(4.0258e-08, -3.15, -2.57644e-07, -2.92063, -1.27665e-07, 1.18001, -1.18001, 2.23802e-07, -2.92063, 36.9679, -108.064, 16.3)
+script = ExtResource("12_d02ne")
+spinZ = 1
+
+[node name="pyramid2" parent="3D background scene/3D Models" instance=ExtResource("11_uybkw")]
+transform = Transform3D(-2.12132, -2.2386e-07, -2.12132, -2.12132, -9.27259e-08, 2.12132, -2.2386e-07, 3, -9.27258e-08, 21.9015, -16.4184, 3.7727)
+script = ExtResource("12_d02ne")
+spinZ = 1
+
+[node name="EveryLevelReusedStuff" parent="." instance=ExtResource("13_uimog")]
+
+[editable path="EveryLevelReusedStuff"]
