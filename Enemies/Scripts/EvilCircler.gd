@@ -1,4 +1,4 @@
-extends "res://Enemies/Enemy.gd"
+extends "res://Enemies/Scripts/Enemy.gd"
 
 const ROTATE_SPEED = 0.2
 const CIRCLE_DISTANCE = 400

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddcoknhl0wvgh"
-path="res://.godot/imported/EvilCircler.png-9ec46e3b76dc36cababc6b7ead51e9d6.ctex"
+uid="uid://c8qh1tgr28e8r"
+path="res://.godot/imported/EnemyCraftMain.png-097e22cab1b9ae145396f9ab7619e450.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/outdated_placeholder_sprites/EvilCircler.png"
-dest_files=["res://.godot/imported/EvilCircler.png-9ec46e3b76dc36cababc6b7ead51e9d6.ctex"]
+source_file="res://Enemies/Art/EnemyCraftMain.png"
+dest_files=["res://.godot/imported/EnemyCraftMain.png-097e22cab1b9ae145396f9ab7619e450.ctex"]
 
 [params]
 

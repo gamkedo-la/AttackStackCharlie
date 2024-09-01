@@ -1,14 +1,14 @@
 [gd_scene load_steps=8 format=3 uid="uid://cj7rg0xhytvee"]
 
-[ext_resource type="Script" path="res://Enemies/EvilSpikes.gd" id="1_5br4y"]
-[ext_resource type="Texture2D" uid="uid://dprmolug2e317" path="res://Enemies/EvilSpikes-Sheet.png" id="2_die8i"]
+[ext_resource type="Script" path="res://Enemies/Scripts/EvilSpikes.gd" id="1_o4rim"]
+[ext_resource type="Texture2D" uid="uid://dprmolug2e317" path="res://Enemies/Art/EvilSpikes-Sheet.png" id="2_hji4a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_apqvm"]
-atlas = ExtResource("2_die8i")
+atlas = ExtResource("2_hji4a")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_enjn8"]
-atlas = ExtResource("2_die8i")
+atlas = ExtResource("2_hji4a")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wk7pd"]
@@ -33,7 +33,7 @@ radius = 18.0278
 
 [node name="EvilSpikes" type="Area2D"]
 collision_layer = 2
-script = ExtResource("1_5br4y")
+script = ExtResource("1_o4rim")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wk7pd")

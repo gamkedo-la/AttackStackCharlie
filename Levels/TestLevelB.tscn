@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5l5coih5r1su"]
+[gd_scene load_steps=6 format=3 uid="uid://b5l5coih5r1su"]
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_2d853"]
-[ext_resource type="PackedScene" uid="uid://ctoiuwlmdykfy" path="res://Player/playerdrone.tscn" id="2_3iq38"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="3_einjh"]
 [ext_resource type="PackedScene" uid="uid://0xcemwtyox3a" path="res://Models/pyramid.glb" id="11_uybkw"]
 [ext_resource type="Script" path="res://Models/3dspin.gd" id="12_d02ne"]
@@ -10,10 +9,6 @@
 [node name="MainPlay" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_2d853")
-
-[node name="Playerdrone" parent="." instance=ExtResource("2_3iq38")]
-visible = false
-position = Vector2(526, 392)
 
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("3_einjh")

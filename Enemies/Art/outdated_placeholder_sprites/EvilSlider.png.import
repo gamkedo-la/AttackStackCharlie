@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bry832xped01m"
-path="res://.godot/imported/EvilSlider.png-902fa8c3ab87585358b08402cce9305f.ctex"
+path="res://.godot/imported/EvilSlider.png-fc6663524f5071c9dd28184822056a3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/outdated_placeholder_sprites/EvilSlider.png"
-dest_files=["res://.godot/imported/EvilSlider.png-902fa8c3ab87585358b08402cce9305f.ctex"]
+source_file="res://Enemies/Art/outdated_placeholder_sprites/EvilSlider.png"
+dest_files=["res://.godot/imported/EvilSlider.png-fc6663524f5071c9dd28184822056a3b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8qh1tgr28e8r"
-path="res://.godot/imported/EnemyCraftMain.png-2751b2663188488e6a14eab06cb360ee.ctex"
+uid="uid://dprmolug2e317"
+path="res://.godot/imported/EvilSpikes-Sheet.png-cac9b377c73ac1e27bacb7a48bdc68a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/EnemyCraftMain.png"
-dest_files=["res://.godot/imported/EnemyCraftMain.png-2751b2663188488e6a14eab06cb360ee.ctex"]
+source_file="res://Enemies/Art/EvilSpikes-Sheet.png"
+dest_files=["res://.godot/imported/EvilSpikes-Sheet.png-cac9b377c73ac1e27bacb7a48bdc68a4.ctex"]
 
 [params]
 

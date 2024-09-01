@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cfc6nu2yaw6cd"]
 
-[ext_resource type="Script" path="res://Enemies/EvilSlider.gd" id="1_5p6gb"]
-[ext_resource type="Texture2D" uid="uid://c8qh1tgr28e8r" path="res://Enemies/EnemyCraftMain.png" id="2_1jdsd"]
+[ext_resource type="Script" path="res://Enemies/Scripts/EvilSlider.gd" id="1_nju7s"]
+[ext_resource type="Texture2D" uid="uid://c8qh1tgr28e8r" path="res://Enemies/Art/EnemyCraftMain.png" id="2_88m1p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cio05"]
 radius = 9.0
@@ -11,7 +11,7 @@ radius = 18.0278
 
 [node name="EvilSlider" type="Area2D"]
 collision_layer = 2
-script = ExtResource("1_5p6gb")
+script = ExtResource("1_nju7s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cio05")
@@ -25,7 +25,7 @@ shape = SubResource("CircleShape2D_hrx8h")
 
 [node name="EnemyCraftMain" type="Sprite2D" parent="."]
 modulate = Color(0, 0.756863, 1, 1)
-texture = ExtResource("2_1jdsd")
+texture = ExtResource("2_88m1p")
 
 [connection signal="area_entered" from="ProjectileDetector" to="." method="_on_projectile_detector_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -19,7 +19,6 @@ process_mode = 1
 script = ExtResource("1_4o0gi")
 
 [node name="Playerdrone" parent="." instance=ExtResource("2_ojseh")]
-visible = false
 position = Vector2(526, 392)
 
 [node name="Enemies" type="Node2D" parent="."]

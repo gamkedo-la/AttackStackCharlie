@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7ox4rum4e7yw"
-path="res://.godot/imported/EvilRusher.png-fc125d32f44f794436721aff2a4ecf87.ctex"
+uid="uid://chx7mumt8v6it"
+path="res://.godot/imported/EvilSpikes.png-17fc7de68d6b645d03409658ffb7730d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/outdated_placeholder_sprites/EvilRusher.png"
-dest_files=["res://.godot/imported/EvilRusher.png-fc125d32f44f794436721aff2a4ecf87.ctex"]
+source_file="res://Enemies/Art/EvilSpikes.png"
+dest_files=["res://.godot/imported/EvilSpikes.png-17fc7de68d6b645d03409658ffb7730d.ctex"]
 
 [params]
 

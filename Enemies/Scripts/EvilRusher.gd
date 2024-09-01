@@ -1,4 +1,4 @@
-extends "res://Enemies/Enemy.gd"
+extends "res://Enemies/Scripts/Enemy.gd"
 
 const HUNT_SPEED = 25
 const RUSH_SPEED = 95
