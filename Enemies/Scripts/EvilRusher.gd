@@ -10,6 +10,7 @@ var lastMovingVec = Vector2.RIGHT
 func _ready():
 	var player_node = get_tree().current_scene.get_node("EveryLevelReusedStuff/Player")
 	player_node.connect("player_moved", Callable(self, "_on_player_moved"))
+	lastMovingVec = Vector2(cos(rotation), sin(rotation)) # works but feels weird, does godot have a better way? -cdeleon
 
 func _on_player_moved(new_position):
 	targetPos = new_position
