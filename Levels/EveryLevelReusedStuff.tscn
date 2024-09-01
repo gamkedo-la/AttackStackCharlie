@@ -13,27 +13,6 @@
 [ext_resource type="AudioStream" uid="uid://58f3fauypuul" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_09.wav" id="11_18cia"]
 [ext_resource type="AudioStream" uid="uid://dxgt70jp13sar" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_10.wav" id="12_y1uoe"]
 
-[sub_resource type="GDScript" id="GDScript_gxu2r"]
-script/source = "extends Node
-
-func trigger_explosion_at_position(position, radius):
-	print(\"Received explosion trigger at: \", position, \" with radius: \", radius)
-	var affected_areas = get_tree().get_nodes_in_group(\"explosion_areas\")
-	for area in affected_areas:
-		if area.global_position.distance_to(position) <= radius and area.get_parent().is_in_group(\"enemies\") and not area.get_parent().exploded:
-			area.get_parent().explode()
-
-func explode_enemy(enemy):
-	enemy.explode()
-	emit_signal(\"enemy_exploded\", enemy.global_position, enemy.explosion_radius)
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_82fqj"]
-size = Vector2(1160, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ro1f"]
-size = Vector2(16, 671)
-
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_irrt5"]
 random_pitch = 1.5
 streams_count = 10
@@ -58,7 +37,43 @@ stream_8/weight = 1.0
 stream_9/stream = ExtResource("12_y1uoe")
 stream_9/weight = 1.0
 
+[sub_resource type="GDScript" id="GDScript_gxu2r"]
+script/source = "extends Node
+
+func trigger_explosion_at_position(position, radius):
+	print(\"Received explosion trigger at: \", position, \" with radius: \", radius)
+	var affected_areas = get_tree().get_nodes_in_group(\"explosion_areas\")
+	for area in affected_areas:
+		if area.global_position.distance_to(position) <= radius and area.get_parent().is_in_group(\"enemies\") and not area.get_parent().exploded:
+			area.get_parent().explode()
+
+func explode_enemy(enemy):
+	enemy.explode()
+	emit_signal(\"enemy_exploded\", enemy.global_position, enemy.explosion_radius)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82fqj"]
+size = Vector2(1160, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ro1f"]
+size = Vector2(16, 671)
+
 [node name="EveryLevelReusedStuff" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_5g5ro")]
+position = Vector2(550, 534)
+
+[node name="SX_PlayShootBasic" type="AudioStreamPlayer" parent="Player"]
+stream = SubResource("AudioStreamRandomizer_irrt5")
+
+[node name="PlayerUpgradeStatus" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 15.0
+offset_right = 168.0
+offset_bottom = 85.0
+text = "ROF: 0
+SPLIT: 0
+RANGE: 0"
 
 [node name="ExplosionManager" type="Node2D" parent="."]
 script = SubResource("GDScript_gxu2r")
@@ -85,17 +100,27 @@ shape = SubResource("RectangleShape2D_5ro1f")
 position = Vector2(580, 648)
 shape = SubResource("RectangleShape2D_82fqj")
 
-[node name="Player" parent="." instance=ExtResource("2_5g5ro")]
-position = Vector2(550, 534)
+[node name="Background 3D setup" type="Node2D" parent="."]
 
-[node name="SX_PlayShootBasic" type="AudioStreamPlayer" parent="Player"]
-stream = SubResource("AudioStreamRandomizer_irrt5")
+[node name="Camera3D" type="Camera3D" parent="Background 3D setup"]
+transform = Transform3D(1, -6.97574e-16, -1.52459e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 17.5481, 13.0985, 9.98588)
+projection = 1
+size = 20.0
 
-[node name="PlayerUpgradeStatus" type="Label" parent="."]
-offset_left = 24.0
-offset_top = 15.0
-offset_right = 168.0
-offset_bottom = 85.0
-text = "ROF: 0
-SPLIT: 0
-RANGE: 0"
+[node name="3D boundaries - visual for alignment" type="Node" parent="Background 3D setup"]
+
+[node name="3d left" type="CSGBox3D" parent="Background 3D setup/3D boundaries - visual for alignment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.731264, 4.99725, 9.98039)
+size = Vector3(1, 1, 20.3375)
+
+[node name="3d top" type="CSGBox3D" parent="Background 3D setup/3D boundaries - visual for alignment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4762, 4.99725, -0.271633)
+size = Vector3(36.7784, 1, 0.786194)
+
+[node name="3d bottom" type="CSGBox3D" parent="Background 3D setup/3D boundaries - visual for alignment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4762, 4.99725, 20.1256)
+size = Vector3(36.7784, 1, 0.72316)
+
+[node name="3d right" type="CSGBox3D" parent="Background 3D setup/3D boundaries - visual for alignment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7226, 4.99725, 10.0399)
+size = Vector3(1, 1, 20.2183)
