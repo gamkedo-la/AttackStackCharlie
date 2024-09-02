@@ -5,3 +5,7 @@ build/
 
 # Mac OS ignores
 .DS_Store
+
+# local VSCode settings
+.vscode
+

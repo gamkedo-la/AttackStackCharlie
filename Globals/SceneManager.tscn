@@ -7,6 +7,8 @@
 script = ExtResource("1_svuu7")
 Scenes = {
 "MainMenu": &"res://UI/MainMenu/main_menu.tscn",
+"MainPlay": &"res://Levels/MainPlay.tscn",
+"StorySequence": &"res://UI/StorySequence/StorySequence.tscn"
 "TestLevelA": "res://Levels/TestLevelA.tscn"
 }
 
