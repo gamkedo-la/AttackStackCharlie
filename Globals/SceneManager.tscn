@@ -8,8 +8,8 @@ script = ExtResource("1_svuu7")
 Scenes = {
 "MainMenu": &"res://UI/MainMenu/main_menu.tscn",
 "MainPlay": &"res://Levels/MainPlay.tscn",
-"StorySequence": &"res://UI/StorySequence/StorySequence.tscn"
-"TestLevelA": "res://Levels/TestLevelA.tscn"
+"StorySequence": &"res://UI/StorySequence/StorySequence.tscn",
+"TestLevelA": "res://Levels/TestLevelA.tscn",
 }
 
 [node name="PauseMenu" parent="." node_paths=PackedStringArray("scene_manager") instance=ExtResource("2_tf0e3")]
