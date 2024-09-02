@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://d4evuq3gml4t4"]
+
+[ext_resource type="StyleBox" uid="uid://ca3ch7upsjhnr" path="res://UI/StorySequence/story_label_style_box_flat.tres" id="1_cykch"]
+[ext_resource type="FontFile" uid="uid://bvk13lut1mwsd" path="res://Fonts/Lonely Cake.otf" id="2_kie4e"]
+
+[resource]
+default_font = ExtResource("2_kie4e")
+default_font_size = 30
+RichTextLabel/styles/normal = ExtResource("1_cykch")
