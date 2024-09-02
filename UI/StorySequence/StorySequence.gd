@@ -18,6 +18,7 @@ const STORY_IMG_PATHS : Array[String] = [
   "res://UI/StorySequence/assets/test_03.png",
 ]
 var story_img_textures : Array[Texture2D] = []
+var format_string = "[center]%s[/center]"
 
 var story_index := 0
 
@@ -40,7 +41,7 @@ func _ready():
 func showSlide() -> void:
   var current_copy := STORY_COPY[story_index]
   story_text.visible_ratio = 0.0 # hide all the text initially, so it can be animated in after the fade up
-  story_text.text = current_copy
+  story_text.text = format_string % current_copy
 
   # swap in the image texture for current slide
   story_image.texture = story_img_textures[story_index]
