@@ -6,5 +6,6 @@ extends Node3D
 
 func _process(delta):
 	var time = Time.get_ticks_msec() / 1000.0
-	rotation.x = cos(time * spinPace+horizAffect*position.x)
-	rotation.y = cos(time * spinPace+vertAffect*position.y)
+	print(global_transform.origin.x)
+	rotation.x = cos(time * spinPace+horizAffect*global_transform.origin.x)
+	rotation.y = cos(time * spinPace+vertAffect*global_transform.origin.z)

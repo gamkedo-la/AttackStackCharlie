@@ -8,5 +8,4 @@
 [node name="pyramid" parent="." instance=ExtResource("1_1fwqg")]
 script = ExtResource("2_770l4")
 spinPace = 0.5
-horizAffect = 0.05
-vertAffect = 0.25
+horizAffect = 5.0
