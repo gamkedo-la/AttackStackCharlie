@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_dwuun"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="2_5tofp"]
-[ext_resource type="PackedScene" uid="uid://di0klw80v6wob" path="res://Models/vr-hand.glb" id="3_c8qap"]
+[ext_resource type="Script" path="res://Models/modelGridSpawner.gd" id="3_afw46"]
 [ext_resource type="PackedScene" uid="uid://0xcemwtyox3a" path="res://Models/pyramid.glb" id="4_oysmc"]
 [ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="5_c5txp"]
 
@@ -44,11 +44,14 @@ omni_range = 47.1413
 
 [node name="3D Models" type="Node3D" parent="3D background scene"]
 
-[node name="vr-hand" parent="3D background scene/3D Models" instance=ExtResource("3_c8qap")]
-transform = Transform3D(0.951772, -4.13695e-16, -0.306808, -0.304249, -0.128899, -0.943832, -0.0395474, 0.991658, -0.122683, 30.4395, -26.1895, 9.69217)
-
-[node name="pyramid" parent="3D background scene/3D Models" instance=ExtResource("4_oysmc")]
-transform = Transform3D(3.15643, -0.458666, -2.41383, 2.45256, 0.824817, 3.05034, 0.14797, -3.88707, 0.932096, 8.88812, -33.7776, 10.4479)
+[node name="BackgroundMeshGridSpawner" type="Node3D" parent="3D background scene/3D Models"]
+script = ExtResource("3_afw46")
+mesh = ExtResource("4_oysmc")
+xSpacing = 4.0
+ySpacing = 4.0
+xCount = 10
+yCount = 6
+scaleSpawned = 0.2
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_c5txp")]
 

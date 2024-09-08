@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://pfh2qjvrbm38"
+path="res://.godot/imported/Sx_EnemyHit_A_02.wav-c2c863b733f556356a7c4d45876e9e96.sample"
+
+[deps]
+
+source_file="res://Raw Source Files/AUDIO/SFX/Sx_EnemyHit_A_02.wav"
+dest_files=["res://.godot/imported/Sx_EnemyHit_A_02.wav-c2c863b733f556356a7c4d45876e9e96.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
