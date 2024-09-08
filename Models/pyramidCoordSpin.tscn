@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdh0ovdewari"]
+
+[ext_resource type="PackedScene" uid="uid://0xcemwtyox3a" path="res://Models/pyramid.glb" id="1_1fwqg"]
+[ext_resource type="Script" path="res://Models/spinByCoord.gd" id="2_770l4"]
+
+[node name="PyramidCoordSpin" type="Node3D"]
+
+[node name="pyramid" parent="." instance=ExtResource("1_1fwqg")]
+script = ExtResource("2_770l4")
+spinPace = 0.5
+horizAffect = 0.05
+vertAffect = 0.25
