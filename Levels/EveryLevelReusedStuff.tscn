@@ -124,3 +124,16 @@ size = Vector3(36.7784, 1, 0.72316)
 [node name="3d right" type="CSGBox3D" parent="Background 3D setup/3D boundaries - visual for alignment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7226, 4.99725, 10.0399)
 size = Vector3(1, 1, 20.2183)
+
+[node name="Timer" type="Label" parent="."]
+offset_left = 489.0
+offset_top = 15.0
+offset_right = 663.0
+offset_bottom = 63.0
+text = "TIME:"
+horizontal_alignment = 1
+
+[node name="Countdown" type="Timer" parent="."]
+wait_time = 100.0
+one_shot = true
+autostart = true
