@@ -22,6 +22,7 @@ func activateShot(useSprite: int, lifeSpan:float, direction: Vector2):
 
 func _physics_process(delta):
 	position += moveDir * delta * SHOT_SPEED
+	rotation = atan2(moveDir.y,moveDir.x)
 	timeAlive -= delta
 	if timeAlive < 0:
 		queue_free()
