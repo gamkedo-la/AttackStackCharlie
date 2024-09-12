@@ -5,6 +5,7 @@ extends CharacterBody2D
 signal player_moved(new_position)
 signal player_turned(new_facing)
 signal player_fired(ship)
+signal player_upgraded(type)
 
 const SHIP_SPEED = 250
 const SHOT_SPREAD = 25
@@ -77,6 +78,7 @@ func upgradeShot(type):
 	for key in shot_levels_dict:
 		player_upgrade_status.text += (key + ": " + str(shot_levels_dict[key]) + "\n");
 	# print(shot_levels_dict)
+	player_upgraded.emit(type)
 	
 
 func fire():

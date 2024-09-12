@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5fwr288dn55u"]
+
+[ext_resource type="Texture2D" uid="uid://deq1i801jjmr2" path="res://UI/HUD/rocket-power-stack.png" id="1_5lbxk"]
+[ext_resource type="Script" path="res://UI/HUD/hud.gd" id="1_axetl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k72kp"]
+atlas = ExtResource("1_5lbxk")
+region = Rect2(0, 0, 44, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj8ot"]
+atlas = ExtResource("1_5lbxk")
+region = Rect2(44, 0, 44, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_siear"]
+atlas = ExtResource("1_5lbxk")
+region = Rect2(88, 0, 44, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhvsc"]
+atlas = ExtResource("1_5lbxk")
+region = Rect2(132, 0, 44, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r8p3d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k72kp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj8ot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_siear")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhvsc")
+}],
+"loop": false,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_axetl")
+
+[node name="SpreadStack" type="AnimatedSprite2D" parent="."]
+position = Vector2(1114, 62)
+sprite_frames = SubResource("SpriteFrames_r8p3d")
+animation = &"new_animation"
