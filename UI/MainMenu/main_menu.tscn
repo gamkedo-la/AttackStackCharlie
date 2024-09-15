@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhjlg4dmbxqom"]
+[gd_scene load_steps=10 format=3 uid="uid://dhjlg4dmbxqom"]
 
 [ext_resource type="Texture2D" uid="uid://bceijy6acrat8" path="res://UI/MainMenu/logo.png" id="1_aqjag"]
 [ext_resource type="Script" path="res://UI/MainMenu/SkipTitleForGameTesting.gd" id="1_l326y"]
 [ext_resource type="Script" path="res://UI/MainMenu/PlayGameBTN.gd" id="1_rummk"]
 [ext_resource type="Script" path="res://UI/MainMenu/ExitBTN.gd" id="3_voos7"]
+[ext_resource type="Script" path="res://UI/MainMenu/LevelSelectBTN.gd" id="4_10x72"]
 [ext_resource type="AudioStream" uid="uid://c4vuhqoft0m78" path="res://Raw Source Files/AUDIO/MUSIC/Mx_MainMenuTheme_Amin.wav" id="4_q28mw"]
 
 [sub_resource type="Animation" id="Animation_5p1r7"]
@@ -126,6 +127,11 @@ layout_mode = 2
 text = "PLAY GAME"
 script = ExtResource("1_rummk")
 
+[node name="LevelSelectBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "LEVEL SELECT"
+script = ExtResource("4_10x72")
+
 [node name="OptionsBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "OPTIONS"
@@ -171,4 +177,5 @@ libraries = {
 autoplay = "intro_sequence"
 
 [connection signal="pressed" from="BoxContainer/VBoxContainer/PlayGameBTN" to="BoxContainer/VBoxContainer/PlayGameBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelSelectBTN" to="BoxContainer/VBoxContainer/LevelSelectBTN" method="_on_pressed"]
 [connection signal="pressed" from="BoxContainer/VBoxContainer/ExitBTN" to="BoxContainer/VBoxContainer/ExitBTN" method="_on_pressed"]

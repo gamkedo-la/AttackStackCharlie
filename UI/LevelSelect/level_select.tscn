@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://6qxfenv0ngsl"]
+
+[ext_resource type="Script" path="res://UI/LevelSelect/LevelABTN.gd" id="1_awoko"]
+[ext_resource type="Script" path="res://UI/LevelSelect/LevelBBTN.gd" id="2_ap83h"]
+[ext_resource type="Script" path="res://UI/LevelSelect/LevelCBTN.gd" id="3_20ogc"]
+[ext_resource type="Script" path="res://UI/LevelSelect/LevelDBTN.gd" id="4_qq0vk"]
+[ext_resource type="Script" path="res://UI/LevelSelect/BackBTN.gd" id="5_u7lfj"]
+
+[node name="LevelSelect" type="Node2D"]
+
+[node name="Header" type="Label" parent="."]
+offset_left = 466.0
+offset_top = 17.0
+offset_right = 700.0
+offset_bottom = 124.0
+text = "LEVEL SELECT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 323.0
+offset_top = 1.0
+offset_right = 844.0
+offset_bottom = 618.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="LevelABTN" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "LEVEL A"
+script = ExtResource("1_awoko")
+
+[node name="LevelBBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "LEVEL B"
+script = ExtResource("2_ap83h")
+
+[node name="LevelCBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "LEVEL C"
+script = ExtResource("3_20ogc")
+
+[node name="LevelDBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "LEVEL D"
+script = ExtResource("4_qq0vk")
+
+[node name="BackBTN" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "RETURN"
+script = ExtResource("5_u7lfj")
+
+[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelABTN" to="BoxContainer/VBoxContainer/LevelABTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelBBTN" to="BoxContainer/VBoxContainer/LevelBBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelCBTN" to="BoxContainer/VBoxContainer/LevelCBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelDBTN" to="BoxContainer/VBoxContainer/LevelDBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/BackBTN" to="BoxContainer/BackBTN" method="_on_pressed"]

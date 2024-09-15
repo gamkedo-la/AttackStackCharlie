@@ -6,10 +6,14 @@
 [node name="SceneManager" type="Node3D"]
 script = ExtResource("1_svuu7")
 Scenes = {
+"LevelSelect": "res://UI/LevelSelect/level_select.tscn",
 "MainMenu": &"res://UI/MainMenu/main_menu.tscn",
 "MainPlay": &"res://Levels/MainPlay.tscn",
 "StorySequence": &"res://UI/StorySequence/StorySequence.tscn",
-"TestLevelA": "res://Levels/TestLevelA.tscn"
+"TestLevelA": "res://Levels/TestLevelA.tscn",
+"TestLevelB": "res://Levels/TestLevelB.tscn",
+"TestLevelC": "res://Levels/TestLevelC.tscn",
+"TestLevelD": "res://Levels/TestLevelD.tscn"
 }
 
 [node name="PauseMenu" parent="." node_paths=PackedStringArray("scene_manager") instance=ExtResource("2_tf0e3")]
