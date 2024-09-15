@@ -9,6 +9,7 @@ var targetPos = Vector2()
 var cwOrbit = false;
 
 func _ready():
+	super._ready() # run the parent enemy init
 	var player_node = get_tree().current_scene.get_node("EveryLevelReusedStuff/Player")
 	player_node.connect("player_moved", Callable(self, "_on_player_moved"))
 	cwOrbit = randi_range(0,10) < 5

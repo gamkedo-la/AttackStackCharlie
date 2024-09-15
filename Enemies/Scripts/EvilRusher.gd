@@ -8,6 +8,7 @@ var targetPos = Vector2()
 var lastMovingVec = Vector2.RIGHT
 
 func _ready():
+	super._ready() # run the parent enemy init
 	var player_node = get_tree().current_scene.get_node("EveryLevelReusedStuff/Player")
 	player_node.connect("player_moved", Callable(self, "_on_player_moved"))
 	lastMovingVec = Vector2(cos(rotation), sin(rotation)) # works but feels weird, does godot have a better way? -cdeleon
