@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://8kolafukcuow"]
+[gd_scene load_steps=19 format=3 uid="uid://8kolafukcuow"]
 
 [ext_resource type="Script" path="res://Levels/RoundManager.gd" id="1_20qqy"]
 [ext_resource type="PackedScene" uid="uid://cmeqeaa4jto17" path="res://Feedback VFX/ScreenEffects/ScreenDamage/screen_damage_fx.tscn" id="1_se8o5"]
@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://byeot2c34tyb6" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_08.wav" id="10_8idhy"]
 [ext_resource type="AudioStream" uid="uid://58f3fauypuul" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_09.wav" id="11_18cia"]
 [ext_resource type="AudioStream" uid="uid://dxgt70jp13sar" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_10.wav" id="12_y1uoe"]
-[ext_resource type="PackedScene" uid="uid://c5fwr288dn55u" path="res://UI/HUD/hud.tscn" id="13_urwts"]
+[ext_resource type="PackedScene" path="res://UI/HUD/hud.tscn" id="13_urwts"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_irrt5"]
 random_pitch = 1.5
