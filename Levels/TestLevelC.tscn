@@ -73,7 +73,4 @@ spinZ = 1
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_5h4dk")]
 
-[node name="Camera3D" parent="EveryLevelReusedStuff/Background 3D setup" index="0"]
-current = true
-
 [editable path="EveryLevelReusedStuff"]
