@@ -21,6 +21,10 @@ PlayerVars="*res://Globals/player_vars.gd"
 SceneManager="*res://Globals/SceneManager.tscn"
 Events="*res://Globals/signal_bus.gd"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/sprite_cutter/plugin.cfg")
+
 [filesystem]
 
 import/fbx/enabled=false
