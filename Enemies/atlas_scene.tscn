@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkurjy56na5t1"]
+
+[ext_resource type="Script" path="res://addons/sprite_cutter/AtlasScene.gd" id="1_3tp3s"]
+[ext_resource type="Texture2D" uid="uid://3qvwrfqfsdod" path="res://Enemies/Art/Asteroid.png" id="2_16rxg"]
+
+[node name="AtlasScene" type="Node"]
+script = ExtResource("1_3tp3s")
+
+[node name="Asteroid" type="Sprite2D" parent="."]
+position = Vector2(177, -38)
+texture = ExtResource("2_16rxg")
