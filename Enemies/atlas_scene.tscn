@@ -5,7 +5,46 @@
 
 [node name="AtlasScene" type="Node"]
 script = ExtResource("1_3tp3s")
+destination_path = "res://Enemies/Art/Asteroid_Sprites"
 
 [node name="Asteroid" type="Sprite2D" parent="."]
 position = Vector2(177, -38)
 texture = ExtResource("2_16rxg")
+region_enabled = true
+region_rect = Rect2(0.0785294, 0.11779, 34.7768, 31.8822)
+
+[node name="Asteroid2" type="Sprite2D" parent="."]
+position = Vector2(216, -39)
+texture = ExtResource("2_16rxg")
+region_enabled = true
+region_rect = Rect2(33.355, 0, 30.8172, 32)
+
+[node name="Asteroid3" type="Sprite2D" parent="."]
+position = Vector2(251, -40)
+texture = ExtResource("2_16rxg")
+region_enabled = true
+region_rect = Rect2(64.1778, 0, 31.1939, 32)
+
+[node name="Asteroid4" type="Sprite2D" parent="."]
+position = Vector2(289, -39)
+texture = ExtResource("2_16rxg")
+region_enabled = true
+region_rect = Rect2(95.8772, 0, 31.5444, 32)
+
+[node name="Asteroid5" type="Sprite2D" parent="."]
+position = Vector2(332, -38)
+texture = ExtResource("2_16rxg")
+region_enabled = true
+region_rect = Rect2(127.422, 0, 32.2454, 32)
+
+[node name="Asteroid6" type="Sprite2D" parent="."]
+position = Vector2(378, -41)
+texture = ExtResource("2_16rxg")
+region_enabled = true
+region_rect = Rect2(160.368, 0, 32.5959, 32)
+
+[node name="Asteroid7" type="Sprite2D" parent="."]
+position = Vector2(425, -38)
+texture = ExtResource("2_16rxg")
+region_enabled = true
+region_rect = Rect2(192.964, 0, 31.036, 32)
