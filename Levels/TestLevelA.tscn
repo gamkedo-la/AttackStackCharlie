@@ -41,7 +41,7 @@ position = Vector2(50, 293)
 position = Vector2(252, 77)
 
 [node name="Asteroid" parent="Enemies" instance=ExtResource("7_527i8")]
-position = Vector2(965, 34)
+position = Vector2(944, 74)
 
 [node name="Powerups (pre-placed)" type="Node2D" parent="."]
 

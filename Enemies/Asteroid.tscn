@@ -14,15 +14,6 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_s2jj0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_7txh4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_xmbmt")
-}, {
-"duration": 1.0,
 "texture": ExtResource("4_x676i")
 }, {
 "duration": 1.0,
@@ -35,7 +26,21 @@ animations = [{
 "texture": ExtResource("7_mamvt")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"asteroid_explosion",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s2jj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7txh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xmbmt")
+}],
+"loop": true,
+"name": &"asteroid_idle",
 "speed": 5.0
 }]
 
@@ -48,6 +53,5 @@ shape = SubResource("CircleShape2D_lhx2u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Asteroid"]
 sprite_frames = SubResource("SpriteFrames_0dx88")
-animation = &"idle"
-frame = 6
-frame_progress = 0.312727
+animation = &"asteroid_explosion"
+frame_progress = 0.13285
