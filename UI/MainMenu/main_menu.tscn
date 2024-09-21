@@ -174,7 +174,6 @@ vertical_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_pqixo")
 }
-autoplay = "intro_sequence"
 
 [connection signal="pressed" from="BoxContainer/VBoxContainer/PlayGameBTN" to="BoxContainer/VBoxContainer/PlayGameBTN" method="_on_pressed"]
 [connection signal="pressed" from="BoxContainer/VBoxContainer/LevelSelectBTN" to="BoxContainer/VBoxContainer/LevelSelectBTN" method="_on_pressed"]

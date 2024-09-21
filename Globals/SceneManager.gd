@@ -4,6 +4,7 @@ class_name NSceneManager
 @export var Scenes : Dictionary = {}
 
 var m_CurrentSceneAlias : String = ""
+var intro_has_already_played : bool = false
 
 # migrating game_manager script stuff related to pause menu into here
 signal toggle_game_paused(is_paused : bool)
