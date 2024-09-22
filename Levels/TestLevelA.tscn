@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://degldynxe05sf"]
+[gd_scene load_steps=15 format=3 uid="uid://degldynxe05sf"]
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_4o0gi"]
 [ext_resource type="PackedScene" uid="uid://ctoiuwlmdykfy" path="res://Player/playerdrone.tscn" id="2_ojseh"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://0xcemwtyox3a" path="res://Models/pyramid.glb" id="11_0i6s5"]
 [ext_resource type="Script" path="res://Models/3dspin.gd" id="12_u562u"]
 [ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="13_ci5d7"]
+[ext_resource type="PackedScene" uid="uid://lnkydrkd03wt" path="res://Powerups/Upgrade_AddDrone.tscn" id="14_q1pid"]
 
 [node name="MainPlay" type="Node2D"]
 process_mode = 1
@@ -115,5 +116,11 @@ script = ExtResource("12_u562u")
 spinZ = 1
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("13_ci5d7")]
+
+[node name="Upgrade_AddDrone" parent="." instance=ExtResource("14_q1pid")]
+position = Vector2(812, 436)
+
+[node name="Upgrade_AddDrone2" parent="." instance=ExtResource("14_q1pid")]
+position = Vector2(826, 528)
 
 [editable path="EveryLevelReusedStuff"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://lnkydrkd03wt"]
+
+[ext_resource type="Script" path="res://Powerups/PowerupAddDrone.gd" id="1_1cg7r"]
+[ext_resource type="Texture2D" uid="uid://dqsayc733is8r" path="res://Powerups/playerdrone_pickup.png" id="2_58603"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bh3kg"]
+size = Vector2(28, 27)
+
+[node name="Upgrade_AddDrone" type="Area2D"]
+script = ExtResource("1_1cg7r")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_bh3kg")
+
+[node name="PlayerdronePickup" type="Sprite2D" parent="."]
+texture = ExtResource("2_58603")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
