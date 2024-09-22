@@ -8,14 +8,16 @@ extends Control
 
 const FADE_DURATION_SEC := 1.0
 const STORY_COPY : Array[String] = [
-	"Once upon a time, this was the copy for the first slide of the story sequence.",
-	"Then came the copy for the second slide of the story sequence. It contained [b]two[/b] sentences. Probably?",
-	"Ultimately, the copy for slide 3 of the story sequence appeared. Since this was the final slide, it probably had some kind of call to action - something that told the player to strap in and prepare for adventure!",
+	"Boy genius [b]Charlie[/b] has a sick grandmother...",
+	"So [b]Charlie[/b] built a homemade flying time machine from household appliances to fly into the future and find a cure!",
+	"While calibrating his navigation, the inter-dimensional police force [b]S.T.A.C.K. attack Charlie[/b] for unlicensed time travel.",
+	"The [b]attack[/b] by [b]S.T.A.C.K.[/b] must not prevent [b]Charlie[/b] from saving his grandmother!"
 ]
 const STORY_IMG_PATHS : Array[String] = [
 	"res://UI/StorySequence/assets/test_01.png",
 	"res://UI/StorySequence/assets/test_02.png",
 	"res://UI/StorySequence/assets/test_03.png",
+	"res://UI/StorySequence/assets/test_02.png",
 ]
 var story_img_textures : Array[Texture2D] = []
 var format_string = "[center]%s[/center]"
