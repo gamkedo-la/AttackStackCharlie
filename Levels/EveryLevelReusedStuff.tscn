@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://byeot2c34tyb6" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_08.wav" id="10_8idhy"]
 [ext_resource type="AudioStream" uid="uid://58f3fauypuul" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_09.wav" id="11_18cia"]
 [ext_resource type="AudioStream" uid="uid://dxgt70jp13sar" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyWeapon_Basic_Fire_10.wav" id="12_y1uoe"]
-[ext_resource type="PackedScene" path="res://UI/HUD/hud.tscn" id="13_urwts"]
+[ext_resource type="PackedScene" uid="uid://c5fwr288dn55u" path="res://UI/HUD/hud.tscn" id="13_urwts"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_irrt5"]
 random_pitch = 1.5
@@ -142,5 +142,24 @@ one_shot = true
 autostart = true
 
 [node name="Control" parent="." instance=ExtResource("13_urwts")]
+
+[node name="EnemyKillCounter" type="Label" parent="."]
+offset_left = 862.0
+offset_top = 15.0
+offset_right = 902.0
+offset_bottom = 38.0
+text = "TEST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VictoryText" type="Label" parent="."]
+offset_left = 420.0
+offset_top = 276.0
+offset_right = 732.0
+offset_bottom = 359.0
+theme_override_font_sizes/font_size = 60
+text = "YOU WON!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="player_upgraded" from="Player" to="Control" method="_on_upgrade_received"]
