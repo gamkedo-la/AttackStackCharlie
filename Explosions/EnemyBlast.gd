@@ -27,7 +27,7 @@ func _on_Area2D_area_entered(area):
 		# print("Destroying enemy: ", areaParent.name)
 		if areaParent.has_method("destroy"):
 			areaParent.destroy()
-			print("blast called destroy - did it register signal?")
+			# print("blast called destroy - did it register signal?")
 		else:
 			print("No destroy method found")
 
