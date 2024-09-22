@@ -2,7 +2,7 @@ extends Node
 
 # Add a variable to count defeated enemies.
 var defeated_enemies = 0
-var level_goal = 10  # This can be set in the Inspector.
+@export var level_goal = 30
 @onready var enemy_kill_counter = $EnemyKillCounter
 @onready var victory_text = $VictoryText
 
