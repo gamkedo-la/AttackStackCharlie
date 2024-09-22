@@ -5,7 +5,8 @@ func _ready():
 	pass
 
 func _process(delta):
-	position += moveDir * delta * ENEMY_SPEED
+	moveDir = Vector2(ENEMY_SPEED, 0).rotated(rotation)
+	position += moveDir * delta
 	pass
 
 func _on_visible_on_screen_notifier_2d_screen_exited():

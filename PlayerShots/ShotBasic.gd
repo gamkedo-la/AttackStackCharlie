@@ -19,6 +19,7 @@ func activateShot(useSprite: int, lifeSpan:float, direction: Vector2):
 	sprite3.visible = (useSprite == 2)
 	timeAlive = lifeSpan
 	moveDir = direction
+	rotation = atan2(moveDir.y,moveDir.x)
 
 func _physics_process(delta):
 	position += moveDir * delta * SHOT_SPEED
