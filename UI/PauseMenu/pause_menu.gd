@@ -20,7 +20,7 @@ func _on_resume_btn_pressed():
 	scene_manager.game_paused = false
 
 func _on_main_menu_btn_pressed():
-	print("Add go to main menu here")
+	SceneManager.SwitchScene("MainMenu")
 
 func _on_exit_btn_pressed():
 	scene_manager.QuitGame()
