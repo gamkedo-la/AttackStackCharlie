@@ -82,6 +82,12 @@ position = Vector2(576, 216)
 [node name="UpgradeShot_Range5" parent="Powerups (pre-placed)" instance=ExtResource("10_enxq4")]
 position = Vector2(738, 190)
 
+[node name="Upgrade_AddDrone" parent="Powerups (pre-placed)" instance=ExtResource("14_q1pid")]
+position = Vector2(812, 436)
+
+[node name="Upgrade_AddDrone2" parent="Powerups (pre-placed)" instance=ExtResource("14_q1pid")]
+position = Vector2(826, 528)
+
 [node name="3D background scene" type="Node" parent="."]
 
 [node name="3D Lighting" type="Node3D" parent="3D background scene"]
@@ -116,11 +122,5 @@ script = ExtResource("12_u562u")
 spinZ = 1
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("13_ci5d7")]
-
-[node name="Upgrade_AddDrone" parent="." instance=ExtResource("14_q1pid")]
-position = Vector2(812, 436)
-
-[node name="Upgrade_AddDrone2" parent="." instance=ExtResource("14_q1pid")]
-position = Vector2(826, 528)
 
 [editable path="EveryLevelReusedStuff"]

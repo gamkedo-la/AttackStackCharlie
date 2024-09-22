@@ -32,6 +32,7 @@ var shot_levels_dict = {
 	SPLIT = 0, # This means that we need to add a + 1 later. The price of the generic implementation of MAX_LEVELS. We may need to customize them in the end.
 	RANGE = 0,
 }
+var droneToSpawn = preload("res://Player/playerdrone.tscn");
 
 # Damage immunity after hit
 var time_modulated: float = 0.3
@@ -80,9 +81,14 @@ func upgradeShot(type):
 	player_upgrade_status.text = "";
 	for key in shot_levels_dict:
 		player_upgrade_status.text += (key + ": " + str(shot_levels_dict[key]) + "\n");
-	# print(shot_levels_dict)
 	player_upgraded.emit(type)
-	
+
+func upgradeDrone():
+	var newDrone = droneToSpawn.instantiate();
+	get_tree().root.add_child(newDrone);
+	newDrone.global_position = $ShootFrom.global_position
+	print("spawn drone! TO DO: (a) only if there aren't too many, (b) adjust orbits to space evenly")	
+	print("that'll require keeping track of a list of them, which isn't yet being done")
 
 func fire():
 	# print("get_time ", get_time())
