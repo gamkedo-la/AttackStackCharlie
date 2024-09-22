@@ -7,7 +7,9 @@ signal player_turned(new_facing)
 signal player_fired(ship)
 signal player_upgraded(type)
 
-const SHIP_SPEED = 250
+const SHIP_SPEED = 150 # multiplier on a value otherwise much smaller, easier tuning
+const SHIP_ACCEL = 0.2
+const SHIP_VEL_DECAY = 0.925
 const SHOT_SPREAD = 25
 
 const LEVEL_TYPE = preload("res://Globals/level_type_enum.gd").LevelType
@@ -35,26 +37,27 @@ var shot_levels_dict = {
 var time_modulated: float = 0.3
 var time_modulated_elapsed: float = 0
 var is_damaged: bool = false
+var move_vec = Vector2()
 
 func _physics_process(delta):
-	var move_vec = Vector2()
+	move_vec *= SHIP_VEL_DECAY
 	if Input.is_action_pressed("move left"):
-		move_vec.x -= 1
+		move_vec.x -= SHIP_ACCEL
 		if Input.is_action_pressed("shoot") == false:
 			shipFacing = Vector2.LEFT;
 			rotation = PI
 	if Input.is_action_pressed("move right"):
-		move_vec.x += 1
+		move_vec.x += SHIP_ACCEL
 		if Input.is_action_pressed("shoot") == false:
 			shipFacing = Vector2.RIGHT;
 			rotation = 0
 	if Input.is_action_pressed("move up"):
-		move_vec.y -= 1
+		move_vec.y -= SHIP_ACCEL
 		if Input.is_action_pressed("shoot") == false:
 			shipFacing = Vector2.UP;
 			rotation = -PI/2
 	if Input.is_action_pressed("move down"):
-		move_vec.y += 1
+		move_vec.y += SHIP_ACCEL
 		if Input.is_action_pressed("shoot") == false:
 			shipFacing = Vector2.DOWN;
 			rotation = PI/2
