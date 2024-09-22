@@ -17,6 +17,5 @@ func _on_enemy_defeated():
 	enemy_kill_counter.text = str(defeated_enemies) + "/" + str(level_goal);
 	
 	if defeated_enemies >= level_goal:
-		SceneManager.game_paused = true;
 		victory_text.visible = true;
 	pass
