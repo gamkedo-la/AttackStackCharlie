@@ -1,0 +1,59 @@
+[gd_scene load_steps=11 format=3 uid="uid://dcj01f3ocrwv2"]
+
+[ext_resource type="Texture2D" uid="uid://u77oesxpw52t" path="res://Enemies/Art/Asteroid_Sprites/Asteroid.atlastex" id="1_s2jj0"]
+[ext_resource type="Script" path="res://Enemies/Asteroid.gd" id="1_sajwd"]
+[ext_resource type="Texture2D" uid="uid://bft8d3jnuslyt" path="res://Enemies/Art/Asteroid_Sprites/Asteroid2.atlastex" id="2_7txh4"]
+[ext_resource type="Texture2D" uid="uid://bjrt45i6ojix5" path="res://Enemies/Art/Asteroid_Sprites/Asteroid3.atlastex" id="3_xmbmt"]
+[ext_resource type="Texture2D" uid="uid://c4fpgxibe8y1h" path="res://Enemies/Art/Asteroid_Sprites/Asteroid4.atlastex" id="4_x676i"]
+[ext_resource type="Texture2D" uid="uid://hyoq5fuqipkn" path="res://Enemies/Art/Asteroid_Sprites/Asteroid5.atlastex" id="5_m6vqj"]
+[ext_resource type="Texture2D" uid="uid://bognbxc5el13c" path="res://Enemies/Art/Asteroid_Sprites/Asteroid6.atlastex" id="6_c4w7k"]
+[ext_resource type="Texture2D" uid="uid://2g4qbrkaw7k2" path="res://Enemies/Art/Asteroid_Sprites/Asteroid7.atlastex" id="7_mamvt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lhx2u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0dx88"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_x676i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m6vqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c4w7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mamvt")
+}],
+"loop": true,
+"name": &"asteroid_explosion",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s2jj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7txh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xmbmt")
+}],
+"loop": true,
+"name": &"asteroid_idle",
+"speed": 5.0
+}]
+
+[node name="Asteroid" type="Node2D"]
+
+[node name="Asteroid" type="CharacterBody2D" parent="."]
+script = ExtResource("1_sajwd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Asteroid"]
+shape = SubResource("CircleShape2D_lhx2u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Asteroid"]
+sprite_frames = SubResource("SpriteFrames_0dx88")
+animation = &"asteroid_explosion"
+frame_progress = 0.13285
