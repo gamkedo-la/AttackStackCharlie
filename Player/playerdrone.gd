@@ -16,16 +16,12 @@ func _ready():
 	player_node.connect("player_turned", Callable(self, "_on_player_turned"))
 	player_node.connect("player_fired", Callable(self, "_on_player_fired"))
 
-func _on_player_turned(new_facing):
-	drone_facing = new_facing
-	if drone_facing == Vector2.LEFT:
-		droneSprite.rotation = PI
-	if drone_facing == Vector2.RIGHT:
-		droneSprite.rotation = 0
-	if drone_facing == Vector2.UP:
-		droneSprite.rotation = -PI/2
-	if drone_facing == Vector2.DOWN:
-		droneSprite.rotation = PI/2
+func _on_player_turned(new_rotation):
+	# note: ignoring player's rotation to aim at mouse, so distance from player "focuses" fire
+	var mouse_position = get_global_mouse_position()
+	var direction = (mouse_position - global_position).normalized()
+	droneSprite.rotation = direction.angle();
+	drone_facing = Vector2.RIGHT.rotated(rotation)
 
 func _on_player_moved(new_position):
 	player_position = new_position

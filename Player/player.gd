@@ -62,7 +62,7 @@ func _physics_process(delta):
 	elif is_damaged:
 		time_modulated_elapsed += delta
 	emit_signal("player_moved", global_position)
-	emit_signal("player_turned", shipFacing)
+	emit_signal("player_turned", rotation)
 
 func _process(delta):
 	if Input.is_action_pressed("shoot"):
