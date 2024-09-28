@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://0xcemwtyox3a" path="res://Models/pyramid.glb" id="11_0i6s5"]
 [ext_resource type="Script" path="res://Models/3dspin.gd" id="12_u562u"]
 [ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="13_ci5d7"]
-[ext_resource type="PackedScene" path="res://Powerups/Upgrade_AddDrone.tscn" id="14_q1pid"]
+[ext_resource type="PackedScene" uid="uid://lnkydrkd03wt" path="res://Powerups/Upgrade_AddDrone.tscn" id="14_q1pid"]
 
 [node name="MainPlay" type="Node2D"]
 process_mode = 1

@@ -41,27 +41,19 @@ var is_damaged: bool = false
 var move_vec = Vector2()
 
 func _physics_process(delta):
+	var mouse_position = get_global_mouse_position()
+	var direction = (mouse_position - global_position).normalized()
+	rotation = direction.angle()
+	shipFacing = Vector2(SHIP_SPEED, 0).rotated(rotation)
 	move_vec *= SHIP_VEL_DECAY
 	if Input.is_action_pressed("move left"):
 		move_vec.x -= SHIP_ACCEL
-		if Input.is_action_pressed("shoot") == false:
-			shipFacing = Vector2.LEFT;
-			rotation = PI
 	if Input.is_action_pressed("move right"):
 		move_vec.x += SHIP_ACCEL
-		if Input.is_action_pressed("shoot") == false:
-			shipFacing = Vector2.RIGHT;
-			rotation = 0
 	if Input.is_action_pressed("move up"):
 		move_vec.y -= SHIP_ACCEL
-		if Input.is_action_pressed("shoot") == false:
-			shipFacing = Vector2.UP;
-			rotation = -PI/2
 	if Input.is_action_pressed("move down"):
 		move_vec.y += SHIP_ACCEL
-		if Input.is_action_pressed("shoot") == false:
-			shipFacing = Vector2.DOWN;
-			rotation = PI/2
 	move_and_collide(move_vec * delta * SHIP_SPEED)
 	
 	if is_damaged and time_modulated_elapsed > time_modulated:
@@ -106,11 +98,8 @@ func fire():
 		shot.activateShot(shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.ROF]], 
 			BASE_SHOT_LIFE + shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.RANGE]] * EXTRA_SHOT_LIFE_INCREMENT,
 			shipFacing);
-		var shotSweepEdgeL = Vector2.LEFT
-		var shotSweepEdgeR = Vector2.RIGHT
-		if shipFacing == Vector2.LEFT || shipFacing == Vector2.RIGHT:
-			shotSweepEdgeL = Vector2.UP
-			shotSweepEdgeR = Vector2.DOWN
+		var shotSweepEdgeL = Vector2.LEFT.rotated(rotation)
+		var shotSweepEdgeR = Vector2.RIGHT.rotated(rotation)
 		shot.global_position = $ShootFrom.global_position + shipFacing*25 + (shotSweepEdgeL*xOffset+shotSweepEdgeR*n)*SHOT_SPREAD
 	emit_signal("player_fired", self)
 
