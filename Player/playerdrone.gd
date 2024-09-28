@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 const SPEED = 7.0
 const ANGLE_CHANGE = 4
-const DISTANCE = 80.0
+const DISTANCE = 100.0
 var current_angle = 0.0
 var player_position = Vector2()
 var drone_facing = Vector2()
@@ -15,6 +15,9 @@ func _ready():
 	player_node.connect("player_moved", Callable(self, "_on_player_moved"))
 	player_node.connect("player_turned", Callable(self, "_on_player_turned"))
 	player_node.connect("player_fired", Callable(self, "_on_player_fired"))
+
+func setGroupAngleOffset(new_offset):
+	current_angle = new_offset
 
 func _on_player_turned(new_rotation):
 	# note: ignoring player's rotation to aim at mouse, so distance from player "focuses" fire

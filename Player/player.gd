@@ -39,6 +39,11 @@ var time_modulated: float = 0.3
 var time_modulated_elapsed: float = 0
 var is_damaged: bool = false
 var move_vec = Vector2()
+var playerDrones = Node.new();
+
+func _ready():
+	playerDrones.name = "PlayerDrones"
+	add_child(playerDrones)
 
 func _physics_process(delta):
 	var mouse_position = get_global_mouse_position()
@@ -77,10 +82,12 @@ func upgradeShot(type):
 
 func upgradeDrone():
 	var newDrone = droneToSpawn.instantiate();
-	get_tree().root.add_child(newDrone);
-	newDrone.global_position = $ShootFrom.global_position
-	print("spawn drone! TO DO: (a) only if there aren't too many, (b) adjust orbits to space evenly")	
-	print("that'll require keeping track of a list of them, which isn't yet being done")
+	playerDrones.add_child(newDrone)
+	var drone_count = playerDrones.get_child_count()
+	for i in range(drone_count):
+		var drone = playerDrones.get_child(i)
+		var angle = i * 2 * PI / drone_count
+		drone.setGroupAngleOffset(angle)
 
 func fire():
 	# print("get_time ", get_time())

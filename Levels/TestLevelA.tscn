@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://degldynxe05sf"]
+[gd_scene load_steps=14 format=3 uid="uid://degldynxe05sf"]
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_4o0gi"]
-[ext_resource type="PackedScene" uid="uid://ctoiuwlmdykfy" path="res://Player/playerdrone.tscn" id="2_ojseh"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="3_j6cuh"]
 [ext_resource type="PackedScene" uid="uid://cj7rg0xhytvee" path="res://Enemies/EvilSpikes.tscn" id="4_wr81a"]
 [ext_resource type="PackedScene" uid="uid://d12rmco0pfhyc" path="res://Enemies/EvilCircler.tscn" id="5_twfta"]
@@ -19,9 +18,6 @@
 process_mode = 1
 script = ExtResource("1_4o0gi")
 LevelName = "A: Placed Enemies/Items"
-
-[node name="Playerdrone" parent="." instance=ExtResource("2_ojseh")]
-position = Vector2(526, 392)
 
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("3_j6cuh")
@@ -84,6 +80,12 @@ position = Vector2(738, 190)
 
 [node name="Upgrade_AddDrone" parent="Powerups (pre-placed)" instance=ExtResource("14_q1pid")]
 position = Vector2(812, 436)
+
+[node name="Upgrade_AddDrone3" parent="Powerups (pre-placed)" instance=ExtResource("14_q1pid")]
+position = Vector2(695.925, 436)
+
+[node name="Upgrade_AddDrone4" parent="Powerups (pre-placed)" instance=ExtResource("14_q1pid")]
+position = Vector2(695.925, 345.715)
 
 [node name="Upgrade_AddDrone2" parent="Powerups (pre-placed)" instance=ExtResource("14_q1pid")]
 position = Vector2(826, 528)
