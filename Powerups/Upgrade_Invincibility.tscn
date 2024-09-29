@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://fbnliiv8xtmt"]
+
+[ext_resource type="Script" path="res://Powerups/Invincibility.gd" id="1_31lki"]
+[ext_resource type="Texture2D" uid="uid://bse2n5ahjfq7m" path="res://Powerups/star.png" id="2_xexrp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bh3kg"]
+size = Vector2(28, 27)
+
+[node name="Upgrade_Invincibility" type="Area2D"]
+script = ExtResource("1_31lki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_bh3kg")
+
+[node name="PlayerdronePickup" type="Sprite2D" parent="."]
+texture = ExtResource("2_xexrp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

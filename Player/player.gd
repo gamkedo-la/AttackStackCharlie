@@ -40,6 +40,8 @@ var droneToSpawn = preload("res://Player/playerdrone.tscn");
 var time_modulated: float = 0.3
 var time_modulated_elapsed: float = 0
 var is_damaged: bool = false
+var is_invincible: bool = false
+var invincibility_time: float = 0;
 var move_vec = Vector2()
 var playerDrones = Node.new();
 
@@ -67,6 +69,14 @@ func _physics_process(delta):
 		time_modulated_elapsed = 0
 	elif is_damaged:
 		time_modulated_elapsed += delta
+		
+	if is_invincible:
+		invincibility_time -= delta;
+	
+	if (invincibility_time <= 0):
+		invincibility_time = 0;
+		is_invincible = false;
+		
 	emit_signal("player_moved", global_position)
 	emit_signal("player_turned", rotation)
 
@@ -80,6 +90,10 @@ func upgradeShot(type):
 	for key in shot_levels_dict:
 		player_upgrade_status.text += (key + ": " + str(shot_levels_dict[key]) + "\n");
 	player_upgraded.emit(type)
+
+func upgradeInvincibility(invincible_time):
+	is_invincible = true;
+	invincibility_time = invincible_time;
 
 func upgradeDrone():
 	var drone_count = playerDrones.get_child_count()
@@ -122,6 +136,9 @@ func get_time():
 	return Time.get_ticks_msec() / 1000.0
 
 func _damage_player() -> void:
+	if (is_invincible):
+		return;
+		
 	Events.emit_signal("player_hit")
 	if is_damaged == false:
 		is_damaged = true
