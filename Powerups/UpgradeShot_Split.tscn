@@ -8,6 +8,7 @@ size = Vector2(28, 27)
 
 [node name="UpgradeShot" type="Area2D"]
 script = ExtResource("1_4eu32")
+type = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
