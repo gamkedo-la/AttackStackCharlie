@@ -104,8 +104,8 @@ func fire():
 		shot.activateShot(shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.ROF]], 
 			BASE_SHOT_LIFE + shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.RANGE]] * EXTRA_SHOT_LIFE_INCREMENT,
 			shipFacing);
-		var shotSweepEdgeL = Vector2.LEFT.rotated(rotation)
-		var shotSweepEdgeR = Vector2.RIGHT.rotated(rotation)
+		var shotSweepEdgeL = Vector2.LEFT.rotated(rotation+PI/2)
+		var shotSweepEdgeR = Vector2.RIGHT.rotated(rotation+PI/2)
 		shot.global_position = $ShootFrom.global_position + shipFacing*25 + (shotSweepEdgeL*xOffset+shotSweepEdgeR*n)*SHOT_SPREAD
 	emit_signal("player_fired", self)
 

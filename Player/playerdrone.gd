@@ -23,7 +23,7 @@ func _on_player_turned(new_rotation):
 	# note: ignoring player's rotation to aim at mouse, so distance from player "focuses" fire
 	var mouse_position = get_global_mouse_position()
 	var direction = (mouse_position - global_position).normalized()
-	droneSprite.rotation = direction.angle();
+	rotation = direction.angle();
 	drone_facing = direction
 
 func _on_player_moved(new_position):
@@ -36,12 +36,9 @@ func _on_player_fired(ship):
 		get_tree().root.add_child(shot);
 		shot.activateShot(ship.shot_levels_dict[ship.LEVEL_TYPE_LIST[ship.LEVEL_TYPE.ROF]], 
 			ship.BASE_SHOT_LIFE + ship.shot_levels_dict[ship.LEVEL_TYPE_LIST[ship.LEVEL_TYPE.RANGE]] * ship.EXTRA_SHOT_LIFE_INCREMENT,
-			ship.shipFacing);
-		var shotSweepEdgeL = Vector2.LEFT
-		var shotSweepEdgeR = Vector2.RIGHT
-		if ship.shipFacing == Vector2.LEFT || ship.shipFacing == Vector2.RIGHT:
-			shotSweepEdgeL = Vector2.UP
-			shotSweepEdgeR = Vector2.DOWN
+			drone_facing);
+		var shotSweepEdgeL = Vector2.LEFT.rotated(rotation+PI/2)
+		var shotSweepEdgeR = Vector2.RIGHT.rotated(rotation+PI/2)
 		shot.global_position = $ShootFrom.global_position + ship.shipFacing*25 + (shotSweepEdgeL*xOffset+shotSweepEdgeR*n)*ship.SHOT_SPREAD
 
 func _physics_process(delta):
