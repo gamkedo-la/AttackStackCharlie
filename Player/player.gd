@@ -86,9 +86,12 @@ func upgradeDrone():
 	if drone_count >= MAX_DRONES:
 		print("drones maxed out, give player feedback (or avoid powerup spawn)")
 		return
+	call_deferred("addDroneAndUpdateSpacing")
+
+func addDroneAndUpdateSpacing():
 	var newDrone = droneToSpawn.instantiate();
 	playerDrones.add_child(newDrone)
-	drone_count += 1 # account for the one just added
+	var drone_count = playerDrones.get_child_count()
 	for i in range(drone_count):
 		var drone = playerDrones.get_child(i)
 		var angle = i * 2 * PI / drone_count
