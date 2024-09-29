@@ -47,9 +47,8 @@ func _ready():
 
 func _physics_process(delta):
 	var mouse_position = get_global_mouse_position()
-	var direction = (mouse_position - global_position).normalized()
-	rotation = direction.angle()
-	shipFacing = Vector2(SHIP_SPEED, 0).rotated(rotation)
+	shipFacing = (mouse_position - global_position).normalized()
+	rotation = shipFacing.angle()
 	move_vec *= SHIP_VEL_DECAY
 	if Input.is_action_pressed("move left"):
 		move_vec.x -= SHIP_ACCEL

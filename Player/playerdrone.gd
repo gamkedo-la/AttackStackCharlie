@@ -24,7 +24,7 @@ func _on_player_turned(new_rotation):
 	var mouse_position = get_global_mouse_position()
 	var direction = (mouse_position - global_position).normalized()
 	droneSprite.rotation = direction.angle();
-	drone_facing = Vector2.RIGHT.rotated(rotation)
+	drone_facing = direction
 
 func _on_player_moved(new_position):
 	player_position = new_position
