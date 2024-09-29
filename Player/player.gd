@@ -23,6 +23,8 @@ const EXTRA_SHOT_LIFE_INCREMENT = 0.3
 # If leveling up logic becomes more complex, it could be extracted to an object 
 # with specific logic to level up each dimension 
 const MAX_LEVELS = 3
+const MAX_DRONES = 7
+
 var lastShotTime = 0.0
 var shotBasic = preload("res://PlayerShots/PlayerShotBasic.tscn");
 const shotSound = preload("res://Raw Source Files/AUDIO/SFX/Sx_PlayerWeapon_Standard_Laser_A_01.wav");
@@ -80,9 +82,13 @@ func upgradeShot(type):
 	player_upgraded.emit(type)
 
 func upgradeDrone():
+	var drone_count = playerDrones.get_child_count()
+	if drone_count >= MAX_DRONES:
+		print("drones maxed out, give player feedback (or avoid powerup spawn)")
+		return
 	var newDrone = droneToSpawn.instantiate();
 	playerDrones.add_child(newDrone)
-	var drone_count = playerDrones.get_child_count()
+	drone_count += 1 # account for the one just added
 	for i in range(drone_count):
 		var drone = playerDrones.get_child(i)
 		var angle = i * 2 * PI / drone_count

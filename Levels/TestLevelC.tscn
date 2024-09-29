@@ -72,5 +72,6 @@ script = ExtResource("4_qcfvj")
 spinZ = 1
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_5h4dk")]
+level_goal = 500
 
 [editable path="EveryLevelReusedStuff"]

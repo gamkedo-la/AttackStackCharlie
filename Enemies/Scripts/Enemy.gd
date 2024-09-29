@@ -82,6 +82,6 @@ func spawn_powerup():
 		index += 1
 	var powerup_scene = load(powerup_paths[index])
 	var powerup_instance = powerup_scene.instantiate()
-	get_parent().add_child(powerup_instance)
+	get_parent().call_deferred("add_child", powerup_instance)
 	powerup_instance.global_position = global_position
 	powerup_spawn_counts[powerup_paths[index]] += 1 # so we can later lower odds of repeats
