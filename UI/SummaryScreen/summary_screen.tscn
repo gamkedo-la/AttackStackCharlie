@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ifg464fuofbn"]
+
+[node name="SummaryScreen" type="Node2D"]
+
+[node name="Header" type="Label" parent="."]
+offset_left = 232.0
+offset_right = 1001.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 100
+text = "PLAY SUMMARY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Enemies Defeated" type="Label" parent="."]
+offset_left = 51.0
+offset_top = 208.0
+offset_right = 372.0
+offset_bottom = 246.0
+text = "ENEMIES DEFEATED: XX"
+
+[node name="Time" type="Label" parent="."]
+offset_left = 51.0
+offset_top = 170.0
+offset_right = 372.0
+offset_bottom = 208.0
+text = "TOTAL TIME: XX SECONDS"
+
+[node name="Score" type="Label" parent="."]
+offset_left = 51.0
+offset_top = 246.0
+offset_right = 372.0
+offset_bottom = 284.0
+text = "FINAL SCORE: XXXX"
