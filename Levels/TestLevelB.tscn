@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://b5l5coih5r1su"]
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_2d853"]
+[ext_resource type="PackedScene" uid="uid://iopfwnba5j8b" path="res://Models/eiffel.glb" id="3_cf2l7"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="3_einjh"]
-[ext_resource type="PackedScene" uid="uid://0xcemwtyox3a" path="res://Models/pyramid.glb" id="11_uybkw"]
 [ext_resource type="Script" path="res://Models/3dspin.gd" id="12_d02ne"]
 [ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="13_uimog"]
 
@@ -44,18 +44,8 @@ omni_range = 47.1413
 
 [node name="3D Models" type="Node3D" parent="3D background scene"]
 
-[node name="pyramid" parent="3D background scene/3D Models" instance=ExtResource("11_uybkw")]
-transform = Transform3D(-3.7893e-07, 3.29937, -0.0643289, 1.18451e-08, 0.0643289, 3.29937, 3.3, 3.78673e-07, -1.68881e-08, 0.76873, -57.1865, 6.19276)
-script = ExtResource("12_d02ne")
-spinZ = 1
-
-[node name="pyramid3" parent="3D background scene/3D Models" instance=ExtResource("11_uybkw")]
-transform = Transform3D(4.0258e-08, -3.15, -2.57644e-07, -2.92063, -1.27665e-07, 1.18001, -1.18001, 2.23802e-07, -2.92063, 36.9679, -108.064, 16.3)
-script = ExtResource("12_d02ne")
-spinZ = 1
-
-[node name="pyramid2" parent="3D background scene/3D Models" instance=ExtResource("11_uybkw")]
-transform = Transform3D(-2.12132, -2.2386e-07, -2.12132, -2.12132, -9.27259e-08, 2.12132, -2.2386e-07, 3, -9.27258e-08, 21.9015, -16.4184, 3.7727)
+[node name="eiffel" parent="3D background scene/3D Models" instance=ExtResource("3_cf2l7")]
+transform = Transform3D(1.5, -1.04636e-15, -2.28689e-23, -2.28689e-23, -6.55671e-08, 1.5, -1.04636e-15, -1.5, -6.55671e-08, 21.2959, -54.7797, 11.6574)
 script = ExtResource("12_d02ne")
 spinZ = 1
 
