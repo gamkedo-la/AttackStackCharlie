@@ -11,10 +11,10 @@ signal enemy_exploded(position, radius)
 signal enemy_defeated()
 
 var powerup_paths = [
-    "res://Powerups/UpgradeShot_Range.tscn",
-    "res://Powerups/UpgradeShot_ROF.tscn",
-    "res://Powerups/UpgradeShot_Split.tscn",
-    "res://Powerups/Upgrade_AddDrone.tscn"
+	"res://Powerups/UpgradeShot_Range.tscn",
+	"res://Powerups/UpgradeShot_ROF.tscn",
+	"res://Powerups/UpgradeShot_Split.tscn",
+	"res://Powerups/Upgrade_AddDrone.tscn"
 ]
 
 var powerup_spawn_counts = {}
