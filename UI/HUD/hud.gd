@@ -4,6 +4,7 @@ const LEVEL_TYPE = preload("res://Globals/level_type_enum.gd").LevelType
 
 @onready var spread_stack = get_node("SpreadStack")
 @onready var range_stack = get_node("RangeStack")
+@onready var rof_stack = get_node("ROFStack")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,3 +21,5 @@ func _on_upgrade_received(type):
 		spread_stack.frame += 1
 	elif (LEVEL_TYPE[type] == LEVEL_TYPE.RANGE):
 		range_stack.frame += 1
+	elif(LEVEL_TYPE[type] == LEVEL_TYPE.ROF):
+		rof_stack.frame += 1
