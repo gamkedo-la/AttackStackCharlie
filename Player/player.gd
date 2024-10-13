@@ -120,6 +120,7 @@ func fire():
 		return
 	$SX_PlayShootBasic.play()	
 	lastShotTime = get_time()
+	PlayerVars.shots_fired += 1;
 	for n in shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.SPLIT]] + 1:
 		var xOffset = (shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.SPLIT]]-1.0)/2.0
 		var shot = shotBasic.instantiate();
@@ -146,6 +147,7 @@ func _damage_player() -> void:
 			PlayerVars.player_shield -= 1
 			pass
 		PlayerVars.player_health -= 1
+		PlayerVars.hits_taken += 1;
 		# print("Player damaged, current player health: ", PlayerVars.player_health)
 		if PlayerVars.player_health <= 0:
 			# Will need to be substituted for a signal or a call to whatever we actually want to do on death

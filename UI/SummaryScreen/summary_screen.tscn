@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://ifg464fuofbn"]
+[gd_scene load_steps=2 format=3 uid="uid://ifg464fuofbn"]
+
+[ext_resource type="Script" path="res://UI/SummaryScreen/summary_screen.gd" id="1_mfkr1"]
 
 [node name="SummaryScreen" type="Node2D"]
+script = ExtResource("1_mfkr1")
 
 [node name="Header" type="Label" parent="."]
 offset_left = 232.0
@@ -11,12 +14,12 @@ text = "PLAY SUMMARY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Enemies Defeated" type="Label" parent="."]
+[node name="Hits Taken" type="Label" parent="."]
 offset_left = 51.0
 offset_top = 208.0
 offset_right = 372.0
 offset_bottom = 246.0
-text = "ENEMIES DEFEATED: XX"
+text = "HITS TAKEN: X"
 
 [node name="Time" type="Label" parent="."]
 offset_left = 51.0
@@ -31,3 +34,17 @@ offset_top = 246.0
 offset_right = 372.0
 offset_bottom = 284.0
 text = "FINAL SCORE: XXXX"
+
+[node name="Shots Fired" type="Label" parent="."]
+offset_left = 51.0
+offset_top = 322.0
+offset_right = 494.0
+offset_bottom = 371.0
+text = "SHOTS FIRED: XX"
+
+[node name="Powerups Collected" type="Label" parent="."]
+offset_left = 51.0
+offset_top = 284.0
+offset_right = 372.0
+offset_bottom = 322.0
+text = "POWERUPS COLLECTED: XX"
