@@ -16,12 +16,13 @@ vertical_alignment = 1
 
 [node name="Hits Taken" type="Label" parent="."]
 offset_left = 51.0
-offset_top = 208.0
+offset_top = 371.0
 offset_right = 372.0
-offset_bottom = 246.0
+offset_bottom = 409.0
 text = "HITS TAKEN: X"
 
 [node name="Time" type="Label" parent="."]
+visible = false
 offset_left = 51.0
 offset_top = 170.0
 offset_right = 372.0
@@ -29,17 +30,18 @@ offset_bottom = 208.0
 text = "TOTAL TIME: XX SECONDS"
 
 [node name="Score" type="Label" parent="."]
-offset_left = 51.0
-offset_top = 246.0
-offset_right = 372.0
-offset_bottom = 284.0
+visible = false
+offset_left = 53.0
+offset_top = 203.0
+offset_right = 374.0
+offset_bottom = 241.0
 text = "FINAL SCORE: XXXX"
 
 [node name="Shots Fired" type="Label" parent="."]
 offset_left = 51.0
-offset_top = 322.0
+offset_top = 327.0
 offset_right = 494.0
-offset_bottom = 371.0
+offset_bottom = 362.0
 text = "SHOTS FIRED: XX"
 
 [node name="Powerups Collected" type="Label" parent="."]

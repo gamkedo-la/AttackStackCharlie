@@ -10,6 +10,10 @@ func _ready():
 	victory_text.visible = false;
 	enemy_kill_counter.text = str(defeated_enemies) + "/" + str(level_goal);
 	pass
+	
+func _process(delta):
+	if defeated_enemies >= level_goal && Input.is_action_pressed("confirm"):
+		SceneManager.SwitchScene("Summary");
 
 func _on_enemy_defeated():
 	defeated_enemies += 1
@@ -18,4 +22,6 @@ func _on_enemy_defeated():
 	
 	if defeated_enemies >= level_goal:
 		victory_text.visible = true;
-	pass
+		
+		if Input.is_action_pressed("confirm"):
+			SceneManager.SwitchScene("Summary");

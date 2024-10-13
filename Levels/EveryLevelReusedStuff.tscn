@@ -162,4 +162,14 @@ text = "YOU WON!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="VictoryText" type="Label" parent="VictoryText"]
+offset_left = -192.0
+offset_top = 53.0
+offset_right = 511.0
+offset_bottom = 136.0
+theme_override_font_sizes/font_size = 30
+text = "Press SPACE to continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="player_upgraded" from="Player" to="Control" method="_on_upgrade_received"]
