@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8oogo1vcjcpt"
+path="res://.godot/imported/HurryMode.mp3-de056cf58591444ee51e5250a345d2f3.mp3str"
+
+[deps]
+
+source_file="res://Raw Source Files/AUDIO/MUSIC/HurryMode.mp3"
+dest_files=["res://.godot/imported/HurryMode.mp3-de056cf58591444ee51e5250a345d2f3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -163,6 +163,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VictoryText" type="Label" parent="VictoryText"]
+layout_mode = 0
 offset_left = -192.0
 offset_top = 53.0
 offset_right = 511.0
