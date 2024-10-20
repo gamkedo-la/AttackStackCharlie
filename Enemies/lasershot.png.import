@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo62y2qll06a1"
-path="res://.godot/imported/shot-lev-3.png-858e75456b0618ce877941734c0ae23b.ctex"
+uid="uid://dfb4rv4v8cwxc"
+path="res://.godot/imported/lasershot.png-30b9d92033c2ce3cd11ff69f8c4c9f60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PlayerShots/shot-lev-3.png"
-dest_files=["res://.godot/imported/shot-lev-3.png-858e75456b0618ce877941734c0ae23b.ctex"]
+source_file="res://Enemies/lasershot.png"
+dest_files=["res://.godot/imported/lasershot.png-30b9d92033c2ce3cd11ff69f8c4c9f60.ctex"]
 
 [params]
 

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1dcvi51vpl8q"]
+
+[ext_resource type="Script" path="res://Enemies/Scripts/EvilSlider.gd" id="1_dxi88"]
+[ext_resource type="Texture2D" uid="uid://dfb4rv4v8cwxc" path="res://Enemies/lasershot.png" id="2_7lri2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cio05"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hrx8h"]
+radius = 18.0278
+
+[node name="EvilShot" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_dxi88")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cio05")
+
+[node name="ProjectileDetector" type="Area2D" parent="." groups=["hitbox"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileDetector"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_hrx8h")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Lasershot" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("2_7lri2")
+
+[connection signal="area_entered" from="ProjectileDetector" to="." method="_on_projectile_detector_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

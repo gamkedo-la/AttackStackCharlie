@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfb4rv4v8cwxc"
-path="res://.godot/imported/lasershot.png-92aba958f1523c4de16f9166b28db647.ctex"
+uid="uid://613kn3ct2f0h"
+path="res://.godot/imported/ShotBasic.png-b89b5b8d562260d39088378322fecc7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PlayerShots/lasershot.png"
-dest_files=["res://.godot/imported/lasershot.png-92aba958f1523c4de16f9166b28db647.ctex"]
+source_file="res://Enemies/ShotBasic.png"
+dest_files=["res://.godot/imported/ShotBasic.png-b89b5b8d562260d39088378322fecc7f.ctex"]
 
 [params]
 

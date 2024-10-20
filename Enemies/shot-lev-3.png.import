@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://613kn3ct2f0h"
-path="res://.godot/imported/ShotBasic.png-1b5c8f240b5f4252a64722cd87fee4f3.ctex"
+uid="uid://bo62y2qll06a1"
+path="res://.godot/imported/shot-lev-3.png-1edffabb5ab308411fb8415e6fb9d12f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PlayerShots/ShotBasic.png"
-dest_files=["res://.godot/imported/ShotBasic.png-1b5c8f240b5f4252a64722cd87fee4f3.ctex"]
+source_file="res://Enemies/shot-lev-3.png"
+dest_files=["res://.godot/imported/shot-lev-3.png-1edffabb5ab308411fb8415e6fb9d12f.ctex"]
 
 [params]
 
