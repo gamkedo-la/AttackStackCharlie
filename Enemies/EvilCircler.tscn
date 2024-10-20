@@ -13,6 +13,7 @@ radius = 18.0278
 collision_layer = 2
 script = ExtResource("1_87sve")
 projectileMode = 2
+reloadTime = 3.0
 fire_dist = 550.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -23,11 +24,8 @@ shape = SubResource("CircleShape2D_cio05")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileDetector"]
 shape = SubResource("CircleShape2D_hrx8h")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-
 [node name="EnemyCraftMain" type="Sprite2D" parent="."]
 modulate = Color(0, 1, 0, 1)
 texture = ExtResource("2_kc2ov")
 
 [connection signal="area_entered" from="ProjectileDetector" to="." method="_on_projectile_detector_area_entered"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
