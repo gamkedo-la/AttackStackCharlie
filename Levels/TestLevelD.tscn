@@ -14,7 +14,7 @@ LevelName = "D: Rush and Circles"
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("2_5tofp")
 enemy_data = Array[Dictionary]([{
-"scene": "EvilRusher",
+"scene": "EvilCircler",
 "weight": 3
 }, {
 "scene": "EvilCircler",

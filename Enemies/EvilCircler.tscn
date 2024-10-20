@@ -13,7 +13,7 @@ radius = 18.0278
 collision_layer = 2
 script = ExtResource("1_87sve")
 projectileMode = 2
-fire_dist = 400.0
+fire_dist = 550.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cio05")

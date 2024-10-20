@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://degldynxe05sf"]
+[gd_scene load_steps=9 format=3 uid="uid://degldynxe05sf"]
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_4o0gi"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="3_j6cuh"]
 [ext_resource type="PackedScene" uid="uid://cj7rg0xhytvee" path="res://Enemies/EvilSpikes.tscn" id="4_wr81a"]
 [ext_resource type="PackedScene" uid="uid://d12rmco0pfhyc" path="res://Enemies/EvilCircler.tscn" id="5_twfta"]
 [ext_resource type="PackedScene" uid="uid://dcj01f3ocrwv2" path="res://Enemies/Asteroid.tscn" id="7_527i8"]
-[ext_resource type="PackedScene" uid="uid://b87ldi225us4h" path="res://Enemies/EvilRusher.tscn" id="7_aq55c"]
 [ext_resource type="PackedScene" uid="uid://0xcemwtyox3a" path="res://Models/pyramid.glb" id="11_0i6s5"]
 [ext_resource type="Script" path="res://Models/3dspin.gd" id="12_u562u"]
 [ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="13_ci5d7"]
@@ -17,6 +16,7 @@ LevelName = "A: Placed Enemies/Items"
 
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("3_j6cuh")
+maxEnemies = 0
 
 [node name="EvilSpikes" parent="Enemies" instance=ExtResource("4_wr81a")]
 position = Vector2(251, 211)
@@ -25,13 +25,7 @@ position = Vector2(251, 211)
 position = Vector2(883, 220)
 
 [node name="EvilCircler" parent="Enemies" instance=ExtResource("5_twfta")]
-position = Vector2(508, 261)
-
-[node name="EvilRusher" parent="Enemies" instance=ExtResource("7_aq55c")]
-position = Vector2(50, 293)
-
-[node name="EvilRusher2" parent="Enemies" instance=ExtResource("7_aq55c")]
-position = Vector2(252, 77)
+position = Vector2(515, 265)
 
 [node name="Asteroid" parent="Enemies" instance=ExtResource("7_527i8")]
 position = Vector2(944, 74)

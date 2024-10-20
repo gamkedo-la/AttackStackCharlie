@@ -3,11 +3,11 @@ var moveDir = Vector2.ZERO
 const ENEMY_SPEED = 50
 
 # used because shots are based on enemies. if true it:
-# can't be shot down
 # won't ever drop powerups
 # won't chain react explode
-# won't fire other shots
+# won't fire its own shots
 # won't use the enemy_defeated signal for stats/victory
+# note: will still destruct if shot, gets ereased in chain react blast
 # note: probably could be refactored in a more separate way, for now this works
 var isJustAShot = false
 
