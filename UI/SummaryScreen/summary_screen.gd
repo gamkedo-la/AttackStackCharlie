@@ -8,11 +8,11 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	shots_fired.text = "Shots Fired: " + str(PlayerVars.shots_fired);
-	hits_taken.text = "Hits Taken: " + str(PlayerVars.hits_taken);
-	time.text = "Total Time: " + str(PlayerVars.time_in_level);
+	shots_fired.text = "Shots Fired: " + PlayerVars.check_round_stat("shots_fired");
+	hits_taken.text = "Hits Taken: " + PlayerVars.check_round_stat("hits_taken");
+	time.text = "Total Time: " + PlayerVars.check_round_stat("time_in_level");
 	#score.text = "Final Score: " + str(PlayerVars.score);
-	powerups_collected.text = "Powerups Collected: " + str(PlayerVars.powerups_collected);
+	powerups_collected.text = "Powerups Collected: " + PlayerVars.check_round_stat("powerups_collected");
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
