@@ -64,6 +64,9 @@ func _physics_process(delta):
 		move_vec.y += SHIP_ACCEL
 	move_and_collide(move_vec * delta * SHIP_SPEED)
 	
+	PlayerVars.player_distance_moved += move_vec.length() * delta * SHIP_SPEED
+	# print("player distance moved ", PlayerVars.player_distance_moved)
+	
 	if is_damaged and time_modulated_elapsed > time_modulated:
 		is_damaged = false
 		time_modulated_elapsed = 0
