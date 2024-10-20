@@ -13,10 +13,10 @@ var isJustAShot = false
 
 # the next value should be an enum or something, but didn't want to
 # just fall back on my old C/JS const approach, can clean it up later
-var projectileMode = 1 # 0 no, 1 straight ahead, 2 toward player
 var shotBasic
-var reloadTime = 1.0
-var fire_dist = 250
+@export var projectileMode: int = 1 # 0 no, 1 straight ahead, 2 toward player
+@export var reloadTime: float = 1.0
+@export var fire_dist: float = 250.0
 
 var exploded = false
 var explosion_radius = 500
@@ -59,14 +59,17 @@ func _on_player_moved(new_position):
 	targetPos = new_position
 
 func _ready():
-	var player_node = get_tree().current_scene.get_node("EveryLevelReusedStuff/Player")
-	player_node.connect("player_moved", Callable(self, "_on_player_moved"))
 	if projectileMode != 0 && isJustAShot == false:
 		shotBasic = load("res://Enemies/EvilShot.tscn")
 		fire_reload_loop()
+		var player_node = get_tree().current_scene.get_node("EveryLevelReusedStuff/Player")
+		if player_node:
+			player_node.connect("player_moved", Callable(self, "_on_player_moved"))
+		add_to_group("enemies")
+	else:
+		add_to_group("enemy_shots")
 	for path in powerup_paths:
 		powerup_spawn_counts[path] = 0
-	add_to_group("enemies")
 	var roundManagerNode = get_tree().current_scene.get_node("EveryLevelReusedStuff")	
 	if roundManagerNode:
 		if isJustAShot==false:
@@ -74,7 +77,7 @@ func _ready():
 	else:
 		print("Can't find roundManagerNode for signal")
 	# print("enemy signal registering")
-	setDirection(Vector2.RIGHT)
+	# setDirection(Vector2.RIGHT)
 	pass
 
 func setDirection(direction: Vector2):
