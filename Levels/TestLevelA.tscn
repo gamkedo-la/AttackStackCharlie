@@ -27,6 +27,12 @@ position = Vector2(883, 220)
 [node name="EvilCircler" parent="Enemies" instance=ExtResource("5_twfta")]
 position = Vector2(515, 265)
 
+[node name="EvilCircler2" parent="Enemies" instance=ExtResource("5_twfta")]
+position = Vector2(764, 265)
+
+[node name="EvilCircler3" parent="Enemies" instance=ExtResource("5_twfta")]
+position = Vector2(215, 439)
+
 [node name="Asteroid" parent="Enemies" instance=ExtResource("7_527i8")]
 position = Vector2(944, 74)
 
