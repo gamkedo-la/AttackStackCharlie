@@ -87,11 +87,13 @@ func _process(delta):
 	position += moveDir * delta * ENEMY_SPEED
 	pass
 
-func destroy():
+func destroy(blastDepth = 1):
 	if isJustAShot == false:
 		try_spawn_powerup()
 		var explosion = explosion_scene.instantiate()
 		explosion.position = position
+		explosion.blastDepth = blastDepth # increased by 1 from where destroy is called
+		PlayerVars.increase_stat_if_increased("chain_reaction_depth",blastDepth,true)
 		get_tree().root.call_deferred("add_child", explosion) 
 		emit_signal("enemy_defeated")
 	# print("enemy signal sending")
@@ -99,7 +101,7 @@ func destroy():
 
 func _on_projectile_detector_area_entered(area):
 	if area.is_in_group("bullet"):
-		destroy()
+		destroy(1)
 
 func try_spawn_powerup():
 	if randf() < 0.25:

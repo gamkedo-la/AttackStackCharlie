@@ -1,9 +1,9 @@
 extends "res://Enemies/Scripts/Enemy.gd"
 
-const ROTATE_SPEED_MAX = 0.1
-const ROTATE_SPEED_MIN = 0.225
-const CIRCLE_DISTANCE_MAX = 270
-const CIRCLE_DISTANCE_MIN = 125
+const ROTATE_SPEED_MAX = 0.07
+const ROTATE_SPEED_MIN = 0.245
+const CIRCLE_DISTANCE_MAX = 230
+const CIRCLE_DISTANCE_MIN = 100
 
 var circlePercent = 0
 var myOrbitDist = 0

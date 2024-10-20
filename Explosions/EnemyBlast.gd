@@ -3,6 +3,7 @@ extends Area2D
 var max_scale = 4
 var growth_rate = 0.2
 var active = true
+var blastDepth = 1
 
 func _ready():
 	scale = Vector2(0.1, 0.1)
@@ -26,7 +27,7 @@ func _on_Area2D_area_entered(area):
 	if areaParent.is_in_group("enemies") and active:
 		# print("Destroying enemy: ", areaParent.name)
 		if areaParent.has_method("destroy"):
-			areaParent.destroy()
+			areaParent.destroy(blastDepth+1)
 			# print("blast called destroy - did it register signal?")
 		else:
 			print("No destroy method found")

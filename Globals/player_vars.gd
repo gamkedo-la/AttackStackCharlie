@@ -12,6 +12,7 @@ var stats = {
     "hits_taken": 0,
     "powerups_collected": 0,
 	# stats not necessary for summary, but powerups etc
+	"chain_reaction_depth":0,
     "player_distance_moved": 0.0
 }
 
@@ -41,6 +42,18 @@ func check_perhit_stat(stat_name: String):
 		print("player_vars.gd Stat not found:", stat_name)
 		return "MISSING_STAT_"+stat_name
 
+func increase_stat_if_increased(stat_name: String, amount, debug: bool = false):
+	if stat_name in stats:
+		var delta = amount-stats[stat_name]
+		var deltaSinceHit = amount-perhit_stats[stat_name]
+		if delta>0:
+			stats[stat_name] = amount
+		if deltaSinceHit>0:
+			perhit_stats[stat_name] = amount
+		# using for debug print, setting value separately above for per hit increase
+		if delta>0 || deltaSinceHit>0:
+			increase_stat(stat_name,0,debug)
+
 func increase_stat(stat_name: String, amount, debug: bool = false):
 	if stat_name in stats:
 		stats[stat_name] += amount
@@ -49,9 +62,9 @@ func increase_stat(stat_name: String, amount, debug: bool = false):
 			var value = stats[stat_name]
 			match typeof(value):
 				TYPE_FLOAT:
-					print("%s now %.3f per life %.3f" % [stat_name, value, perhit_stats[stat_name]])
+					print("player_vars.gd %s now %.3f per life %.3f" % [stat_name, value, perhit_stats[stat_name]])
 				TYPE_INT:
-					print("%s now %d per life %d" % [stat_name, value, perhit_stats[stat_name]])
+					print("player_vars.gd %s now %d per life %d" % [stat_name, value, perhit_stats[stat_name]])
 	else:
 		print("player_vars.gd Stat not found:", stat_name)
 

@@ -24,7 +24,7 @@ func _on_body_entered(body):
 		collection_vfx.position = global_position
 		collection_vfx.z_index = -1
 		get_parent().add_child(collection_vfx)
-		PlayerVars.powerups_collected += 1;
+		PlayerVars.increase_stat("powerups_collected", 1, false)
 	pass
 
 func collected(body):
