@@ -28,7 +28,6 @@ func _physics_process(delta):
 	if timeAlive < 0:
 		queue_free()
 
-
 func _on_area_entered(area):
 	if area.is_in_group("hitbox"):
 		queue_free()

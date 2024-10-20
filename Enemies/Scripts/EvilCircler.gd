@@ -5,17 +5,11 @@ const CIRCLE_DISTANCE = 350
 
 var circlePercent = 0
 var inRangeOfTarget
-var targetPos = Vector2()
 var cwOrbit = false;
 
 func _ready():
 	super._ready() # run the parent enemy init
-	var player_node = get_tree().current_scene.get_node("EveryLevelReusedStuff/Player")
-	player_node.connect("player_moved", Callable(self, "_on_player_moved"))
 	cwOrbit = randi_range(0,10) < 5
-
-func _on_player_moved(new_position):
-	targetPos = new_position
 
 func _process(delta):
 	var rotationAmount = circlePercent * TAU

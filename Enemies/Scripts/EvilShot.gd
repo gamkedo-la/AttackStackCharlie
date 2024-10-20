@@ -1,11 +1,14 @@
 extends "res://Enemies/Scripts/Enemy.gd"
 
+@export var speed: float = 200.0
+
 func _ready():
 	super._ready() # run the parent enemy init
+	isJustAShot = true
 	pass
 
 func _process(delta):
-	moveDir = Vector2(ENEMY_SPEED, 0).rotated(rotation)
+	moveDir = Vector2(speed, 0).rotated(rotation)
 	position += moveDir * delta
 	pass
 

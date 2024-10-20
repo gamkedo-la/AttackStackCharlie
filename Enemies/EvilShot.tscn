@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b1dcvi51vpl8q"]
 
-[ext_resource type="Script" path="res://Enemies/Scripts/EvilSlider.gd" id="1_dxi88"]
+[ext_resource type="Script" path="res://Enemies/Scripts/EvilShot.gd" id="1_fwroi"]
 [ext_resource type="Texture2D" uid="uid://dfb4rv4v8cwxc" path="res://Enemies/lasershot.png" id="2_7lri2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cio05"]
@@ -11,7 +11,7 @@ radius = 18.0278
 
 [node name="EvilShot" type="Area2D"]
 collision_layer = 2
-script = ExtResource("1_dxi88")
+script = ExtResource("1_fwroi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cio05")

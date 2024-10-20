@@ -1,6 +1,22 @@
 class_name Enemy extends Area2D
-var moveDir = Vector2.ZERO;
+var moveDir = Vector2.ZERO
 const ENEMY_SPEED = 50
+
+# used because shots are based on enemies. if true it:
+# can't be shot down
+# won't ever drop powerups
+# won't chain react explode
+# won't fire other shots
+# won't use the enemy_defeated signal for stats/victory
+# note: probably could be refactored in a more separate way, for now this works
+var isJustAShot = false
+
+# the next value should be an enum or something, but didn't want to
+# just fall back on my old C/JS const approach, can clean it up later
+var projectileMode = 1 # 0 no, 1 straight ahead, 2 toward player
+var shotBasic
+var reloadTime = 1.0
+var fire_dist = 250
 
 var exploded = false
 var explosion_radius = 500
@@ -19,13 +35,42 @@ var powerup_paths = [
 
 var powerup_spawn_counts = {}
 
+var targetPos = Vector2()
+
+func fire_reload_loop():
+	while true:
+		var timer = get_tree().create_timer(reloadTime)
+		await timer.timeout
+		var distToPlayer = global_position.distance_to(targetPos)
+		if distToPlayer <= fire_dist:
+			fire_shot()
+
+func fire_shot():
+	var shot = shotBasic.instantiate()
+	get_tree().root.add_child(shot)
+	if projectileMode == 1:
+		shot.rotation = rotation
+	if projectileMode == 2:
+		var toPlayer = (targetPos-global_position).normalized()
+		shot.rotation = toPlayer.angle()
+	shot.global_position = position
+
+func _on_player_moved(new_position):
+	targetPos = new_position
+
 func _ready():
+	var player_node = get_tree().current_scene.get_node("EveryLevelReusedStuff/Player")
+	player_node.connect("player_moved", Callable(self, "_on_player_moved"))
+	if projectileMode != 0 && isJustAShot == false:
+		shotBasic = load("res://Enemies/EvilShot.tscn")
+		fire_reload_loop()
 	for path in powerup_paths:
 		powerup_spawn_counts[path] = 0
 	add_to_group("enemies")
 	var roundManagerNode = get_tree().current_scene.get_node("EveryLevelReusedStuff")	
 	if roundManagerNode:
-		connect("enemy_defeated", Callable(roundManagerNode, "_on_enemy_defeated"))
+		if isJustAShot==false:
+			connect("enemy_defeated", Callable(roundManagerNode, "_on_enemy_defeated"))
 	else:
 		print("Can't find roundManagerNode for signal")
 	# print("enemy signal registering")
@@ -39,13 +84,13 @@ func _process(delta):
 	position += moveDir * delta * ENEMY_SPEED
 	pass
 
-
 func destroy():
-	try_spawn_powerup()
-	var explosion = explosion_scene.instantiate()
-	explosion.position = position
-	get_tree().root.call_deferred("add_child", explosion) 
-	emit_signal("enemy_defeated")
+	if isJustAShot == false:
+		try_spawn_powerup()
+		var explosion = explosion_scene.instantiate()
+		explosion.position = position
+		get_tree().root.call_deferred("add_child", explosion) 
+		emit_signal("enemy_defeated")
 	# print("enemy signal sending")
 	queue_free()
 
