@@ -50,6 +50,7 @@ animations = [{
 [node name="Asteroid" type="CharacterBody2D" parent="."]
 collision_mask = 0
 script = ExtResource("1_sajwd")
+speed = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Asteroid"]
 shape = SubResource("CircleShape2D_lhx2u")
