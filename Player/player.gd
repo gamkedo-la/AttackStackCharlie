@@ -116,6 +116,7 @@ func addDroneAndUpdateSpacing():
 	var newDrone = droneToSpawn.instantiate();
 	playerDrones.add_child(newDrone)
 	var drone_count = playerDrones.get_child_count()
+	PlayerVars.increase_stat_if_increased("most_drones_gained", drone_count, true)
 	for i in range(drone_count):
 		var drone = playerDrones.get_child(i)
 		var angle = i * 2 * PI / drone_count
