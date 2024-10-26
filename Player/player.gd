@@ -67,6 +67,9 @@ func _physics_process(delta):
 	
 	PlayerVars.increase_stat("player_distance_moved", vecMovedThisFrame.length(), false)
 	
+	if vecMovedThisFrame.length() > 0:
+		PlayerVars.reset_stat("time_since_player_moved", false)
+		
 	if is_damaged and time_modulated_elapsed > time_modulated:
 		is_damaged = false
 		time_modulated_elapsed = 0
@@ -85,6 +88,9 @@ func _physics_process(delta):
 
 func _process(delta):
 	PlayerVars.increase_stat("time_in_level", delta, false)
+	PlayerVars.increase_stat("time_since_last_shot_fired", delta, false)
+	PlayerVars.increase_stat("time_since_last_hit", delta, false)
+	PlayerVars.increase_stat("time_since_player_moved", delta, false)
 	if Input.is_action_pressed("shoot"):
 		fire()
 
@@ -124,7 +130,8 @@ func fire():
 		return
 	$SX_PlayShootBasic.play()	
 	lastShotTime = get_time()
-	PlayerVars.increase_stat("shots_fired",1,false);
+	PlayerVars.increase_stat("shots_fired",1,false)
+	PlayerVars.reset_stat("time_since_last_shot_fired", false)
 	for n in shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.SPLIT]] + 1:
 		var xOffset = (shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.SPLIT]]-1.0)/2.0
 		var shot = shotBasic.instantiate();
@@ -152,13 +159,14 @@ func _damage_player() -> void:
 			pass
 		PlayerVars.player_health -= 1
 		PlayerVars.increase_stat("hits_taken", 1, false)
+		PlayerVars.reset_stat("time_since_last_hit", false)
 		# print("Player damaged, current player health: ", PlayerVars.player_health)
 		if PlayerVars.player_health <= 0:
 			# Will need to be substituted for a signal or a call to whatever we actually want to do on death
-			PlayerVars.reset();
+			PlayerVars.reset()
 			SceneManager.RestartScene()
 		else:
-			PlayerVars.reset_respawn_stats();
+			PlayerVars.reset_respawn_stats()
 	else:
 		pass
 

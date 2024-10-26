@@ -7,13 +7,17 @@ var player_shield: int = 0;
 
 var stats = {
 	# stats for summary screen
-    "shots_fired": 0,
-    "time_in_level": 0,
-    "hits_taken": 0,
-    "powerups_collected": 0,
+	"shots_fired": 0,
+	"time_in_level": 0,
+	"hits_taken": 0,
+	"powerups_collected": 0,
 	# stats not necessary for summary, but powerups etc
 	"chain_reaction_depth":0,
-    "player_distance_moved": 0.0
+	"player_distance_moved": 0.0,
+	"time_since_last_hit": 0,
+	"time_since_last_shot_fired": 0,
+	"time_since_player_moved": 0,
+	"most_drones_gained": 0, 
 }
 
 # cloning values to track per round (summary screen) separate from powerups (per hit)
@@ -27,6 +31,20 @@ func reset():
 func reset_respawn_stats():
 	for key in perhit_stats.keys():
 		perhit_stats[key] = 0
+		
+func reset_stat(stat_name: String, debug: bool = false):
+	if stat_name in perhit_stats:
+		if debug:
+			print("BEFORE RESET")
+			print(stat_name + ": " + str(perhit_stats[stat_name]) );
+		
+		perhit_stats[stat_name] = 0
+		
+		if debug:
+			print("AFTER RESET")
+			print(stat_name + ": " + str(perhit_stats[stat_name]) );
+	else:
+		print("player_vars.gd Stat not found:", stat_name)
 
 func check_round_stat(stat_name: String):
 	if stat_name in stats:
