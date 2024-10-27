@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://c5fwr288dn55u"]
 
-[ext_resource type="Texture2D" uid="uid://deq1i801jjmr2" path="res://UI/HUD/rocket-power-stack.png" id="1_5lbxk"]
+[ext_resource type="Texture2D" uid="uid://r47imah4lq45" path="res://UI/HUD/rocket-power-stack.png" id="1_5lbxk"]
 [ext_resource type="Script" path="res://UI/HUD/hud.gd" id="1_axetl"]
 [ext_resource type="Texture2D" uid="uid://h5d2q0838pyo" path="res://UI/HUD/range-upgrade-stack.png" id="3_ckwcm"]
 [ext_resource type="Texture2D" uid="uid://cymsb5vux2a2" path="res://UI/HUD/rof-upgrade-stack.png" id="4_jh1wr"]

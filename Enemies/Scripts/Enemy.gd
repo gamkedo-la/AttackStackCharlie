@@ -1,6 +1,7 @@
 class_name Enemy extends Area2D
 var moveDir = Vector2.ZERO
 const ENEMY_SPEED = 50
+const DROP_PERC = 0.15
 
 # used because shots are based on enemies. if true it:
 # won't ever drop powerups
@@ -104,7 +105,7 @@ func _on_projectile_detector_area_entered(area):
 		destroy(1)
 
 func try_spawn_powerup():
-	if randf() < 0.25:
+	if randf() < DROP_PERC:
 		spawn_powerup()
 
 func sum_array(values):
