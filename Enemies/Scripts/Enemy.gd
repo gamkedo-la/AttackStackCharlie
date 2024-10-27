@@ -27,10 +27,10 @@ signal enemy_exploded(position, radius)
 signal enemy_defeated()
 
 var powerup_paths = [
-	"res://Powerups/UpgradeShot_Range.tscn",
-	"res://Powerups/UpgradeShot_ROF.tscn",
-	"res://Powerups/UpgradeShot_Split.tscn",
-	"res://Powerups/Upgrade_AddDrone.tscn"
+	{ "path": "res://Powerups/UpgradeShot_Range.tscn", "stat": "time_since_player_moved", "minimum": 5 },
+	{ "path": "res://Powerups/UpgradeShot_ROF.tscn", "stat": "time_since_player_moved", "hits_taken": 1 },
+	{ "path": "res://Powerups/UpgradeShot_Split.tscn", "stat": "time_in_level", "minimum": 0 },
+	{ "path": "res://Powerups/Upgrade_AddDrone.tscn", "stat": "time_since_last_shot_fired", "minimum": 5 }
 ]
 
 var powerup_spawn_counts = {}
@@ -68,8 +68,8 @@ func _ready():
 		add_to_group("enemies")
 	else:
 		add_to_group("enemy_shots")
-	for path in powerup_paths:
-		powerup_spawn_counts[path] = 0
+	for powerup in powerup_paths:
+		powerup_spawn_counts[powerup["path"]] = 0
 	var roundManagerNode = get_tree().current_scene.get_node("EveryLevelReusedStuff")	
 	if roundManagerNode:
 		if isJustAShot==false:
@@ -93,7 +93,7 @@ func destroy(blastDepth = 1):
 		var explosion = explosion_scene.instantiate()
 		explosion.position = position
 		explosion.blastDepth = blastDepth # increased by 1 from where destroy is called
-		PlayerVars.increase_stat_if_increased("chain_reaction_depth",blastDepth,true)
+		PlayerVars.increase_stat_if_increased("chain_reaction_depth",blastDepth,false)
 		get_tree().root.call_deferred("add_child", explosion) 
 		emit_signal("enemy_defeated")
 	# print("enemy signal sending")
@@ -116,8 +116,8 @@ func sum_array(values):
 func spawn_powerup():
 	var total = sum_array(powerup_spawn_counts.values()) + 1
 	var weights = []
-	for path in powerup_paths:
-		var count = powerup_spawn_counts[path]
+	for powerup in powerup_paths:
+		var count = powerup_spawn_counts[powerup["path"]]
 		weights.append(1.0 / (count + 1))
 	var weight_sum = sum_array(weights)
 	for i in range(weights.size()):
@@ -130,8 +130,8 @@ func spawn_powerup():
 		if random_pick < accum:
 			break
 		index += 1
-	var powerup_scene = load(powerup_paths[index])
+	var powerup_scene = load(powerup_paths[index]["path"])
 	var powerup_instance = powerup_scene.instantiate()
 	get_parent().call_deferred("add_child", powerup_instance)
 	powerup_instance.global_position = global_position
-	powerup_spawn_counts[powerup_paths[index]] += 1 # so we can later lower odds of repeats
+	powerup_spawn_counts[powerup_paths[index]["path"]] += 1 # so we can later lower odds of repeats
