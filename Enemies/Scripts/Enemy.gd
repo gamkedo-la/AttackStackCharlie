@@ -28,10 +28,10 @@ signal enemy_exploded(position, radius)
 signal enemy_defeated()
 
 var powerup_paths = [ # checks stat since last player damage, "hits_taken" won't make sense
-	{ "path": "res://Powerups/UpgradeShot_Range.tscn", "stat": "time_since_player_moved", "minimum": 5 },
+	{ "path": "res://Powerups/UpgradeShot_Range.tscn", "stat": "time_since_player_moved", "minimum": 4 },
 	{ "path": "res://Powerups/UpgradeShot_ROF.tscn", "stat": "shots_fired", "minimum": 20 },
 	{ "path": "res://Powerups/UpgradeShot_Split.tscn", "stat": "time_in_level", "minimum": 0 }, #per hit, so time since last hit
-	{ "path": "res://Powerups/Upgrade_AddDrone.tscn", "stat": "time_since_last_shot_fired", "minimum": 5 }
+	{ "path": "res://Powerups/Upgrade_AddDrone.tscn", "stat": "time_since_last_shot_fired", "minimum": 2 }
 ]
 
 var powerup_spawn_counts = {}
