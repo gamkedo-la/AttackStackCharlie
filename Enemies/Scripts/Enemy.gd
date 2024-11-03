@@ -27,13 +27,6 @@ signal enemy_exploded(position, radius)
 
 signal enemy_defeated()
 
-var powerup_paths = [ # checks stat since last player damage, "hits_taken" won't make sense
-	{ "path": "res://Powerups/UpgradeShot_Range.tscn", "stat": "time_since_player_moved", "minimum": 4 },
-	{ "path": "res://Powerups/UpgradeShot_ROF.tscn", "stat": "shots_fired", "minimum": 20 },
-	{ "path": "res://Powerups/UpgradeShot_Split.tscn", "stat": "time_in_level", "minimum": 0 }, #per hit, so time since last hit
-	{ "path": "res://Powerups/Upgrade_AddDrone.tscn", "stat": "time_since_last_shot_fired", "minimum": 2 }
-]
-
 var powerup_spawn_counts = {}
 
 var targetPos = Vector2()
@@ -69,7 +62,7 @@ func _ready():
 		add_to_group("enemies")
 	else:
 		add_to_group("enemy_shots")
-	for powerup in powerup_paths:
+	for powerup in PlayerVars.powerup_paths:
 		powerup_spawn_counts[powerup["path"]] = 0
 	var roundManagerNode = get_tree().current_scene.get_node("EveryLevelReusedStuff")	
 	if roundManagerNode:
@@ -117,7 +110,7 @@ func sum_array(values):
 func spawn_powerup():
 	var total = sum_array(powerup_spawn_counts.values()) + 1
 	var weights = []
-	for powerup in powerup_paths:
+	for powerup in PlayerVars.powerup_paths:
 		var count = powerup_spawn_counts[powerup["path"]]
 		if PlayerVars.check_perhit_stat(powerup["stat"]) >= powerup["minimum"]:
 			weights.append(1.0 / (count + 1))
@@ -134,9 +127,9 @@ func spawn_powerup():
 		if random_pick < accum:
 			break
 		index += 1
-	var powerup_scene = load(powerup_paths[index]["path"])
-	PlayerVars.reset_stat(powerup_paths[index]["stat"])
+	var powerup_scene = load(PlayerVars.powerup_paths[index]["path"])
+	PlayerVars.reset_stat(PlayerVars.powerup_paths[index]["stat"])
 	var powerup_instance = powerup_scene.instantiate()
 	get_parent().call_deferred("add_child", powerup_instance)
 	powerup_instance.global_position = global_position
-	powerup_spawn_counts[powerup_paths[index]["path"]] += 1 # so we can later lower odds of repeats
+	powerup_spawn_counts[PlayerVars.powerup_paths[index]["path"]] += 1 # so we can later lower odds of repeats

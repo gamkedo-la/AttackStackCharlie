@@ -22,10 +22,18 @@ var stats = {
 	"most_drones_gained": 0, 
 }
 
+var powerup_paths = [ # checks stat since last player damage, "hits_taken" won't make sense
+	{ "path": "res://Powerups/UpgradeShot_Range.tscn", "word":"Range", "stat": "time_since_player_moved", "minimum": 4 },
+	{ "path": "res://Powerups/UpgradeShot_ROF.tscn", "word":"ROF", "stat": "shots_fired", "minimum": 20 },
+	{ "path": "res://Powerups/UpgradeShot_Split.tscn", "word":"Split", "stat": "time_in_level", "minimum": 0 }, #per hit, so time since last hit
+	{ "path": "res://Powerups/Upgrade_AddDrone.tscn", "word":"Drone", "stat": "time_since_last_shot_fired", "minimum": 2 }
+]
+
 # cloning values to track per round (summary screen) separate from powerups (per hit)
 var perhit_stats = stats.duplicate() 
 
 func reset():
+	player_upgrade_status = get_tree().current_scene.get_node("EveryLevelReusedStuff/PlayerUpgradeStatus")
 	reset_respawn_stats();
 	for key in stats.keys():
 		stats[key] = 0
@@ -65,9 +73,12 @@ func check_perhit_stat(stat_name: String):
 		return "MISSING_STAT_"+stat_name
 
 func item_unlock_debug_text_update():
+	if not player_upgrade_status:
+		return
 	player_upgrade_status.text = ""
-	for key in perhit_stats:
-		player_upgrade_status.text += (key + ": " + str(round(check_perhit_stat(key))) + "\n")
+	for key in powerup_paths:
+		player_upgrade_status.text += (key["word"] + ": " + key["stat"] + " " + str(round(check_perhit_stat(key["stat"]))) + "/" + 
+					str(key["minimum"]) + "\n")
 
 func increase_stat_if_increased(stat_name: String, amount, debug: bool = false):
 	if stat_name in stats:
