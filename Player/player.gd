@@ -66,7 +66,7 @@ func _physics_process(delta):
 	
 	PlayerVars.increase_stat("player_distance_moved", vecMovedThisFrame.length(), false)
 	
-	if vecMovedThisFrame.length() > 0:
+	if vecMovedThisFrame.length() >= 1:
 		PlayerVars.reset_stat("time_since_player_moved", false)
 		
 	if is_damaged and time_modulated_elapsed > time_modulated:
