@@ -33,7 +33,6 @@ var powerup_paths = [ # checks stat since last player damage, "hits_taken" won't
 var perhit_stats = stats.duplicate() 
 
 func reset():
-	player_upgrade_status = get_tree().current_scene.get_node("EveryLevelReusedStuff/PlayerUpgradeStatus")
 	reset_respawn_stats();
 	for key in stats.keys():
 		stats[key] = 0
@@ -74,7 +73,8 @@ func check_perhit_stat(stat_name: String):
 
 func item_unlock_debug_text_update():
 	if not player_upgrade_status:
-		return
+		player_upgrade_status = get_tree().current_scene.get_node("EveryLevelReusedStuff/PlayerUpgradeStatus")
+
 	player_upgrade_status.text = ""
 	for key in powerup_paths:
 		player_upgrade_status.text += (key["word"] + ": " + key["stat"] + " " + str(round(check_perhit_stat(key["stat"]))) + "/" + 
