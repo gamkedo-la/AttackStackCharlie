@@ -1,6 +1,6 @@
 extends Node
 
-@onready var player_upgrade_status = get_tree().current_scene.get_node("EveryLevelReusedStuff/PlayerUpgradeStatus")
+var player_upgrade_status
 
 var player_max_health: int = 3
 var player_health: int = 3
@@ -24,7 +24,7 @@ var stats = {
 
 var powerup_paths = [ # checks stat since last player damage, "hits_taken" won't make sense
 	{ "path": "res://Powerups/UpgradeShot_Range.tscn", "word":"Range", "stat": "time_since_player_moved", "minimum": 4 },
-	{ "path": "res://Powerups/UpgradeShot_ROF.tscn", "word":"ROF", "stat": "shots_fired", "minimum": 20 },
+	{ "path": "res://Powerups/UpgradeShot_ROF.tscn", "word":"ROF", "stat": "shots_fired", "minimum": 10 },
 	{ "path": "res://Powerups/UpgradeShot_Split.tscn", "word":"Split", "stat": "time_in_level", "minimum": 0 }, #per hit, so time since last hit
 	{ "path": "res://Powerups/Upgrade_AddDrone.tscn", "word":"Drone", "stat": "time_since_last_shot_fired", "minimum": 2 }
 ]
@@ -33,9 +33,13 @@ var powerup_paths = [ # checks stat since last player damage, "hits_taken" won't
 var perhit_stats = stats.duplicate() 
 
 func reset():
+	repair_UI_stat_ref()
 	reset_respawn_stats();
 	for key in stats.keys():
 		stats[key] = 0
+
+func repair_UI_stat_ref():
+	player_upgrade_status = get_tree().current_scene.get_node("EveryLevelReusedStuff/PlayerUpgradeStatus")
 		
 func reset_respawn_stats():
 	for key in perhit_stats.keys():
@@ -55,7 +59,6 @@ func reset_stat(stat_name: String, debug: bool = false):
 			print(stat_name + ": " + str(perhit_stats[stat_name]) );
 	else:
 		print("player_vars.gd Stat not found:", stat_name)
-	item_unlock_debug_text_update()
 
 func check_round_stat(stat_name: String):
 	if stat_name in stats:
@@ -73,12 +76,16 @@ func check_perhit_stat(stat_name: String):
 
 func item_unlock_debug_text_update():
 	if not player_upgrade_status:
-		player_upgrade_status = get_tree().current_scene.get_node("EveryLevelReusedStuff/PlayerUpgradeStatus")
-
-	player_upgrade_status.text = ""
+		repair_UI_stat_ref()
+	player_upgrade_status.clear()
 	for key in powerup_paths:
-		player_upgrade_status.text += (key["word"] + ": " + key["stat"] + " " + str(round(check_perhit_stat(key["stat"]))) + "/" + 
-					str(key["minimum"]) + "\n")
+		var textColor
+		if check_perhit_stat(key["stat"]) >= key["minimum"]:
+			textColor = "green"
+		else:
+			textColor = "white"
+		player_upgrade_status.append_text("[color="+textColor+"]" + key["word"] + ": " + key["stat"] + " " + str(round(check_perhit_stat(key["stat"]))) + "/" + 
+					str(key["minimum"]) + "[/color]\n")
 
 func increase_stat_if_increased(stat_name: String, amount, debug: bool = false):
 	if stat_name in stats:
@@ -96,7 +103,6 @@ func increase_stat(stat_name: String, amount, debug: bool = false):
 	if stat_name in stats:
 		stats[stat_name] += amount
 		perhit_stats[stat_name] += amount
-		item_unlock_debug_text_update()
 		if debug:
 			var value = stats[stat_name]
 			match typeof(value):
@@ -108,7 +114,18 @@ func increase_stat(stat_name: String, amount, debug: bool = false):
 		print("player_vars.gd Stat not found:", stat_name)
 
 func _ready():
+	var path = "EveryLevelReusedStuff/PlayerUpgradeStatus"
+	var node = get_tree().current_scene.get_node_or_null(path)
+	if node:
+		print("Node found: ", node)
+	else:
+		print("Node not found at path: ", path)
 	reset()
 
+var infreq_update_timer = 0.0
+
 func _process(delta):
-	pass
+	infreq_update_timer+=delta
+	if infreq_update_timer>0.2:
+		infreq_update_timer=0.0
+		item_unlock_debug_text_update()

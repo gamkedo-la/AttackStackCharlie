@@ -69,14 +69,13 @@ position = Vector2(550, 534)
 [node name="SX_PlayShootBasic" type="AudioStreamPlayer" parent="Player"]
 stream = SubResource("AudioStreamRandomizer_irrt5")
 
-[node name="PlayerUpgradeStatus" type="Label" parent="."]
-offset_left = 24.0
-offset_top = 15.0
-offset_right = 168.0
-offset_bottom = 85.0
-text = "ROF: 0
-SPLIT: 0
-RANGE: 0"
+[node name="PlayerUpgradeStatus" type="RichTextLabel" parent="."]
+offset_right = 348.0
+offset_bottom = 173.0
+bbcode_enabled = true
+text = "powerup [red]stat[/red] goals"
+scroll_active = false
+shortcut_keys_enabled = false
 
 [node name="ExplosionManager" type="Node2D" parent="."]
 script = SubResource("GDScript_gxu2r")
