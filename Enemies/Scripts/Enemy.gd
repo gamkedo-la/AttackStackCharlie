@@ -135,6 +135,7 @@ func spawn_powerup():
 			break
 		index += 1
 	var powerup_scene = load(powerup_paths[index]["path"])
+	PlayerVars.reset_stat(powerup_paths[index]["stat"])
 	var powerup_instance = powerup_scene.instantiate()
 	get_parent().call_deferred("add_child", powerup_instance)
 	powerup_instance.global_position = global_position
