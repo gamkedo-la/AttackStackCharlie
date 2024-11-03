@@ -1,5 +1,7 @@
 extends Node
 
+@onready var player_upgrade_status = get_tree().current_scene.get_node("EveryLevelReusedStuff/PlayerUpgradeStatus")
+
 var player_max_health: int = 3
 var player_health: int = 3
 var player_max_shield: int = 6
@@ -31,6 +33,7 @@ func reset():
 func reset_respawn_stats():
 	for key in perhit_stats.keys():
 		perhit_stats[key] = 0
+	item_unlock_debug_text_update()
 		
 func reset_stat(stat_name: String, debug: bool = false):
 	if stat_name in perhit_stats:
@@ -45,6 +48,7 @@ func reset_stat(stat_name: String, debug: bool = false):
 			print(stat_name + ": " + str(perhit_stats[stat_name]) );
 	else:
 		print("player_vars.gd Stat not found:", stat_name)
+	item_unlock_debug_text_update()
 
 func check_round_stat(stat_name: String):
 	if stat_name in stats:
@@ -59,6 +63,11 @@ func check_perhit_stat(stat_name: String):
 	else:
 		print("player_vars.gd Stat not found:", stat_name)
 		return "MISSING_STAT_"+stat_name
+
+func item_unlock_debug_text_update():
+	player_upgrade_status.text = ""
+	for key in perhit_stats:
+		player_upgrade_status.text += (key + ": " + str(round(check_perhit_stat(key))) + "\n")
 
 func increase_stat_if_increased(stat_name: String, amount, debug: bool = false):
 	if stat_name in stats:
@@ -76,6 +85,7 @@ func increase_stat(stat_name: String, amount, debug: bool = false):
 	if stat_name in stats:
 		stats[stat_name] += amount
 		perhit_stats[stat_name] += amount
+		item_unlock_debug_text_update()
 		if debug:
 			var value = stats[stat_name]
 			match typeof(value):
