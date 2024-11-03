@@ -123,14 +123,14 @@ grow_vertical = 2
 script = ExtResource("1_axetl")
 
 [node name="SpreadStack" type="AnimatedSprite2D" parent="."]
-position = Vector2(1019, 47)
+position = Vector2(1024, 47)
 sprite_frames = SubResource("SpriteFrames_r8p3d")
 animation = &"new_animation"
 
 [node name="RangeStack" type="AnimatedSprite2D" parent="."]
-position = Vector2(1069, 47)
+position = Vector2(1074, 47)
 sprite_frames = SubResource("SpriteFrames_tetcy")
 
 [node name="ROFStack" type="AnimatedSprite2D" parent="."]
-position = Vector2(1118, 47)
+position = Vector2(1123, 47)
 sprite_frames = SubResource("SpriteFrames_2cupe")

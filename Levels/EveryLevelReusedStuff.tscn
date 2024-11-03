@@ -63,12 +63,6 @@ size = Vector2(16, 671)
 [node name="EveryLevelReusedStuff" type="Node2D"]
 script = ExtResource("1_20qqy")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 989.0
-offset_right = 1144.0
-offset_bottom = 97.0
-color = Color(0, 0, 0, 0.529412)
-
 [node name="Player" parent="." instance=ExtResource("2_5g5ro")]
 position = Vector2(550, 534)
 
@@ -95,19 +89,19 @@ offset_bottom = 648.0
 [node name="Boundaries" type="StaticBody2D" parent="."]
 
 [node name="Top" type="CollisionShape2D" parent="Boundaries"]
-position = Vector2(576, 0)
+position = Vector2(576, -4)
 shape = SubResource("RectangleShape2D_82fqj")
 
 [node name="Left" type="CollisionShape2D" parent="Boundaries"]
-position = Vector2(8, 320.5)
+position = Vector2(0, 320.5)
 shape = SubResource("RectangleShape2D_5ro1f")
 
 [node name="Right" type="CollisionShape2D" parent="Boundaries"]
-position = Vector2(1152, 324)
+position = Vector2(1157, 324)
 shape = SubResource("RectangleShape2D_5ro1f")
 
 [node name="Bottom" type="CollisionShape2D" parent="Boundaries"]
-position = Vector2(580, 648)
+position = Vector2(580, 653)
 shape = SubResource("RectangleShape2D_82fqj")
 
 [node name="Background 3D setup" type="Node2D" parent="."]
@@ -148,7 +142,15 @@ wait_time = 100.0
 one_shot = true
 autostart = true
 
+[node name="UI background box" type="ColorRect" parent="."]
+z_index = 1
+offset_left = 997.0
+offset_right = 1152.0
+offset_bottom = 97.0
+color = Color(0, 0, 0, 0.529412)
+
 [node name="Control" parent="." instance=ExtResource("13_urwts")]
+z_index = 2
 
 [node name="EnemyKillCounter" type="Label" parent="."]
 offset_left = 862.0
