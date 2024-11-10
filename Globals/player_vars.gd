@@ -33,18 +33,13 @@ var powerup_paths = [ # checks stat since last player damage, "hits_taken" won't
 var perhit_stats = stats.duplicate() 
 
 func reset():
-	repair_UI_stat_ref()
 	reset_respawn_stats();
 	for key in stats.keys():
 		stats[key] = 0
-
-func repair_UI_stat_ref():
-	player_upgrade_status = get_tree().current_scene.get_node("EveryLevelReusedStuff/PlayerUpgradeStatus")
 		
 func reset_respawn_stats():
 	for key in perhit_stats.keys():
 		perhit_stats[key] = 0
-	item_unlock_debug_text_update()
 		
 func reset_stat(stat_name: String, debug: bool = false):
 	if stat_name in perhit_stats:
@@ -73,22 +68,6 @@ func check_perhit_stat(stat_name: String):
 	else:
 		print("player_vars.gd Stat not found:", stat_name)
 		return "MISSING_STAT_"+stat_name
-
-func item_unlock_debug_text_update():
-	if player_upgrade_status == null:
-		return
-		
-	if not player_upgrade_status:
-		repair_UI_stat_ref()
-	player_upgrade_status.clear()
-	for key in powerup_paths:
-		var textColor
-		if check_perhit_stat(key["stat"]) >= key["minimum"]:
-			textColor = "green"
-		else:
-			textColor = "white"
-		player_upgrade_status.append_text("[color="+textColor+"]" + key["word"] + ": " + key["stat"] + " " + str(round(check_perhit_stat(key["stat"]))) + "/" + 
-					str(key["minimum"]) + "[/color]\n")
 
 func increase_stat_if_increased(stat_name: String, amount, debug: bool = false):
 	if stat_name in stats:
@@ -124,11 +103,3 @@ func _ready():
 	else:
 		print("Node not found at path: ", path)
 	reset()
-
-var infreq_update_timer = 0.0
-
-func _process(delta):
-	infreq_update_timer+=delta
-	if infreq_update_timer>0.2:
-		infreq_update_timer=0.0
-		item_unlock_debug_text_update()
