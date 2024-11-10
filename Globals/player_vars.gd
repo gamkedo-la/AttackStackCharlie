@@ -75,6 +75,9 @@ func check_perhit_stat(stat_name: String):
 		return "MISSING_STAT_"+stat_name
 
 func item_unlock_debug_text_update():
+	if player_upgrade_status == null:
+		return
+		
 	if not player_upgrade_status:
 		repair_UI_stat_ref()
 	player_upgrade_status.clear()
