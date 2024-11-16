@@ -24,6 +24,7 @@ var story_img_textures : Array[Texture2D] = []
 var format_string = "[center]%s[/center]"
 
 var story_index := 0
+var text_animation = null
 
 func _ready():
 	next_button.pressed.connect(advanceSlide)
@@ -44,6 +45,8 @@ func _ready():
 
 func showSlide() -> void:
 	var current_copy := STORY_COPY[story_index]
+	if (text_animation):
+		text_animation.kill()
 	story_text.visible_ratio = 0.0 # hide all the text initially, so it can be animated in after the fade up
 	story_text.text = format_string % current_copy
 
@@ -55,7 +58,7 @@ func showSlide() -> void:
 	fade_in_animation.tween_property(story_slide, "modulate", Color.WHITE, FADE_DURATION_SEC)
 	await fade_in_animation.finished
 
-	var text_animation = create_tween()
+	text_animation = create_tween()
 	var text_animation_duration := 0.04 * current_copy.length()
 
 	# animate visible_ratio to 1.0 over text_animation_duration seconds
