@@ -4,6 +4,7 @@ extends Control
 @onready var story_text: RichTextLabel = %StoryText
 @onready var story_image: TextureRect = %StoryImage
 @onready var skip_button: Button = %SkipButton
+@onready var next_button: Button = %NextButton
 @onready var story_music: AudioStreamPlayer = %StoryMusic
 
 const FADE_DURATION_SEC := 1.0
@@ -25,7 +26,8 @@ var format_string = "[center]%s[/center]"
 var story_index := 0
 
 func _ready():
-	skip_button.pressed.connect(advanceSlide)
+	next_button.pressed.connect(advanceSlide)
+	skip_button.pressed.connect(skipStory)
 
 	# load story images as textures
 	for path in STORY_IMG_PATHS:
@@ -72,3 +74,12 @@ func advanceSlide() -> void:
 		SceneManager.SwitchScene("MainMenu")
 	else:
 		showSlide()
+
+func skipStory() -> void:
+	# fade out on the current slide
+	var fade_out_animation := create_tween()
+	fade_out_animation.tween_property(story_slide, "modulate", Color.TRANSPARENT, FADE_DURATION_SEC)
+
+	await fade_out_animation.finished
+	
+	SceneManager.SwitchScene("MainMenu")
