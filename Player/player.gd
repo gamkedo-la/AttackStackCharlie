@@ -50,6 +50,7 @@ var playerDrones = Node.new();
 
 func _ready():
 	playerDrones.name = "PlayerDrones"
+	shield_particles.local_coords = true
 	add_child(playerDrones)
 
 func _physics_process(delta):
