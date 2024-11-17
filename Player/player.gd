@@ -36,6 +36,8 @@ var shot_levels_dict = {
 }
 var droneToSpawn = preload("res://Player/playerdrone.tscn");
 
+@onready var boost_particles = $"Playerjet/Boost Particles"
+
 # Damage immunity after hit
 var time_modulated: float = 0.3
 var time_modulated_elapsed: float = 0
@@ -55,11 +57,19 @@ func _physics_process(delta):
 	shipFacing = (mouse_position - global_position).normalized()
 	rotation = shipFacing.angle()
 	move_vec *= SHIP_VEL_DECAY
+	
 	var speedNow;
+	var showBoosting;
 	if boost_time > 0:
+		showBoosting = true;
 		speedNow = SHIP_BOOST_ACCEL
 	else:
+		showBoosting = false;
 		speedNow = SHIP_ACCEL
+	
+	if showBoosting != boost_particles.emitting:
+		boost_particles.emitting = showBoosting
+		
 	if Input.is_action_pressed("move left"):
 		move_vec.x -= speedNow
 	if Input.is_action_pressed("move right"):

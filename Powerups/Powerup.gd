@@ -2,8 +2,8 @@ extends Area2D
 
 const COLLECTION_VFX = preload("res://Feedback VFX/collection_feedback.tscn")
 
-const POWERUP_LIFETIME = 2.5
-const FLASHING_TIME = 0.75 # total, not additive
+const POWERUP_LIFETIME = 3
+const FLASHING_TIME = 0.85 # total, not additive
 const FLASH_TOGGLE_TIME = 0.1 # adjust to change flash rate
 
 var elapsed_time = 0.0
