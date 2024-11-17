@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://degldynxe05sf"]
+[gd_scene load_steps=11 format=3 uid="uid://degldynxe05sf"]
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_4o0gi"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="3_j6cuh"]
 [ext_resource type="PackedScene" uid="uid://cj7rg0xhytvee" path="res://Enemies/EvilSpikes.tscn" id="4_wr81a"]
 [ext_resource type="PackedScene" uid="uid://d12rmco0pfhyc" path="res://Enemies/EvilCircler.tscn" id="5_twfta"]
 [ext_resource type="PackedScene" uid="uid://dcj01f3ocrwv2" path="res://Enemies/Asteroid.tscn" id="7_527i8"]
+[ext_resource type="PackedScene" uid="uid://fbnliiv8xtmt" path="res://Powerups/Upgrade_Invincibility.tscn" id="9_hxvgy"]
+[ext_resource type="PackedScene" uid="uid://hkobk68n3sih" path="res://Powerups/Upgrade_TempSpeedBoost.tscn" id="10_u84x0"]
 [ext_resource type="PackedScene" uid="uid://0xcemwtyox3a" path="res://Models/pyramid.glb" id="11_0i6s5"]
 [ext_resource type="Script" path="res://Models/3dspin.gd" id="12_u562u"]
 [ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="13_ci5d7"]
@@ -86,10 +88,16 @@ spinZ = 1
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("13_ci5d7")]
 
-[node name="VictoryText" parent="EveryLevelReusedStuff/VictoryText" index="0"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 703.0
-offset_bottom = 83.0
+[node name="Upgrade_Invincibility" parent="." instance=ExtResource("9_hxvgy")]
+position = Vector2(275, 434)
+
+[node name="Upgrade_TempSpeedBoost" parent="." instance=ExtResource("10_u84x0")]
+position = Vector2(783, 523)
+
+[node name="Upgrade_TempSpeedBoost2" parent="." instance=ExtResource("10_u84x0")]
+position = Vector2(799, 411)
+
+[node name="Upgrade_TempSpeedBoost3" parent="." instance=ExtResource("10_u84x0")]
+position = Vector2(638, 232)
 
 [editable path="EveryLevelReusedStuff"]

@@ -8,6 +8,7 @@ signal player_upgraded(type)
 
 const SHIP_SPEED = 150 # multiplier on a value otherwise much smaller, easier tuning
 const SHIP_ACCEL = 0.2
+const SHIP_BOOST_ACCEL = 0.3
 const SHIP_VEL_DECAY = 0.925
 const SHOT_SPREAD = 25
 
@@ -41,6 +42,7 @@ var time_modulated_elapsed: float = 0
 var is_damaged: bool = false
 var is_invincible: bool = false
 var invincibility_time: float = 0;
+var boost_time: float = 0;
 var move_vec = Vector2()
 var playerDrones = Node.new();
 
@@ -53,14 +55,19 @@ func _physics_process(delta):
 	shipFacing = (mouse_position - global_position).normalized()
 	rotation = shipFacing.angle()
 	move_vec *= SHIP_VEL_DECAY
+	var speedNow;
+	if boost_time > 0:
+		speedNow = SHIP_BOOST_ACCEL
+	else:
+		speedNow = SHIP_ACCEL
 	if Input.is_action_pressed("move left"):
-		move_vec.x -= SHIP_ACCEL
+		move_vec.x -= speedNow
 	if Input.is_action_pressed("move right"):
-		move_vec.x += SHIP_ACCEL
+		move_vec.x += speedNow
 	if Input.is_action_pressed("move up"):
-		move_vec.y -= SHIP_ACCEL
+		move_vec.y -= speedNow
 	if Input.is_action_pressed("move down"):
-		move_vec.y += SHIP_ACCEL
+		move_vec.y += speedNow
 	var vecMovedThisFrame = move_vec * delta * SHIP_SPEED
 	move_and_collide(vecMovedThisFrame)
 	
@@ -82,6 +89,9 @@ func _physics_process(delta):
 		invincibility_time = 0;
 		is_invincible = false;
 		
+	if boost_time > 0:
+		boost_time -= delta;
+		
 	emit_signal("player_moved", global_position)
 	emit_signal("player_turned", rotation)
 
@@ -99,6 +109,9 @@ func upgradeShot(type):
 func upgradeInvincibility(invincible_time):
 	is_invincible = true;
 	invincibility_time = invincible_time;
+
+func upgradeTempSpeedBoost(speedboost_time):
+	boost_time += speedboost_time;
 
 func upgradeDrone():
 	var drone_count = playerDrones.get_child_count()
