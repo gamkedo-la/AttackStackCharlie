@@ -74,10 +74,4 @@ spinZ = 1
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_5h4dk")]
 level_goal = 500
 
-[node name="VictoryText" parent="EveryLevelReusedStuff/VictoryText" index="0"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 703.0
-offset_bottom = 83.0
-
 [editable path="EveryLevelReusedStuff"]
