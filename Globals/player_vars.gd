@@ -10,7 +10,7 @@ var player_shield: int = 0;
 var stats = {
 	# stats for summary screen
 	"shots_fired": 0,
-	"time_in_level": 0,
+	"seconds": 0,
 	"hits_taken": 0,
 	"powerups_collected": 0,
 	# stats not necessary for summary, but powerups etc
@@ -25,7 +25,7 @@ var stats = {
 var powerup_paths = [ # checks stat since last player damage, "hits_taken" won't make sense
 	{ "path": "res://Powerups/UpgradeShot_Range.tscn", "word":"Range", "stat": "time_since_player_moved", "minimum": 4 },
 	{ "path": "res://Powerups/UpgradeShot_ROF.tscn", "word":"ROF", "stat": "shots_fired", "minimum": 10 },
-	{ "path": "res://Powerups/UpgradeShot_Split.tscn", "word":"Split", "stat": "time_in_level", "minimum": 0 }, #per hit, so time since last hit
+	{ "path": "res://Powerups/UpgradeShot_Split.tscn", "word":"Split", "stat": "seconds", "minimum": 0 }, #per hit, so time since last hit
 	{ "path": "res://Powerups/Upgrade_AddDrone.tscn", "word":"Drone", "stat": "time_since_last_shot_fired", "minimum": 2 }
 ]
 

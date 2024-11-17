@@ -86,9 +86,8 @@ func _physics_process(delta):
 	emit_signal("player_turned", rotation)
 
 func _process(delta):
-	PlayerVars.increase_stat("time_in_level", delta, false)
+	PlayerVars.increase_stat("seconds", delta, false)
 	PlayerVars.increase_stat("time_since_last_shot_fired", delta, false)
-	PlayerVars.increase_stat("time_since_last_hit", delta, false)
 	PlayerVars.increase_stat("time_since_player_moved", delta, false)
 	if Input.is_action_pressed("shoot"):
 		fire()
@@ -156,7 +155,7 @@ func _damage_player() -> void:
 			pass
 		PlayerVars.player_health -= 1
 		PlayerVars.increase_stat("hits_taken", 1, false)
-		PlayerVars.reset_stat("time_since_last_hit", false)
+		PlayerVars.reset_stat("seconds", false)
 		# print("Player damaged, current player health: ", PlayerVars.player_health)
 		if PlayerVars.player_health <= 0:
 			# Will need to be substituted for a signal or a call to whatever we actually want to do on death
