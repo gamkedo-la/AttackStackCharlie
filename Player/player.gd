@@ -37,12 +37,12 @@ var shot_levels_dict = {
 var droneToSpawn = preload("res://Player/playerdrone.tscn");
 
 @onready var boost_particles = $"Playerjet/Boost Particles"
+@onready var shield_particles = $"Playerjet/Shield Particles"
 
 # Damage immunity after hit
 var time_modulated: float = 0.3
 var time_modulated_elapsed: float = 0
 var is_damaged: bool = false
-var is_invincible: bool = false
 var invincibility_time: float = 0;
 var boost_time: float = 0;
 var move_vec = Vector2()
@@ -59,12 +59,10 @@ func _physics_process(delta):
 	move_vec *= SHIP_VEL_DECAY
 	
 	var speedNow;
-	var showBoosting;
-	if boost_time > 0:
-		showBoosting = true;
+	var showBoosting = boost_time > 0
+	if showBoosting:
 		speedNow = SHIP_BOOST_ACCEL
 	else:
-		showBoosting = false;
 		speedNow = SHIP_ACCEL
 	
 	if showBoosting != boost_particles.emitting:
@@ -92,12 +90,12 @@ func _physics_process(delta):
 	elif is_damaged:
 		time_modulated_elapsed += delta
 		
-	if is_invincible:
+	var showShield = invincibility_time > 0.0;
+	if showShield:
 		invincibility_time -= delta;
-	
-	if (invincibility_time <= 0):
-		invincibility_time = 0;
-		is_invincible = false;
+		
+	if shield_particles.emitting != showShield:
+		shield_particles.emitting = showShield
 		
 	if boost_time > 0:
 		boost_time -= delta;
@@ -117,8 +115,7 @@ func upgradeShot(type):
 	player_upgraded.emit(type)
 
 func upgradeInvincibility(invincible_time):
-	is_invincible = true;
-	invincibility_time = invincible_time;
+	invincibility_time += invincible_time;
 
 func upgradeTempSpeedBoost(speedboost_time):
 	boost_time += speedboost_time;
@@ -167,7 +164,7 @@ func get_time():
 	return Time.get_ticks_msec() / 1000.0
 
 func _damage_player() -> void:
-	if (is_invincible):
+	if (invincibility_time > 0.0):
 		return;
 		
 	Events.emit_signal("player_hit")

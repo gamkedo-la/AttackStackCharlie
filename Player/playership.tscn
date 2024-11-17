@@ -105,14 +105,35 @@ emission_sphere_radius = 15.0
 direction = Vector2(0, 1)
 spread = 20.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 64.0
-initial_velocity_max = 300.0
+initial_velocity_max = 125.0
 damping_min = 0.1
 damping_max = 0.2
 angle_max = 360.0
 scale_amount_min = 3.0
 scale_amount_max = 6.0
 color = Color(0, 0.784314, 1, 1)
+color_ramp = SubResource("Gradient_5qx18")
+hue_variation_curve = SubResource("Curve_b5pw3")
+
+[node name="Shield Particles" type="CPUParticles2D" parent="Playerjet"]
+position = Vector2(-2.08165e-12, -2.08165e-12)
+rotation = 1.5708
+amount = 64
+lifetime = 0.5
+explosiveness = 0.04
+randomness = 0.21
+emission_shape = 1
+emission_sphere_radius = 25.0
+direction = Vector2(0, 1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 125.0
+damping_min = 100.0
+damping_max = 100.0
+angle_max = 360.0
+scale_amount_min = 2.0
+scale_amount_max = 8.0
+color = Color(0, 1, 0, 1)
 color_ramp = SubResource("Gradient_5qx18")
 hue_variation_curve = SubResource("Curve_b5pw3")
 
