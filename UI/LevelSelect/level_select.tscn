@@ -66,6 +66,37 @@ text = "LEVEL E"
 script = ExtResource("1_awoko")
 map_name = "TestLevelE"
 
+[node name="LevelFBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "LEVEL F
+"
+script = ExtResource("1_awoko")
+map_name = "TestLevelF"
+
+[node name="LevelGBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "LEVEL G"
+script = ExtResource("1_awoko")
+map_name = "TestLevelG"
+
+[node name="LevelHBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "LEVEL H"
+script = ExtResource("1_awoko")
+map_name = "TestLevelH"
+
+[node name="LevelIBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "LEVEL I"
+script = ExtResource("1_awoko")
+map_name = "TestLevelI"
+
+[node name="LevelJBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "LEVEL J"
+script = ExtResource("1_awoko")
+map_name = "TestLevelJ"
+
 [node name="BackBTN" type="Button" parent="BoxContainer"]
 layout_mode = 2
 text = "RETURN"
@@ -76,4 +107,9 @@ script = ExtResource("5_u7lfj")
 [connection signal="pressed" from="BoxContainer/VBoxContainer/LevelCBTN" to="BoxContainer/VBoxContainer/LevelCBTN" method="_on_pressed"]
 [connection signal="pressed" from="BoxContainer/VBoxContainer/LevelDBTN" to="BoxContainer/VBoxContainer/LevelDBTN" method="_on_pressed"]
 [connection signal="pressed" from="BoxContainer/VBoxContainer/LevelEBTN" to="BoxContainer/VBoxContainer/LevelEBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelFBTN" to="BoxContainer/VBoxContainer/LevelFBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelGBTN" to="BoxContainer/VBoxContainer/LevelGBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelHBTN" to="BoxContainer/VBoxContainer/LevelHBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelIBTN" to="BoxContainer/VBoxContainer/LevelIBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelJBTN" to="BoxContainer/VBoxContainer/LevelJBTN" method="_on_pressed"]
 [connection signal="pressed" from="BoxContainer/BackBTN" to="BoxContainer/BackBTN" method="_on_pressed"]

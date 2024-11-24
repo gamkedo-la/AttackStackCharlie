@@ -14,7 +14,13 @@ Scenes = {
 "TestLevelA": "res://Levels/TestLevelA.tscn",
 "TestLevelB": "res://Levels/TestLevelB.tscn",
 "TestLevelC": "res://Levels/TestLevelC.tscn",
-"TestLevelD": "res://Levels/TestLevelD.tscn"
+"TestLevelD": "res://Levels/TestLevelD.tscn",
+"TestLevelE": "res://Levels/TestLevelE.tscn",
+"TestLevelF": "res://Levels/TestLevelF.tscn",
+"TestLevelG": "res://Levels/TestLevelG.tscn",
+"TestLevelH": "res://Levels/TestLevelH.tscn",
+"TestLevelI": "res://Levels/TestLevelI.tscn",
+"TestLevelJ": "res://Levels/TestLevelJ.tscn"
 }
 
 [node name="PauseMenu" parent="." node_paths=PackedStringArray("scene_manager") instance=ExtResource("2_tf0e3")]
