@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var particles = $CPUParticles2D
+
 var max_scale = 4
 var growth_rate = 0.2
 var active = true
@@ -7,6 +9,7 @@ var blastDepth = 1
 
 func _ready():
 	scale = Vector2(0.1, 0.1)
+	particles.restart()
 	self.connect("area_entered", Callable(self, "_on_Area2D_area_entered"))
 
 func _process(delta):
