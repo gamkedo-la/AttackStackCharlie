@@ -8,18 +8,22 @@ extends Node2D
 @export var minRespawnTime: float = 0.25
 @export var maxRespawnTime: float = 0.75
 @export var maxEnemies: int = 25
+@export var spawning_active: bool = true;
 
 
 func _ready():
 	spawn_loop()
 
 func spawn_loop():
-	while true:
+	while spawning_active:
 		var delay_time = randf_range(minRespawnTime, maxRespawnTime)
 		var timer = get_tree().create_timer(delay_time)
 		await timer.timeout
 		if get_node_count() < maxEnemies:
 			spawn_enemy_at_random_edge()
+			
+func toggle_spawning():
+	spawning_active = !spawning_active;
 
 func get_node_count():
 	return get_tree().get_nodes_in_group("enemies").size()
