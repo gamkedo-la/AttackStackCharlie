@@ -1,12 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://degldynxe05sf"]
+[gd_scene load_steps=6 format=3 uid="uid://degldynxe05sf"]
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_4o0gi"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="3_j6cuh"]
-[ext_resource type="PackedScene" uid="uid://cj7rg0xhytvee" path="res://Enemies/EvilSpikes.tscn" id="4_wr81a"]
-[ext_resource type="PackedScene" uid="uid://d12rmco0pfhyc" path="res://Enemies/EvilCircler.tscn" id="5_twfta"]
-[ext_resource type="PackedScene" uid="uid://dcj01f3ocrwv2" path="res://Enemies/Asteroid.tscn" id="7_527i8"]
-[ext_resource type="PackedScene" uid="uid://fbnliiv8xtmt" path="res://Powerups/Upgrade_Invincibility.tscn" id="9_hxvgy"]
-[ext_resource type="PackedScene" uid="uid://hkobk68n3sih" path="res://Powerups/Upgrade_TempSpeedBoost.tscn" id="10_u84x0"]
 [ext_resource type="PackedScene" uid="uid://0xcemwtyox3a" path="res://Models/pyramid.glb" id="11_0i6s5"]
 [ext_resource type="Script" path="res://Models/3dspin.gd" id="12_u562u"]
 [ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="13_ci5d7"]
@@ -14,44 +9,20 @@
 [node name="MainPlay" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_4o0gi")
-LevelName = "A: Placed Enemies/Items"
+LevelName = "A: Wading In"
 
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("3_j6cuh")
-maxEnemies = 0
-
-[node name="EvilSpikes" parent="Enemies" instance=ExtResource("4_wr81a")]
-position = Vector2(251, 211)
-
-[node name="EvilSpikes2" parent="Enemies" instance=ExtResource("4_wr81a")]
-position = Vector2(883, 220)
-
-[node name="EvilCircler" parent="Enemies" instance=ExtResource("5_twfta")]
-position = Vector2(104, 265)
-
-[node name="EvilCircler2" parent="Enemies" instance=ExtResource("5_twfta")]
-position = Vector2(833, 265)
-
-[node name="EvilCircler3" parent="Enemies" instance=ExtResource("5_twfta")]
-position = Vector2(562, 102)
-
-[node name="EvilCircler4" parent="Enemies" instance=ExtResource("5_twfta")]
-position = Vector2(302, 98)
-
-[node name="EvilCircler5" parent="Enemies" instance=ExtResource("5_twfta")]
-position = Vector2(103, 472)
-
-[node name="Asteroid" parent="Enemies" instance=ExtResource("7_527i8")]
-position = Vector2(944, 74)
-
-[node name="Asteroid2" parent="Enemies" instance=ExtResource("7_527i8")]
-position = Vector2(1059, 564)
-
-[node name="Asteroid3" parent="Enemies" instance=ExtResource("7_527i8")]
-position = Vector2(134, 54)
-
-[node name="Asteroid4" parent="Enemies" instance=ExtResource("7_527i8")]
-position = Vector2(83, 563)
+enemy_data = Array[Dictionary]([{
+"scene": "EvilRusher",
+"weight": 1
+}, {
+"scene": "EvilSlider",
+"weight": 4
+}])
+minRespawnTime = 1.0
+maxRespawnTime = 1.0
+maxEnemies = 15
 
 [node name="3D background scene" type="Node" parent="."]
 
@@ -87,17 +58,5 @@ script = ExtResource("12_u562u")
 spinZ = 1
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("13_ci5d7")]
-
-[node name="Upgrade_Invincibility" parent="." instance=ExtResource("9_hxvgy")]
-position = Vector2(275, 434)
-
-[node name="Upgrade_TempSpeedBoost" parent="." instance=ExtResource("10_u84x0")]
-position = Vector2(783, 523)
-
-[node name="Upgrade_TempSpeedBoost2" parent="." instance=ExtResource("10_u84x0")]
-position = Vector2(799, 411)
-
-[node name="Upgrade_TempSpeedBoost3" parent="." instance=ExtResource("10_u84x0")]
-position = Vector2(638, 232)
 
 [editable path="EveryLevelReusedStuff"]
