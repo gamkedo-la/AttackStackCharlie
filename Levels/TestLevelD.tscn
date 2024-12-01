@@ -9,20 +9,17 @@
 [node name="MainPlay" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_dwuun")
-LevelName = "D: Rush and Circles"
+LevelName = "D: Circlers"
 
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("2_5tofp")
 enemy_data = Array[Dictionary]([{
-"scene": "EvilRusher",
-"weight": 3
-}, {
 "scene": "EvilCircler",
-"weight": 2
+"weight": 1
 }])
-minRespawnTime = 0.1
-maxRespawnTime = 0.4
-maxEnemies = 150
+minRespawnTime = 1.0
+maxRespawnTime = 1.0
+maxEnemies = 5
 
 [node name="Powerups (pre-placed)" type="Node2D" parent="."]
 
@@ -54,5 +51,6 @@ yCount = 6
 scaleSpawned = 0.2
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_c5txp")]
+level_goal = 10
 
 [editable path="EveryLevelReusedStuff"]
