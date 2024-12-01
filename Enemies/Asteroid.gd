@@ -13,18 +13,27 @@ func _ready():
 	camera_width = viewport.size.x 
 	camera_height = viewport.size.y
 	
-	position.x = -50
-	position.y = randf_range(0, camera_height)
+	if randf_range(0, 100) < 50:
+		speed = -speed
+	
+	# position.x = -50
+	# position.y = randf_range(0, camera_height)
 	var sprite = $AnimatedSprite2D
 
 func _process(delta):
 	rotation_degrees += rotation_speed * delta
 	position.x += speed * delta
 	
-	if position.x > camera_width + 50:
+	if position.x < 10:
+		respawn_on_right()
+	if position.x > camera_width - 10:
 		respawn_on_left()
 	
 	
 func respawn_on_left():
-	position.x = -50
+	position.x = 15
+	position.y = randf_range(0, camera_height)
+
+func respawn_on_right():
+	position.x = camera_width - 15
 	position.y = randf_range(0, camera_height)

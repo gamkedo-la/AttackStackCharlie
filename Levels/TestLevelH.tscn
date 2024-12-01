@@ -1,28 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://ck1rihhio6xsg"]
+[gd_scene load_steps=7 format=3 uid="uid://ck1rihhio6xsg"]
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_eqnwn"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="2_mw2ls"]
 [ext_resource type="Script" path="res://Models/modelGridSpawner.gd" id="3_71lkb"]
 [ext_resource type="PackedScene" uid="uid://cdh0ovdewari" path="res://Models/pyramidCoordSpin.tscn" id="4_1766h"]
 [ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="5_gw4cp"]
+[ext_resource type="PackedScene" uid="uid://dcj01f3ocrwv2" path="res://Enemies/Asteroid.tscn" id="6_56aae"]
 
 [node name="MainPlay" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_eqnwn")
-LevelName = "H: TBD"
+LevelName = "H: Asteroids"
 
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("2_mw2ls")
 enemy_data = Array[Dictionary]([{
 "scene": "EvilRusher",
-"weight": 3
-}, {
-"scene": "EvilCircler",
 "weight": 2
+}, {
+"scene": "EvilSlider",
+"weight": 7
 }])
-minRespawnTime = 0.1
-maxRespawnTime = 0.4
-maxEnemies = 150
+minRespawnTime = 0.3
+maxRespawnTime = 1.0
+maxEnemies = 10
 
 [node name="Powerups (pre-placed)" type="Node2D" parent="."]
 
@@ -54,5 +55,53 @@ yCount = 6
 scaleSpawned = 0.2
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_gw4cp")]
+
+[node name="Asteroid" parent="." instance=ExtResource("6_56aae")]
+position = Vector2(118, 450)
+
+[node name="Asteroid2" parent="." instance=ExtResource("6_56aae")]
+position = Vector2(679, 191)
+
+[node name="Asteroid3" parent="." instance=ExtResource("6_56aae")]
+position = Vector2(204, 153)
+
+[node name="Asteroid4" parent="." instance=ExtResource("6_56aae")]
+position = Vector2(929, 484)
+
+[node name="Asteroid5" parent="." instance=ExtResource("6_56aae")]
+position = Vector2(361, 234)
+
+[node name="Asteroid6" parent="." instance=ExtResource("6_56aae")]
+position = Vector2(258, 508)
+
+[node name="Asteroid7" parent="." instance=ExtResource("6_56aae")]
+position = Vector2(520, 70)
+
+[node name="Asteroid8" parent="." instance=ExtResource("6_56aae")]
+position = Vector2(677, 593)
+
+[node name="Asteroid9" parent="." instance=ExtResource("6_56aae")]
+position = Vector2(915, 284)
+
+[node name="Asteroid10" parent="." instance=ExtResource("6_56aae")]
+position = Vector2(900, 106)
+
+[node name="Asteroid11" parent="." instance=ExtResource("6_56aae")]
+position = Vector2(220, 341)
+
+[node name="Asteroid12" parent="." instance=ExtResource("6_56aae")]
+position = Vector2(84, 62)
+
+[node name="Asteroid13" parent="." instance=ExtResource("6_56aae")]
+position = Vector2(731, 442)
+
+[node name="Asteroid14" parent="." instance=ExtResource("6_56aae")]
+position = Vector2(369, 85)
+
+[node name="Asteroid15" parent="." instance=ExtResource("6_56aae")]
+position = Vector2(1016, 381)
+
+[node name="Asteroid16" parent="." instance=ExtResource("6_56aae")]
+position = Vector2(98, 592)
 
 [editable path="EveryLevelReusedStuff"]
