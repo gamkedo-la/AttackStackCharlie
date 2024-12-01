@@ -15,7 +15,7 @@ func _ready():
 	spawn_loop()
 
 func spawn_loop():
-	while spawning_active:
+	while spawning_active && get_tree() != null:
 		var delay_time = randf_range(minRespawnTime, maxRespawnTime)
 		var timer = get_tree().create_timer(delay_time)
 		await timer.timeout
@@ -26,6 +26,9 @@ func toggle_spawning():
 	spawning_active = !spawning_active;
 
 func get_node_count():
+	if (get_tree() == null):
+		return 0;
+		
 	return get_tree().get_nodes_in_group("enemies").size()
 
 func get_spawn_weight_total():
@@ -52,6 +55,9 @@ func select_enemy_scene():
 	return null
 
 func spawn_enemy_at_random_edge():
+	if (get_tree() == null):
+		return;
+		
 	var viewport_size = get_viewport_rect().size
 
 	# Randomly select an edge: 0 = top, 1 = bottom, 2 = left, 3 = right

@@ -5,7 +5,6 @@ var defeated_enemies = 0
 @export var level_goal = 30
 @onready var enemy_kill_counter = $EnemyKillCounter
 @onready var victory_text = $VictoryText
-@onready var enemies = $Enemies
 
 func _ready():
 	victory_text.visible = false;
@@ -14,7 +13,10 @@ func _ready():
 	
 func _process(delta):
 	if defeated_enemies >= level_goal && Input.is_action_pressed("confirm"):
-		enemies.toggle_spawning();
+		for enemy in get_tree().get_nodes_in_group("enemies"):
+			enemy.destroy()
+	
+		# move to summary screen
 		SceneManager.SwitchScene("Summary");
 
 func _on_enemy_defeated():
