@@ -2,26 +2,26 @@ extends Area2D
 
 @onready var particles = $CPUParticles2D
 
-var max_scale = 4
-var growth_rate = 0.2
+var max_scale = 7
+var growth_rate = 0.1
 var active = true
 var blastDepth = 1
+var hit_scale = 0.1
 
 func _ready():
-	scale = Vector2(0.1, 0.1)
 	particles.restart()
 	self.connect("area_entered", Callable(self, "_on_Area2D_area_entered"))
 
 func _process(delta):
-	if scale.x < max_scale and active:
-		scale += Vector2(growth_rate, growth_rate)
+	if hit_scale < max_scale and active:
+		hit_scale += growth_rate # *delta
 		update_collision_shape()
 	else:
 		queue_free()
 
 func update_collision_shape():
 	if $CollisionShape2D.shape is CircleShape2D:
-		$CollisionShape2D.shape.radius = 10.0 * scale.x
+		$CollisionShape2D.shape.radius = 10.0 * hit_scale
 
 func _on_Area2D_area_entered(area):
 	# print("Area entered: ", area.name) 

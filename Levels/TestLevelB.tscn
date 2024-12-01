@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5l5coih5r1su"]
+[gd_scene load_steps=10 format=3 uid="uid://b5l5coih5r1su"]
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_2d853"]
 [ext_resource type="PackedScene" uid="uid://cph8u3741k0sk" path="res://Models/scarecrow.glb" id="3_3pck2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="3_einjh"]
 [ext_resource type="PackedScene" uid="uid://da817q0bdxwwa" path="res://Models/tree.glb" id="6_gqn6m"]
 [ext_resource type="PackedScene" uid="uid://b80avaganc7y3" path="res://Models/GrandpaClockWorkingHands.tscn" id="8_73ghd"]
+[ext_resource type="PackedScene" uid="uid://bq73d6o8w0lgq" path="res://Explosions/EnemyBlast.tscn" id="9_il3cp"]
 [ext_resource type="Script" path="res://Models/3dspin.gd" id="12_d02ne"]
 [ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="13_uimog"]
 
@@ -69,5 +70,8 @@ spinRate = -0.05
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("13_uimog")]
 level_goal = 100
+
+[node name="EnemyBlast" parent="." instance=ExtResource("9_il3cp")]
+position = Vector2(347, 257)
 
 [editable path="EveryLevelReusedStuff"]
