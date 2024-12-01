@@ -1,28 +1,73 @@
-[gd_scene load_steps=6 format=3 uid="uid://dut353rdmn67k"]
+[gd_scene load_steps=7 format=3 uid="uid://dut353rdmn67k"]
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_oroyq"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="2_vxfs1"]
 [ext_resource type="Script" path="res://Models/modelGridSpawner.gd" id="3_kidnh"]
+[ext_resource type="PackedScene" uid="uid://cj7rg0xhytvee" path="res://Enemies/EvilSpikes.tscn" id="3_rwh13"]
 [ext_resource type="PackedScene" uid="uid://cdh0ovdewari" path="res://Models/pyramidCoordSpin.tscn" id="4_mf000"]
 [ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="5_vy31i"]
 
 [node name="MainPlay" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_oroyq")
-LevelName = "I: TBD"
+LevelName = "I: Minefield"
 
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("2_vxfs1")
 enemy_data = Array[Dictionary]([{
 "scene": "EvilRusher",
-"weight": 3
+"weight": 5
 }, {
 "scene": "EvilCircler",
-"weight": 2
+"weight": 1
 }])
-minRespawnTime = 0.1
-maxRespawnTime = 0.4
-maxEnemies = 150
+minRespawnTime = 1.0
+maxRespawnTime = 2.0
+maxEnemies = 5
+
+[node name="Node2D" type="Node2D" parent="Enemies"]
+
+[node name="EvilSpikes" parent="Enemies/Node2D" instance=ExtResource("3_rwh13")]
+position = Vector2(150, 150)
+
+[node name="EvilSpikes2" parent="Enemies/Node2D" instance=ExtResource("3_rwh13")]
+position = Vector2(400, 150)
+
+[node name="EvilSpikes3" parent="Enemies/Node2D" instance=ExtResource("3_rwh13")]
+position = Vector2(650, 150)
+
+[node name="EvilSpikes4" parent="Enemies/Node2D" instance=ExtResource("3_rwh13")]
+position = Vector2(900, 150)
+
+[node name="Node2D2" type="Node2D" parent="Enemies"]
+position = Vector2(100, 200)
+
+[node name="EvilSpikes" parent="Enemies/Node2D2" instance=ExtResource("3_rwh13")]
+position = Vector2(150, 150)
+
+[node name="EvilSpikes2" parent="Enemies/Node2D2" instance=ExtResource("3_rwh13")]
+position = Vector2(400, 150)
+
+[node name="EvilSpikes3" parent="Enemies/Node2D2" instance=ExtResource("3_rwh13")]
+position = Vector2(650, 150)
+
+[node name="EvilSpikes4" parent="Enemies/Node2D2" instance=ExtResource("3_rwh13")]
+position = Vector2(900, 150)
+
+[node name="Node2D3" type="Node2D" parent="Enemies"]
+position = Vector2(2.08165e-12, 400)
+
+[node name="EvilSpikes" parent="Enemies/Node2D3" instance=ExtResource("3_rwh13")]
+position = Vector2(150, 150)
+
+[node name="EvilSpikes2" parent="Enemies/Node2D3" instance=ExtResource("3_rwh13")]
+position = Vector2(400, 150)
+
+[node name="EvilSpikes3" parent="Enemies/Node2D3" instance=ExtResource("3_rwh13")]
+position = Vector2(650, 150)
+
+[node name="EvilSpikes4" parent="Enemies/Node2D3" instance=ExtResource("3_rwh13")]
+position = Vector2(900, 150)
 
 [node name="Powerups (pre-placed)" type="Node2D" parent="."]
 
