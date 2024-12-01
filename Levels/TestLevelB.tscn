@@ -12,20 +12,19 @@
 [node name="MainPlay" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_2d853")
-LevelName = "B: Many Rushers Spawn"
+LevelName = "B: Crash Mix"
 
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("3_einjh")
 enemy_data = Array[Dictionary]([{
 "scene": "EvilRusher",
-"weight": 5
+"weight": 1
 }, {
 "scene": "EvilSlider",
 "weight": 3
-}, {
-"scene": "EvilCircler",
-"weight": 2
 }])
+minRespawnTime = 0.4
+maxRespawnTime = 0.4
 
 [node name="Powerups (pre-placed)" type="Node2D" parent="."]
 
@@ -69,5 +68,6 @@ spinZ = 1
 spinRate = -0.05
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("13_uimog")]
+level_goal = 100
 
 [editable path="EveryLevelReusedStuff"]
