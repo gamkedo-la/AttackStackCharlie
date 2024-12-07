@@ -59,4 +59,12 @@ spinZ = 1
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("13_ci5d7")]
 
+[node name="Health" type="Label" parent="EveryLevelReusedStuff"]
+offset_left = 320.0
+offset_top = 15.0
+offset_right = 494.0
+offset_bottom = 63.0
+text = "HEALTH: 0/0"
+horizontal_alignment = 1
+
 [editable path="EveryLevelReusedStuff"]
