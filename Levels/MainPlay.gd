@@ -24,4 +24,8 @@ func _process(delta):
 	pass
 
 func updateHealthDisplay():
+	# Health was null initially when selecting a level from "Level Select" on main menu
+	# Probably only needed temporarily as see health is defined on main play through
+	if !is_instance_valid(health): return
+	
 	health.text = "HEALTH: " + str(PlayerVars.player_health) + "/" + str(PlayerVars.player_max_health)
