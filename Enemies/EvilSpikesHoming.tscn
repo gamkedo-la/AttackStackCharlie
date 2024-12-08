@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4ixardf5saca"]
+
+[ext_resource type="Script" path="res://Enemies/Scripts/EvilSpikesHoming.gd" id="1_hgkqa"]
+[ext_resource type="Texture2D" uid="uid://dprmolug2e317" path="res://Enemies/Art/EvilSpikes-Sheet.png" id="2_e113y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apqvm"]
+atlas = ExtResource("2_e113y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enjn8"]
+atlas = ExtResource("2_e113y")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wk7pd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apqvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enjn8")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cio05"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hrx8h"]
+radius = 18.0278
+
+[node name="EvilSpikesHoming" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_hgkqa")
+projectileMode = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.988235, 0.431373, 0, 1)
+sprite_frames = SubResource("SpriteFrames_wk7pd")
+animation = &"spin"
+autoplay = "spin"
+frame_progress = 0.218369
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cio05")
+
+[node name="ProjectileDetector" type="Area2D" parent="." groups=["hitbox"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileDetector"]
+shape = SubResource("CircleShape2D_hrx8h")
+
+[connection signal="area_entered" from="ProjectileDetector" to="." method="_on_projectile_detector_area_entered"]
