@@ -53,12 +53,12 @@ func _on_player_moved(new_position):
 	targetPos = new_position
 
 func _ready():
+	var player_node = get_tree().current_scene.get_node("EveryLevelReusedStuff/Player")
+	if player_node:
+		player_node.connect("player_moved", Callable(self, "_on_player_moved"))
 	if projectileMode != 0 && isJustAShot == false:
 		shotBasic = load("res://Enemies/EvilShot.tscn")
 		fire_reload_loop()
-		var player_node = get_tree().current_scene.get_node("EveryLevelReusedStuff/Player")
-		if player_node:
-			player_node.connect("player_moved", Callable(self, "_on_player_moved"))
 		add_to_group("enemies")
 	else:
 		add_to_group("enemy_shots")
