@@ -1,7 +1,7 @@
 extends "res://Enemies/Scripts/Enemy.gd"
 
 enum State { HORIZONTAL_MOVE, PAUSE, VERTICAL_MOVE }
-const HOMING_SPEED = 90
+const HOMING_SPEED = 140
 var current_state = State.HORIZONTAL_MOVE
 var behavior_switch_timer = 0.0
 var last_move_was_horizontal = true
