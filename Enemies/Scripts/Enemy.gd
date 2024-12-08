@@ -18,6 +18,7 @@ var shotBasic
 @export var projectileMode: int = 1 # 0 no, 1 straight ahead, 2 toward player, 3 mine layer
 @export var reloadTime: float = 1.0
 @export var fire_dist: float = 250.0
+@export var shotType: String = "EvilShot"
 
 var exploded = false
 var explosion_radius = 500
@@ -63,10 +64,7 @@ func _ready():
 	if player_node:
 		player_node.connect("player_moved", Callable(self, "_on_player_moved"))
 	if projectileMode != 0 && isJustAShot == false:
-		if projectileMode == 3:
-			shotBasic = load("res://Enemies/EvilSpikes.tscn")
-		else:
-			shotBasic = load("res://Enemies/EvilShot.tscn")
+		shotBasic = load("res://Enemies/"+shotType+".tscn")
 		fire_reload_loop_after_rand_delay()
 		add_to_group("enemies")
 	else:

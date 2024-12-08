@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://odgg4mvj8b04"]
+[gd_scene load_steps=5 format=3 uid="uid://brs30faap2bqm"]
 
-[ext_resource type="Script" path="res://Enemies/Scripts/EvilSliderMineLayer.gd" id="1_m8euc"]
-[ext_resource type="Texture2D" uid="uid://c8qh1tgr28e8r" path="res://Enemies/Art/EnemyCraftMain.png" id="2_nvi65"]
+[ext_resource type="Script" path="res://Enemies/Scripts/EvilSliderMineLayer.gd" id="1_mywp6"]
+[ext_resource type="Texture2D" uid="uid://c8qh1tgr28e8r" path="res://Enemies/Art/EnemyCraftMain.png" id="2_b0h70"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cio05"]
 radius = 9.0
@@ -9,13 +9,13 @@ radius = 9.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_hrx8h"]
 radius = 18.0278
 
-[node name="EvilSliderMineLayer" type="Area2D"]
+[node name="EvilSliderHomingLayer" type="Area2D"]
 collision_layer = 2
-script = ExtResource("1_m8euc")
-projectileMode = 3
-reloadTime = 3.5
+script = ExtResource("1_mywp6")
+projectileMode = 4
+reloadTime = 5.0
 fire_dist = 10000.0
-shotType = "EvilSpikes"
+shotType = "EvilSpikesHoming"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cio05")
@@ -28,7 +28,8 @@ shape = SubResource("CircleShape2D_hrx8h")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
 [node name="EnemyCraftMain" type="Sprite2D" parent="."]
-texture = ExtResource("2_nvi65")
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("2_b0h70")
 
 [connection signal="area_entered" from="ProjectileDetector" to="." method="_on_projectile_detector_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
