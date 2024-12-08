@@ -26,6 +26,7 @@ enemy_data = Array[Dictionary]([{
 }])
 minRespawnTime = 0.4
 maxRespawnTime = 0.4
+maxEnemies = 18
 
 [node name="Powerups (pre-placed)" type="Node2D" parent="."]
 
@@ -69,7 +70,7 @@ spinZ = 1
 spinRate = -0.05
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("13_uimog")]
-level_goal = 100
+level_goal = 50
 
 [node name="EnemyBlast" parent="." instance=ExtResource("9_il3cp")]
 position = Vector2(347, 257)

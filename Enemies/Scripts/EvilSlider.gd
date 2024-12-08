@@ -1,11 +1,13 @@
 extends "res://Enemies/Scripts/Enemy.gd"
 
+const SLIDER_SPEED = 100.0
+
 func _ready():
 	super._ready() # run the parent enemy init
 	pass
 
 func _process(delta):
-	moveDir = Vector2(ENEMY_SPEED, 0).rotated(rotation)
+	moveDir = Vector2(SLIDER_SPEED, 0).rotated(rotation)
 	position += moveDir * delta
 	pass
 
