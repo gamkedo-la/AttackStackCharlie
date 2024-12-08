@@ -18,7 +18,10 @@ enemy_data = Array[Dictionary]([{
 "weight": 1
 }, {
 "scene": "EvilSlider",
-"weight": 4
+"weight": 3
+}, {
+"scene": "EvilSpikesHoming",
+"weight": 2
 }])
 minRespawnTime = 1.0
 maxRespawnTime = 1.0
@@ -58,6 +61,7 @@ script = ExtResource("12_u562u")
 spinZ = 1
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("13_ci5d7")]
+level_goal = 20
 
 [node name="Health" type="Label" parent="EveryLevelReusedStuff"]
 offset_left = 320.0
