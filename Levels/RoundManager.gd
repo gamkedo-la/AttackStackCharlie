@@ -29,3 +29,6 @@ func _on_enemy_defeated():
 		
 		if Input.is_action_pressed("confirm"):
 			SceneManager.SwitchScene("Summary");
+
+func already_won():
+	return defeated_enemies >= level_goal
