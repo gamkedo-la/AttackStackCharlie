@@ -32,6 +32,8 @@ var powerup_spawn_counts = {}
 
 var targetPos = Vector2()
 
+@onready var criticalDangerFeedback = get_tree().current_scene.get_node("EveryLevelReusedStuff/CriticalDangerFeedback")
+
 func fire_reload_loop_after_rand_delay():
 	var timer = get_tree().create_timer(reloadTime * randf_range(0.2,1.0))
 	await timer.timeout
@@ -77,6 +79,12 @@ func _ready():
 			connect("enemy_defeated", Callable(roundManagerNode, "_on_enemy_defeated"))
 	else:
 		print("Can't find roundManagerNode for signal")
+
+	if criticalDangerFeedback:
+		connect("enemy_defeated", Callable(criticalDangerFeedback, "on_enemy_defeated"))
+	else:
+		print("Can't find criticalDangerFeedback for signal")
+
 	# print("enemy signal registering")
 	# setDirection(Vector2.RIGHT)
 	pass
