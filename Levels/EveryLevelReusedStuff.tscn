@@ -216,4 +216,12 @@ vertical_alignment = 1
 [node name="FeedbackTimer" type="Timer" parent="CriticalDangerFeedback"]
 one_shot = true
 
+[node name="Health" type="Label" parent="."]
+offset_left = 320.0
+offset_top = 15.0
+offset_right = 494.0
+offset_bottom = 63.0
+text = "HEALTH: 0/0"
+horizontal_alignment = 1
+
 [connection signal="player_upgraded" from="Player" to="Control" method="_on_upgrade_received"]

@@ -72,9 +72,6 @@ spinRate = -0.05
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("13_uimog")]
 level_goal = 50
 
-[node name="CriticalDangerFeedback" parent="EveryLevelReusedStuff" index="12"]
-message_display_time_secs = 2
-
 [node name="EnemyBlast" parent="." instance=ExtResource("9_il3cp")]
 position = Vector2(347, 257)
 
