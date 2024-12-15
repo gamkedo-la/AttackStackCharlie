@@ -203,4 +203,17 @@ vertical_alignment = 1
 [node name="CriticalDangerFeedback" type="Node" parent="."]
 script = ExtResource("16_x0dh6")
 
+[node name="FeedbackText" type="Label" parent="CriticalDangerFeedback"]
+offset_left = 425.0
+offset_top = 190.0
+offset_right = 719.0
+offset_bottom = 258.0
+theme_override_font_sizes/font_size = 40
+text = "<PLACEHOLDER!>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FeedbackTimer" type="Timer" parent="CriticalDangerFeedback"]
+one_shot = true
+
 [connection signal="player_upgraded" from="Player" to="Control" method="_on_upgrade_received"]
