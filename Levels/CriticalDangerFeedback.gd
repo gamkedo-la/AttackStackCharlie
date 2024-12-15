@@ -19,13 +19,15 @@ func _ready():
 	if is_instance_valid(feedback_text):
 		feedback_text.visible = false
 	else:
-		push_error("CriticalDanagerFeedback: feedback_text not in scene!")
+		push_error("CriticalDangerFeedback: feedback_text not in scene!")
 	
 	if is_instance_valid(timer):
 		timer.wait_time = message_display_time_secs
 		timer.connect("timeout", Callable(self, "on_timer_expired"))
 	else:
-		push_error("CriticalDanagerFeedback: timer not in scene!")
+		push_error("CriticalDangerFeedback: timer not in scene!")
+		
+	Events.player_hit.connect(on_player_hit)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -42,8 +44,16 @@ func on_enemy_defeated():
 		# Hide any messages as victory text will display
 		force_hide_message()
 		
+func on_player_hit():
+	print("CriticalDangerFeedback: Player hit")
+	# Check if 1 remaining health
+	# TODO: Note that this event seems to fire before the health is decremented so need to subtract 1
+	var healthRemaining = PlayerVars.player_health - 1
+	if healthRemaining == 1:
+		show_message(LowHealthMessage)
+	
 func show_message(text):
-	print("CriticalDanagerFeedback: " + text)
+	print("CriticalDangerFeedback: " + text)
 	# set the text of the feedback text
 	if feedback_text == null:
 		return
@@ -62,7 +72,7 @@ func force_hide_message():
 		timer.stop()
 		
 func on_timer_expired():
-	print("CriticalDanagerFeedback: Timer expired")
+	print("CriticalDangerFeedback: Timer expired")
 	hide_message()
 
 func hide_message():
