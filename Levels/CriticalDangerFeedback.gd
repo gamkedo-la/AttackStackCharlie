@@ -2,17 +2,18 @@ class_name CriticalDanagerFeedback extends Node
 
 const LastEnemyMessage = "Last Enemy!"
 const LowHealthMessage = "Health Low!"
-const TimeRunningOutMessge = "Hurry Up!"
+const TimeRunningOutMessage = "Hurry Up!"
 
-# TODO: Add "taking too long" feedback
-# TODO: Add low player health feedback
+@export var message_display_time_secs = 2
+@export var time_running_out_threshold_secs = 30
 
 # RoundManager is the owner of win conditions
 @onready var roundManager = get_tree().current_scene.get_node("EveryLevelReusedStuff")
 @onready var feedback_text = $FeedbackText
 @onready var timer = $FeedbackTimer
+@onready var countdown = get_tree().current_scene.get_node("EveryLevelReusedStuff/Countdown");
 
-@export var message_display_time_secs = 2
+var low_time_message_displayed: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,15 +27,28 @@ func _ready():
 		timer.connect("timeout", Callable(self, "on_timer_expired"))
 	else:
 		push_error("CriticalDangerFeedback: timer not in scene!")
+	
+	if !is_instance_valid(countdown):
+		push_error("CriticalDangerFeedback: Countdown not in scene!")
 		
 	Events.player_hit.connect(on_player_hit)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	# Tick not the best but works for now
+	check_low_time()
+
+func check_low_time():
+	# Only display the message once
+	if !is_instance_valid(countdown) or low_time_message_displayed:
+		return
+	# print("CriticalDangerFeedback: TimeRem=" + str(countdown.time_left))
+	if countdown.time_left <= time_running_out_threshold_secs:
+		low_time_message_displayed = true
+		show_message(TimeRunningOutMessage)
 
 func on_enemy_defeated():
-	# print("CriticalDanagerFeedback: Enemy Defeated")
+	# print("CriticalDangerFeedback: Enemy Defeated")
 	var enemiesRemaining = roundManager.level_goal - roundManager.defeated_enemies
 
 	# Check if it is the last enemy and if so will show message to player
