@@ -63,6 +63,11 @@ func on_player_hit():
 	# Check if 1 remaining health
 	# TODO: Note that this event seems to fire before the health is decremented so need to subtract 1
 	var healthRemaining = PlayerVars.player_health - 1
+	
+	if healthRemaining <= PlayerVars.player_min_health:
+		PlayerVars.player_health = PlayerVars.player_min_health
+		healthRemaining = PlayerVars.player_health
+		
 	if healthRemaining == 1:
 		show_message(LowHealthMessage)
 	

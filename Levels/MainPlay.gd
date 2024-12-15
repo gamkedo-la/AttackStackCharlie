@@ -27,5 +27,5 @@ func updateHealthDisplay():
 	# Health was null initially when selecting a level from "Level Select" on main menu
 	# Probably only needed temporarily as see health is defined on main play through
 	if !is_instance_valid(health): return
-	
-	health.text = "HEALTH: " + str(PlayerVars.player_health) + "/" + str(PlayerVars.player_max_health)
+	var current_health = max(PlayerVars.player_min_health, PlayerVars.player_health)
+	health.text = "HEALTH: " + str(current_health) + "/" + str(PlayerVars.player_max_health)

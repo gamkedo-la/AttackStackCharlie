@@ -3,6 +3,7 @@ extends Node
 var player_upgrade_status
 
 var player_max_health: int = 3
+var player_min_health: int = 0;
 var player_health: int = 3
 var player_max_shield: int = 6
 var player_shield: int = 0;
