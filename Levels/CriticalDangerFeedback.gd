@@ -1,4 +1,4 @@
-class_name CriticalDanagerFeedback extends Node
+class_name CriticalDangerFeedback extends Node
 
 const LastEnemyMessage = "Last Enemy!"
 const LowHealthMessage = "Health Low!"
