@@ -12,6 +12,7 @@ const TimeRunningOutMessage = "Hurry Up!"
 @onready var feedback_text = $FeedbackText
 @onready var timer = $FeedbackTimer
 @onready var countdown = get_tree().current_scene.get_node("EveryLevelReusedStuff/Countdown");
+@onready var player_node = get_tree().current_scene.get_node("EveryLevelReusedStuff/Player")
 
 var low_time_message_displayed: bool = false
 
@@ -31,7 +32,7 @@ func _ready():
 	if !is_instance_valid(countdown):
 		push_error("CriticalDangerFeedback: Countdown not in scene!")
 		
-	Events.player_hit.connect(on_player_hit)
+	player_node.player_health_decreased.connect(on_player_health_decreased)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -58,11 +59,10 @@ func on_enemy_defeated():
 		# Hide any messages as victory text will display
 		force_hide_message()
 		
-func on_player_hit():
-	print("CriticalDangerFeedback: Player hit")
+func on_player_health_decreased():
+	print("CriticalDangerFeedback: Player health decreased")
 	# Check if 1 remaining health
-	# TODO: Note that this event seems to fire before the health is decremented so need to subtract 1
-	var healthRemaining = PlayerVars.player_health - 1
+	var healthRemaining = PlayerVars.player_health
 	
 	if healthRemaining <= PlayerVars.player_min_health:
 		PlayerVars.player_health = PlayerVars.player_min_health

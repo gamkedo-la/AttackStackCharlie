@@ -5,6 +5,7 @@ signal player_moved(new_position)
 signal player_turned(new_facing)
 signal player_fired(ship)
 signal player_upgraded(type)
+signal player_health_decreased
 
 const SHIP_SPEED = 150 # multiplier on a value otherwise much smaller, easier tuning
 const SHIP_ACCEL = 0.2
@@ -174,7 +175,10 @@ func _damage_player() -> void:
 		if(PlayerVars.player_shield > 0):
 			PlayerVars.player_shield -= 1
 			pass
+		
 		PlayerVars.player_health -= 1
+		emit_signal("player_health_decreased")
+
 		PlayerVars.increase_stat("hits_taken", 1, false)
 		PlayerVars.reset_stat("seconds", false)
 		# print("Player damaged, current player health: ", PlayerVars.player_health)
