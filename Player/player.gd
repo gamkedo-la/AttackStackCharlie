@@ -17,7 +17,7 @@ const LEVEL_TYPE = preload("res://Globals/level_type_enum.gd").LevelType
 var LEVEL_TYPE_LIST = LEVEL_TYPE.keys()
 const ROF = 0.5
 const EXTRA_ROF_TIME_DECREASE = 0.1
-const BASE_SHOT_LIFE = 0.5
+const BASE_SHOT_LIFE = 0.85
 const EXTRA_SHOT_LIFE_INCREMENT = 0.3
 
 # Can be split too if needed. Potentially inside the dictionary
