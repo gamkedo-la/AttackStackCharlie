@@ -3,6 +3,11 @@ class_name NSceneManager
 
 @export var Scenes : Dictionary = {}
 
+var levels = ["TestLevelA", "TestLevelB", "TestLevelC", "TestLevelD", 
+			  "TestLevelE", "TestLevelF", "TestLevelG", "TestLevelH", 
+			  "TestLevelI", "TestLevelJ"]
+var currentLevelAlias = "TestLevelA"
+
 var m_CurrentSceneAlias : String = ""
 var intro_has_already_played : bool = false
 
@@ -30,6 +35,8 @@ func RemoveScene(sceneAlias : String) -> void:
 	Scenes.erase(sceneAlias)
 	
 func SwitchScene(sceneAlias : String) -> void:
+	if levels.find(sceneAlias) != -1:
+		currentLevelAlias = sceneAlias
 	get_tree().change_scene_to_file(Scenes[sceneAlias])
 
 func RestartScene() -> void:
@@ -39,6 +46,11 @@ func RestartScene() -> void:
 		enemy.queue_free()
 	get_tree().reload_current_scene()
 	
+func GoToNextLevel() -> void:
+	var nextLevelIndex = levels.find(currentLevelAlias) + 1
+	# should probably go to a credits screen or something if at the end of the array
+	SwitchScene(levels[nextLevelIndex])
+
 func QuitGame() -> void:
 	get_tree().quit()
 	
