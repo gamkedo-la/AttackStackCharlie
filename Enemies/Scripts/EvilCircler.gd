@@ -4,12 +4,16 @@ const ROTATE_SPEED_MIN = 0.07
 const ROTATE_SPEED_MAX = 0.245
 const CIRCLE_DISTANCE_MAX = 230
 const CIRCLE_DISTANCE_MIN = 100
-
-# TODO: Add an "arrive at" to slow down as get on the circle go from 5x down to regular speed that we orbit
+const ARRIVE_AT_DIST_MIN = 50
+const ARRIVE_AT_DIST_MAX = 150
+const ARRIVE_AT_SPEED_MULT = 2
+const ENEMY_SPEED_SEEK_SPEED_MULT = 5
 
 var circlePercent = 0
 var myOrbitDist = 0
 var myOrbitRate = 0
+var myArriveAtDist = 0
+
 var inRangeOfTarget = false
 var cwOrbit = false;
 var rotDir = 0
@@ -19,6 +23,7 @@ func _ready():
 	cwOrbit = randi_range(0,10) < 5
 	myOrbitDist = randf_range(CIRCLE_DISTANCE_MIN,CIRCLE_DISTANCE_MAX)
 	myOrbitRate = randf_range(ROTATE_SPEED_MIN,ROTATE_SPEED_MAX)
+	myArriveAtDist = randf_range(ARRIVE_AT_DIST_MIN,ARRIVE_AT_DIST_MAX)
 	rotDir = -1 if cwOrbit else 1
 
 func _process(delta):
@@ -44,11 +49,25 @@ func _process(delta):
 		rotation = rotationAmount + rotDir * PI/2
 	else:
 		# print("outofrange")
-		global_position += (targetPos - global_position).normalized() * delta * ENEMY_SPEED * 5
+		global_position += (targetPos - global_position).normalized() * delta * calculate_speed(distToPlayer)
 		var moveAng = atan2(global_position.y-wasPos.y,global_position.x-wasPos.x)
 		rotation = moveAng
 	pass
 
+func calculate_speed(distToPlayer):
+	var circlingDist = distToPlayer - myOrbitDist
+	var seekSpeed = float(ENEMY_SPEED_SEEK_SPEED_MULT * ENEMY_SPEED)
+	if circlingDist >= myArriveAtDist:
+		return seekSpeed
+
+	# Arrive at circling speed smoothly
+	# v = r * w
+	var orbitTranslationalSpeed = myOrbitDist * myOrbitRate
+	var lerpedSpeed = lerp(orbitTranslationalSpeed * ARRIVE_AT_SPEED_MULT, seekSpeed, circlingDist / myArriveAtDist)
+	
+	# print("speed=" + str(lerpedSpeed) + "orbitSpeed=" + str(orbitTranslationalSpeed) + "seekSpeed=" + str(seekSpeed) + ";alpha=" + str(circlingDist / myArriveAtDist))
+	return lerpedSpeed
+	
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
 	pass
