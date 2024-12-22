@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://catmw8khctw14"]
+
+[ext_resource type="PackedScene" uid="uid://b80avaganc7y3" path="res://Models/GrandpaClockWorkingHands.tscn" id="1_naao8"]
+[ext_resource type="Script" path="res://Models/spinByCoord.gd" id="2_02g3n"]
+
+[node name="ClockCoordSpin" type="Node3D"]
+
+[node name="GrandpaClockWorkingHands" parent="." instance=ExtResource("1_naao8")]
+script = ExtResource("2_02g3n")
+spinPace = 0.4
+vertAffect = 2.0

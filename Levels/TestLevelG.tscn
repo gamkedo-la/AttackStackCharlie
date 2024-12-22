@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_e1crx"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="2_71spp"]
 [ext_resource type="Script" path="res://Models/modelGridSpawner.gd" id="3_1mpjm"]
-[ext_resource type="PackedScene" uid="uid://cdh0ovdewari" path="res://Models/pyramidCoordSpin.tscn" id="4_1p68v"]
+[ext_resource type="PackedScene" uid="uid://catmw8khctw14" path="res://Models/clockCoordSpin.tscn" id="4_2w5qg"]
 [ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="5_knst2"]
 
 [node name="MainPlay" type="Node2D"]
@@ -43,12 +43,12 @@ omni_range = 47.1413
 
 [node name="BackgroundMeshGridSpawner" type="Node3D" parent="3D background scene/3D Models"]
 script = ExtResource("3_1mpjm")
-mesh = ExtResource("4_1p68v")
-xSpacing = 4.0
-ySpacing = 4.0
+mesh = ExtResource("4_2w5qg")
+xSpacing = 5.0
+ySpacing = 5.0
 xCount = 10
 yCount = 6
-scaleSpawned = 0.2
+scaleSpawned = 0.7
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_knst2")]
 level_goal = 10
