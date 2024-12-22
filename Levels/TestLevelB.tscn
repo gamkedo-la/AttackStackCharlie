@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5l5coih5r1su"]
+[gd_scene load_steps=9 format=3 uid="uid://b5l5coih5r1su"]
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_2d853"]
-[ext_resource type="PackedScene" uid="uid://cph8u3741k0sk" path="res://Models/scarecrow.glb" id="3_3pck2"]
 [ext_resource type="PackedScene" uid="uid://iopfwnba5j8b" path="res://Models/eiffel.glb" id="3_cf2l7"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="3_einjh"]
 [ext_resource type="PackedScene" uid="uid://da817q0bdxwwa" path="res://Models/tree.glb" id="6_gqn6m"]
@@ -47,11 +46,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.6214, -88.5333, 11.2573)
 omni_range = 47.1413
 
 [node name="3D Models" type="Node3D" parent="3D background scene"]
-
-[node name="scarecrow" parent="3D background scene/3D Models" instance=ExtResource("3_3pck2")]
-transform = Transform3D(-4.37114e-08, -1, 3.48787e-16, 0.993226, -4.34153e-08, 0.116203, -0.116203, 5.07938e-09, 0.993226, 26.5924, 0, 7.75411)
-script = ExtResource("12_d02ne")
-spinX = 1
 
 [node name="eiffel" parent="3D background scene/3D Models" instance=ExtResource("3_cf2l7")]
 transform = Transform3D(1.5, -1.04636e-15, -2.28689e-23, -2.28689e-23, -6.55671e-08, 1.5, -1.04636e-15, -1.5, -6.55671e-08, 11.4385, -54.7797, 11.6574)
