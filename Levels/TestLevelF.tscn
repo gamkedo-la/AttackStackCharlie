@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_entm6"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="2_l6c65"]
-[ext_resource type="Script" path="res://Models/modelGridSpawner.gd" id="3_43eey"]
-[ext_resource type="PackedScene" uid="uid://cdh0ovdewari" path="res://Models/pyramidCoordSpin.tscn" id="4_0yuyp"]
+[ext_resource type="PackedScene" uid="uid://iopfwnba5j8b" path="res://Models/eiffel.glb" id="3_as1v8"]
+[ext_resource type="Script" path="res://Models/3dspin.gd" id="4_uomvp"]
 [ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="5_hpn0p"]
 
 [node name="MainPlay" type="Node2D"]
@@ -41,14 +41,23 @@ omni_range = 47.1413
 
 [node name="3D Models" type="Node3D" parent="3D background scene"]
 
-[node name="BackgroundMeshGridSpawner" type="Node3D" parent="3D background scene/3D Models"]
-script = ExtResource("3_43eey")
-mesh = ExtResource("4_0yuyp")
-xSpacing = 4.0
-ySpacing = 4.0
-xCount = 10
-yCount = 6
-scaleSpawned = 0.2
+[node name="eiffel" parent="3D background scene/3D Models" instance=ExtResource("3_as1v8")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 17.3208, -44.6648, 9.90788)
+script = ExtResource("4_uomvp")
+spinY = 1
+spinRate = 0.05
+
+[node name="eiffel2" parent="3D background scene/3D Models" instance=ExtResource("3_as1v8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.5856, -44.6649, 7.78049)
+script = ExtResource("4_uomvp")
+spinX = 1
+spinRate = 0.2
+
+[node name="eiffel3" parent="3D background scene/3D Models" instance=ExtResource("3_as1v8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.27543, -44.6649, 13.8941)
+script = ExtResource("4_uomvp")
+spinZ = 1
+spinRate = -0.3
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_hpn0p")]
 level_goal = 60
