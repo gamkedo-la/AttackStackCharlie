@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_28ide"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="2_kom4i"]
-[ext_resource type="Script" path="res://Models/modelGridSpawner.gd" id="3_q6mnk"]
-[ext_resource type="PackedScene" uid="uid://cdh0ovdewari" path="res://Models/pyramidCoordSpin.tscn" id="4_rq4dp"]
+[ext_resource type="PackedScene" uid="uid://b80avaganc7y3" path="res://Models/GrandpaClockWorkingHands.tscn" id="4_k1xo3"]
+[ext_resource type="Script" path="res://Models/3dspin.gd" id="4_uu3i5"]
 [ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="5_wdf1m"]
 
 [node name="MainPlay" type="Node2D"]
@@ -41,14 +41,35 @@ omni_range = 47.1413
 
 [node name="3D Models" type="Node3D" parent="3D background scene"]
 
-[node name="BackgroundMeshGridSpawner" type="Node3D" parent="3D background scene/3D Models"]
-script = ExtResource("3_q6mnk")
-mesh = ExtResource("4_rq4dp")
-xSpacing = 4.0
-ySpacing = 4.0
-xCount = 10
-yCount = 6
-scaleSpawned = 0.2
+[node name="GrandpaClockWorkingHands" parent="3D background scene/3D Models" instance=ExtResource("4_k1xo3")]
+transform = Transform3D(0.257362, -0.445764, -0.857356, 0.866025, 0.5, -2.48147e-17, 0.428678, -0.742492, 0.514724, 6.72562, -6.58258, 5.88742)
+script = ExtResource("4_uu3i5")
+spinZ = 1
+spinRate = 0.3
+
+[node name="GrandpaClockWorkingHands4" parent="3D background scene/3D Models" instance=ExtResource("4_k1xo3")]
+transform = Transform3D(0.499045, -0.86577, 0.0373586, 0.866382, 0.499381, -0.000382751, -0.0183249, 0.0325579, 0.999302, 6.86956, -6.58246, 15.2118)
+script = ExtResource("4_uu3i5")
+spinX = 1
+spinRate = 0.5
+
+[node name="GrandpaClockWorkingHands2" parent="3D background scene/3D Models" instance=ExtResource("4_k1xo3")]
+transform = Transform3D(-0.450482, 0.780257, -0.433895, 0.866025, 0.5, -7.58328e-09, 0.216947, -0.375764, -0.900964, 25.0812, -6.58246, 13.1253)
+script = ExtResource("4_uu3i5")
+spinZ = 1
+spinRate = -0.2
+
+[node name="GrandpaClockWorkingHands5" parent="3D background scene/3D Models" instance=ExtResource("4_k1xo3")]
+transform = Transform3D(-0.315337, 0.54618, -0.303726, 0.606218, 0.35, -3.66651e-08, 0.151863, -0.263035, -0.630674, 30.1955, -6.58246, 4.65467)
+script = ExtResource("4_uu3i5")
+spinY = 1
+spinRate = -0.7
+
+[node name="GrandpaClockWorkingHands3" parent="3D background scene/3D Models" instance=ExtResource("4_k1xo3")]
+transform = Transform3D(-0.288427, 0.505652, 3.95741, 3.46637, 1.99607, -0.00240628, -1.97513, 3.42929, -0.582124, 18.0552, -18.4064, 8.66164)
+script = ExtResource("4_uu3i5")
+spinY = 1
+spinRate = -0.2
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_wdf1m")]
 level_goal = 100

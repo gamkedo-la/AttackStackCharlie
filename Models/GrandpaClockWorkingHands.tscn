@@ -7,16 +7,16 @@
 [node name="GrandpaClockWorkingHands" type="Node3D"]
 
 [node name="grandpa_clock_02-blend" parent="." instance=ExtResource("1_pcl3h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.162, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.162, -4.39771, 2.08165e-12)
 
 [node name="clockhand min" parent="." instance=ExtResource("2_q16e7")]
-transform = Transform3D(-1.74846e-09, -0.051, 1.77881e-17, 0.04, -2.22928e-09, -1.77881e-17, 1.39515e-17, 1.77881e-17, 0.051, 0.600111, 5.591, 2.08165e-12)
+transform = Transform3D(-1.74846e-09, -0.051, 1.77881e-17, 0.04, -2.22928e-09, -1.77881e-17, 1.39515e-17, 1.77881e-17, 0.051, 0.600111, 1.1933, 2.08165e-12)
 script = ExtResource("3_b0r38")
 spinX = 1
 spinRate = -6.0
 
 [node name="clockhand hour" parent="." instance=ExtResource("2_q16e7")]
-transform = Transform3D(-1.09278e-09, -0.051, 1.77881e-17, 0.0217895, -1.943e-09, 0.0250027, -0.0122562, 1.0929e-09, 0.0444507, 0.600111, 5.591, 2.08165e-12)
+transform = Transform3D(-1.09278e-09, -0.051, 1.77881e-17, 0.0217895, -1.943e-09, 0.0250027, -0.0122562, 1.0929e-09, 0.0444507, 0.600111, 1.1933, 2.08165e-12)
 script = ExtResource("3_b0r38")
 spinX = 1
 spinRate = -0.1
