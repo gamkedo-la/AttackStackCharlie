@@ -92,11 +92,11 @@ omni_range = 47.1413
 [node name="BackgroundMeshGridSpawner" type="Node3D" parent="3D background scene/3D Models"]
 script = ExtResource("3_kidnh")
 mesh = ExtResource("4_mf000")
-xSpacing = 4.0
-ySpacing = 4.0
+xSpacing = 6.0
+ySpacing = 6.0
 xCount = 10
 yCount = 6
-scaleSpawned = 0.2
+scaleSpawned = 0.4
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_vy31i")]
 
