@@ -24,12 +24,12 @@ var stats = {
 }
 
 var powerup_paths = [ # checks stat since last player damage, "hits_taken" won't make sense
-	{ "path": "res://Powerups/Upgrade_TempSpeedBoost.tscn", "word":"Always Available", "stat": "seconds", "minimum": -1 }, # always can drop
-	{ "path": "res://Powerups/UpgradeShot_Range.tscn", "word":"Range", "stat": "time_since_player_moved", "minimum": 4 },
-	{ "path": "res://Powerups/UpgradeShot_ROF.tscn", "word":"ROF", "stat": "shots_fired", "minimum": 10 },
-	{ "path": "res://Powerups/Upgrade_Invincibility.tscn", "word":"Invul", "stat": "chain_reaction_depth", "minimum": 15 },
-	{ "path": "res://Powerups/UpgradeShot_Split.tscn", "word":"Split", "stat": "seconds", "minimum": 5 }, #per hit, so time since last hit
-	{ "path": "res://Powerups/Upgrade_AddDrone.tscn", "word":"Drone", "stat": "time_since_last_shot_fired", "minimum": 2 }
+	{ "image": "res://Powerups/speed_boost.png", "path": "res://Powerups/Upgrade_TempSpeedBoost.tscn", "word":"Always Available", "stat": "seconds", "minimum": -1 }, # always can drop
+	{ "image": "res://Powerups/range_upgrade.png", "path": "res://Powerups/UpgradeShot_Range.tscn", "word":"Range", "stat": "time_since_player_moved", "minimum": 4 },
+	{ "image": "res://Powerups/rof_upgrade.png", "path": "res://Powerups/UpgradeShot_ROF.tscn", "word":"ROF", "stat": "shots_fired", "minimum": 10 },
+	{ "image": "res://Powerups/star.png", "path": "res://Powerups/Upgrade_Invincibility.tscn", "word":"Invul", "stat": "chain_reaction_depth", "minimum": 15 },
+	{ "image": "res://Powerups/rocket_powerup.png", "path": "res://Powerups/UpgradeShot_Split.tscn", "word":"Split", "stat": "seconds", "minimum": 5 }, #per hit, so time since last hit
+	{ "image": "res://Powerups/playerdrone_pickup.png", "path": "res://Powerups/Upgrade_AddDrone.tscn", "word":"Drone", "stat": "time_since_last_shot_fired", "minimum": 2 }
 ]
 
 # cloning values to track per round (summary screen) separate from powerups (per hit)
@@ -104,5 +104,5 @@ func _ready():
 	if node:
 		print("Node found: ", node)
 	else:
-		print("Node not found at path: ", path)
+		print("Node not found at path: ", path)	
 	reset()

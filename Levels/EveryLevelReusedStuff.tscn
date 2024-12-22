@@ -71,14 +71,18 @@ position = Vector2(550, 534)
 [node name="SX_PlayShootBasic" type="AudioStreamPlayer" parent="Player"]
 stream = SubResource("AudioStreamRandomizer_irrt5")
 
-[node name="PlayerUpgradeStatus" type="RichTextLabel" parent="."]
-offset_left = 12.0
-offset_top = 11.0
-offset_right = 360.0
-offset_bottom = 184.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 200)
+offset_right = 320.0
+offset_bottom = 191.0
+
+[node name="PlayerUpgradeStatus" type="RichTextLabel" parent="VBoxContainer"]
+clip_contents = false
+layout_mode = 2
 bbcode_enabled = true
 text = "powerup [red]stat[/red] goals"
 scroll_active = false
+autowrap_mode = 0
 shortcut_keys_enabled = false
 script = ExtResource("13_o3uog")
 
