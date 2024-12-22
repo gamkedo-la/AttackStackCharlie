@@ -8,9 +8,12 @@ func item_unlock_debug_text_update():
 		var key = PlayerVars.powerup_paths[i]
 		var ui_element = powerup_ui_elements[i]
 
-		# var text_color = "green" if check_perhit_stat(key["stat"]) >= key["minimum"] else "white"
-		ui_element["label"].text = key["stat"] + " " + \
-		                            str(round(check_perhit_stat(key["stat"]))) + "/" + str(key["minimum"])
+		var can_drop = check_perhit_stat(key["stat"]) >= key["minimum"]
+		if i==0:
+			ui_element["label"].text = key["descr"]
+		else:
+			ui_element["label"].text = key["descr"] + "\n" + \
+			("READY" if can_drop else str(round(check_perhit_stat(key["stat"]))) + "/" + str(key["minimum"]))
 
 	# for key in PlayerVars.powerup_paths:
 	# 	var textColor
@@ -33,7 +36,7 @@ func _ready():
 	var i = 0
 	for key in PlayerVars.powerup_paths:
 		var control = Control.new()
-		control.set_position(Vector2(25, 35 + i * 50))  # Horizontal fixed at 50, vertical based on index
+		control.set_position(Vector2(25, 35 + i * 60))  # Horizontal fixed at 50, vertical based on index
 		i += 1
 		add_child(control)
 
@@ -44,7 +47,7 @@ func _ready():
 		control.add_child(sprite)
 
 		var label = Label.new()
-		label.set_position(Vector2(25,-10))
+		label.set_position(Vector2(25,-25))
 		control.add_child(label)
 
 		powerup_ui_elements.append({ "control": control, "sprite": sprite, "label": label })
