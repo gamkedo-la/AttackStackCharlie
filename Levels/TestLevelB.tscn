@@ -1,10 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5l5coih5r1su"]
+[gd_scene load_steps=7 format=3 uid="uid://b5l5coih5r1su"]
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_2d853"]
-[ext_resource type="PackedScene" uid="uid://iopfwnba5j8b" path="res://Models/eiffel.glb" id="3_cf2l7"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="3_einjh"]
 [ext_resource type="PackedScene" uid="uid://da817q0bdxwwa" path="res://Models/tree.glb" id="6_gqn6m"]
-[ext_resource type="PackedScene" uid="uid://b80avaganc7y3" path="res://Models/GrandpaClockWorkingHands.tscn" id="8_73ghd"]
 [ext_resource type="PackedScene" uid="uid://bq73d6o8w0lgq" path="res://Explosions/EnemyBlast.tscn" id="9_il3cp"]
 [ext_resource type="Script" path="res://Models/3dspin.gd" id="12_d02ne"]
 [ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="13_uimog"]
@@ -47,21 +45,45 @@ omni_range = 47.1413
 
 [node name="3D Models" type="Node3D" parent="3D background scene"]
 
-[node name="eiffel" parent="3D background scene/3D Models" instance=ExtResource("3_cf2l7")]
-transform = Transform3D(1.5, -1.04636e-15, -2.28689e-23, -2.28689e-23, -6.55671e-08, 1.5, -1.04636e-15, -1.5, -6.55671e-08, 11.4385, -54.7797, 11.6574)
-script = ExtResource("12_d02ne")
-spinZ = 1
-
 [node name="tree" parent="3D background scene/3D Models" instance=ExtResource("6_gqn6m")]
-transform = Transform3D(1, 0, -1.5246e-23, -1.5246e-23, -4.37114e-08, -1, 0, 1, -4.37114e-08, 17.7317, 0, 0)
+transform = Transform3D(2, -1.33285e-30, 5.82606e-38, 0, -8.74228e-08, -2, 1.33285e-30, 2, -8.74228e-08, 25.9097, 0, 0)
 script = ExtResource("12_d02ne")
 spinZ = -1
 
-[node name="GrandpaClockWorkingHands" parent="3D background scene/3D Models" instance=ExtResource("8_73ghd")]
-transform = Transform3D(0.0170368, -0.715093, -0.698821, 0.994084, -0.0628677, 0.0885667, -0.107267, -0.696196, 0.709792, 9.18217, 0, 7.4035)
+[node name="tree3" parent="3D background scene/3D Models" instance=ExtResource("6_gqn6m")]
+transform = Transform3D(-3, -4.52987e-07, 1.98007e-14, 0, -1.31134e-07, -3, 4.52987e-07, -3, 1.31134e-07, 17.3321, 0, 20.6945)
 script = ExtResource("12_d02ne")
 spinZ = 1
-spinRate = -0.05
+spinRate = 0.03
+
+[node name="tree2" parent="3D background scene/3D Models" instance=ExtResource("6_gqn6m")]
+transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, -1.56198, 0, 5.70485)
+script = ExtResource("12_d02ne")
+spinX = 1
+
+[node name="tree4" parent="3D background scene/3D Models" instance=ExtResource("6_gqn6m")]
+transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, -1.63294, -0.660156, 14.5039)
+script = ExtResource("12_d02ne")
+spinX = 1
+spinRate = -0.3
+
+[node name="tree5" parent="3D background scene/3D Models" instance=ExtResource("6_gqn6m")]
+transform = Transform3D(7.54979e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 7.54979e-08, -3.30012e-15, 36.2475, -0.858398, 16.8748)
+script = ExtResource("12_d02ne")
+spinX = 1
+spinRate = 0.2
+
+[node name="tree6" parent="3D background scene/3D Models" instance=ExtResource("6_gqn6m")]
+transform = Transform3D(5.28485e-08, -0.7, 3.0598e-08, 0, -3.0598e-08, -0.7, 0.7, 5.28485e-08, -2.31008e-15, 36.0199, -0.372192, 10.3195)
+script = ExtResource("12_d02ne")
+spinX = 1
+spinRate = 0.4
+
+[node name="tree7" parent="3D background scene/3D Models" instance=ExtResource("6_gqn6m")]
+transform = Transform3D(7.54979e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 7.54979e-08, -3.30012e-15, 36.9389, -0.318237, 3.21838)
+script = ExtResource("12_d02ne")
+spinX = 1
+spinRate = -0.1
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("13_uimog")]
 level_goal = 50
