@@ -60,6 +60,9 @@ func _physics_process(delta):
 	rotation = shipFacing.angle()
 	move_vec *= SHIP_VEL_DECAY
 	
+	var timeSinceShot = PlayerVars.check_perhit_stat("time_since_last_shot_fired")
+	PlayerVars.increase_stat_if_increased("time_since_last_shot_fired_depth",timeSinceShot,false)
+	
 	var speedNow;
 	var showBoosting = boost_time > 0
 	if showBoosting:
@@ -124,6 +127,7 @@ func upgradeTempSpeedBoost(speedboost_time):
 
 func upgradeDrone():
 	var drone_count = playerDrones.get_child_count()
+	PlayerVars.reset_stat("time_since_last_shot_fired_depth",false) #picked up, restart counter
 	if drone_count >= MAX_DRONES:
 		print("drones maxed out, give player feedback (or avoid powerup spawn)")
 		return

@@ -18,7 +18,8 @@ var stats = {
 	"chain_reaction_depth":0,
 	"player_distance_moved": 0.0,
 	"time_since_last_hit": 0,
-	"time_since_last_shot_fired": 0,
+	"time_since_last_shot_fired": 0, # counter, resets instantly on fire
+	"time_since_last_shot_fired_depth":0, #saves ceiling for powerup check, reset only when dispensed
 	"time_since_player_moved": 0,
 	"most_drones_gained": 0, 
 }
@@ -29,7 +30,7 @@ var powerup_paths = [ # checks stat since last player damage, "hits_taken" won't
 	{ "image": "res://Powerups/range_upgrade.png", "path": "res://Powerups/UpgradeShot_Range.tscn", "descr":"Sit still for range", "word":"Range", "stat": "time_since_player_moved", "minimum": 4 },
 	{ "image": "res://Powerups/rof_upgrade.png", "path": "res://Powerups/UpgradeShot_ROF.tscn", "descr":"Shoot more for ROF", "word":"ROF", "stat": "shots_fired", "minimum": 10 },
 	{ "image": "res://Powerups/star.png", "path": "res://Powerups/Upgrade_Invincibility.tscn", "descr":"Chain reaction for invul", "word":"Invul", "stat": "chain_reaction_depth", "minimum": 8 },
-	{ "image": "res://Powerups/playerdrone_pickup.png", "path": "res://Powerups/Upgrade_AddDrone.tscn",  "descr":"Hold fire for drone", "word":"Drone", "stat": "time_since_last_shot_fired", "minimum": 3 }
+	{ "image": "res://Powerups/playerdrone_pickup.png", "path": "res://Powerups/Upgrade_AddDrone.tscn",  "descr":"Hold fire for drone", "word":"Drone", "stat": "time_since_last_shot_fired_depth", "minimum": 3 }
 ]
 
 # cloning values to track per round (summary screen) separate from powerups (per hit)
