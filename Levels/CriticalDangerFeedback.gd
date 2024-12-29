@@ -61,10 +61,10 @@ func on_enemy_defeated():
 	# Check if it is the last enemy and if so will show message to player
 	if enemiesRemaining == 1:
 		show_message(LastEnemyMessage)
+		activate_panic_state(LastEnemyMessage)
 	elif enemiesRemaining == 0:
 		# Hide any messages as victory text will display
 		force_hide_message()
-		activate_panic_state(LastEnemyMessage)
 
 func on_player_health_decreased():
 	print("CriticalDangerFeedback: Player health decreased")
