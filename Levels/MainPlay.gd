@@ -9,6 +9,9 @@ var timerCount: int = 100;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	PlayerVars.player_health = PlayerVars.player_max_health
+	health.max_value = PlayerVars.player_max_health;
+	health.value = PlayerVars.player_health;
+	health.get("theme_override_styles/fill").bg_color = Color.GREEN;
 	updateHealthDisplay();
 	var roundTitle = RoundTitle.instantiate()
 	add_child(roundTitle)
@@ -27,5 +30,16 @@ func updateHealthDisplay():
 	# Health was null initially when selecting a level from "Level Select" on main menu
 	# Probably only needed temporarily as see health is defined on main play through
 	if !is_instance_valid(health): return
+	
 	var current_health = max(PlayerVars.player_min_health, PlayerVars.player_health)
-	health.text = "HEALTH: " + str(current_health) + "/" + str(PlayerVars.player_max_health)
+	health.value = current_health;
+	
+	# healthbar is yellow at 70% health
+	if health.value <= 0.7 * health.max_value:
+		health.get("theme_override_styles/fill").bg_color = Color.YELLOW;
+		
+	# healthbar is red at 35% health	
+	if health.value <= 0.35 * health.max_value:
+		health.get("theme_override_styles/fill").bg_color = Color.RED;
+	
+		
