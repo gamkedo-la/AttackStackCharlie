@@ -22,6 +22,7 @@ var panic_state: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Engine.time_scale = 1.0
 	if is_instance_valid(feedback_text):
 		feedback_text.visible = false
 	else:
@@ -80,6 +81,7 @@ func on_player_health_decreased():
 
 func activate_panic_state(reason: String):
 	if not panic_state:
+		Engine.time_scale = 1.5
 		panic_state = true
 		show_message(reason)
 		play_music(panic_music_path)
