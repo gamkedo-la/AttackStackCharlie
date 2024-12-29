@@ -6,15 +6,19 @@ const TimeRunningOutMessage = "Hurry Up!"
 
 @export var message_display_time_secs = 2
 @export var time_running_out_threshold_secs = 30
+const normal_music_path = "res://Audio/AttackStackCharlie-Audio-rodrigo.ogg"
+const panic_music_path = "res://Audio/HurryMode0-vaan.ogg"
 
 # RoundManager is the owner of win conditions
 @onready var roundManager = get_tree().current_scene.get_node("EveryLevelReusedStuff")
 @onready var feedback_text = $FeedbackText
 @onready var timer = $FeedbackTimer
-@onready var countdown = get_tree().current_scene.get_node("EveryLevelReusedStuff/Countdown");
+@onready var countdown = get_tree().current_scene.get_node("EveryLevelReusedStuff/Countdown")
 @onready var player_node = get_tree().current_scene.get_node("EveryLevelReusedStuff/Player")
+@onready var music_player = get_tree().current_scene.get_node("EveryLevelReusedStuff/MusicPlayer")
 
 var low_time_message_displayed: bool = false
+var panic_state: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -34,6 +38,9 @@ func _ready():
 		
 	player_node.player_health_decreased.connect(on_player_health_decreased)
 
+	# Start normal music
+	play_music(normal_music_path)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# Tick not the best but works for now
@@ -43,10 +50,9 @@ func check_low_time():
 	# Only display the message once
 	if !is_instance_valid(countdown) or low_time_message_displayed:
 		return
-	# print("CriticalDangerFeedback: TimeRem=" + str(countdown.time_left))
 	if countdown.time_left <= time_running_out_threshold_secs:
 		low_time_message_displayed = true
-		show_message(TimeRunningOutMessage)
+		activate_panic_state(TimeRunningOutMessage)
 
 func on_enemy_defeated():
 	# print("CriticalDangerFeedback: Enemy Defeated")
@@ -58,7 +64,8 @@ func on_enemy_defeated():
 	elif enemiesRemaining == 0:
 		# Hide any messages as victory text will display
 		force_hide_message()
-		
+		activate_panic_state(LastEnemyMessage)
+
 func on_player_health_decreased():
 	print("CriticalDangerFeedback: Player health decreased")
 	# Check if 1 remaining health
@@ -69,8 +76,14 @@ func on_player_health_decreased():
 		healthRemaining = PlayerVars.player_health
 		
 	if healthRemaining == 1:
-		show_message(LowHealthMessage)
-	
+		activate_panic_state(LowHealthMessage)
+
+func activate_panic_state(reason: String):
+	if not panic_state:
+		panic_state = true
+		show_message(reason)
+		play_music(panic_music_path)
+
 func show_message(text):
 	print("CriticalDangerFeedback: " + text)
 	# set the text of the feedback text
@@ -97,3 +110,8 @@ func on_timer_expired():
 func hide_message():
 	if feedback_text:
 		feedback_text.visible = false
+
+func play_music(music_path: String):
+	if is_instance_valid(music_player):
+		music_player.stream = ResourceLoader.load(music_path)
+		music_player.play()
