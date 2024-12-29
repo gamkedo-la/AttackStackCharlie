@@ -10,7 +10,7 @@ offset_left = 466.0
 offset_top = 17.0
 offset_right = 700.0
 offset_bottom = 124.0
-text = "LEVEL SELECT"
+text = "MISSION SELECT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -38,62 +38,61 @@ alignment = 1
 
 [node name="LevelABTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "LEVEL A"
+text = "Wading In"
 script = ExtResource("1_awoko")
 map_name = "TestLevelA"
 
 [node name="LevelBBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "LEVEL B"
+text = "Crash Mix"
 script = ExtResource("1_awoko")
 map_name = "TestLevelB"
 
 [node name="LevelCBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "LEVEL C"
+text = "Dense Sliders"
 script = ExtResource("1_awoko")
 map_name = "TestLevelC"
 
 [node name="LevelDBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "LEVEL D"
+text = "Circlers"
 script = ExtResource("1_awoko")
 map_name = "TestLevelD"
 
 [node name="LevelEBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "LEVEL E"
+text = "Tracking Mines"
 script = ExtResource("1_awoko")
 map_name = "TestLevelE"
 
 [node name="LevelFBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "LEVEL F
-"
+text = "Wave Sliders"
 script = ExtResource("1_awoko")
 map_name = "TestLevelF"
 
 [node name="LevelGBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "LEVEL G"
+text = "Mine Layers"
 script = ExtResource("1_awoko")
 map_name = "TestLevelG"
 
 [node name="LevelHBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "LEVEL H"
+text = "Asteroids"
 script = ExtResource("1_awoko")
 map_name = "TestLevelH"
 
 [node name="LevelIBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "LEVEL I"
+text = "Minefield"
 script = ExtResource("1_awoko")
 map_name = "TestLevelI"
 
 [node name="LevelJBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "LEVEL J"
+text = "Homing Bombers"
 script = ExtResource("1_awoko")
 map_name = "TestLevelJ"
 
