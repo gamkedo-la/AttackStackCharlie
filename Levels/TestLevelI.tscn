@@ -10,7 +10,7 @@
 [node name="MainPlay" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_oroyq")
-LevelName = "I: Minefield"
+LevelName = "Minefield"
 
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("2_vxfs1")

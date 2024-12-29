@@ -9,7 +9,7 @@
 [node name="MainPlay" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_entm6")
-LevelName = "F: Wave Sliders"
+LevelName = "Wave Sliders"
 
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("2_l6c65")

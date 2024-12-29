@@ -9,7 +9,7 @@
 [node name="MainPlay" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_28ide")
-LevelName = "E: Tracking Mines"
+LevelName = "Tracking Mines"
 
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("2_kom4i")
