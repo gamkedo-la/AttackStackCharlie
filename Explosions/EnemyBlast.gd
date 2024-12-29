@@ -10,6 +10,7 @@ var hit_scale = 0.1
 
 func _ready():
 	particles.restart()
+	$AudioStreamPlayer.play()
 	self.connect("area_entered", Callable(self, "_on_Area2D_area_entered"))
 
 func _process(delta):
@@ -25,7 +26,6 @@ func update_collision_shape():
 
 func _on_Area2D_area_entered(area):
 	# print("Area entered: ", area.name) 
-	$AudioStreamPlayer.play()
 	var areaParent = area.get_parent()
 	if areaParent.is_in_group("enemies") and active:
 		# print("Destroying enemy: ", areaParent.name)
