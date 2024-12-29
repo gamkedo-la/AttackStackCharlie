@@ -4,7 +4,7 @@ extends Node2D
 @onready var time = $Time
 @onready var score = $Score
 @onready var powerups_collected = $"Powerups Collected"
-
+@onready var victory_sound = $"Lvl_Victory"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,6 +13,7 @@ func _ready():
 	time.text = "Total Time: " + str(PlayerVars.check_round_stat("time_in_level"));
 	#score.text = "Final Score: " + str(PlayerVars.score);
 	powerups_collected.text = "Powerups Collected: " + str(PlayerVars.check_round_stat("powerups_collected"));
+	victory_sound.play();
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

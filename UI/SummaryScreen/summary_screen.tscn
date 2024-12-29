@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ifg464fuofbn"]
+[gd_scene load_steps=3 format=3 uid="uid://ifg464fuofbn"]
 
 [ext_resource type="Script" path="res://UI/SummaryScreen/summary_screen.gd" id="1_mfkr1"]
+[ext_resource type="AudioStream" uid="uid://8pd0nxp6d63w" path="res://Raw Source Files/AUDIO/SFX/Lvl_Victory.wav" id="2_tnd0c"]
 
 [node name="SummaryScreen" type="Node2D"]
 script = ExtResource("1_mfkr1")
@@ -50,3 +51,6 @@ offset_top = 284.0
 offset_right = 372.0
 offset_bottom = 322.0
 text = "POWERUPS COLLECTED: XX"
+
+[node name="Lvl_Victory" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_tnd0c")
