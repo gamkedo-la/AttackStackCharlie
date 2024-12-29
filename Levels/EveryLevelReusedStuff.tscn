@@ -239,4 +239,7 @@ show_percentage = false
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="PanicTint" type="CanvasModulate" parent="."]
+color = Color(1, 0.0117647, 0, 0.615686)
+
 [connection signal="player_upgraded" from="Player" to="Control" method="_on_upgrade_received"]

@@ -4,6 +4,10 @@ const LastEnemyMessage = "Last Enemy!"
 const LowHealthMessage = "Health Low!"
 const TimeRunningOutMessage = "Hurry Up!"
 
+# for panic mode alarm stobe effect
+@onready var stobeVisual = get_tree().current_scene.get_node("EveryLevelReusedStuff/PanicTint")
+var pulse_intensity_clock = 0.0
+
 @export var message_display_time_secs = 2
 @export var time_running_out_threshold_secs = 30
 const normal_music_path = "res://Audio/AttackStackCharlie-Audio-rodrigo.ogg"
@@ -23,6 +27,7 @@ var panic_state: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Engine.time_scale = 1.0
+	stobeVisual.color = Color(1, 1, 1, 1)  # Reset to no effect
 	if is_instance_valid(feedback_text):
 		feedback_text.visible = false
 	else:
@@ -44,8 +49,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	# Tick not the best but works for now
 	check_low_time()
+
+	if panic_state:
+		pulse_intensity_clock += delta * 3.0
+		var nonRedChannels = 0.4+0.4*sin(pulse_intensity_clock) # 0.0-0.8
+		stobeVisual.color = Color(1, nonRedChannels, nonRedChannels, 1)
+	else:
+		stobeVisual.color = Color(1, 1, 1, 1)  # Reset to no effect
 
 func check_low_time():
 	# Only display the message once
