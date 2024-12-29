@@ -113,5 +113,8 @@ func hide_message():
 
 func play_music(music_path: String):
 	if is_instance_valid(music_player):
-		music_player.stream = ResourceLoader.load(music_path)
+		var music_stream = ResourceLoader.load(music_path)
+		music_stream.loop = true
+		music_player.stream = music_stream
+		# music_player.stream = ResourceLoader.load(music_path)
 		music_player.play()

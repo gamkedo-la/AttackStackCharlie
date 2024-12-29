@@ -17,9 +17,9 @@ enemy_data = Array[Dictionary]([{
 "scene": "EvilSlider",
 "weight": 1
 }])
-minRespawnTime = 0.06
-maxRespawnTime = 0.1
-maxEnemies = 200
+minRespawnTime = 0.1
+maxRespawnTime = 0.2
+maxEnemies = 100
 
 [node name="Powerups (pre-placed)" type="Node2D" parent="."]
 
@@ -72,6 +72,6 @@ script = ExtResource("4_qcfvj")
 spinZ = 1
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_5h4dk")]
-level_goal = 500
+level_goal = 100
 
 [editable path="EveryLevelReusedStuff"]
