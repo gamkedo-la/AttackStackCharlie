@@ -1,11 +1,42 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhjlg4dmbxqom"]
+[gd_scene load_steps=16 format=3 uid="uid://dhjlg4dmbxqom"]
 
-[ext_resource type="Texture2D" uid="uid://bceijy6acrat8" path="res://UI/MainMenu/logo.png" id="1_aqjag"]
 [ext_resource type="Script" path="res://UI/MainMenu/SkipTitleForGameTesting.gd" id="1_l326y"]
 [ext_resource type="Script" path="res://UI/MainMenu/PlayGameBTN.gd" id="1_rummk"]
+[ext_resource type="Texture2D" uid="uid://b2ejnhoyb8wjd" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-1.png" id="2_5mduk"]
+[ext_resource type="Texture2D" uid="uid://kh3e5jl5s41m" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-2.png" id="3_tknoh"]
 [ext_resource type="Script" path="res://UI/MainMenu/ExitBTN.gd" id="3_voos7"]
 [ext_resource type="Script" path="res://UI/MainMenu/LevelSelectBTN.gd" id="4_10x72"]
+[ext_resource type="Texture2D" uid="uid://4on6pvnvw24h" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-3.png" id="4_hu0mj"]
 [ext_resource type="AudioStream" uid="uid://c4vuhqoft0m78" path="res://Raw Source Files/AUDIO/MUSIC/Mx_MainMenuTheme_Amin.wav" id="4_q28mw"]
+[ext_resource type="Texture2D" uid="uid://qth1n0np3bqh" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-4.png" id="5_a5wus"]
+[ext_resource type="Texture2D" uid="uid://b8uvpatpue0cc" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-5.png" id="6_x5jhf"]
+[ext_resource type="Texture2D" uid="uid://d3cydidnku2si" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-6.png" id="7_ojv0w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c724w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5mduk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tknoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hu0mj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a5wus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x5jhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ojv0w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [sub_resource type="Animation" id="Animation_5p1r7"]
 length = 0.001
@@ -109,11 +140,16 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 46
 text = "ATTACK STACK CHARLIE"
 
-[node name="TextureRect" type="TextureRect" parent="BoxContainer"]
+[node name="Control" type="Control" parent="BoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_aqjag")
-expand_mode = 5
-stretch_mode = 5
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AnimatedLogo" type="AnimatedSprite2D" parent="BoxContainer/Control"]
+position = Vector2(0, -25)
+sprite_frames = SubResource("SpriteFrames_c724w")
+frame = 3
+frame_progress = 0.208546
 
 [node name="VBoxContainer" type="HBoxContainer" parent="BoxContainer"]
 layout_mode = 2
@@ -178,3 +214,4 @@ libraries = {
 [connection signal="pressed" from="BoxContainer/VBoxContainer/PlayGameBTN" to="BoxContainer/VBoxContainer/PlayGameBTN" method="_on_pressed"]
 [connection signal="pressed" from="BoxContainer/VBoxContainer/LevelSelectBTN" to="BoxContainer/VBoxContainer/LevelSelectBTN" method="_on_pressed"]
 [connection signal="pressed" from="BoxContainer/VBoxContainer/ExitBTN" to="BoxContainer/VBoxContainer/ExitBTN" method="_on_pressed"]
+[connection signal="animation_finished" from="IntroSequence" to="." method="_on_intro_sequence_animation_finished"]
