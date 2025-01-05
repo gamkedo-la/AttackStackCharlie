@@ -120,7 +120,8 @@ func _process(delta):
 		fire()
 
 func update_aimer_position():
-	var shotRangeNow = 270
+	var lifePixelMultiplier = 270.0/BASE_SHOT_LIFE # depends on shot life/speed, just found experimentally
+	var shotRangeNow = lifePixelMultiplier * (BASE_SHOT_LIFE + shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.RANGE]] * EXTRA_SHOT_LIFE_INCREMENT)
 	aimerTarget.global_position = global_position + shipFacing * shotRangeNow
 	aimerTarget.global_rotation = 0
 
