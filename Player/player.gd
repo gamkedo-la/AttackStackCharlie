@@ -128,7 +128,7 @@ func update_aimer_position():
 	aimerTarget.global_rotation = 0
 
 func upgradeShot(type):
-	if type == LEVEL_TYPE.RANGE:
+	if type == "RANGE":
 		PlayerVars.reset_stat("time_since_player_moved_best",false) #picked up, restart counter
 	shot_levels_dict[type] = min(MAX_LEVELS - 1, shot_levels_dict[type] + 1)
 	player_upgraded.emit(type)
