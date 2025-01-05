@@ -37,6 +37,8 @@ var shot_levels_dict = {
 }
 var droneToSpawn = preload("res://Player/playerdrone.tscn");
 
+@onready var aimerTarget = $Aimer
+
 @onready var boost_particles = $"Playerjet/Boost Particles"
 @onready var shield_particles = $"Playerjet/Shield Particles"
 
@@ -53,6 +55,7 @@ func _ready():
 	playerDrones.name = "PlayerDrones"
 	shield_particles.local_coords = true
 	add_child(playerDrones)
+	update_aimer_position()
 
 func _physics_process(delta):
 	var mouse_position = get_global_mouse_position()
@@ -112,8 +115,14 @@ func _process(delta):
 	PlayerVars.increase_stat("seconds", delta, false)
 	PlayerVars.increase_stat("time_since_last_shot_fired", delta, false)
 	PlayerVars.increase_stat("time_since_player_moved", delta, false)
+	update_aimer_position()
 	if Input.is_action_pressed("shoot"):
 		fire()
+
+func update_aimer_position():
+	var shotRangeNow = 270
+	aimerTarget.global_position = global_position + shipFacing * shotRangeNow
+	aimerTarget.global_rotation = 0
 
 func upgradeShot(type):
 	shot_levels_dict[type] = min(MAX_LEVELS - 1, shot_levels_dict[type] + 1)
