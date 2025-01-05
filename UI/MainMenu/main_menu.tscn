@@ -116,7 +116,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.389287, 0.389287, 0.389287, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="BoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -168,10 +168,6 @@ layout_mode = 2
 text = "LEVEL SELECT"
 script = ExtResource("4_10x72")
 
-[node name="OptionsBTN" type="Button" parent="BoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "OPTIONS"
-
 [node name="CreditsBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "CREDITS"
@@ -210,6 +206,7 @@ vertical_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_pqixo")
 }
+speed_scale = 1.58
 
 [connection signal="pressed" from="BoxContainer/VBoxContainer/PlayGameBTN" to="BoxContainer/VBoxContainer/PlayGameBTN" method="_on_pressed"]
 [connection signal="pressed" from="BoxContainer/VBoxContainer/LevelSelectBTN" to="BoxContainer/VBoxContainer/LevelSelectBTN" method="_on_pressed"]
