@@ -161,6 +161,7 @@ hue_variation_curve = SubResource("Curve_b5pw3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, -0.5)
+scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_meycx")
 
 [node name="ShootFrom" type="Node2D" parent="."]
@@ -171,7 +172,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
-scale = Vector2(2.88, 3.375)
+scale = Vector2(0.853, 1)
 shape = SubResource("RectangleShape2D_mvcs2")
 debug_color = Color(0.899814, 0.296397, 0.262715, 0.42)
 
