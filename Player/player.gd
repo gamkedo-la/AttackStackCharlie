@@ -56,6 +56,7 @@ func _ready():
 	shield_particles.local_coords = true
 	add_child(playerDrones)
 	update_aimer_position()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 
 func _physics_process(delta):
 	var mouse_position = get_global_mouse_position()
