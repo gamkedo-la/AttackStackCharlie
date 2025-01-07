@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2lo5nsj7lk7d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45uuv"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_72qop"]
+material = SubResource("StandardMaterial3D_45uuv")
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 18.1875, -168.741, 3.6788)
+mesh = SubResource("PlaneMesh_72qop")
+skeleton = NodePath("")

@@ -1,11 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5l5coih5r1su"]
+[gd_scene load_steps=9 format=3 uid="uid://b5l5coih5r1su"]
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_2d853"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="3_einjh"]
+[ext_resource type="PackedScene" uid="uid://d2lo5nsj7lk7d" path="res://Models/backPlate.tscn" id="5_pa5yo"]
 [ext_resource type="PackedScene" uid="uid://da817q0bdxwwa" path="res://Models/tree.glb" id="6_gqn6m"]
 [ext_resource type="PackedScene" uid="uid://bq73d6o8w0lgq" path="res://Explosions/EnemyBlast.tscn" id="9_il3cp"]
 [ext_resource type="Script" path="res://Models/3dspin.gd" id="12_d02ne"]
 [ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="13_uimog"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h3vdv"]
+albedo_color = Color(1, 0, 1, 1)
+emission_enabled = true
+emission = Color(0.6, 0.211765, 0, 1)
+distance_fade_mode = 1
+distance_fade_max_distance = 69.4
 
 [node name="MainPlay" type="Node2D"]
 process_mode = 1
@@ -31,59 +39,71 @@ maxEnemies = 18
 
 [node name="3D Lighting" type="Node3D" parent="3D background scene"]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="3D background scene/3D Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6197, 4.99725, 11.2573)
-omni_range = 24.9841
+[node name="BackWashGreen" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(0.320456, 0.697531, -0.640905, -0.0483499, 0.687748, 0.724337, 0.946029, -0.20113, 0.254118, -66.8182, -62.6468, 40.1021)
+light_color = Color(0, 0.239216, 0.156863, 1)
+light_energy = 2.863
+spot_range = 338.76
+spot_attenuation = 0.0
+spot_angle = 27.12
+spot_angle_attenuation = 9.51363
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="3D background scene/3D Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2094, -51.1959, 11.2573)
-omni_range = 47.1413
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="3D background scene/3D Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.6214, -88.5333, 11.2573)
-omni_range = 47.1413
+[node name="BackWashBrown" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(0.0649013, 0.186189, 0.980368, -0.903991, -0.405082, 0.136777, 0.422596, -0.895121, 0.142023, 128.76, -85.397, 41.5606)
+light_color = Color(0.172549, 0.180392, 0.0862745, 1)
+light_energy = 2.863
+spot_range = 338.76
+spot_attenuation = 0.0
+spot_angle = 38.22
+spot_angle_attenuation = 6.49802
 
 [node name="3D Models" type="Node3D" parent="3D background scene"]
 
 [node name="tree" parent="3D background scene/3D Models" instance=ExtResource("6_gqn6m")]
-transform = Transform3D(2, -1.33285e-30, 5.82606e-38, 0, -8.74228e-08, -2, 1.33285e-30, 2, -8.74228e-08, 25.9097, 0, 0)
+transform = Transform3D(2, -1.33285e-30, 5.82606e-38, 0, -8.74228e-08, -2, 1.33285e-30, 2, -8.74228e-08, 25.9097, -12.9443, 0)
 script = ExtResource("12_d02ne")
 spinZ = -1
 
 [node name="tree3" parent="3D background scene/3D Models" instance=ExtResource("6_gqn6m")]
-transform = Transform3D(-3, -4.52987e-07, 1.98007e-14, 0, -1.31134e-07, -3, 4.52987e-07, -3, 1.31134e-07, 17.3321, 0, 20.6945)
+transform = Transform3D(-3, -4.52987e-07, 1.98007e-14, 0, -1.31134e-07, -3, 4.52987e-07, -3, 1.31134e-07, 17.3321, -12.9443, 20.6945)
 script = ExtResource("12_d02ne")
 spinZ = 1
 spinRate = 0.03
 
 [node name="tree2" parent="3D background scene/3D Models" instance=ExtResource("6_gqn6m")]
-transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, -1.56198, 0, 5.70485)
+transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, -1.56198, -12.9443, 5.70485)
 script = ExtResource("12_d02ne")
 spinX = 1
 
 [node name="tree4" parent="3D background scene/3D Models" instance=ExtResource("6_gqn6m")]
-transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, -1.63294, -0.660156, 14.5039)
+transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, -1.63294, -13.6045, 14.5039)
 script = ExtResource("12_d02ne")
 spinX = 1
 spinRate = -0.3
 
 [node name="tree5" parent="3D background scene/3D Models" instance=ExtResource("6_gqn6m")]
-transform = Transform3D(7.54979e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 7.54979e-08, -3.30012e-15, 36.2475, -0.858398, 16.8748)
+transform = Transform3D(7.54979e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 7.54979e-08, -3.30012e-15, 36.2475, -13.8027, 16.8748)
 script = ExtResource("12_d02ne")
 spinX = 1
 spinRate = 0.2
 
 [node name="tree6" parent="3D background scene/3D Models" instance=ExtResource("6_gqn6m")]
-transform = Transform3D(5.28485e-08, -0.7, 3.0598e-08, 0, -3.0598e-08, -0.7, 0.7, 5.28485e-08, -2.31008e-15, 36.0199, -0.372192, 10.3195)
+transform = Transform3D(5.28485e-08, -0.7, 3.0598e-08, 0, -3.0598e-08, -0.7, 0.7, 5.28485e-08, -2.31008e-15, 36.0199, -13.3165, 10.3195)
 script = ExtResource("12_d02ne")
 spinX = 1
 spinRate = 0.4
 
 [node name="tree7" parent="3D background scene/3D Models" instance=ExtResource("6_gqn6m")]
-transform = Transform3D(7.54979e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 7.54979e-08, -3.30012e-15, 36.9389, -0.318237, 3.21838)
+transform = Transform3D(7.54979e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 7.54979e-08, -3.30012e-15, 36.9389, -13.2626, 3.21838)
 script = ExtResource("12_d02ne")
 spinX = 1
 spinRate = -0.1
+
+[node name="BackPlate" parent="3D background scene/3D Models" instance=ExtResource("5_pa5yo")]
+
+[node name="EmissiveFilter" parent="3D background scene/3D Models" instance=ExtResource("5_pa5yo")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 18.1875, -1.77702, 3.6788)
+surface_material_override/0 = SubResource("StandardMaterial3D_h3vdv")
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("13_uimog")]
 level_goal = 50
