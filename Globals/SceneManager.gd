@@ -64,3 +64,7 @@ func GetCurrentSceneAlias() -> String:
 func _input(event : InputEvent):
 	if(event.is_action_pressed("ui_cancel") or event.is_action_pressed("pause")):
 		game_paused = !game_paused
+		if game_paused:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
