@@ -14,6 +14,7 @@ func item_unlock_debug_text_update():
 		else:
 			ui_element["label"].text = key["descr"] + "\n" + \
 			("READY" if can_drop else str(round(check_perhit_stat(key["stat"]))) + "/" + str(key["minimum"]))
+			ui_element["sprite"].modulate = Color(1, 1, 1, (1.0 if can_drop else 0.5))
 
 	# for key in PlayerVars.powerup_paths:
 	# 	var textColor
