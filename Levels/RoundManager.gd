@@ -12,7 +12,7 @@ func _ready():
 	pass
 	
 func _process(delta):
-	if defeated_enemies >= level_goal && Input.is_action_pressed("confirm"):
+	if defeated_enemies >= level_goal:
 		for enemy in get_tree().get_nodes_in_group("enemies"):
 			enemy.destroy()
 	
@@ -25,10 +25,7 @@ func _on_enemy_defeated():
 	enemy_kill_counter.text = str(defeated_enemies) + "/" + str(level_goal);
 	
 	if defeated_enemies >= level_goal:
-		victory_text.visible = true;
-		
-		if Input.is_action_pressed("confirm"):
-			SceneManager.SwitchScene("Summary");
+		SceneManager.SwitchScene("Summary");
 
 func already_won():
 	return defeated_enemies >= level_goal
