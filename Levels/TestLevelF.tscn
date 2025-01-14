@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cetlov4vwsnvh"]
+[gd_scene load_steps=7 format=3 uid="uid://cetlov4vwsnvh"]
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_entm6"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="2_l6c65"]
 [ext_resource type="PackedScene" uid="uid://iopfwnba5j8b" path="res://Models/eiffel.glb" id="3_as1v8"]
 [ext_resource type="Script" path="res://Models/3dspin.gd" id="4_uomvp"]
+[ext_resource type="PackedScene" uid="uid://d2lo5nsj7lk7d" path="res://Models/backPlate.tscn" id="5_b6kq2"]
 [ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="5_hpn0p"]
 
 [node name="MainPlay" type="Node2D"]
@@ -27,17 +28,96 @@ maxEnemies = 40
 
 [node name="3D Lighting" type="Node3D" parent="3D background scene"]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="3D background scene/3D Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6197, 4.99725, 11.2573)
-omni_range = 24.9841
+[node name="InteiorSpotCool" type="OmniLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8935, -58.2132, 8.64318)
+light_color = Color(0.364706, 0.564706, 0.882353, 1)
+light_energy = 2.205
+omni_range = 68.1488
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="3D background scene/3D Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2094, -51.1959, 11.2573)
-omni_range = 47.1413
+[node name="TopSpotOrange1" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(-0.0319891, 0.853248, -0.520523, -0.280271, 0.492237, 0.824106, 0.959388, 0.17225, 0.223394, -0.996235, 15.2333, 23.2043)
+light_color = Color(0.921569, 0.419608, 0.258824, 1)
+spot_range = 135.688
+spot_attenuation = 0.0
+spot_angle = 57.0786
+spot_angle_attenuation = 2.07052
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="3D background scene/3D Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.6214, -88.5333, 11.2573)
-omni_range = 47.1413
+[node name="TopSpotOrange2" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(-0.236855, 0.922005, 0.306278, -0.153214, -0.346751, 0.925359, 0.959388, 0.17225, 0.223394, 17.5499, 7.34358, 10.0139)
+light_color = Color(0.921569, 0.419608, 0.258824, 1)
+spot_range = 79.7976
+spot_attenuation = 0.0
+spot_angle = 57.0786
+spot_angle_attenuation = 2.07052
+
+[node name="TowerSpotEast" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(-0.466073, -0.0855404, 0.880601, -0.866134, -0.158965, -0.473858, 0.180519, -0.983571, -3.66409e-08, 61.8706, -81.6151, 10.9729)
+light_color = Color(0.729412, 0.470588, 0.160784, 1)
+light_energy = 2.0
+spot_range = 103.434
+spot_attenuation = 0.435276
+spot_angle = 44.1924
+spot_angle_attenuation = 2.07052
+
+[node name="TowerSpotWest" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(0.4663, 0.0855819, -0.880477, -0.866012, -0.158943, -0.474088, -0.180519, 0.983572, -4.39691e-08, -28.9308, -81.6151, 10.9729)
+visible = false
+light_color = Color(0.717647, 0.45098, 0.211765, 1)
+light_energy = 2.0
+spot_range = 103.434
+spot_attenuation = 0.435276
+spot_angle = 44.1924
+spot_angle_attenuation = 2.07052
+
+[node name="TowerSpotNorth" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(0.180519, -0.983571, -7.89221e-08, -0.866012, -0.158943, -0.474088, 0.4663, 0.0855821, -0.880477, 16.5318, -81.6151, -36.3554)
+light_color = Color(0.481888, 0.731738, 1, 1)
+light_energy = 2.0
+spot_range = 103.434
+spot_attenuation = 0.435276
+spot_angle = 44.1924
+spot_angle_attenuation = 2.07052
+
+[node name="TowerSpotSouth" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(-0.180519, 0.983571, -5.37989e-09, -0.866012, -0.158943, -0.474088, -0.4663, -0.085582, 0.880477, 16.5318, -81.6151, 61.5592)
+light_color = Color(0.223529, 0.694118, 0.764706, 1)
+light_energy = 2.0
+spot_range = 103.434
+spot_attenuation = 0.435276
+spot_angle = 44.1924
+spot_angle_attenuation = 2.07052
+
+[node name="BackWashPuple" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(-4.37114e-08, 1, -3.59989e-21, 4.37114e-08, 1.91069e-15, 1, 1, 4.37114e-08, -4.37114e-08, 18.1475, -185.23, 7.01512)
+light_color = Color(0.505882, 0.329412, 0.584314, 1)
+light_energy = 5.603
+spot_range = 72.753
+spot_attenuation = 0.0
+spot_angle = 21.0
+spot_angle_attenuation = 2.07052
+
+[node name="BackWashRed" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(0.213549, 0.464869, 0.85924, -0.854659, -0.337157, 0.39482, 0.473239, -0.818671, 0.325304, 128.76, -203.258, 41.5606)
+light_color = Color(0.45098, 0.184314, 0.188235, 1)
+light_energy = 1.219
+spot_range = 338.76
+spot_attenuation = 0.0
+spot_angle = 67.81
+spot_angle_attenuation = 12.5533
+
+[node name="DirectionalLavender" type="DirectionalLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(-0.317385, 0.110198, 0.941872, -0.864721, 0.374072, -0.335153, -0.389262, -0.920829, -0.0234346, 71.5916, -61.1141, 0)
+light_color = Color(0.588235, 0.545098, 0.384314, 1)
+light_energy = 1.5
+
+[node name="DirectionalDeep" type="DirectionalLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(0.650571, -0.395955, -0.648056, 0.296539, 0.918031, -0.263217, 0.699158, -0.0209321, 0.714661, 41.5074, -64.6471, 0)
+light_color = Color(0.207843, 0.196078, 0.454902, 1)
+
+[node name="DirectionalPink" type="DirectionalLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(-0.359095, 0.521504, 0.774005, 0.738632, 0.665743, -0.105876, -0.570503, 0.533685, -0.624264, 71.5916, -64.6471, -35.4684)
+light_color = Color(0.854902, 0.486275, 0.435294, 1)
+light_energy = 0.5
 
 [node name="3D Models" type="Node3D" parent="3D background scene"]
 
@@ -58,6 +138,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.27543, -44.6649, 13.8941)
 script = ExtResource("4_uomvp")
 spinZ = 1
 spinRate = -0.3
+
+[node name="BackPlate" parent="3D background scene/3D Models" instance=ExtResource("5_b6kq2")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 18.1875, -250.505, 3.6788)
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_hpn0p")]
 level_goal = 60

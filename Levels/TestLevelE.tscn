@@ -28,13 +28,13 @@ maxEnemies = 20
 
 [node name="3D Lighting" type="Node3D" parent="3D background scene"]
 
-[node name="FieldFillGreen" type="OmniLight3D" parent="3D background scene/3D Lighting"]
+[node name="FieldSpotCoolGreen" type="OmniLight3D" parent="3D background scene/3D Lighting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.024, 6.06369, 18.0239)
 light_color = Color(0, 0.741176, 0.607843, 1)
 light_energy = 2.205
 omni_range = 68.1488
 
-[node name="FieldSpotPale" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+[node name="FieldSpotLime" type="SpotLight3D" parent="3D background scene/3D Lighting"]
 transform = Transform3D(-0.236855, 0.922005, 0.306278, 0.776538, 0.369111, -0.510633, -0.583857, 0.11689, -0.803398, 19.4441, -15.8646, -38.0913)
 light_color = Color(0.537255, 0.639216, 0.294118, 1)
 spot_range = 79.7976
@@ -42,7 +42,7 @@ spot_attenuation = 0.0
 spot_angle = 57.0786
 spot_angle_attenuation = 2.07052
 
-[node name="FieldSpotPale3" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+[node name="FieldSpotPaleRim" type="SpotLight3D" parent="3D background scene/3D Lighting"]
 transform = Transform3D(-0.866523, -0.05876, -0.495667, 0.437833, 0.387344, -0.811336, 0.239668, -0.920061, -0.309915, -22.0198, -81.5656, -1.7156)
 light_color = Color(0.694118, 0.823529, 0.937255, 1)
 light_energy = 0.5
@@ -51,7 +51,7 @@ spot_attenuation = 0.0
 spot_angle = 39.5046
 spot_angle_attenuation = 2.07052
 
-[node name="FieldSpotPale4" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+[node name="FieldSpotSaturatedRim" type="SpotLight3D" parent="3D background scene/3D Lighting"]
 transform = Transform3D(-0.38428, -0.661225, 0.644291, -0.840968, -0.0372369, -0.539802, 0.380922, -0.749263, -0.54176, 116.114, -81.5656, -33.1238)
 light_color = Color(0.356863, 0.678431, 0.827451, 1)
 light_energy = 0.2
@@ -60,7 +60,7 @@ spot_attenuation = 0.0
 spot_angle = 39.5046
 spot_angle_attenuation = 2.07052
 
-[node name="FieldSpotPale2" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+[node name="FieldSpotRed1" type="SpotLight3D" parent="3D background scene/3D Lighting"]
 transform = Transform3D(-0.359927, 0.929711, 0.0780334, -0.919843, -0.367602, 0.13696, 0.156018, -0.022483, 0.987498, 23.5114, 12.2082, 38.9995)
 light_color = Color(0.666667, 0, 0.152941, 1)
 light_energy = 0.5
@@ -69,7 +69,7 @@ spot_attenuation = 0.0
 spot_angle = 57.0786
 spot_angle_attenuation = 2.07052
 
-[node name="FieldSpotPale5" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+[node name="FieldSpotRed2" type="SpotLight3D" parent="3D background scene/3D Lighting"]
 transform = Transform3D(-0.148975, 0.91681, 0.370493, -0.768953, -0.342975, 0.539518, 0.621705, -0.204517, 0.756079, 38.675, -17.8427, 43.1124)
 light_color = Color(0.666667, 0, 0.152941, 1)
 light_energy = 0.5
@@ -78,7 +78,7 @@ spot_attenuation = 0.0
 spot_angle = 57.0786
 spot_angle_attenuation = 2.07052
 
-[node name="BackWashPale" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+[node name="BackWashCenter" type="SpotLight3D" parent="3D background scene/3D Lighting"]
 transform = Transform3D(-4.37114e-08, 1, -3.59989e-21, 4.37114e-08, 1.91069e-15, 1, 1, 4.37114e-08, -4.37114e-08, 18.1475, -185.23, 7.01512)
 light_color = Color(0.635294, 0.713726, 0.807843, 1)
 light_energy = 7.795
@@ -87,7 +87,7 @@ spot_attenuation = 0.0
 spot_angle = 21.0
 spot_angle_attenuation = 2.07052
 
-[node name="BackWashGreen" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+[node name="BackWashBlue" type="SpotLight3D" parent="3D background scene/3D Lighting"]
 transform = Transform3D(0.213549, 0.464869, 0.85924, -0.854659, -0.337157, 0.39482, 0.473239, -0.818671, 0.325304, 128.76, -203.258, 41.5606)
 light_color = Color(0.192157, 0.360784, 0.615686, 1)
 light_energy = 1.219
@@ -95,23 +95,6 @@ spot_range = 338.76
 spot_attenuation = 0.0
 spot_angle = 67.81
 spot_angle_attenuation = 12.5533
-
-[node name="DirectionalLavender" type="DirectionalLight3D" parent="3D background scene/3D Lighting"]
-transform = Transform3D(-0.317385, 0.110198, 0.941872, -0.864721, 0.374072, -0.335153, -0.389262, -0.920829, -0.0234346, 71.5916, -61.1141, 0)
-visible = false
-light_color = Color(0.615686, 0.45098, 0.823529, 1)
-light_energy = 1.5
-
-[node name="DirectionalDeep" type="DirectionalLight3D" parent="3D background scene/3D Lighting"]
-transform = Transform3D(0.650571, -0.395955, -0.648056, 0.296539, 0.918031, -0.263217, 0.699158, -0.0209321, 0.714661, 41.5074, -64.6471, 0)
-visible = false
-light_color = Color(0.368627, 0.14902, 0.266667, 1)
-
-[node name="DirectionalPink" type="DirectionalLight3D" parent="3D background scene/3D Lighting"]
-transform = Transform3D(-0.359095, 0.521504, 0.774005, 0.738632, 0.665743, -0.105876, -0.570503, 0.533685, -0.624264, 71.5916, -64.6471, -35.4684)
-visible = false
-light_color = Color(1, 0.462745, 0.623529, 1)
-light_energy = 0.5
 
 [node name="3D Models" type="Node3D" parent="3D background scene"]
 
