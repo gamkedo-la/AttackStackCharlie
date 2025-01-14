@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://duyhagoaid6br"]
+[gd_scene load_steps=7 format=3 uid="uid://duyhagoaid6br"]
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_28ide"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="2_kom4i"]
 [ext_resource type="PackedScene" uid="uid://b80avaganc7y3" path="res://Models/GrandpaClockWorkingHands.tscn" id="4_k1xo3"]
 [ext_resource type="Script" path="res://Models/3dspin.gd" id="4_uu3i5"]
+[ext_resource type="PackedScene" uid="uid://d2lo5nsj7lk7d" path="res://Models/backPlate.tscn" id="5_31skq"]
 [ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="5_wdf1m"]
 
 [node name="MainPlay" type="Node2D"]
@@ -27,17 +28,90 @@ maxEnemies = 20
 
 [node name="3D Lighting" type="Node3D" parent="3D background scene"]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="3D background scene/3D Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6197, 4.99725, 11.2573)
-omni_range = 24.9841
+[node name="FieldFillGreen" type="OmniLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.024, 6.06369, 18.0239)
+light_color = Color(0, 0.741176, 0.607843, 1)
+light_energy = 2.205
+omni_range = 68.1488
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="3D background scene/3D Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2094, -51.1959, 11.2573)
-omni_range = 47.1413
+[node name="FieldSpotPale" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(-0.236855, 0.922005, 0.306278, 0.776538, 0.369111, -0.510633, -0.583857, 0.11689, -0.803398, 19.4441, -15.8646, -38.0913)
+light_color = Color(0.537255, 0.639216, 0.294118, 1)
+spot_range = 79.7976
+spot_attenuation = 0.0
+spot_angle = 57.0786
+spot_angle_attenuation = 2.07052
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="3D background scene/3D Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.6214, -88.5333, 11.2573)
-omni_range = 47.1413
+[node name="FieldSpotPale3" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(-0.866523, -0.05876, -0.495667, 0.437833, 0.387344, -0.811336, 0.239668, -0.920061, -0.309915, -22.0198, -81.5656, -1.7156)
+light_color = Color(0.694118, 0.823529, 0.937255, 1)
+light_energy = 0.5
+spot_range = 89.9202
+spot_attenuation = 0.0
+spot_angle = 39.5046
+spot_angle_attenuation = 2.07052
+
+[node name="FieldSpotPale4" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(-0.38428, -0.661225, 0.644291, -0.840968, -0.0372369, -0.539802, 0.380922, -0.749263, -0.54176, 116.114, -81.5656, -33.1238)
+light_color = Color(0.356863, 0.678431, 0.827451, 1)
+light_energy = 0.2
+spot_range = 146.93
+spot_attenuation = 0.0
+spot_angle = 39.5046
+spot_angle_attenuation = 2.07052
+
+[node name="FieldSpotPale2" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(-0.359927, 0.929711, 0.0780334, -0.919843, -0.367602, 0.13696, 0.156018, -0.022483, 0.987498, 23.5114, 12.2082, 38.9995)
+light_color = Color(0.666667, 0, 0.152941, 1)
+light_energy = 0.5
+spot_range = 72.753
+spot_attenuation = 0.0
+spot_angle = 57.0786
+spot_angle_attenuation = 2.07052
+
+[node name="FieldSpotPale5" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(-0.148975, 0.91681, 0.370493, -0.768953, -0.342975, 0.539518, 0.621705, -0.204517, 0.756079, 38.675, -17.8427, 43.1124)
+light_color = Color(0.666667, 0, 0.152941, 1)
+light_energy = 0.5
+spot_range = 57.6822
+spot_attenuation = 0.0
+spot_angle = 57.0786
+spot_angle_attenuation = 2.07052
+
+[node name="BackWashPale" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(-4.37114e-08, 1, -3.59989e-21, 4.37114e-08, 1.91069e-15, 1, 1, 4.37114e-08, -4.37114e-08, 18.1475, -185.23, 7.01512)
+light_color = Color(0.635294, 0.713726, 0.807843, 1)
+light_energy = 7.795
+spot_range = 72.753
+spot_attenuation = 0.0
+spot_angle = 21.0
+spot_angle_attenuation = 2.07052
+
+[node name="BackWashGreen" type="SpotLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(0.213549, 0.464869, 0.85924, -0.854659, -0.337157, 0.39482, 0.473239, -0.818671, 0.325304, 128.76, -203.258, 41.5606)
+light_color = Color(0.192157, 0.360784, 0.615686, 1)
+light_energy = 1.219
+spot_range = 338.76
+spot_attenuation = 0.0
+spot_angle = 67.81
+spot_angle_attenuation = 12.5533
+
+[node name="DirectionalLavender" type="DirectionalLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(-0.317385, 0.110198, 0.941872, -0.864721, 0.374072, -0.335153, -0.389262, -0.920829, -0.0234346, 71.5916, -61.1141, 0)
+visible = false
+light_color = Color(0.615686, 0.45098, 0.823529, 1)
+light_energy = 1.5
+
+[node name="DirectionalDeep" type="DirectionalLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(0.650571, -0.395955, -0.648056, 0.296539, 0.918031, -0.263217, 0.699158, -0.0209321, 0.714661, 41.5074, -64.6471, 0)
+visible = false
+light_color = Color(0.368627, 0.14902, 0.266667, 1)
+
+[node name="DirectionalPink" type="DirectionalLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(-0.359095, 0.521504, 0.774005, 0.738632, 0.665743, -0.105876, -0.570503, 0.533685, -0.624264, 71.5916, -64.6471, -35.4684)
+visible = false
+light_color = Color(1, 0.462745, 0.623529, 1)
+light_energy = 0.5
 
 [node name="3D Models" type="Node3D" parent="3D background scene"]
 
@@ -66,10 +140,13 @@ spinY = 1
 spinRate = -0.7
 
 [node name="GrandpaClockWorkingHands3" parent="3D background scene/3D Models" instance=ExtResource("4_k1xo3")]
-transform = Transform3D(-0.288427, 0.505652, 3.95741, 3.46637, 1.99607, -0.00240628, -1.97513, 3.42929, -0.582124, 18.0552, -18.4064, 8.66164)
+transform = Transform3D(-0.288427, 0.505652, 3.95741, 3.46637, 1.99607, -0.00240628, -1.97513, 3.42929, -0.582124, 18.0552, -55.0534, 8.66164)
 script = ExtResource("4_uu3i5")
 spinY = 1
 spinRate = -0.2
+
+[node name="BackPlate" parent="3D background scene/3D Models" instance=ExtResource("5_31skq")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 18.1875, -250.505, 3.6788)
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_wdf1m")]
 level_goal = 100
