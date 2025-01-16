@@ -159,9 +159,8 @@ color = Color(1, 1, 0.223529, 1)
 color_ramp = SubResource("Gradient_5qx18")
 hue_variation_curve = SubResource("Curve_b5pw3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="PowerupDetector" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, -0.5)
-scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_meycx")
 
 [node name="ShootFrom" type="Node2D" parent="."]
