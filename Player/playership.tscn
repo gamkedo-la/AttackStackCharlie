@@ -176,6 +176,7 @@ shape = SubResource("RectangleShape2D_mvcs2")
 debug_color = Color(0.899814, 0.296397, 0.262715, 0.42)
 
 [node name="Aimer" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(270, 2.08165e-12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_cuxph")

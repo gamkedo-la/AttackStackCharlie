@@ -37,6 +37,7 @@ var shot_levels_dict = {
 }
 var droneToSpawn = preload("res://Player/playerdrone.tscn");
 
+var aimerToSpawn = preload("res://Player/playertempaimer.tscn")
 @onready var aimerTarget = $Aimer
 
 @onready var boost_particles = $"Playerjet/Boost Particles"
@@ -122,6 +123,11 @@ func _process(delta):
 	if Input.is_action_pressed("shoot"):
 		fire()
 
+func spawn_aimer():
+	var instance = aimerToSpawn.instantiate()
+	instance.global_position = aimerTarget.global_position
+	get_tree().root.add_child(instance)
+	
 func update_aimer_position():
 	var lifePixelMultiplier = 270.0/BASE_SHOT_LIFE # depends on shot life/speed, just found experimentally
 	var shotRangeNow = lifePixelMultiplier * (BASE_SHOT_LIFE + shot_levels_dict[LEVEL_TYPE_LIST[LEVEL_TYPE.RANGE]] * EXTRA_SHOT_LIFE_INCREMENT)
@@ -179,6 +185,7 @@ func fire():
 		var shotSweepEdgeL = Vector2.LEFT.rotated(rotation+PI/2)
 		var shotSweepEdgeR = Vector2.RIGHT.rotated(rotation+PI/2)
 		shot.global_position = $ShootFrom.global_position + shipFacing*25 + (shotSweepEdgeL*xOffset+shotSweepEdgeR*n)*SHOT_SPREAD
+	spawn_aimer()
 	emit_signal("player_fired", self)
 
 func get_time():
