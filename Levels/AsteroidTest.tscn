@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbbrd5eu36v1s"]
+
+[ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_dk1y2"]
+[ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="2_mdncx"]
+[ext_resource type="Script" path="res://Models/modelGridSpawner.gd" id="3_7bmxe"]
+[ext_resource type="PackedScene" uid="uid://erhc8bjaguav" path="res://Models/eiffelCoordSpin.tscn" id="4_uc2eq"]
+[ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="5_826cv"]
+[ext_resource type="PackedScene" uid="uid://dcj01f3ocrwv2" path="res://Enemies/Asteroid.tscn" id="6_c43f8"]
+
+[node name="MainPlay" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_dk1y2")
+LevelName = "Asteroids"
+
+[node name="Enemies" type="Node2D" parent="."]
+script = ExtResource("2_mdncx")
+enemy_data = Array[Dictionary]([{
+"scene": "EvilRusher",
+"weight": 2
+}, {
+"scene": "EvilSlider",
+"weight": 7
+}])
+minRespawnTime = 0.3
+maxRespawnTime = 1.0
+maxEnemies = 10
+spawning_active = false
+
+[node name="Powerups (pre-placed)" type="Node2D" parent="."]
+
+[node name="3D background scene" type="Node" parent="."]
+
+[node name="3D Lighting" type="Node3D" parent="3D background scene"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6197, 4.99725, 11.2573)
+omni_range = 24.9841
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2094, -51.1959, 11.2573)
+omni_range = 47.1413
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.6214, -88.5333, 11.2573)
+omni_range = 47.1413
+
+[node name="3D Models" type="Node3D" parent="3D background scene"]
+
+[node name="BackgroundMeshGridSpawner" type="Node3D" parent="3D background scene/3D Models"]
+script = ExtResource("3_7bmxe")
+mesh = ExtResource("4_uc2eq")
+xSpacing = 4.0
+ySpacing = 4.0
+xCount = 10
+yCount = 6
+
+[node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_826cv")]
+
+[node name="Camera3D" parent="EveryLevelReusedStuff/Background 3D setup" index="0"]
+current = true
+
+[node name="Asteroid" parent="." instance=ExtResource("6_c43f8")]
+position = Vector2(234, 261)
+
+[node name="Asteroid2" parent="." instance=ExtResource("6_c43f8")]
+position = Vector2(382, 492)
+
+[editable path="EveryLevelReusedStuff"]
