@@ -1,10 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcpdxqiufb8lm"]
+[gd_scene load_steps=8 format=3 uid="uid://dcpdxqiufb8lm"]
 
 [ext_resource type="Script" path="res://Levels/MainPlay.gd" id="1_e1crx"]
 [ext_resource type="Script" path="res://Enemies/EnemyEdgeSpawning.gd" id="2_71spp"]
 [ext_resource type="Script" path="res://Models/modelGridSpawner.gd" id="3_1mpjm"]
 [ext_resource type="PackedScene" uid="uid://catmw8khctw14" path="res://Models/clockCoordSpin.tscn" id="4_2w5qg"]
+[ext_resource type="PackedScene" uid="uid://d2lo5nsj7lk7d" path="res://Models/backPlate.tscn" id="5_640ky"]
 [ext_resource type="PackedScene" uid="uid://8kolafukcuow" path="res://Levels/EveryLevelReusedStuff.tscn" id="5_knst2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ftxx"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.52549, 0.847059, 1, 1)
+distance_fade_mode = 1
+distance_fade_max_distance = 50.0
 
 [node name="MainPlay" type="Node2D"]
 process_mode = 1
@@ -27,17 +35,19 @@ maxEnemies = 5
 
 [node name="3D Lighting" type="Node3D" parent="3D background scene"]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="3D background scene/3D Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6197, 4.99725, 11.2573)
-omni_range = 24.9841
+[node name="DirectionalLavender" type="DirectionalLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(-0.317385, 0.110198, 0.941872, -0.864721, 0.374072, -0.335153, -0.389262, -0.920829, -0.0234346, 71.5916, -61.1141, 0)
+light_color = Color(0.694118, 0.658824, 0.937255, 1)
+light_energy = 1.5
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="3D background scene/3D Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2094, -51.1959, 11.2573)
-omni_range = 47.1413
+[node name="DirectionalRed" type="DirectionalLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(0.650571, -0.395955, -0.648056, 0.296539, 0.918031, -0.263217, 0.699158, -0.0209321, 0.714661, 41.5074, -64.6471, 0)
+light_color = Color(0.596078, 0, 0.0980392, 1)
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="3D background scene/3D Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.6214, -88.5333, 11.2573)
-omni_range = 47.1413
+[node name="DirectionalBlue" type="DirectionalLight3D" parent="3D background scene/3D Lighting"]
+transform = Transform3D(-0.359095, 0.521504, 0.774005, 0.738632, 0.665743, -0.105876, -0.570503, 0.533685, -0.624264, 71.5916, -64.6471, -35.4684)
+light_color = Color(0.12549, 0.54902, 0.772549, 1)
+light_energy = 0.5
 
 [node name="3D Models" type="Node3D" parent="3D background scene"]
 
@@ -49,6 +59,13 @@ ySpacing = 5.0
 xCount = 10
 yCount = 6
 scaleSpawned = 0.7
+
+[node name="BackPlate" parent="3D background scene/3D Models" instance=ExtResource("5_640ky")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 18.1875, -250.505, 3.6788)
+
+[node name="EmissiveFilter" parent="3D background scene/3D Models" instance=ExtResource("5_640ky")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 18.1875, 4.2124, 3.6788)
+surface_material_override/0 = SubResource("StandardMaterial3D_6ftxx")
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_knst2")]
 level_goal = 10
