@@ -1,13 +1,15 @@
 extends CharacterBody2D
 
-@export var rotation_speed_min = 45
-@export var rotation_speed_max = 135
+@export var rotation_speed_min: float = 45
+@export var rotation_speed_max: float = 135
 
 @export var speed_min: float = 50.0
 @export var speed_max: float = 150.0
 
-@export var heading_deviation_min = 10
-@export var heading_deviation_max = 30
+@export var heading_deviation_angle_min: float = 10
+@export var heading_deviation_angle_max: float = 30
+
+var border_buffer: float = 10
 
 var speed : float
 var rotation_speed: float
@@ -35,10 +37,10 @@ func _ready():
 	else:
 		push_error("Asteroid: Missing Level area Boundary!")
 
-	topY = 10
-	bottomY = camera_height - 10
-	leftX = 10
-	rightX = camera_width - 10
+	topY = border_buffer
+	bottomY = camera_height - border_buffer
+	leftX = border_buffer
+	rightX = camera_width - border_buffer
 
 	init_movement()
 
@@ -50,7 +52,7 @@ func init_movement():
 	heading = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
 	
 func perturb_heading():
-	var angle = randf_range(10, 30) * ( 1 if randf() <= 0.5 else -1)
+	var angle = randf_range(heading_deviation_angle_min, heading_deviation_angle_max) * ( 1 if randf() <= 0.5 else -1)
 	# rotate heading by angle
 	heading = heading.rotated(deg_to_rad(angle))
 	
