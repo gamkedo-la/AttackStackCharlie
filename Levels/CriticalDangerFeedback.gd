@@ -28,6 +28,7 @@ var panic_state: bool = false
 func _ready():
 	Engine.time_scale = 1.0
 	stobeVisual.color = Color(1, 1, 1, 1)  # Reset to no effect
+	panic_state = false #reset
 	if is_instance_valid(feedback_text):
 		feedback_text.visible = false
 	else:
