@@ -22,11 +22,13 @@ shader_parameter/roll_speed = 0.3
 shader_parameter/scan_line_strength = -6.0
 shader_parameter/pixel_strength = -2.0
 
-[node name="CRTEffect" type="CanvasLayer"]
-layer = 128
+[node name="CRTEffect" type="Node"]
 script = ExtResource("3_x8674")
 
-[node name="CRTEffect" type="Sprite2D" parent="."]
+[node name="ScreenOverlay" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="CRTEffect" type="Sprite2D" parent="ScreenOverlay"]
 material = SubResource("ShaderMaterial_f6e08")
 scale = Vector2(9.29456, 9.29456)
 texture = ExtResource("2_r6qqc")

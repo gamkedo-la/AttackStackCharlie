@@ -1,6 +1,6 @@
-extends CanvasLayer
+extends Node
 
-@onready var sprite = $CRTEffect
+@onready var sprite = $ScreenOverlay/CRTEffect;
 
 @export var enable_crt: bool = true
 

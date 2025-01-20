@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://6qxfenv0ngsl"]
+[gd_scene load_steps=4 format=3 uid="uid://6qxfenv0ngsl"]
 
 [ext_resource type="Script" path="res://UI/LevelSelect/LevelLoadBTN.gd" id="1_awoko"]
+[ext_resource type="PackedScene" uid="uid://bqe1ul3picejh" path="res://Shaders/CRTEffect.tscn" id="3_7usc6"]
 [ext_resource type="Script" path="res://UI/LevelSelect/BackBTN.gd" id="5_u7lfj"]
 
 [node name="LevelSelect" type="Node2D"]
@@ -100,6 +101,8 @@ map_name = "TestLevelJ"
 layout_mode = 2
 text = "RETURN"
 script = ExtResource("5_u7lfj")
+
+[node name="CRTEffect" parent="." instance=ExtResource("3_7usc6")]
 
 [connection signal="pressed" from="BoxContainer/VBoxContainer/LevelABTN" to="BoxContainer/VBoxContainer/LevelABTN" method="_on_pressed"]
 [connection signal="pressed" from="BoxContainer/VBoxContainer/LevelBBTN" to="BoxContainer/VBoxContainer/LevelBBTN" method="_on_pressed"]

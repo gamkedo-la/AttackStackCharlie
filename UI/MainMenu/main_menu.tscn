@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dhjlg4dmbxqom"]
+[gd_scene load_steps=17 format=3 uid="uid://dhjlg4dmbxqom"]
 
 [ext_resource type="Script" path="res://UI/MainMenu/SkipTitleForGameTesting.gd" id="1_l326y"]
 [ext_resource type="Script" path="res://UI/MainMenu/PlayGameBTN.gd" id="1_rummk"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://qth1n0np3bqh" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-4.png" id="5_a5wus"]
 [ext_resource type="Texture2D" uid="uid://b8uvpatpue0cc" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-5.png" id="6_x5jhf"]
 [ext_resource type="Texture2D" uid="uid://d3cydidnku2si" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-6.png" id="7_ojv0w"]
+[ext_resource type="PackedScene" uid="uid://bqe1ul3picejh" path="res://Shaders/CRTEffect.tscn" id="12_o54ba"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c724w"]
 animations = [{
@@ -207,6 +208,8 @@ libraries = {
 "": SubResource("AnimationLibrary_pqixo")
 }
 speed_scale = 1.58
+
+[node name="CRTEffect" parent="." instance=ExtResource("12_o54ba")]
 
 [connection signal="pressed" from="BoxContainer/VBoxContainer/PlayGameBTN" to="BoxContainer/VBoxContainer/PlayGameBTN" method="_on_pressed"]
 [connection signal="pressed" from="BoxContainer/VBoxContainer/LevelSelectBTN" to="BoxContainer/VBoxContainer/LevelSelectBTN" method="_on_pressed"]
