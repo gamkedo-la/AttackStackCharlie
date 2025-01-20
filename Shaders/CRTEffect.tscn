@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqe1ul3picejh"]
+
+[ext_resource type="Shader" path="res://Shaders/realistic_crt.gdshader" id="1_yytrn"]
+[ext_resource type="Texture2D" uid="uid://c8v6r2ym4rbe0" path="res://icon.svg" id="2_r6qqc"]
+[ext_resource type="Script" path="res://Shaders/CRTEffect.gd" id="3_x8674"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f6e08"]
+shader = ExtResource("1_yytrn")
+shader_parameter/resolution = Vector2(640, 360)
+shader_parameter/scan_line_amount = 0.5
+shader_parameter/scan_line_height = 0.5
+shader_parameter/warp_amount = 0.05
+shader_parameter/noise_amount = 0.02
+shader_parameter/interference_amount = 0.1
+shader_parameter/grille_amount = 0.1
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberation_amount = 0.25
+shader_parameter/roll_line_amount = 0.2
+shader_parameter/roll_speed = 0.3
+shader_parameter/scan_line_strength = -6.0
+shader_parameter/pixel_strength = -2.0
+
+[node name="CRTEffect" type="CanvasLayer"]
+layer = 128
+script = ExtResource("3_x8674")
+
+[node name="CRTEffect" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_f6e08")
+scale = Vector2(9.29456, 9.29456)
+texture = ExtResource("2_r6qqc")
+centered = false
