@@ -28,6 +28,8 @@ uniform sampler2D SCREEN_TEXTURE: hint_screen_texture;
 uniform vec2 resolution = vec2(320.0, 180.0);
 
 uniform float scan_line_amount :hint_range(0.0, 1.0) = 1.0;
+uniform float scan_line_height :hint_range(0.1, 10.0) = 1.0;
+
 uniform float warp_amount :hint_range(0.0, 5.0) = 0.1;
 uniform float noise_amount :hint_range(0.0, 0.3) = 0.03;
 uniform float interference_amount :hint_range(0.0, 1.0) = 0.2;
@@ -143,7 +145,9 @@ vec3 grille(vec2 uv){
 }
 
 float roll_line(vec2 uv){
-	float x = uv.y * 3.0 - TIME * roll_speed;
+	float height_adjust = 1.0 / scan_line_height;
+	float x = uv.y * 3.0 * height_adjust - TIME * roll_speed;
+
 	float f = cos(x) * cos(x * 2.35 + 1.1) * cos(x * 4.45 + 2.3);
 	float roll_line = smoothstep(0.5, 0.9, f);
 	return roll_line * roll_line_amount;
