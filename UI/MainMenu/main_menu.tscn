@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dhjlg4dmbxqom"]
+[gd_scene load_steps=18 format=3 uid="uid://dhjlg4dmbxqom"]
 
 [ext_resource type="Script" path="res://UI/MainMenu/SkipTitleForGameTesting.gd" id="1_l326y"]
 [ext_resource type="Script" path="res://UI/MainMenu/PlayGameBTN.gd" id="1_rummk"]
@@ -38,6 +38,10 @@ animations = [{
 "name": &"default",
 "speed": 4.0
 }]
+
+[sub_resource type="Gradient" id="Gradient_wbur3"]
+offsets = PackedFloat32Array(0, 0.986175)
+colors = PackedColorArray(0.99558, 0.99558, 0.99558, 1, 0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_5p1r7"]
 length = 0.001
@@ -119,6 +123,14 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="CreditsBTN" type="Button" parent="."]
+layout_mode = 2
+offset_left = 628.5
+offset_top = 400.5
+offset_right = 700.5
+offset_bottom = 431.5
+text = "CREDITS"
+
 [node name="BoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -169,10 +181,6 @@ layout_mode = 2
 text = "LEVEL SELECT"
 script = ExtResource("4_10x72")
 
-[node name="CreditsBTN" type="Button" parent="BoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "CREDITS"
-
 [node name="ExitBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "EXIT"
@@ -181,6 +189,24 @@ script = ExtResource("3_voos7")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_q28mw")
 autoplay = true
+
+[node name="Logo Particles" type="CPUParticles2D" parent="."]
+position = Vector2(1174, 317)
+amount = 480
+lifetime = 4.0
+emission_shape = 3
+emission_rect_extents = Vector2(1, 80)
+direction = Vector2(-1, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 300.0
+angular_velocity_max = 90.0
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+color = Color(0.893404, 0.896819, 0.593828, 1)
+color_ramp = SubResource("Gradient_wbur3")
+hue_variation_max = 1.0
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 layout_mode = 1
