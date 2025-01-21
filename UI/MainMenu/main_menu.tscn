@@ -1,10 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://dhjlg4dmbxqom"]
+[gd_scene load_steps=17 format=3 uid="uid://dhjlg4dmbxqom"]
 
 [ext_resource type="Script" path="res://UI/MainMenu/SkipTitleForGameTesting.gd" id="1_l326y"]
 [ext_resource type="Script" path="res://UI/MainMenu/PlayGameBTN.gd" id="1_rummk"]
 [ext_resource type="Texture2D" uid="uid://b2ejnhoyb8wjd" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-1.png" id="2_5mduk"]
 [ext_resource type="Texture2D" uid="uid://kh3e5jl5s41m" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-2.png" id="3_tknoh"]
-[ext_resource type="Script" path="res://UI/MainMenu/ExitBTN.gd" id="3_voos7"]
 [ext_resource type="Script" path="res://UI/MainMenu/LevelSelectBTN.gd" id="4_10x72"]
 [ext_resource type="Texture2D" uid="uid://4on6pvnvw24h" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-3.png" id="4_hu0mj"]
 [ext_resource type="AudioStream" uid="uid://c4vuhqoft0m78" path="res://Raw Source Files/AUDIO/MUSIC/Mx_MainMenuTheme_Amin.wav" id="4_q28mw"]
@@ -123,14 +122,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="CreditsBTN" type="Button" parent="."]
-layout_mode = 2
-offset_left = 628.5
-offset_top = 400.5
-offset_right = 700.5
-offset_bottom = 431.5
-text = "CREDITS"
-
 [node name="BoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -171,20 +162,19 @@ size_flags_vertical = 4
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="PlayGameBTN" type="Button" parent="BoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "PLAY GAME"
-script = ExtResource("1_rummk")
-
 [node name="LevelSelectBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "LEVEL SELECT"
+text = "PICK LEVEL"
 script = ExtResource("4_10x72")
 
-[node name="ExitBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+[node name="PlayGameBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "EXIT"
-script = ExtResource("3_voos7")
+text = "ALL PLAY"
+script = ExtResource("1_rummk")
+
+[node name="CreditsBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "CREDITS (not ready yet)"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_q28mw")
@@ -237,7 +227,6 @@ speed_scale = 1.58
 
 [node name="CRTEffect" parent="." instance=ExtResource("12_o54ba")]
 
-[connection signal="pressed" from="BoxContainer/VBoxContainer/PlayGameBTN" to="BoxContainer/VBoxContainer/PlayGameBTN" method="_on_pressed"]
 [connection signal="pressed" from="BoxContainer/VBoxContainer/LevelSelectBTN" to="BoxContainer/VBoxContainer/LevelSelectBTN" method="_on_pressed"]
-[connection signal="pressed" from="BoxContainer/VBoxContainer/ExitBTN" to="BoxContainer/VBoxContainer/ExitBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/PlayGameBTN" to="BoxContainer/VBoxContainer/PlayGameBTN" method="_on_pressed"]
 [connection signal="animation_finished" from="IntroSequence" to="." method="_on_intro_sequence_animation_finished"]
