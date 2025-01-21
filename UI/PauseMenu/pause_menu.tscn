@@ -58,9 +58,10 @@ text = "RESUME"
 
 [node name="MainMenuBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "MAIN MENU"
+text = "CHANGE LEVEL"
 
 [node name="ExitBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "EXIT"
 
