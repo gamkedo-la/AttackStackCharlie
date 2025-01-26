@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ifg464fuofbn"]
+[gd_scene load_steps=7 format=3 uid="uid://ifg464fuofbn"]
 
 [ext_resource type="Script" path="res://UI/SummaryScreen/summary_screen.gd" id="1_mfkr1"]
 [ext_resource type="AudioStream" uid="uid://8pd0nxp6d63w" path="res://Raw Source Files/AUDIO/SFX/Lvl_Victory.wav" id="2_tnd0c"]
+[ext_resource type="AudioStream" uid="uid://dlve6yo0thl81" path="res://Audio/AttackStackCharlie-Audio-rodrigo.ogg" id="3_qpy4f"]
 [ext_resource type="Script" path="res://UI/LevelSelect/BackBTN.gd" id="3_t5xed"]
 [ext_resource type="Script" path="res://UI/SummaryScreen/NextLevelButton.gd" id="4_rso5n"]
 [ext_resource type="PackedScene" uid="uid://bqe1ul3picejh" path="res://Shaders/CRTEffect.tscn" id="5_y17p7"]
@@ -58,6 +59,10 @@ text = "POWERUPS COLLECTED: XX"
 
 [node name="Lvl_Victory" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_tnd0c")
+
+[node name="Lvl_VictorySong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qpy4f")
+autoplay = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 900.0

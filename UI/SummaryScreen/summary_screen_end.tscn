@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dn1gqimir3ucc"]
+[gd_scene load_steps=6 format=3 uid="uid://dn1gqimir3ucc"]
 
 [ext_resource type="Script" path="res://UI/SummaryScreen/summary_screen.gd" id="1_6ryc6"]
 [ext_resource type="AudioStream" uid="uid://ciu1gq7ipwwr" path="res://Audio/Explosion0-vaan.ogg" id="2_qy7o2"]
 [ext_resource type="Script" path="res://UI/LevelSelect/BackBTN.gd" id="3_5jpvm"]
+[ext_resource type="AudioStream" uid="uid://cjbb2u35u6b05" path="res://Audio/DarkSpacev2-rodrigo_intro.mp3" id="3_ktn5v"]
 [ext_resource type="PackedScene" uid="uid://bqe1ul3picejh" path="res://Shaders/CRTEffect.tscn" id="5_eff5v"]
 
 [node name="SummaryScreen" type="Node2D"]
@@ -67,6 +68,10 @@ text = "POWERUPS COLLECTED: XX"
 
 [node name="Lvl_Victory" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qy7o2")
+
+[node name="Game_Victory Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ktn5v")
+autoplay = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 900.0
