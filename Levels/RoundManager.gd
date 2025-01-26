@@ -25,6 +25,8 @@ func _on_enemy_defeated():
 	enemy_kill_counter.text = str(defeated_enemies) + "/" + str(level_goal);
 	
 	if defeated_enemies >= level_goal:
+		for enemy in get_tree().get_nodes_in_group("enemies"):
+			enemy.force_safe_remove()
 		SceneManager.SwitchScene("Summary");
 
 func already_won():

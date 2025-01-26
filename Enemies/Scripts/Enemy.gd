@@ -108,6 +108,9 @@ func destroy(blastDepth = 1):
 	# print("enemy signal sending")
 	queue_free()
 
+func force_safe_remove():
+	queue_free()
+
 func _on_projectile_detector_area_entered(area):
 	if area.is_in_group("bullet"):
 		destroy(1)
