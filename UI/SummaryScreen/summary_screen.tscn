@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bqe1ul3picejh" path="res://Shaders/CRTEffect.tscn" id="5_y17p7"]
 
 [node name="SummaryScreen" type="Node2D"]
+z_index = 1
 script = ExtResource("1_mfkr1")
 
 [node name="Header" type="Label" parent="."]
