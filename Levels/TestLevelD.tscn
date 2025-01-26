@@ -18,9 +18,9 @@ enemy_data = Array[Dictionary]([{
 "scene": "EvilCircler",
 "weight": 1
 }])
-minRespawnTime = 1.0
+minRespawnTime = 0.5
 maxRespawnTime = 1.0
-maxEnemies = 5
+maxEnemies = 6
 
 [node name="Powerups (pre-placed)" type="Node2D" parent="."]
 
@@ -88,6 +88,6 @@ scaleSpawned = 0.2
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 18.1875, -250.505, 3.6788)
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_c5txp")]
-level_goal = 10
+level_goal = 20
 
 [editable path="EveryLevelReusedStuff"]

@@ -132,6 +132,6 @@ spinRate = -0.2
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 18.1875, -250.505, 3.6788)
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_wdf1m")]
-level_goal = 100
+level_goal = 200
 
 [editable path="EveryLevelReusedStuff"]

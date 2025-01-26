@@ -106,7 +106,7 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 18.1875, -1.77702, 3.6788)
 surface_material_override/0 = SubResource("StandardMaterial3D_h3vdv")
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("13_uimog")]
-level_goal = 50
+level_goal = 75
 
 [node name="EnemyBlast" parent="." instance=ExtResource("9_il3cp")]
 position = Vector2(347, 257)

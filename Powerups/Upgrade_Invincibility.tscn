@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://fbnliiv8xtmt"]
+[gd_scene load_steps=5 format=3 uid="uid://fbnliiv8xtmt"]
 
 [ext_resource type="Script" path="res://Powerups/Invincibility.gd" id="1_31lki"]
 [ext_resource type="Texture2D" uid="uid://bse2n5ahjfq7m" path="res://Powerups/star.png" id="2_xexrp"]
+[ext_resource type="AudioStream" uid="uid://go0u6xj2ajd2" path="res://Raw Source Files/AUDIO/SFX/Sx_Pickup_ShipPwrUp.wav" id="3_grkp5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bh3kg"]
 size = Vector2(28, 27)
@@ -15,5 +16,9 @@ shape = SubResource("RectangleShape2D_bh3kg")
 
 [node name="PlayerdronePickup" type="Sprite2D" parent="."]
 texture = ExtResource("2_xexrp")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_grkp5")
+volume_db = -4.07
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

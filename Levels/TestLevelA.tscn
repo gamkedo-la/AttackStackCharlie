@@ -90,6 +90,6 @@ spinZ = 1
 [node name="BackPlate" parent="3D background scene/3D Models" instance=ExtResource("5_l4tes")]
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("13_ci5d7")]
-level_goal = 20
+level_goal = 25
 
 [editable path="EveryLevelReusedStuff"]
