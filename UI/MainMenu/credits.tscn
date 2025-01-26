@@ -29,12 +29,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -566.0
-offset_top = -320.0
+offset_top = -309.0
 offset_right = 634.0
-offset_bottom = 347.0
+offset_bottom = 358.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.95, 0.95)
+scale = Vector2(0.9, 0.9)
 theme_override_constants/separation = 60
 alignment = 1
 
@@ -54,14 +54,14 @@ Vaan Hope Khani: Animated title logo, hurry up music, sounds (level victory, gam
 Allan Regush: Laser and rocket sprites, rocket pickup icon, round title display
 Sergio Ferrer: Centralized tuning variables, powerup implementation made more extensible, early powerup icon concept
 Anthony Hernandez: Enemy spawn/despawn improvements
-Christer \"McFunkypants\" Kaitila: Thrust particles, menu backgrounds
 Neil Urwin: Circling enemy base behavior
+Jonathan Peterson: Main story
 Luke Bertram: Intro story implementation
 Oriphiel Blanco: Additional writing
-Jonathan Peterson: Initial story
-Karen McMullan: Pause menu 
-Vitor M: Bullet collision fix
+Christer \"McFunkypants\" Kaitila: Thrust particles, menu backgrounds
 Ryan Davidson: Win screen next level / menu buttons
+Vitor M: Bullet collision fix
+Karen McMullan: Pause menu 
 Cindy Andrade: Exit button setup (not used in web build)
 Jakeyouh Dogwalker: Title screen layout, earlier logo concept
 Playtesting: Klaim (A. Joël Lamotte), Jason Timms	"
