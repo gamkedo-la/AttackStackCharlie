@@ -14,6 +14,7 @@ var timeAlive = 0.0
 var moveDir = Vector2.ZERO;
 
 func activateShot(useSprite: int, lifeSpan:float, direction: Vector2):
+	add_to_group("shots")
 	sprite1.visible = (useSprite == 0)
 	sprite2.visible = (useSprite == 1)
 	sprite3.visible = (useSprite == 2)
@@ -27,6 +28,9 @@ func _physics_process(delta):
 	timeAlive -= delta
 	if timeAlive < 0:
 		queue_free()
+
+func force_safe_remove():
+	queue_free()
 
 # func _on_area_entered(area):
 # 	if area.is_in_group("hitbox"):
