@@ -48,8 +48,11 @@ func RestartScene() -> void:
 	
 func GoToNextLevel() -> void:
 	var nextLevelIndex = levels.find(currentLevelAlias) + 1
-	# should probably go to a credits screen or something if at the end of the array
-	SwitchScene(levels[nextLevelIndex])
+	if nextLevelIndex < levels.size():
+		SwitchScene(levels[nextLevelIndex])
+	else:
+		# should probably go to a credits screen or something if at the end of the array
+		pass
 
 func QuitGame() -> void:
 	get_tree().quit()
