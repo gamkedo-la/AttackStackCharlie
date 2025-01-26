@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://o2qcoern0i06"]
+[gd_scene load_steps=3 format=3 uid="uid://o2qcoern0i06"]
 
 [ext_resource type="Script" path="res://UI/LevelSelect/BackBTN.gd" id="2_ycdq7"]
 [ext_resource type="AudioStream" uid="uid://c4vuhqoft0m78" path="res://Raw Source Files/AUDIO/MUSIC/Mx_MainMenuTheme_Amin.wav" id="10_jp0n5"]
-[ext_resource type="PackedScene" uid="uid://bqe1ul3picejh" path="res://Shaders/CRTEffect.tscn" id="11_d088w"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -99,7 +98,5 @@ scale_amount_min = 4.0
 scale_amount_max = 4.0
 color = Color(0.255659, 0.255659, 0.255659, 1)
 hue_variation_max = 1.0
-
-[node name="CRTEffect" parent="." instance=ExtResource("11_d088w")]
 
 [connection signal="pressed" from="CreditsBTN" to="CreditsBTN" method="_on_pressed"]
