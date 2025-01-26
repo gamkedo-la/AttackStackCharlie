@@ -223,7 +223,7 @@ vertical_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_pqixo")
 }
-speed_scale = 1.58
+speed_scale = 2.958
 
 [node name="CRTEffect" parent="." instance=ExtResource("12_o54ba")]
 
