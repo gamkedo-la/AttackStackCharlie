@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dn1gqimir3ucc"]
 
 [ext_resource type="Script" path="res://UI/SummaryScreen/summary_screen.gd" id="1_6ryc6"]
-[ext_resource type="AudioStream" uid="uid://8pd0nxp6d63w" path="res://Raw Source Files/AUDIO/SFX/Lvl_Victory.wav" id="2_nrd7l"]
+[ext_resource type="AudioStream" uid="uid://ciu1gq7ipwwr" path="res://Audio/Explosion0-vaan.ogg" id="2_qy7o2"]
 [ext_resource type="Script" path="res://UI/LevelSelect/BackBTN.gd" id="3_5jpvm"]
 [ext_resource type="PackedScene" uid="uid://bqe1ul3picejh" path="res://Shaders/CRTEffect.tscn" id="5_eff5v"]
 
@@ -66,7 +66,7 @@ offset_bottom = 322.0
 text = "POWERUPS COLLECTED: XX"
 
 [node name="Lvl_Victory" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_nrd7l")
+stream = ExtResource("2_qy7o2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 900.0
