@@ -77,3 +77,5 @@ color = Color(0.255659, 0.255659, 0.255659, 1)
 hue_variation_max = 1.0
 
 [node name="CRTEffect" parent="." instance=ExtResource("11_d088w")]
+
+[connection signal="pressed" from="CreditsBTN" to="CreditsBTN" method="_on_pressed"]
