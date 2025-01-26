@@ -43,7 +43,8 @@ func fire_reload_loop():
 	while true:
 		var distToPlayer = global_position.distance_to(targetPos)
 		if distToPlayer <= fire_dist:
-			fire_shot()
+			if get_tree().paused == false:
+				fire_shot()
 		var timer = get_tree().create_timer(reloadTime)
 		await timer.timeout
 
