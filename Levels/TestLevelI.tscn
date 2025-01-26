@@ -21,10 +21,11 @@ enemy_data = Array[Dictionary]([{
 }, {
 "scene": "EvilCircler",
 "weight": 1
+}, {
+"scene": "EvilSliderMineLayer",
+"weight": 3
 }])
-minRespawnTime = 1.0
-maxRespawnTime = 2.0
-maxEnemies = 5
+maxEnemies = 10
 
 [node name="Node2D" type="Node2D" parent="Enemies"]
 
@@ -47,7 +48,7 @@ position = Vector2(100, 200)
 position = Vector2(150, 150)
 
 [node name="EvilSpikes2" parent="Enemies/Node2D2" instance=ExtResource("3_rwh13")]
-position = Vector2(400, 150)
+position = Vector2(319, 150)
 
 [node name="EvilSpikes3" parent="Enemies/Node2D2" instance=ExtResource("3_rwh13")]
 position = Vector2(650, 150)
@@ -153,5 +154,6 @@ scaleSpawned = 0.4
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 18.1875, -250.505, 3.6788)
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_vy31i")]
+level_goal = 50
 
 [editable path="EveryLevelReusedStuff"]
