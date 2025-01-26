@@ -39,6 +39,11 @@ func SwitchScene(sceneAlias : String) -> void:
 		currentLevelAlias = sceneAlias
 	get_tree().change_scene_to_file(Scenes[sceneAlias])
 
+func OnLastLevel() -> bool:
+	# print("Current Level Alias: ", currentLevelAlias)
+	# print("Last Level in Array: ", levels[levels.size() - 1])
+	return currentLevelAlias == levels[levels.size()-1]
+
 func RestartScene() -> void:
 	if(get_tree().current_scene.get_node("EveryLevelReusedStuff").already_won()):
 		return

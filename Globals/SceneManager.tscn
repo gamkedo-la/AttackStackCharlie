@@ -11,6 +11,7 @@ Scenes = {
 "MainPlay": &"res://Levels/MainPlay.tscn",
 "StorySequence": &"res://UI/StorySequence/StorySequence.tscn",
 "Summary": "res://UI/SummaryScreen/summary_screen.tscn",
+"SummaryFinal": "res://UI/SummaryScreen/summary_screen_end.tscn",
 "TestLevelA": "res://Levels/TestLevelA.tscn",
 "TestLevelB": "res://Levels/TestLevelB.tscn",
 "TestLevelC": "res://Levels/TestLevelC.tscn",

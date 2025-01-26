@@ -20,11 +20,18 @@ func _process(delta):
 		for enemyshot in get_tree().get_nodes_in_group("enemy_shots"):
 			enemyshot.destroy()
 		# move to summary screen
-		SceneManager.SwitchScene("Summary");
+		if SceneManager.OnLastLevel():
+			SceneManager.SwitchScene("SummaryFinal");
+		else:
+			SceneManager.SwitchScene("Summary");
 
 func _on_enemy_defeated():
 	defeated_enemies += 1
 	
+	if get_tree() == null:
+		print("Scene tree is not available.")
+		return
+		
 	enemy_kill_counter.text = str(defeated_enemies) + "/" + str(level_goal);
 	
 	if defeated_enemies >= level_goal:
@@ -34,7 +41,10 @@ func _on_enemy_defeated():
 			shot.force_safe_remove()
 		for enemyshot in get_tree().get_nodes_in_group("enemy_shots"):
 			enemyshot.force_safe_remove()
-		SceneManager.SwitchScene("Summary");
+		if SceneManager.OnLastLevel():
+			SceneManager.SwitchScene("SummaryFinal");
+		else:
+			SceneManager.SwitchScene("Summary");
 
 func already_won():
 	return defeated_enemies >= level_goal

@@ -48,7 +48,7 @@ offset_right = 494.0
 offset_bottom = 362.0
 text = "SHOTS FIRED: XX"
 
-[node name="Shots Fired2" type="Label" parent="."]
+[node name="Ending Message" type="Label" parent="."]
 offset_left = 56.0
 offset_top = 530.0
 offset_right = 1080.0
@@ -56,7 +56,7 @@ offset_bottom = 631.0
 text = "Though the dimensional fracture derailed your original quest for a cure, the disruption of time flow while battling S.T.A.C.K. forces
 has undone the past 30 years. Charlie returns safely back to 1995, where he'll be able to share more time with his grandmother.
 
-But... can she ever understand and fully accept why, and how, Charlie meets her then, at his present age? Is it any more time for her?"
+But... can she ever understand and fully accept why, and how, Charlie meets her then, at his present age? Did she gain extra time?"
 
 [node name="Powerups Collected" type="Label" parent="."]
 offset_left = 51.0
