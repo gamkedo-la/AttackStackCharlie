@@ -269,6 +269,7 @@ value = 3.0
 show_percentage = false
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -14.713
 
 [node name="PanicTint" type="CanvasModulate" parent="."]
 color = Color(1, 0.0117647, 0, 0.615686)

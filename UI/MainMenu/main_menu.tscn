@@ -180,6 +180,7 @@ script = ExtResource("10_p74f4")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_q28mw")
+volume_db = -5.073
 autoplay = true
 
 [node name="Logo Particles" type="CPUParticles2D" parent="."]
