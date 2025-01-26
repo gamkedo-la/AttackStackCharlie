@@ -10,7 +10,7 @@ var pulse_intensity_clock = 0.0
 
 @export var message_display_time_secs = 2
 @export var time_running_out_threshold_secs = 30
-const normal_music_path = "res://Audio/AttackStackCharlie-Audio-rodrigo.ogg"
+const normal_music_path = "res://Audio/Mx_MainGameplay_bolt.mp3"
 const panic_music_path = "res://Audio/HurryMode0-vaan.ogg"
 
 # RoundManager is the owner of win conditions
