@@ -85,7 +85,7 @@ corner_radius_bottom_left = 8
 script = ExtResource("1_20qqy")
 
 [node name="Player" parent="." instance=ExtResource("2_5g5ro")]
-position = Vector2(550, 534)
+position = Vector2(579, 322)
 
 [node name="SX_PlayShootBasic" type="AudioStreamPlayer" parent="Player"]
 stream = SubResource("AudioStreamRandomizer_irrt5")
