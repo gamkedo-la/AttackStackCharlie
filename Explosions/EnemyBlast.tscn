@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bq73d6o8w0lgq"]
+[gd_scene load_steps=5 format=3 uid="uid://bq73d6o8w0lgq"]
 
 [ext_resource type="Script" path="res://Explosions/EnemyBlast.gd" id="1_urs3d"]
 [ext_resource type="Texture2D" uid="uid://b0bmb8pipi6uq" path="res://Explosions/blast.png" id="2_hfxop"]
-[ext_resource type="AudioStream" uid="uid://bpcu7pm7yg7jx" path="res://Raw Source Files/AUDIO/SFX/Sx_Enemy_Status_Defeat_A_01.wav" id="3_ikk2a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cla4d"]
 
@@ -23,7 +22,6 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_hfxop")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_ikk2a")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
