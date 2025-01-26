@@ -21,7 +21,54 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="BoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -566.0
+offset_top = -320.0
+offset_right = 634.0
+offset_bottom = 347.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.95, 0.95)
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(1200, 100)
+layout_mode = 2
+text = "Chris DeLeon: Project lead, core gameplay, level design,  item drop system, background models and dynamic spin field grid, enemy spawn and projectile system, main enemy and weapon behaviors, player sprite, hurry up mode, asset integration and assorted tuning
+Chris \"BOLT\" Bolte: Theme music (gameplay, title screen), sounds (ship destroyed, laser sound, enemy defeated, plasma beam, enemy firing, plasma ball, pause/unpause, button click/hover/error, shield, spread pickup, enemy hit), audio bus implementaiton
+Dan Dela Rosa: Drone functionality and related art, HUD icons (including main stacking \"domino\" frame, images for rocket, spread, range), story skip option, story animation fix, health label, implemented title animatation, additional edge case crash/lock fixes, simplified item pickup
+Michael Monty: Round timer, health UI, UI text styling, player stat tracking (hits taken, shots fired, etc. for round summary, item drop logic), shot upgrade HUD, aim cursor improvements, level select functionality, progress counter, round summary screen, invincibility powerup,
+Rodrigo Bonzerr Lopez: Story sequence music, asteroid graphic and base behaviors
+Justin Montgomery: CRT shader integration (adapted from GodotShaders.com), critical damage detection/feedback, low time warning, fire range tuning, circling enemy smoothed movement, asteroid feature improvements (all directional support), low health warning, crash fixes
+Gabriel Cornish: Scene manager/switcher, player damage visual feedback, collison damage, powerup collection feedback, main menu functionality, signal bus, sounds (crash, collect), menu music integration, menu intro, explosion sound integration
+Elizabeth McMahill: Scene lighting for all level backgrounds, detailed internal testing
+Vaan Hope Khani: Animated title logo, hurry up music, sounds (level victory, game ending sound), intro announcer
+Allan Regush: Laser and rocket sprites, rocket pickup icon, round title display
+Sergio Ferrer: Centralized tuning variables, powerup implementation made more extensible, early powerup icon concept
+Anthony Hernandez: Enemy spawn/despawn improvements
+Christer \"McFunkypants\" Kaitila: Thrust particles, menu backgrounds
+Neil Urwin: Circling enemy base behavior
+Luke Bertram: Intro story implementation
+Oriphiel Blanco: Additional writing
+Jonathan Peterson: Initial story
+Karen McMullan: Pause menu 
+Vitor M: Bullet collision fix
+Ryan Davidson: Win screen next level / menu buttons
+Cindy Andrade: Exit button setup (not used in web build)
+Jakeyouh Dogwalker: Title screen layout, earlier logo concept
+Playtesting: Klaim (A. Joël Lamotte), Jason Timms	"
+fit_content = true
+
 [node name="CreditsBTN" type="Button" parent="."]
+z_index = 2
 layout_mode = 2
 offset_left = 1020.0
 offset_top = 572.0
@@ -30,29 +77,6 @@ offset_bottom = 603.0
 text = "BACK
 "
 script = ExtResource("2_ycdq7")
-
-[node name="BoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -260.5
-offset_top = -308.5
-offset_right = 260.5
-offset_bottom = 308.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 60
-alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="BoxContainer"]
-z_index = 1
-custom_minimum_size = Vector2(2.08165e-12, 100)
-layout_mode = 2
-text = "Credits text here
-"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_jp0n5")
