@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cs8ob8bu7oema"
+path="res://.godot/imported/Sx_EnemyHit_A_04.mp3-69e1c7730b1b875f913e87deb6a7c4a3.mp3str"
+
+[deps]
+
+source_file="res://Raw Source Files/AUDIO/SFX/Sx_EnemyHit_A_04.mp3"
+dest_files=["res://.godot/imported/Sx_EnemyHit_A_04.mp3-69e1c7730b1b875f913e87deb6a7c4a3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

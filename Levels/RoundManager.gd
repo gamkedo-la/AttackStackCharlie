@@ -11,14 +11,19 @@ func _ready():
 	enemy_kill_counter.text = str(defeated_enemies) + "/" + str(level_goal);
 	pass
 	
+func destroy_all(): # match force_safe_remove in _on_enemy_defeated!
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		enemy.destroy()
+	for shot in get_tree().get_nodes_in_group("shots"):
+		shot.destroy()
+	for powerup in get_tree().get_nodes_in_group("powerups"):
+		powerup.destroy()
+	for enemyshot in get_tree().get_nodes_in_group("enemy_shots"):
+		enemyshot.destroy()
+	
 func _process(delta):
 	if defeated_enemies >= level_goal:
-		for enemy in get_tree().get_nodes_in_group("enemies"):
-			enemy.destroy()
-		for shot in get_tree().get_nodes_in_group("shots"):
-			shot.destroy()
-		for enemyshot in get_tree().get_nodes_in_group("enemy_shots"):
-			enemyshot.destroy()
+		destroy_all()
 		# move to summary screen
 		if SceneManager.OnLastLevel():
 			SceneManager.SwitchScene("SummaryFinal");
@@ -39,6 +44,8 @@ func _on_enemy_defeated():
 			enemy.force_safe_remove()
 		for shot in get_tree().get_nodes_in_group("shots"):
 			shot.force_safe_remove()
+		for powerup in get_tree().get_nodes_in_group("powerups"):
+			powerup.force_safe_remove()
 		for enemyshot in get_tree().get_nodes_in_group("enemy_shots"):
 			enemyshot.force_safe_remove()
 		if SceneManager.OnLastLevel():

@@ -20,7 +20,10 @@ func _on_resume_btn_pressed():
 	scene_manager.game_paused = false
 
 func _on_main_menu_btn_pressed():
+	var roundManager = get_tree().current_scene.get_node("EveryLevelReusedStuff")
 	scene_manager.game_paused = false
+	if roundManager != null:
+		roundManager.destroy_all()
 	SceneManager.SwitchScene("MainMenu")
 
 func _on_exit_btn_pressed():

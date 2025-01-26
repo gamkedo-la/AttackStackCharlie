@@ -96,6 +96,6 @@ scaleSpawned = 0.3
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 18.1875, -250.505, 3.6788)
 
 [node name="EveryLevelReusedStuff" parent="." instance=ExtResource("5_wna4h")]
-level_goal = 40
+level_goal = 70
 
 [editable path="EveryLevelReusedStuff"]

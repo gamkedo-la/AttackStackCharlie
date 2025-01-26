@@ -11,6 +11,9 @@ var last_toggle_time = 0.0
 
 var already_collected = false
 
+func _ready():
+	add_to_group("powerups")
+
 func _process(delta):
 	elapsed_time += delta
 	if elapsed_time >= POWERUP_LIFETIME-FLASHING_TIME:
@@ -36,3 +39,6 @@ func _on_body_entered(body):
 func collected(body):
 	print("this should be overriden by the powerup")
 	return false # collision ignored
+
+func force_safe_remove():
+	queue_free()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cj7rg0xhytvee"]
+[gd_scene load_steps=9 format=3 uid="uid://cj7rg0xhytvee"]
 
 [ext_resource type="Script" path="res://Enemies/Scripts/EvilSpikes.gd" id="1_o4rim"]
 [ext_resource type="Texture2D" uid="uid://dprmolug2e317" path="res://Enemies/Art/EvilSpikes-Sheet.png" id="2_hji4a"]
+[ext_resource type="AudioStream" uid="uid://cs8ob8bu7oema" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyHit_A_04.mp3" id="3_ii4jk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_apqvm"]
 atlas = ExtResource("2_hji4a")
@@ -49,5 +50,10 @@ shape = SubResource("CircleShape2D_cio05")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileDetector"]
 shape = SubResource("CircleShape2D_hrx8h")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ii4jk")
+volume_db = -10.018
+autoplay = true
 
 [connection signal="area_entered" from="ProjectileDetector" to="." method="_on_projectile_detector_area_entered"]
