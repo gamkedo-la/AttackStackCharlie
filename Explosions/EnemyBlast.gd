@@ -20,7 +20,7 @@ var boom_sounds = [
     preload("res://Raw Source Files/AUDIO/SFX/Sx_Enemy_Status_Defeat_A_09.wav"),
     preload("res://Raw Source Files/AUDIO/SFX/Sx_Enemy_Status_Defeat_A_10.wav"),
     preload("res://Raw Source Files/AUDIO/SFX/Sx_Enemy_Status_Defeat_A_11.wav"),
-    preload("res://Raw Source Files/AUDIO/SFX/Sx_Enemy_Status_Defeat_A_12.wav"),
+    preload("res://Raw Source Files/AUDIO/SFX/Sx_Enemy_Status_Defeat_A_12.wav")
 ]
 
 func _ready():
