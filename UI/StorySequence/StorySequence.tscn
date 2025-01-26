@@ -100,7 +100,7 @@ offset_right = -25.9999
 offset_bottom = -577.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.937251, 0.76078)
+scale = Vector2(0.937251, 0.96078)
 text = "skip"
 
 [node name="NextButton" type="Button" parent="."]
