@@ -23,6 +23,7 @@ grow_vertical = 2
 color = Color(0.388235, 0.388235, 0.388235, 0.486275)
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
+z_index = 1
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
