@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://hkobk68n3sih"]
+[gd_scene load_steps=5 format=3 uid="uid://hkobk68n3sih"]
 
 [ext_resource type="Script" path="res://Powerups/TempSpeedBoost.gd" id="1_ebx8x"]
 [ext_resource type="Texture2D" uid="uid://b8mos3jmtm8le" path="res://Powerups/speed_boost.png" id="2_p78cy"]
+[ext_resource type="AudioStream" uid="uid://i40cqt0ox3rp" path="res://Raw Source Files/AUDIO/SFX/Sx_Pickup_SpreadShotPlayer_B.wav" id="3_iftj6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bh3kg"]
 size = Vector2(28, 27)
@@ -16,4 +17,8 @@ shape = SubResource("RectangleShape2D_bh3kg")
 [node name="PlayerdronePickup" type="Sprite2D" parent="."]
 texture = ExtResource("2_p78cy")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_iftj6")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

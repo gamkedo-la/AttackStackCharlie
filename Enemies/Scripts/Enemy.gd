@@ -1,7 +1,7 @@
 class_name Enemy extends Area2D
 var moveDir = Vector2.ZERO
 const ENEMY_SPEED = 50
-const DROP_PERC = 0.15
+const DROP_PERC = 0.3
 
 # used because shots are based on enemies. if true it:
 # won't ever drop powerups

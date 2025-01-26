@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://6qxfenv0ngsl"]
+[gd_scene load_steps=10 format=3 uid="uid://6qxfenv0ngsl"]
 
 [ext_resource type="Texture2D" uid="uid://b4r8uim5jvh1v" path="res://UI/StorySequence/stars.png" id="1_7u1ih"]
 [ext_resource type="Script" path="res://UI/LevelSelect/LevelLoadBTN.gd" id="1_awoko"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ep23f1urry7c" path="res://Player/playerjet.png" id="4_2u8ig"]
 [ext_resource type="Texture2D" uid="uid://c8qh1tgr28e8r" path="res://Enemies/Art/EnemyCraftMain.png" id="5_4fdwi"]
 [ext_resource type="Script" path="res://UI/LevelSelect/BackBTN.gd" id="5_u7lfj"]
+[ext_resource type="AudioStream" uid="uid://dlve6yo0thl81" path="res://Audio/AttackStackCharlie-Audio-rodrigo.ogg" id="9_r0mss"]
 
 [node name="LevelSelect" type="Node2D"]
 
@@ -133,6 +134,11 @@ text = "RETURN"
 script = ExtResource("5_u7lfj")
 
 [node name="CRTEffect" parent="." instance=ExtResource("3_7usc6")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_r0mss")
+volume_db = -18.087
+autoplay = true
 
 [connection signal="pressed" from="BoxContainer/VBoxContainer/LevelABTN" to="BoxContainer/VBoxContainer/LevelABTN" method="_on_pressed"]
 [connection signal="pressed" from="BoxContainer/VBoxContainer/LevelBBTN" to="BoxContainer/VBoxContainer/LevelBBTN" method="_on_pressed"]
