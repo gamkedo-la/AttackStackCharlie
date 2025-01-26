@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://kh3e5jl5s41m" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-2.png" id="3_tknoh"]
 [ext_resource type="Script" path="res://UI/MainMenu/LevelSelectBTN.gd" id="4_10x72"]
 [ext_resource type="Texture2D" uid="uid://4on6pvnvw24h" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-3.png" id="4_hu0mj"]
-[ext_resource type="AudioStream" uid="uid://c4vuhqoft0m78" path="res://Raw Source Files/AUDIO/MUSIC/Mx_MainMenuTheme_Amin.wav" id="4_q28mw"]
 [ext_resource type="Texture2D" uid="uid://qth1n0np3bqh" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-4.png" id="5_a5wus"]
 [ext_resource type="Texture2D" uid="uid://b8uvpatpue0cc" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-5.png" id="6_x5jhf"]
 [ext_resource type="Texture2D" uid="uid://d3cydidnku2si" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-6.png" id="7_ojv0w"]
 [ext_resource type="Script" path="res://UI/MainMenu/CreditsBTN.gd" id="10_p74f4"]
+[ext_resource type="AudioStream" uid="uid://d2wi6v4du33su" path="res://Audio/Mx_MainMenuTheme_Bolt.mp3" id="11_2on5a"]
 [ext_resource type="PackedScene" uid="uid://bqe1ul3picejh" path="res://Shaders/CRTEffect.tscn" id="12_o54ba"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c724w"]
@@ -179,7 +179,7 @@ text = "CREDITS"
 script = ExtResource("10_p74f4")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_q28mw")
+stream = ExtResource("11_2on5a")
 volume_db = -5.073
 autoplay = true
 
