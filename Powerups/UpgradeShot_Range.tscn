@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b84bpkxpn18yb"]
+[gd_scene load_steps=5 format=3 uid="uid://b84bpkxpn18yb"]
 
 [ext_resource type="Script" path="res://Powerups/PowerupShotPlus.gd" id="1_52muy"]
 [ext_resource type="Texture2D" uid="uid://dkxjebqsbvbfw" path="res://Powerups/range_upgrade.png" id="2_t0gjh"]
+[ext_resource type="AudioStream" uid="uid://ukqh4xrp24x6" path="res://Raw Source Files/AUDIO/SFX/Sx_Pickup_SpreadShotPlayer_A.wav" id="3_eda40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bh3kg"]
 size = Vector2(28, 27)
@@ -17,5 +18,8 @@ shape = SubResource("RectangleShape2D_bh3kg")
 [node name="Shotupgrade" type="Sprite2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("2_t0gjh")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_eda40")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

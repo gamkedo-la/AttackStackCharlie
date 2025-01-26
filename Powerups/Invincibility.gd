@@ -1,5 +1,5 @@
 extends "res://Powerups/Powerup.gd"
-var invincibility_time: float = 5 # 5 seconds of invincibility
+var invincibility_time: float = 5 # seconds of invincibility
 var audio_player
 
 func _ready():
