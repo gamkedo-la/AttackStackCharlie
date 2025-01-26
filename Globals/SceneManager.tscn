@@ -6,6 +6,7 @@
 [node name="SceneManager" type="Node3D"]
 script = ExtResource("1_svuu7")
 Scenes = {
+"Credits": "res://UI/MainMenu/credits.tscn",
 "LevelSelect": "res://UI/LevelSelect/level_select.tscn",
 "MainMenu": &"res://UI/MainMenu/main_menu.tscn",
 "MainPlay": &"res://Levels/MainPlay.tscn",

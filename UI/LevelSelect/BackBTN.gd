@@ -12,4 +12,5 @@ func _process(delta):
 
 
 func _on_pressed():
+	print("Back from credits.")
 	SceneManager.SwitchScene("MainMenu")

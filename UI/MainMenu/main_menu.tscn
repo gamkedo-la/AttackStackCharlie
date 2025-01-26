@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dhjlg4dmbxqom"]
+[gd_scene load_steps=18 format=3 uid="uid://dhjlg4dmbxqom"]
 
 [ext_resource type="Script" path="res://UI/MainMenu/SkipTitleForGameTesting.gd" id="1_l326y"]
 [ext_resource type="Script" path="res://UI/MainMenu/PlayGameBTN.gd" id="1_rummk"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://qth1n0np3bqh" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-4.png" id="5_a5wus"]
 [ext_resource type="Texture2D" uid="uid://b8uvpatpue0cc" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-5.png" id="6_x5jhf"]
 [ext_resource type="Texture2D" uid="uid://d3cydidnku2si" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-6.png" id="7_ojv0w"]
+[ext_resource type="Script" path="res://UI/MainMenu/CreditsBTN.gd" id="10_p74f4"]
 [ext_resource type="PackedScene" uid="uid://bqe1ul3picejh" path="res://Shaders/CRTEffect.tscn" id="12_o54ba"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c724w"]
@@ -174,7 +175,8 @@ script = ExtResource("1_rummk")
 
 [node name="CreditsBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "CREDITS (not ready yet)"
+text = "CREDITS"
+script = ExtResource("10_p74f4")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_q28mw")
@@ -229,4 +231,5 @@ speed_scale = 2.958
 
 [connection signal="pressed" from="BoxContainer/VBoxContainer/LevelSelectBTN" to="BoxContainer/VBoxContainer/LevelSelectBTN" method="_on_pressed"]
 [connection signal="pressed" from="BoxContainer/VBoxContainer/PlayGameBTN" to="BoxContainer/VBoxContainer/PlayGameBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/CreditsBTN" to="BoxContainer/VBoxContainer/CreditsBTN" method="_on_pressed"]
 [connection signal="animation_finished" from="IntroSequence" to="." method="_on_intro_sequence_animation_finished"]

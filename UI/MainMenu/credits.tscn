@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://o2qcoern0i06"]
+
+[ext_resource type="Script" path="res://UI/LevelSelect/BackBTN.gd" id="2_ycdq7"]
+[ext_resource type="AudioStream" uid="uid://c4vuhqoft0m78" path="res://Raw Source Files/AUDIO/MUSIC/Mx_MainMenuTheme_Amin.wav" id="10_jp0n5"]
+[ext_resource type="PackedScene" uid="uid://bqe1ul3picejh" path="res://Shaders/CRTEffect.tscn" id="11_d088w"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CreditsBTN" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1020.0
+offset_top = 572.0
+offset_right = 1092.0
+offset_bottom = 603.0
+text = "BACK
+"
+script = ExtResource("2_ycdq7")
+
+[node name="BoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.5
+offset_top = -308.5
+offset_right = 260.5
+offset_bottom = 308.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(2.08165e-12, 100)
+layout_mode = 2
+text = "Credits text here
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_jp0n5")
+autoplay = true
+
+[node name="Logo Particles" type="CPUParticles2D" parent="."]
+position = Vector2(1174, 317)
+amount = 480
+lifetime = 7.0
+preprocess = 7.0
+emission_shape = 3
+emission_rect_extents = Vector2(1, 300)
+direction = Vector2(-1, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 300.0
+angular_velocity_max = 90.0
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+color = Color(0.255659, 0.255659, 0.255659, 1)
+hue_variation_max = 1.0
+
+[node name="CRTEffect" parent="." instance=ExtResource("11_d088w")]
