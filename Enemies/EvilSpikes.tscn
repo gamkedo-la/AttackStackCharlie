@@ -4,22 +4,22 @@
 [ext_resource type="Texture2D" uid="uid://dprmolug2e317" path="res://Enemies/Art/EvilSpikes-Sheet.png" id="2_hji4a"]
 [ext_resource type="AudioStream" uid="uid://cs8ob8bu7oema" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyHit_A_04.mp3" id="3_ii4jk"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_apqvm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjnvq"]
 atlas = ExtResource("2_hji4a")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(0, 0, 40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_enjn8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0l0y"]
 atlas = ExtResource("2_hji4a")
-region = Rect2(32, 0, 32, 32)
+region = Rect2(40, 0, 40, 40)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wk7pd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_apqvm")
+"texture": SubResource("AtlasTexture_qjnvq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_enjn8")
+"texture": SubResource("AtlasTexture_q0l0y")
 }],
 "loop": true,
 "name": &"spin",

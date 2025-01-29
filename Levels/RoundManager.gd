@@ -12,6 +12,8 @@ func _ready():
 	pass
 	
 func destroy_all(): # match force_safe_remove in _on_enemy_defeated!
+	if get_tree() == null:
+		return
 	for enemy in get_tree().get_nodes_in_group("enemies"):
 		enemy.destroy()
 	for shot in get_tree().get_nodes_in_group("shots"):
