@@ -25,7 +25,6 @@ shape = SubResource("CircleShape2D_hrx8h")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
 [node name="EnemyCraftMain" type="Sprite2D" parent="."]
-modulate = Color(0, 0.756863, 1, 1)
 texture = ExtResource("2_88m1p")
 
 [connection signal="area_entered" from="ProjectileDetector" to="." method="_on_projectile_detector_area_entered"]

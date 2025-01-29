@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d12rmco0pfhyc"]
 
 [ext_resource type="Script" path="res://Enemies/Scripts/EvilCircler.gd" id="1_87sve"]
-[ext_resource type="Texture2D" uid="uid://c8qh1tgr28e8r" path="res://Enemies/Art/EnemyCraftMain.png" id="2_kc2ov"]
+[ext_resource type="Texture2D" uid="uid://oua6lkbafo5p" path="res://Enemies/Art/EnemyCraft-Circler.png" id="2_3jhlk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cio05"]
 radius = 9.0
@@ -25,7 +25,6 @@ shape = SubResource("CircleShape2D_cio05")
 shape = SubResource("CircleShape2D_hrx8h")
 
 [node name="EnemyCraftMain" type="Sprite2D" parent="."]
-modulate = Color(0, 1, 0, 1)
-texture = ExtResource("2_kc2ov")
+texture = ExtResource("2_3jhlk")
 
 [connection signal="area_entered" from="ProjectileDetector" to="." method="_on_projectile_detector_area_entered"]

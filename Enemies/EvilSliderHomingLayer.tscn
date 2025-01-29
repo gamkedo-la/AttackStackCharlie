@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://brs30faap2bqm"]
 
 [ext_resource type="Script" path="res://Enemies/Scripts/EvilSliderMineLayer.gd" id="1_mywp6"]
-[ext_resource type="Texture2D" uid="uid://c8qh1tgr28e8r" path="res://Enemies/Art/EnemyCraftMain.png" id="2_b0h70"]
+[ext_resource type="Texture2D" uid="uid://cbwmrdcgmbme2" path="res://Enemies/Art/EnemyCraft-HomingSpawner.png" id="2_xmj2w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cio05"]
 radius = 9.0
@@ -28,8 +28,7 @@ shape = SubResource("CircleShape2D_hrx8h")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
 [node name="EnemyCraftMain" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("2_b0h70")
+texture = ExtResource("2_xmj2w")
 
 [connection signal="area_entered" from="ProjectileDetector" to="." method="_on_projectile_detector_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
