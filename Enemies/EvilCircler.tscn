@@ -24,6 +24,11 @@ shape = SubResource("CircleShape2D_cio05")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileDetector"]
 shape = SubResource("CircleShape2D_hrx8h")
 
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.537255)
+position = Vector2(-2, 3)
+texture = ExtResource("2_3jhlk")
+
 [node name="EnemyCraftMain" type="Sprite2D" parent="."]
 texture = ExtResource("2_3jhlk")
 

@@ -37,11 +37,21 @@ collision_layer = 2
 script = ExtResource("1_hgkqa")
 projectileMode = 0
 
+[node name="Shadow" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.454902)
+position = Vector2(-3, 4)
+sprite_frames = SubResource("SpriteFrames_wk7pd")
+animation = &"spin"
+autoplay = "spin"
+frame = 1
+frame_progress = 0.621073
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wk7pd")
 animation = &"spin"
 autoplay = "spin"
-frame_progress = 0.432547
+frame = 1
+frame_progress = 0.541668
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cio05")

@@ -37,6 +37,14 @@ collision_layer = 2
 script = ExtResource("1_o4rim")
 projectileMode = 0
 
+[node name="Shadow" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.454902)
+position = Vector2(-2, 4)
+sprite_frames = SubResource("SpriteFrames_wk7pd")
+animation = &"spin"
+autoplay = "spin"
+frame_progress = 0.230995
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wk7pd")
 animation = &"spin"
