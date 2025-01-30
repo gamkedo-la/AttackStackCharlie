@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dprmolug2e317" path="res://Enemies/Art/EvilSpikes-Sheet.png" id="2_hji4a"]
 [ext_resource type="AudioStream" uid="uid://cs8ob8bu7oema" path="res://Raw Source Files/AUDIO/SFX/Sx_EnemyHit_A_04.mp3" id="3_ii4jk"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qjnvq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sbb0"]
 atlas = ExtResource("2_hji4a")
 region = Rect2(0, 0, 40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q0l0y"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hgqj"]
 atlas = ExtResource("2_hji4a")
 region = Rect2(40, 0, 40, 40)
 
@@ -16,10 +16,10 @@ region = Rect2(40, 0, 40, 40)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qjnvq")
+"texture": SubResource("AtlasTexture_3sbb0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q0l0y")
+"texture": SubResource("AtlasTexture_0hgqj")
 }],
 "loop": true,
 "name": &"spin",
@@ -41,7 +41,7 @@ projectileMode = 0
 sprite_frames = SubResource("SpriteFrames_wk7pd")
 animation = &"spin"
 autoplay = "spin"
-frame_progress = 0.218369
+frame_progress = 0.230995
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cio05")
