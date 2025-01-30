@@ -36,7 +36,6 @@ position = Vector2(13, 0)
 texture = ExtResource("2_kr5tv")
 
 [node name="Glow particles (left)" type="CPUParticles2D" parent="Playerjet"]
-visible = false
 position = Vector2(-18, -6)
 amount = 16
 lifetime = 0.25
@@ -57,7 +56,6 @@ color_ramp = SubResource("Gradient_5qx18")
 hue_variation_curve = SubResource("Curve_b5pw3")
 
 [node name="Glow particles (right)" type="CPUParticles2D" parent="Playerjet"]
-visible = false
 position = Vector2(-17, 8)
 amount = 16
 lifetime = 0.25
