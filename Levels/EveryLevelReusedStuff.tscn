@@ -274,7 +274,7 @@ value = 3.0
 show_percentage = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Health"]
-position = Vector2(92, 26)
+position = Vector2(88, 26)
 scale = Vector2(3.31, 3.31)
 texture = ExtResource("18_qx6qe")
 
