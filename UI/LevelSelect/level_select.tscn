@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://6qxfenv0ngsl"]
+[gd_scene load_steps=11 format=3 uid="uid://6qxfenv0ngsl"]
 
 [ext_resource type="Texture2D" uid="uid://b4r8uim5jvh1v" path="res://UI/StorySequence/stars.png" id="1_7u1ih"]
 [ext_resource type="Script" path="res://UI/LevelSelect/LevelLoadBTN.gd" id="1_awoko"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ep23f1urry7c" path="res://Player/playerjet.png" id="4_2u8ig"]
 [ext_resource type="Texture2D" uid="uid://c8qh1tgr28e8r" path="res://Enemies/Art/EnemyCraftMain.png" id="5_4fdwi"]
 [ext_resource type="Script" path="res://UI/LevelSelect/BackBTN.gd" id="5_u7lfj"]
+[ext_resource type="FontFile" uid="uid://d2sm3a6y6h6sv" path="res://Fonts/MichelangeloFree-2O7Le.otf" id="6_f0roc"]
 [ext_resource type="AudioStream" uid="uid://dlve6yo0thl81" path="res://Audio/AttackStackCharlie-Audio-rodrigo.ogg" id="9_r0mss"]
 
 [node name="LevelSelect" type="Node2D"]
@@ -41,6 +42,7 @@ offset_left = 320.0
 offset_top = 17.0
 offset_right = 825.0
 offset_bottom = 124.0
+theme_override_fonts/font = ExtResource("6_f0roc")
 theme_override_font_sizes/font_size = 64
 text = "MISSION SELECT"
 horizontal_alignment = 1

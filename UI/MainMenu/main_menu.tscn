@@ -1,39 +1,24 @@
-[gd_scene load_steps=16 format=3 uid="uid://dhjlg4dmbxqom"]
+[gd_scene load_steps=13 format=3 uid="uid://dhjlg4dmbxqom"]
 
 [ext_resource type="Script" path="res://UI/MainMenu/SkipTitleForGameTesting.gd" id="1_l326y"]
 [ext_resource type="Script" path="res://UI/MainMenu/PlayGameBTN.gd" id="1_rummk"]
-[ext_resource type="Texture2D" uid="uid://b2ejnhoyb8wjd" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-1.png" id="2_5mduk"]
-[ext_resource type="Texture2D" uid="uid://kh3e5jl5s41m" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-2.png" id="3_tknoh"]
+[ext_resource type="Texture2D" uid="uid://cmyvctop3orjm" path="res://UI/MainMenu/Logo.png" id="2_1dfr3"]
 [ext_resource type="Script" path="res://UI/MainMenu/LevelSelectBTN.gd" id="4_10x72"]
-[ext_resource type="Texture2D" uid="uid://4on6pvnvw24h" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-3.png" id="4_hu0mj"]
-[ext_resource type="Texture2D" uid="uid://qth1n0np3bqh" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-4.png" id="5_a5wus"]
-[ext_resource type="Texture2D" uid="uid://b8uvpatpue0cc" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-5.png" id="6_x5jhf"]
-[ext_resource type="Texture2D" uid="uid://d3cydidnku2si" path="res://UI/MainMenu/animated logo gif frames/AnimatedLogo-6.png" id="7_ojv0w"]
+[ext_resource type="FontFile" uid="uid://d2sm3a6y6h6sv" path="res://Fonts/MichelangeloFree-2O7Le.otf" id="8_6peic"]
 [ext_resource type="Script" path="res://UI/MainMenu/CreditsBTN.gd" id="10_p74f4"]
 [ext_resource type="AudioStream" uid="uid://d2wi6v4du33su" path="res://Audio/Mx_MainMenuTheme_Bolt.mp3" id="11_2on5a"]
 [ext_resource type="AudioStream" uid="uid://bx7nuhupbwhva" path="res://Audio/Announce-vaan.ogg" id="12_cc8lx"]
 [ext_resource type="PackedScene" uid="uid://bqe1ul3picejh" path="res://Shaders/CRTEffect.tscn" id="12_o54ba"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nq8t4"]
+atlas = ExtResource("2_1dfr3")
+region = Rect2(0, 0, 418, 432)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_c724w"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_5mduk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_tknoh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_hu0mj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_a5wus")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_x5jhf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_ojv0w")
+"texture": SubResource("AtlasTexture_nq8t4")
 }],
 "loop": true,
 "name": &"default",
@@ -62,6 +47,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="BoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -70,10 +56,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -260.5
-offset_top = -308.5
-offset_right = 260.5
-offset_bottom = 308.5
+offset_left = -263.0
+offset_top = -197.0
+offset_right = 258.0
+offset_bottom = 420.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 60
@@ -91,9 +77,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="AnimatedLogo" type="AnimatedSprite2D" parent="BoxContainer/Control"]
-position = Vector2(0, -25)
+position = Vector2(2, -195)
 sprite_frames = SubResource("SpriteFrames_c724w")
-frame = 3
 frame_progress = 0.208546
 
 [node name="VBoxContainer" type="HBoxContainer" parent="BoxContainer"]
@@ -105,16 +90,19 @@ alignment = 1
 
 [node name="LevelSelectBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("8_6peic")
 text = "PICK LEVEL"
 script = ExtResource("4_10x72")
 
 [node name="PlayGameBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("8_6peic")
 text = "ALL PLAY"
 script = ExtResource("1_rummk")
 
 [node name="CreditsBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("8_6peic")
 text = "CREDITS"
 script = ExtResource("10_p74f4")
 
@@ -129,7 +117,7 @@ volume_db = -5.073
 autoplay = true
 
 [node name="Logo Particles" type="CPUParticles2D" parent="."]
-position = Vector2(1174, 317)
+position = Vector2(1170, 275)
 amount = 480
 lifetime = 4.0
 emission_shape = 3
@@ -147,6 +135,27 @@ color_ramp = SubResource("Gradient_wbur3")
 hue_variation_max = 1.0
 
 [node name="CRTEffect" parent="." instance=ExtResource("12_o54ba")]
+
+[node name="Header" type="Label" parent="."]
+visible = false
+offset_left = 326.0
+offset_top = 168.0
+offset_right = 831.0
+offset_bottom = 390.0
+theme_override_colors/font_color = Color(0.564706, 0.619608, 0.866667, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = -2
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("8_6peic")
+theme_override_font_sizes/font_size = 64
+text = "ATTACK
+STACK
+CHARLIE"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="BoxContainer/VBoxContainer/LevelSelectBTN" to="BoxContainer/VBoxContainer/LevelSelectBTN" method="_on_pressed"]
 [connection signal="pressed" from="BoxContainer/VBoxContainer/PlayGameBTN" to="BoxContainer/VBoxContainer/PlayGameBTN" method="_on_pressed"]
