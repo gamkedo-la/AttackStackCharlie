@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bg368c62u3b87"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bg368c62u3b87"]
 
 [ext_resource type="FontFile" uid="uid://d2sm3a6y6h6sv" path="res://Fonts/MichelangeloFree-2O7Le.otf" id="1_yks20"]
+[ext_resource type="FontFile" uid="uid://bufop6wbxql7j" path="res://Fonts/foresight.ttf" id="2_88obh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8g5r"]
 bg_color = Color(0.27432, 0.477873, 0.678268, 0.12549)
@@ -60,3 +61,7 @@ Button/styles/pressed = SubResource("StyleBoxFlat_tmwj4")
 Label/colors/font_shadow_color = Color(0, 0, 0, 0.819608)
 Label/constants/shadow_offset_y = 4
 Label/fonts/font = ExtResource("1_yks20")
+RichTextLabel/font_sizes/bold_font_size = 16
+RichTextLabel/font_sizes/normal_font_size = 12
+RichTextLabel/fonts/bold_font = ExtResource("2_88obh")
+RichTextLabel/fonts/normal_font = ExtResource("2_88obh")

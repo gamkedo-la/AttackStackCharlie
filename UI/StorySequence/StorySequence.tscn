@@ -54,6 +54,7 @@ offset_right = -7.41598
 offset_bottom = -196.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("6_c4kps")
 bbcode_enabled = true
 text = "[center]Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pulvinar fames torquent cras efficitur maximus; sociosqu dui. Libero leo purus mauris habitant duis purus finibus eu. Interdum est scelerisque erat fermentum consequat velit fusce?[/center]"
 visible_characters_behavior = 1

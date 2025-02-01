@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ifg464fuofbn"]
+[gd_scene load_steps=9 format=3 uid="uid://ifg464fuofbn"]
 
 [ext_resource type="Script" path="res://UI/SummaryScreen/summary_screen.gd" id="1_mfkr1"]
 [ext_resource type="Theme" uid="uid://bg368c62u3b87" path="res://UI/base_theme.tres" id="2_sngam"]
 [ext_resource type="AudioStream" uid="uid://8pd0nxp6d63w" path="res://Raw Source Files/AUDIO/SFX/Lvl_Victory.wav" id="2_tnd0c"]
+[ext_resource type="FontFile" uid="uid://bufop6wbxql7j" path="res://Fonts/foresight.ttf" id="3_plief"]
 [ext_resource type="AudioStream" uid="uid://dlve6yo0thl81" path="res://Audio/AttackStackCharlie-Audio-rodrigo.ogg" id="3_qpy4f"]
 [ext_resource type="Script" path="res://UI/LevelSelect/BackBTN.gd" id="3_t5xed"]
 [ext_resource type="Script" path="res://UI/SummaryScreen/NextLevelButton.gd" id="4_rso5n"]
@@ -27,6 +28,7 @@ offset_left = 51.0
 offset_top = 371.0
 offset_right = 372.0
 offset_bottom = 409.0
+theme_override_fonts/font = ExtResource("3_plief")
 text = "HITS TAKEN: X"
 
 [node name="Time" type="Label" parent="."]
@@ -50,6 +52,7 @@ offset_left = 51.0
 offset_top = 327.0
 offset_right = 494.0
 offset_bottom = 362.0
+theme_override_fonts/font = ExtResource("3_plief")
 text = "SHOTS FIRED: XX"
 
 [node name="Powerups Collected" type="Label" parent="."]
@@ -57,6 +60,7 @@ offset_left = 51.0
 offset_top = 284.0
 offset_right = 372.0
 offset_bottom = 322.0
+theme_override_fonts/font = ExtResource("3_plief")
 text = "POWERUPS COLLECTED: XX"
 
 [node name="Lvl_Victory" type="AudioStreamPlayer" parent="."]
@@ -71,12 +75,7 @@ offset_left = 900.0
 offset_top = 450.0
 offset_right = 1020.0
 offset_bottom = 540.0
-
-[node name="MainMenuButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_sngam")
-text = "MAIN MENU"
-script = ExtResource("3_t5xed")
+theme_override_constants/separation = 16
 
 [node name="NextLevelButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -84,7 +83,13 @@ theme = ExtResource("2_sngam")
 text = "NEXT LEVEL"
 script = ExtResource("4_rso5n")
 
+[node name="MainMenuButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_sngam")
+text = "MAIN MENU"
+script = ExtResource("3_t5xed")
+
 [node name="CRTEffect" parent="." instance=ExtResource("5_y17p7")]
 
-[connection signal="pressed" from="VBoxContainer/MainMenuButton" to="VBoxContainer/MainMenuButton" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/NextLevelButton" to="VBoxContainer/NextLevelButton" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/MainMenuButton" to="VBoxContainer/MainMenuButton" method="_on_pressed"]
