@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvjh5aukq142t"]
+[gd_scene load_steps=8 format=3 uid="uid://dvjh5aukq142t"]
 
 [ext_resource type="Theme" uid="uid://d4evuq3gml4t4" path="res://UI/StorySequence/story_sequence_theme.tres" id="1_cn2c1"]
 [ext_resource type="Texture2D" uid="uid://3emmtw4oi317" path="res://UI/StorySequence/storycard_test.png" id="2_btdn3"]
 [ext_resource type="Script" path="res://UI/StorySequence/StorySequence.gd" id="2_gei5n"]
 [ext_resource type="Texture2D" uid="uid://b4r8uim5jvh1v" path="res://UI/StorySequence/stars.png" id="3_js15a"]
 [ext_resource type="PackedScene" uid="uid://bqe1ul3picejh" path="res://Shaders/CRTEffect.tscn" id="4_72xdg"]
+[ext_resource type="Theme" uid="uid://bg368c62u3b87" path="res://UI/base_theme.tres" id="6_c4kps"]
 [ext_resource type="AudioStream" uid="uid://cjbb2u35u6b05" path="res://Audio/DarkSpacev2-rodrigo_intro.mp3" id="6_i3y54"]
 
 [node name="StorySequence" type="Control"]
@@ -95,6 +96,7 @@ offset_bottom = -577.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.937251, 0.96078)
+theme = ExtResource("6_c4kps")
 text = "skip"
 
 [node name="NextButton" type="Button" parent="."]
@@ -111,6 +113,7 @@ offset_right = -33.0
 offset_bottom = -33.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = ExtResource("6_c4kps")
 text = "next"
 
 [node name="CRTEffect" parent="." instance=ExtResource("4_72xdg")]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ifg464fuofbn"]
+[gd_scene load_steps=8 format=3 uid="uid://ifg464fuofbn"]
 
 [ext_resource type="Script" path="res://UI/SummaryScreen/summary_screen.gd" id="1_mfkr1"]
+[ext_resource type="Theme" uid="uid://bg368c62u3b87" path="res://UI/base_theme.tres" id="2_sngam"]
 [ext_resource type="AudioStream" uid="uid://8pd0nxp6d63w" path="res://Raw Source Files/AUDIO/SFX/Lvl_Victory.wav" id="2_tnd0c"]
 [ext_resource type="AudioStream" uid="uid://dlve6yo0thl81" path="res://Audio/AttackStackCharlie-Audio-rodrigo.ogg" id="3_qpy4f"]
 [ext_resource type="Script" path="res://UI/LevelSelect/BackBTN.gd" id="3_t5xed"]
@@ -15,6 +16,7 @@ script = ExtResource("1_mfkr1")
 offset_left = 232.0
 offset_right = 1001.0
 offset_bottom = 137.0
+theme = ExtResource("2_sngam")
 theme_override_font_sizes/font_size = 100
 text = "PLAY SUMMARY"
 horizontal_alignment = 1
@@ -72,11 +74,13 @@ offset_bottom = 540.0
 
 [node name="MainMenuButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_sngam")
 text = "MAIN MENU"
 script = ExtResource("3_t5xed")
 
 [node name="NextLevelButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_sngam")
 text = "NEXT LEVEL"
 script = ExtResource("4_rso5n")
 

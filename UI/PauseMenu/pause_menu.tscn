@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbeaplqjjejha"]
+[gd_scene load_steps=3 format=3 uid="uid://cbeaplqjjejha"]
 
 [ext_resource type="Script" path="res://UI/PauseMenu/pause_menu.gd" id="1_yuhrh"]
+[ext_resource type="Theme" uid="uid://bg368c62u3b87" path="res://UI/base_theme.tres" id="2_ow6a4"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -42,6 +43,7 @@ theme_override_constants/margin_bottom = 60
 
 [node name="Label" type="Label" parent="BoxContainer/MarginContainer"]
 layout_mode = 2
+theme = ExtResource("2_ow6a4")
 theme_override_font_sizes/font_size = 46
 text = "PAUSE"
 horizontal_alignment = 1
@@ -55,15 +57,18 @@ theme_override_constants/separation = 10
 
 [node name="ResumeBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_ow6a4")
 text = "RESUME"
 
 [node name="MainMenuBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_ow6a4")
 text = "CHANGE LEVEL"
 
 [node name="ExitBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
+theme = ExtResource("2_ow6a4")
 text = "EXIT"
 
 [connection signal="pressed" from="BoxContainer/VBoxContainer/ResumeBTN" to="." method="_on_resume_btn_pressed"]
