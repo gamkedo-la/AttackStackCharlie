@@ -10,6 +10,10 @@
 [ext_resource type="AudioStream" uid="uid://bx7nuhupbwhva" path="res://Audio/Announce-vaan.ogg" id="12_cc8lx"]
 [ext_resource type="PackedScene" uid="uid://bqe1ul3picejh" path="res://Shaders/CRTEffect.tscn" id="12_o54ba"]
 
+[sub_resource type="Gradient" id="Gradient_wbur3"]
+offsets = PackedFloat32Array(0, 0.986175)
+colors = PackedColorArray(0.99558, 0.99558, 0.99558, 1, 0, 0, 0, 1)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_nq8t4"]
 atlas = ExtResource("2_1dfr3")
 region = Rect2(0, 0, 418, 432)
@@ -24,10 +28,6 @@ animations = [{
 "name": &"default",
 "speed": 4.0
 }]
-
-[sub_resource type="Gradient" id="Gradient_wbur3"]
-offsets = PackedFloat32Array(0, 0.986175)
-colors = PackedColorArray(0.99558, 0.99558, 0.99558, 1, 0, 0, 0, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -48,6 +48,26 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
+
+[node name="Logo Particles" type="CPUParticles2D" parent="."]
+position = Vector2(1170, 275)
+scale = Vector2(1, 5.16)
+amount = 480
+lifetime = 6.0
+speed_scale = 2.0
+emission_shape = 3
+emission_rect_extents = Vector2(1, 80)
+direction = Vector2(-1, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 300.0
+angular_velocity_max = 90.0
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+color = Color(0.894118, 0.898039, 0.858824, 1)
+color_ramp = SubResource("Gradient_wbur3")
+hue_variation_max = 1.0
 
 [node name="BoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -91,18 +111,21 @@ alignment = 1
 [node name="LevelSelectBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_6peic")
+theme_override_font_sizes/font_size = 32
 text = "PICK LEVEL"
 script = ExtResource("4_10x72")
 
 [node name="PlayGameBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_6peic")
+theme_override_font_sizes/font_size = 32
 text = "ALL PLAY"
 script = ExtResource("1_rummk")
 
 [node name="CreditsBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_6peic")
+theme_override_font_sizes/font_size = 32
 text = "CREDITS"
 script = ExtResource("10_p74f4")
 
@@ -115,24 +138,6 @@ autoplay = true
 stream = ExtResource("12_cc8lx")
 volume_db = -5.073
 autoplay = true
-
-[node name="Logo Particles" type="CPUParticles2D" parent="."]
-position = Vector2(1170, 275)
-amount = 480
-lifetime = 4.0
-emission_shape = 3
-emission_rect_extents = Vector2(1, 80)
-direction = Vector2(-1, 0)
-spread = 0.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 200.0
-initial_velocity_max = 300.0
-angular_velocity_max = 90.0
-scale_amount_min = 4.0
-scale_amount_max = 4.0
-color = Color(0.893404, 0.896819, 0.593828, 1)
-color_ramp = SubResource("Gradient_wbur3")
-hue_variation_max = 1.0
 
 [node name="CRTEffect" parent="." instance=ExtResource("12_o54ba")]
 
