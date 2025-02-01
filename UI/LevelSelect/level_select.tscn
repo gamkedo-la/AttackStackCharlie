@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://6qxfenv0ngsl"]
+[gd_scene load_steps=12 format=3 uid="uid://6qxfenv0ngsl"]
 
 [ext_resource type="Texture2D" uid="uid://b4r8uim5jvh1v" path="res://UI/StorySequence/stars.png" id="1_7u1ih"]
 [ext_resource type="Script" path="res://UI/LevelSelect/LevelLoadBTN.gd" id="1_awoko"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c8qh1tgr28e8r" path="res://Enemies/Art/EnemyCraftMain.png" id="5_4fdwi"]
 [ext_resource type="Script" path="res://UI/LevelSelect/BackBTN.gd" id="5_u7lfj"]
 [ext_resource type="FontFile" uid="uid://d2sm3a6y6h6sv" path="res://Fonts/MichelangeloFree-2O7Le.otf" id="6_f0roc"]
+[ext_resource type="Theme" uid="uid://bg368c62u3b87" path="res://UI/base_theme.tres" id="7_p3odl"]
 [ext_resource type="AudioStream" uid="uid://dlve6yo0thl81" path="res://Audio/AttackStackCharlie-Audio-rodrigo.ogg" id="9_r0mss"]
 
 [node name="LevelSelect" type="Node2D"]
@@ -39,9 +40,9 @@ texture = ExtResource("5_4fdwi")
 
 [node name="Header" type="Label" parent="."]
 offset_left = 320.0
-offset_top = 17.0
+offset_top = 7.0
 offset_right = 825.0
-offset_bottom = 124.0
+offset_bottom = 114.0
 theme_override_fonts/font = ExtResource("6_f0roc")
 theme_override_font_sizes/font_size = 64
 text = "MISSION SELECT"
@@ -55,83 +56,94 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 323.0
-offset_top = 1.0
+offset_top = 34.0
 offset_right = 844.0
-offset_bottom = 618.0
+offset_bottom = 651.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 60
 alignment = 1
 
-[node name="VBoxContainer" type="HBoxContainer" parent="BoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="BoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 10
-alignment = 1
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 9
+columns = 2
 
-[node name="LevelABTN" type="Button" parent="BoxContainer/VBoxContainer"]
+[node name="LevelABTN" type="Button" parent="BoxContainer/GridContainer"]
 layout_mode = 2
+theme = ExtResource("7_p3odl")
 text = "Wading In"
 script = ExtResource("1_awoko")
 map_name = "TestLevelA"
 
-[node name="LevelBBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+[node name="LevelBBTN" type="Button" parent="BoxContainer/GridContainer"]
 layout_mode = 2
+theme = ExtResource("7_p3odl")
 text = "Crash Mix"
 script = ExtResource("1_awoko")
 map_name = "TestLevelB"
 
-[node name="LevelCBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+[node name="LevelCBTN" type="Button" parent="BoxContainer/GridContainer"]
 layout_mode = 2
+theme = ExtResource("7_p3odl")
 text = "Dense Sliders"
 script = ExtResource("1_awoko")
 map_name = "TestLevelC"
 
-[node name="LevelDBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+[node name="LevelDBTN" type="Button" parent="BoxContainer/GridContainer"]
 layout_mode = 2
+theme = ExtResource("7_p3odl")
 text = "Circlers"
 script = ExtResource("1_awoko")
 map_name = "TestLevelD"
 
-[node name="LevelEBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+[node name="LevelEBTN" type="Button" parent="BoxContainer/GridContainer"]
 layout_mode = 2
+theme = ExtResource("7_p3odl")
 text = "Tracking Mines"
 script = ExtResource("1_awoko")
 map_name = "TestLevelE"
 
-[node name="LevelFBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+[node name="LevelFBTN" type="Button" parent="BoxContainer/GridContainer"]
 layout_mode = 2
+theme = ExtResource("7_p3odl")
 text = "Wave Sliders"
 script = ExtResource("1_awoko")
 map_name = "TestLevelF"
 
-[node name="LevelGBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+[node name="LevelGBTN" type="Button" parent="BoxContainer/GridContainer"]
 layout_mode = 2
+theme = ExtResource("7_p3odl")
 text = "Mine Layers"
 script = ExtResource("1_awoko")
 map_name = "TestLevelG"
 
-[node name="LevelHBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+[node name="LevelHBTN" type="Button" parent="BoxContainer/GridContainer"]
 layout_mode = 2
+theme = ExtResource("7_p3odl")
 text = "Asteroids"
 script = ExtResource("1_awoko")
 map_name = "TestLevelH"
 
-[node name="LevelIBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+[node name="LevelIBTN" type="Button" parent="BoxContainer/GridContainer"]
 layout_mode = 2
+theme = ExtResource("7_p3odl")
 text = "Minefield"
 script = ExtResource("1_awoko")
 map_name = "TestLevelI"
 
-[node name="LevelJBTN" type="Button" parent="BoxContainer/VBoxContainer"]
+[node name="LevelJBTN" type="Button" parent="BoxContainer/GridContainer"]
 layout_mode = 2
+theme = ExtResource("7_p3odl")
 text = "Homing Bombers"
 script = ExtResource("1_awoko")
 map_name = "TestLevelJ"
 
 [node name="BackBTN" type="Button" parent="BoxContainer"]
 layout_mode = 2
+theme = ExtResource("7_p3odl")
 text = "RETURN"
 script = ExtResource("5_u7lfj")
 
@@ -142,14 +154,14 @@ stream = ExtResource("9_r0mss")
 volume_db = -18.087
 autoplay = true
 
-[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelABTN" to="BoxContainer/VBoxContainer/LevelABTN" method="_on_pressed"]
-[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelBBTN" to="BoxContainer/VBoxContainer/LevelBBTN" method="_on_pressed"]
-[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelCBTN" to="BoxContainer/VBoxContainer/LevelCBTN" method="_on_pressed"]
-[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelDBTN" to="BoxContainer/VBoxContainer/LevelDBTN" method="_on_pressed"]
-[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelEBTN" to="BoxContainer/VBoxContainer/LevelEBTN" method="_on_pressed"]
-[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelFBTN" to="BoxContainer/VBoxContainer/LevelFBTN" method="_on_pressed"]
-[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelGBTN" to="BoxContainer/VBoxContainer/LevelGBTN" method="_on_pressed"]
-[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelHBTN" to="BoxContainer/VBoxContainer/LevelHBTN" method="_on_pressed"]
-[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelIBTN" to="BoxContainer/VBoxContainer/LevelIBTN" method="_on_pressed"]
-[connection signal="pressed" from="BoxContainer/VBoxContainer/LevelJBTN" to="BoxContainer/VBoxContainer/LevelJBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/GridContainer/LevelABTN" to="BoxContainer/GridContainer/LevelABTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/GridContainer/LevelBBTN" to="BoxContainer/GridContainer/LevelBBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/GridContainer/LevelCBTN" to="BoxContainer/GridContainer/LevelCBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/GridContainer/LevelDBTN" to="BoxContainer/GridContainer/LevelDBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/GridContainer/LevelEBTN" to="BoxContainer/GridContainer/LevelEBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/GridContainer/LevelFBTN" to="BoxContainer/GridContainer/LevelFBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/GridContainer/LevelGBTN" to="BoxContainer/GridContainer/LevelGBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/GridContainer/LevelHBTN" to="BoxContainer/GridContainer/LevelHBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/GridContainer/LevelIBTN" to="BoxContainer/GridContainer/LevelIBTN" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/GridContainer/LevelJBTN" to="BoxContainer/GridContainer/LevelJBTN" method="_on_pressed"]
 [connection signal="pressed" from="BoxContainer/BackBTN" to="BoxContainer/BackBTN" method="_on_pressed"]

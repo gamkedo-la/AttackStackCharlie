@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhjlg4dmbxqom"]
+[gd_scene load_steps=14 format=3 uid="uid://dhjlg4dmbxqom"]
 
 [ext_resource type="Script" path="res://UI/MainMenu/SkipTitleForGameTesting.gd" id="1_l326y"]
 [ext_resource type="Script" path="res://UI/MainMenu/PlayGameBTN.gd" id="1_rummk"]
 [ext_resource type="Texture2D" uid="uid://cmyvctop3orjm" path="res://UI/MainMenu/Logo.png" id="2_1dfr3"]
+[ext_resource type="Theme" uid="uid://bg368c62u3b87" path="res://UI/base_theme.tres" id="3_j0bsj"]
 [ext_resource type="Script" path="res://UI/MainMenu/LevelSelectBTN.gd" id="4_10x72"]
 [ext_resource type="FontFile" uid="uid://d2sm3a6y6h6sv" path="res://Fonts/MichelangeloFree-2O7Le.otf" id="8_6peic"]
 [ext_resource type="Script" path="res://UI/MainMenu/CreditsBTN.gd" id="10_p74f4"]
@@ -105,18 +106,18 @@ frame_progress = 0.208546
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 10
+theme_override_constants/separation = 50
 alignment = 1
 
 [node name="LevelSelectBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("8_6peic")
-theme_override_font_sizes/font_size = 32
+theme = ExtResource("3_j0bsj")
 text = "PICK LEVEL"
 script = ExtResource("4_10x72")
 
 [node name="PlayGameBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_j0bsj")
 theme_override_fonts/font = ExtResource("8_6peic")
 theme_override_font_sizes/font_size = 32
 text = "ALL PLAY"
@@ -124,6 +125,7 @@ script = ExtResource("1_rummk")
 
 [node name="CreditsBTN" type="Button" parent="BoxContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_j0bsj")
 theme_override_fonts/font = ExtResource("8_6peic")
 theme_override_font_sizes/font_size = 32
 text = "CREDITS"
