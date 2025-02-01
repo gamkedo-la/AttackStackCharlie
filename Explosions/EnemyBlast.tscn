@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bq73d6o8w0lgq"]
+[gd_scene load_steps=6 format=3 uid="uid://bq73d6o8w0lgq"]
 
 [ext_resource type="Script" path="res://Explosions/EnemyBlast.gd" id="1_urs3d"]
 [ext_resource type="Texture2D" uid="uid://b0bmb8pipi6uq" path="res://Explosions/blast.png" id="2_hfxop"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cla4d"]
 
+[sub_resource type="Curve" id="Curve_vpcec"]
+_data = [Vector2(0.00242719, 0), 0.0, 0.0, 0, 0, Vector2(0.206311, 1), 0.0, 0.0, 0, 0, Vector2(0.995146, 0.00878), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [sub_resource type="Gradient" id="Gradient_xyjq6"]
-offsets = PackedFloat32Array(0.0238095, 0.660714, 1)
-colors = PackedColorArray(1, 1, 0, 1, 1, 0.591463, 0, 1, 1, 0, 0, 1)
+offsets = PackedFloat32Array(0.0238095, 0.658854, 1)
+colors = PackedColorArray(1, 0.878431, 0.568627, 1, 1, 0.411765, 0.352941, 1, 0.866667, 0.215686, 0.270588, 1)
 
 [node name="EnemyBlast" type="Area2D"]
 script = ExtResource("1_urs3d")
@@ -26,7 +30,7 @@ texture = ExtResource("2_hfxop")
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
 amount = 400
-lifetime = 3.0
+lifetime = 4.0
 one_shot = true
 speed_scale = 14.3
 explosiveness = 1.0
@@ -42,4 +46,5 @@ initial_velocity_max = 50.0
 angle_max = 360.0
 scale_amount_min = 2.35
 scale_amount_max = 11.5
+scale_amount_curve = SubResource("Curve_vpcec")
 color_ramp = SubResource("Gradient_xyjq6")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3r4y0jmgsskp"]
+[gd_scene load_steps=3 format=3 uid="uid://c3r4y0jmgsskp"]
 
 [ext_resource type="Script" path="res://UI/HUD/round_title.gd" id="1_pyglu"]
+[ext_resource type="Theme" uid="uid://bg368c62u3b87" path="res://UI/base_theme.tres" id="2_6ftjb"]
 
 [node name="RoundTitle" type="Node2D"]
 position = Vector2(1, -1)
@@ -20,6 +21,7 @@ grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(87.5, 2.08165e-12)
 size_flags_horizontal = 4
+theme = ExtResource("2_6ftjb")
 theme_override_font_sizes/font_size = 28
 text = "TEST"
 horizontal_alignment = 1

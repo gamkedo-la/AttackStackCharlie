@@ -145,6 +145,7 @@ autoplay = true
 
 [node name="Header" type="Label" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 326.0
 offset_top = 168.0
 offset_right = 831.0

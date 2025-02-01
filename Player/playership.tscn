@@ -94,7 +94,7 @@ damping_max = 0.2
 angle_max = 360.0
 scale_amount_min = 2.0
 scale_amount_max = 4.0
-color = Color(1, 1, 0.223529, 1)
+color = Color(1, 0.878431, 0.568627, 1)
 color_ramp = SubResource("Gradient_5qx18")
 hue_variation_curve = SubResource("Curve_b5pw3")
 
@@ -117,7 +117,7 @@ damping_max = 0.2
 angle_max = 360.0
 scale_amount_min = 3.0
 scale_amount_max = 6.0
-color = Color(0, 0.784314, 1, 1)
+color = Color(0.313726, 0.72549, 0.921569, 1)
 color_ramp = SubResource("Gradient_5qx18")
 hue_variation_curve = SubResource("Curve_b5pw3")
 
@@ -137,7 +137,7 @@ damping_min = 100.0
 damping_max = 100.0
 angle_max = 360.0
 scale_amount_max = 3.0
-color = Color(0, 1, 0, 1)
+color = Color(0.258824, 0.737255, 0.498039, 1)
 color_ramp = SubResource("Gradient_5qx18")
 hue_variation_curve = SubResource("Curve_b5pw3")
 
@@ -160,7 +160,7 @@ damping_max = 0.2
 angle_max = 360.0
 scale_amount_min = 2.0
 scale_amount_max = 4.0
-color = Color(1, 1, 0.223529, 1)
+color = Color(1, 0.878431, 0.568627, 1)
 color_ramp = SubResource("Gradient_5qx18")
 hue_variation_curve = SubResource("Curve_b5pw3")
 
